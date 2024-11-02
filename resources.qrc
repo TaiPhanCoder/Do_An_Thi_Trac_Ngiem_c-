@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/logo">
+        <file>ad27bc12ca81e862ceb35328122757ee.png</file>
+        <file>R.png</file>
+        <file>Mangekyou_Sharingan_Itachi.svg.png</file>
+        <file>ad27bc12ca81e862ceb35328122757ee.ico</file>
+        <file>down-arrow.png</file>
+        <file>down-arrow (1).png</file>
+        <file>left-long-solid.svg</file>
+        <file>right-long-solid.svg</file>
+    </qresource>
+    <qresource prefix="/TK-MK-PTIT">
+        <file>TK-MK.txt</file>
+        <file>MH-CauHoi.txt</file>
+        <file>DsachDalLamBai.txt</file>
+    </qresource>
+    <qresource prefix="/Danh_Sach_Cau_Hoi">
+        <file>Danh_Sach_Mon_Hoc.txt</file>
+        <file>INT1303.txt</file>
+        <file>INT1306.txt</file>
+        <file>INT1474.txt</file>
+    </qresource>
+</RCC>

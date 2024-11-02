@@ -1,0 +1,10 @@
+2152|5 + 3 bằng mấy?|A. 6|B. 7|C. 8|D. 9|C
+5269|Thủ đô của Nhật Bản là?|A. Tokyo|B. Osaka|C. Kyoto|D. Sapporo|A
+5273|7 - 3 bằng mấy?|A. 2|B. 3|C. 4|D. 5|C
+5308|Mặt trời mọc ở hướng nào?|A. Đông|B. Tây|C. Nam|D. Bắc|A
+6558|Con vật nào biết bay?|A. Cá|B. Chim|C. Hổ|D. Sư tử|B
+6756|Ai là người phát minh ra bóng đèn?|A. Albert Einstein|B. Isaac Newton|C. Thomas Edison|D. Nikola Tesla|C
+8118|9 + 1 bằng mấy?|A. 10|B. 11|C. 12|D. 9|A
+8394|Nước nào lớn nhất trên thế giới?|A. Trung Quốc|B. Nga|C. Mỹ|D. Canada|B
+8860|Số lớn hơn 10 là?|A. 8|B. 9|C. 11|D. 10|C
+9211|Con vật nào sống dưới nước?|A. Mèo|B. Cá|C. Chó|D. Gà|B

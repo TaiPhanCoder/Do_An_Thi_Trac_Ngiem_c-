@@ -1,0 +1,9 @@
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/THI_TRAC_NGHIEM.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/install.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/THI_TRAC_NGHIEM_autogen_timestamp_deps.dir
+C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_7_3_MinGW_64_bit-Debug/CMakeFiles/THI_TRAC_NGHIEM_autogen.dir

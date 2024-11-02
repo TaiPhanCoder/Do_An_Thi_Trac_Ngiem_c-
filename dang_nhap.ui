@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dang_Nhap</class>
+ <widget class="QDialog" name="Dang_Nhap">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>450</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dang_Nhap</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>591</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <widget class="QLabel" name="labelDN">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>30</y>
+      <width>351</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700; color:#ff0000;&quot;&gt;Đăng Nhập Tài Khoản&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>110</y>
+      <width>131</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/logo/ad27bc12ca81e862ceb35328122757ee.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TaiKhoan">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>200</y>
+      <width>271</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;
+padding-left: 85px;</string>
+    </property>
+    <property name="placeholderText">
+     <string>    Tài Khoản</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="MatKhau">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>270</y>
+      <width>271</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;
+padding-left: 85px;
+</string>
+    </property>
+    <property name="placeholderText">
+     <string>    Mật Khẩu</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DangNhapButton">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>360</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+border: 2px solid gray;
+border-radius: 20px;
+background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255);
+font-size: 18px;
+}
+
+QPushButton:hover {
+    background-color: rgb(200, 0, 0);  /* Màu nền khi hover (đậm hơn) */
+    cursor: pointer;  /* Con trỏ chuột sẽ chuyển thành hình bàn tay khi hover */
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>Đăng Nhập</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sharingan">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>270</y>
+      <width>71</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 25px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="resources.qrc">
+      <normaloff>:/logo/R.png</normaloff>:/logo/R.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ThongBao">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>330</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>3</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

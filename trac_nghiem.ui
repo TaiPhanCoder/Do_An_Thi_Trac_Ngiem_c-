@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Trac_Nghiem</class>
+ <widget class="QMainWindow" name="Trac_Nghiem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1536</width>
+    <height>960</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Thi Trắc Nghiệm</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="Khung_Thong_Tin">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>991</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+	color: black;
+	font-size: 14px;</string>
+    </property>
+    <property name="title">
+     <string>Thông Tin Thi Trắc Nghiệm</string>
+    </property>
+    <widget class="QLabel" name="MSSV">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+	border-radius: 20px;
+	background-color: #F0F0F0;
+	color: black;
+	font-size: 14px;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>MSSV:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TEN">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>30</y>
+       <width>481</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tên:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="maMH">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>70</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mã Môn Học:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Questions">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>110</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+	border-radius: 20px;</string>
+     </property>
+     <property name="text">
+      <string>Số Câu Hỏi:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Times">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>110</y>
+       <width>481</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Số Phút:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="MonHoc">
+     <property name="geometry">
+      <rect>
+       <x>470</x>
+       <y>70</y>
+       <width>481</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Môn Học:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_PTIT">
+     <property name="geometry">
+      <rect>
+       <x>12</x>
+       <y>30</y>
+       <width>101</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>10</y>
+      <width>231</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+	color: black;
+	font-size: 14px;</string>
+    </property>
+    <property name="title">
+     <string>Thời Gian Thi</string>
+    </property>
+    <widget class="QLabel" name="timerLabel">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>40</y>
+       <width>191</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;25:00&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>169</y>
+      <width>1231</width>
+      <height>691</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Phần Làm Bài</string>
+    </property>
+    <widget class="QFrame" name="Lam_Bai">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>50</y>
+       <width>1171</width>
+       <height>551</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <widget class="QLabel" name="cau_hoi">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>30</y>
+        <width>1031</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:22pt; font-weight:700; color:#ff0000;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt; font-weight:700; color:#ff0000;&quot;&gt;Câu hỏi: Thủ đô của Việt Nam là thành phố nào?&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="AQ">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>150</y>
+        <width>1000</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 16pt; color: #000000;</string>
+      </property>
+      <property name="text">
+       <string>A. Hồ Chí Minh</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="BQ">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>220</y>
+        <width>1000</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 16pt; color: #000000;</string>
+      </property>
+      <property name="text">
+       <string>B. Đà Nẵng</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="CQ">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>290</y>
+        <width>1000</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 16pt; color: #000000;</string>
+      </property>
+      <property name="text">
+       <string>C. Hà Nội</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="DQ">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>360</y>
+        <width>1000</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size: 16pt; color: #000000;</string>
+      </property>
+      <property name="text">
+       <string>D. Hải Phòng</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="left_arow">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>620</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+border-radius: 20px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/logo/left-long-solid.svg</normaloff>:/logo/left-long-solid.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>150</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="right_arow">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>620</y>
+       <width>151</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+border-radius: 20px;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="resources.qrc">
+       <normaloff>:/logo/right-long-solid.svg</normaloff>:/logo/right-long-solid.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>40</width>
+       <height>150</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="NopBai">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>620</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border: 2px solid gray;
+border-radius: 20px;
+background-color: rgb(255, 0, 0);
+color: rgb(255, 255, 255);
+font-size: 18px;
+}
+
+QPushButton:hover {
+    background-color: rgb(200, 0, 0);  /* Màu nền khi hover (đậm hơn) */
+    cursor: pointer;  /* Con trỏ chuột sẽ chuyển thành hình bàn tay khi hover */
+}
+
+</string>
+     </property>
+     <property name="text">
+      <string>Nộp Bài</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_3">
+    <property name="geometry">
+     <rect>
+      <x>1279</x>
+      <y>169</y>
+      <width>241</width>
+      <height>691</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+	color: black;
+	font-size: 14px;</string>
+    </property>
+    <property name="title">
+     <string>Danh Sách Câu Hỏi</string>
+    </property>
+    <widget class="QListWidget" name="listWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>41</y>
+       <width>221</width>
+       <height>631</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>1279</x>
+      <y>9</y>
+      <width>231</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+	color: black;
+	font-size: 14px;</string>
+    </property>
+    <property name="title">
+     <string>Hướng Dẫn Làm Bài</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1536</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,10 @@
+1388|2 + 2 bằng mấy?|A. 2|B. 3|C. 4|D. 5|C
+1606|Thủ đô của Việt Nam là?|A. Hà Nội|B. TP.HCM|C. Đà Nẵng|D. Hải Phòng|A
+1910|3 + 5 bằng mấy?|A. 6|B. 7|C. 8|D. 9|C
+2156|Màu của lá cây là?|A. Đỏ|B. Vàng|C. Xanh lá|D. Xanh dương|C
+4403|Cá sống ở đâu?|A. Trên cây|B. Trong nước|C. Trên cạn|D. Trên trời|B
+5019|Việt Nam thuộc châu lục nào?|A. Châu Á|B. Châu Âu|C. Châu Phi|D. Châu Mỹ|A
+6041|4 + 4 bằng mấy?|A. 6|B. 7|C. 8|D. 9|C
+8068|Tháng có 28 hoặc 29 ngày là?|A. Tháng 1|B. Tháng 2|C. Tháng 3|D. Tháng 4|B
+9551|Số nhỏ hơn 5 là?|A. 5|B. 6|C. 4|D. 7|C
+9733|Hình vuông có bao nhiêu cạnh?|A. 2|B. 3|C. 4|D. 5|C

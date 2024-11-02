@@ -1,0 +1,38 @@
+INT1303|AN TOÀN BẢO MẬT HỆ THỐNG THÔNG TIN|headDsachCauHoiINT1303
+10
+1|1 + 1 bằng mấy?|A. 1|B. 2|C. 3|D. 4|B
+2|Thủ đô của Việt Nam là thành phố nào?|A. Hồ Chí Minh|B. Đà Nẵng|C. Hà Nội|D. Hải Phòng|C
+3|Bảo mật thông tin liên quan đến?|A. An ninh|B. Độ tin cậy|C. Tính toàn vẹn|D. Tất cả các ý trên|D
+4|Virus máy tính là gì?|A. Một loại phần mềm độc hại|B. Một loại phần mềm bảo mật|C. Một loại phần cứng|D. Một hệ điều hành|A
+5|Mật khẩu yếu là gì?|A. Dễ đoán|B. Khó đoán|C. Chỉ có ký tự đặc biệt|D. Chỉ có số|A
+6|Tấn công từ chối dịch vụ (DoS) là gì?|A. Tấn công vào mật khẩu|B. Tấn công làm ngừng dịch vụ|C. Tấn công lấy cắp dữ liệu|D. Tấn công mạng không dây|B
+7|SSL/TLS dùng để làm gì?|A. Bảo mật kết nối|B. Gửi email|C. Điều khiển kết nối|D. Định danh địa chỉ IP|A
+8|Cách nào để bảo mật tài khoản email?|A. Sử dụng mật khẩu mạnh|B. Không bao giờ đăng nhập|C. Chia sẻ mật khẩu với người khác|D. Tắt xác thực hai yếu tố|A
+9|VPN là viết tắt của?|A. Virtual Private Network|B. Virus Protection Network|C. Visual Processing Node|D. Virtual Port Network|A
+10|Tấn công lừa đảo (Phishing) là gì?|A. Gửi email giả mạo để lấy cắp thông tin|B. Tấn công bằng phần mềm độc hại|C. Tấn công vào mạng không dây|D. Tấn công lấy cắp dữ liệu|A
+
+INT1474|CÁC GIAO THỨC CỦA INTERNET|headDsachCauHoiINT1474
+10
+1|HTTP là viết tắt của?|A. HyperText Transfer Page|B. HyperText Transfer Protocol|C. HyperTerminal Text Protocol|D. HyperLink Text Protocol|B
+2|Giao thức dùng để gửi email?|A. SMTP|B. FTP|C. HTTP|D. TCP|A
+3|Giao thức HTTPS sử dụng thêm yếu tố nào so với HTTP?|A. SSL/TLS|B. FTP|C. DNS|D. IP|A
+4|Giao thức DNS có chức năng gì?|A. Định danh địa chỉ IP|B. Gửi email|C. Chuyển tiếp dữ liệu|D. Điều khiển kết nối|A
+5|FTP là giao thức nào?|A. Chuyển tệp|B. Gửi email|C. Định danh IP|D. Bảo mật truyền tin|A
+6|TCP là viết tắt của?|A. Transmission Control Protocol|B. Transfer Communication Protocol|C. Transfer Code Procedure|D. Transmission Code Protocol|A
+7|IMAP là viết tắt của?|A. Internet Mail Access Protocol|B. Instant Messaging Access Protocol|C. Interactive Mail Access Protocol|D. Internet Message Access Protocol|A
+8|POP3 dùng để làm gì?|A. Lưu trữ email|B. Xóa email|C. Tải email từ máy chủ|D. Gửi email|C
+9|Giao thức nào được sử dụng để truyền dữ liệu web?|A. FTP|B. SMTP|C. HTTP|D. SSH|C
+10|Telnet được sử dụng để?|A. Kết nối từ xa|B. Truyền email|C. Bảo mật thông tin|D. Tải tệp tin|A
+
+INT1306|CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT|headDsachCauHoiINT1306
+10
+1|Độ phức tạp của thuật toán tìm kiếm nhị phân?|A. O(n)|B. O(log n)|C. O(n^2)|D. O(1)|B
+2|Kiểu dữ liệu nào là LIFO?|A. Queue|B. Stack|C. List|D. Map|B
+3|Độ phức tạp của thuật toán sắp xếp nổi bọt là gì?|A. O(n)|B. O(n^2)|C. O(log n)|D. O(n log n)|B
+4|Thuật toán sắp xếp nào có hiệu năng tốt nhất?|A. Bubble Sort|B. Merge Sort|C. Quick Sort|D. Insertion Sort|C
+5|Cấu trúc dữ liệu nào là FIFO?|A. Stack|B. Queue|C. Tree|D. Graph|B
+6|Big-O của thuật toán tìm kiếm tuyến tính là?|A. O(n^2)|B. O(n)|C. O(1)|D. O(log n)|B
+7|Thuật toán nào là chia để trị?|A. Quick Sort|B. Merge Sort|C. Bubble Sort|D. Insertion Sort|A
+8|Độ phức tạp của thuật toán tìm kiếm nhị phân?|A. O(log n)|B. O(n)|C. O(n^2)|D. O(1)|A
+9|Thuật toán BFS được sử dụng trên cấu trúc nào?|A. Stack|B. Tree|C. Queue|D. Graph|D
+10|DFS là thuật toán gì?|A. Depth First Search|B. Data File Search|C. Direct File Search|D. Depth File Search|A
