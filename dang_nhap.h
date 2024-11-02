@@ -3,8 +3,6 @@
 
 #include <QMainWindow>
 #include <QDialog>
-#include "globals.h"
-#include <vector>
 #include <QString>
 
 using namespace std;

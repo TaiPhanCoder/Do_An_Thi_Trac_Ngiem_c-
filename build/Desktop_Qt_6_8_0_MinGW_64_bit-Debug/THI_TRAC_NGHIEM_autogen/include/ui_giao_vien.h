@@ -12,11 +12,13 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -32,6 +34,7 @@ public:
     QLabel *logo;
     QLabel *label_2;
     QGroupBox *groupBox_2;
+    QTableWidget *bangDuLieu;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -47,13 +50,37 @@ public:
         groupBox->setGeometry(QRect(0, 180, 321, 681));
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 100, 141, 61));
+        pushButton->setGeometry(QRect(80, 180, 151, 61));
+        pushButton->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 20px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"padding: 10px 20px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
         pushButton_2 = new QPushButton(groupBox);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(80, 200, 141, 61));
+        pushButton_2->setGeometry(QRect(80, 100, 151, 61));
+        pushButton_2->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 20px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"padding: 10px 20px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
         pushButton_3 = new QPushButton(groupBox);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(80, 290, 141, 61));
+        pushButton_3->setGeometry(QRect(80, 260, 151, 61));
+        pushButton_3->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 20px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"padding: 10px 20px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
         logo = new QLabel(centralwidget);
         logo->setObjectName("logo");
         logo->setGeometry(QRect(120, 10, 201, 121));
@@ -69,7 +96,10 @@ public:
 ""));
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(319, 0, 1211, 191));
+        groupBox_2->setGeometry(QRect(319, 0, 1201, 191));
+        bangDuLieu = new QTableWidget(centralwidget);
+        bangDuLieu->setObjectName("bangDuLieu");
+        bangDuLieu->setGeometry(QRect(325, 191, 1201, 671));
         GIao_Vien->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GIao_Vien);
         menubar->setObjectName("menubar");
@@ -88,9 +118,9 @@ public:
     {
         GIao_Vien->setWindowTitle(QCoreApplication::translate("GIao_Vien", "MainWindow", nullptr));
         groupBox->setTitle(QCoreApplication::translate("GIao_Vien", "Tu\341\273\263 ch\341\273\215n", nullptr));
-        pushButton->setText(QCoreApplication::translate("GIao_Vien", "Ch\341\273\211nh S\341\273\255a L\341\273\233p", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("GIao_Vien", "Ch\341\273\211nh S\341\273\255a Sinh Vi\303\252n", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("GIao_Vien", "\304\220i\341\273\201u Ch\341\273\211nh C\303\242u H\341\273\217i", nullptr));
+        pushButton->setText(QCoreApplication::translate("GIao_Vien", "L\341\273\233p", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("GIao_Vien", "Sinh Vi\303\252n", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
         logo->setText(QString());
         label_2->setText(QCoreApplication::translate("GIao_Vien", "H\341\273\215c Vi\341\273\207n Ho\303\240ng Gia HCM", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("GIao_Vien", "GroupBox", nullptr));

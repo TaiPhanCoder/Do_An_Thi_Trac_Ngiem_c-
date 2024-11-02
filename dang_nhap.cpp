@@ -3,6 +3,7 @@
 #include "globals.h"
 #include <QFile>
 #include <QDialog>
+#include "sinhvien.h"
 
 Dang_Nhap::Dang_Nhap(QWidget *parent)
     : QDialog(parent)
@@ -35,17 +36,6 @@ Dang_Nhap::~Dang_Nhap()
     delete ui;
 }
 
-SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, QString password) {
-    SinhVien* sv = new SinhVien;
-    sv->masv = masv;
-    sv->ho = ho;
-    sv->ten = ten;
-    sv->phai = phai;
-    sv->password = password;
-    sv->ds_diemthi = nullptr;
-    sv->next = nullptr;
-    return sv;
-}
 
 void Dang_Nhap::loadSinhVienFromFile(const QString &filename) {
     SinhVien* tail = nullptr;

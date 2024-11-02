@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-aa66278e5be668cdabc5.json",
+					"jsonFile" : "directory-.-Debug-3ee312889c195de2c8bb.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "THI_TRAC_NGHIEM::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-THI_TRAC_NGHIEM-Debug-0e634d52ac51f38ef30a.json",
+					"jsonFile" : "target-THI_TRAC_NGHIEM-Debug-92783adda6e6b1c640ed.json",
 					"name" : "THI_TRAC_NGHIEM",
 					"projectIndex" : 0
 				},

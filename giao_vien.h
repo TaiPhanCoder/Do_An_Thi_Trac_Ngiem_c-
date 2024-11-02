@@ -15,6 +15,8 @@ public:
     explicit GIao_Vien(QWidget *parent = nullptr);
     ~GIao_Vien();
 
+    void populateTable();
+
 private:
     Ui::GIao_Vien *ui;
 };

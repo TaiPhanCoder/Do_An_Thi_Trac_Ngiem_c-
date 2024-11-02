@@ -30,39 +30,69 @@
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>100</y>
-       <width>141</width>
+       <y>180</y>
+       <width>151</width>
        <height>61</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: rgb(255, 35, 35);
+color: white;
+font-size: 16px;
+padding: 10px 20px;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
+     </property>
      <property name="text">
-      <string>Chỉnh Sửa Lớp</string>
+      <string>Lớp</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>200</y>
-       <width>141</width>
+       <y>100</y>
+       <width>151</width>
        <height>61</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: rgb(255, 35, 35);
+color: white;
+font-size: 16px;
+padding: 10px 20px;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
+     </property>
      <property name="text">
-      <string>Chỉnh Sửa Sinh Viên</string>
+      <string>Sinh Viên</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>290</y>
-       <width>141</width>
+       <y>260</y>
+       <width>151</width>
        <height>61</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: rgb(255, 35, 35);
+color: white;
+font-size: 16px;
+padding: 10px 20px;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
+     </property>
      <property name="text">
-      <string>Điều Chỉnh Câu Hỏi</string>
+      <string>Câu Hỏi</string>
      </property>
     </widget>
    </widget>
@@ -108,12 +138,22 @@
      <rect>
       <x>319</x>
       <y>0</y>
-      <width>1211</width>
+      <width>1201</width>
       <height>191</height>
      </rect>
     </property>
     <property name="title">
      <string>GroupBox</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="bangDuLieu">
+    <property name="geometry">
+     <rect>
+      <x>325</x>
+      <y>191</y>
+      <width>1201</width>
+      <height>671</height>
+     </rect>
     </property>
    </widget>
   </widget>

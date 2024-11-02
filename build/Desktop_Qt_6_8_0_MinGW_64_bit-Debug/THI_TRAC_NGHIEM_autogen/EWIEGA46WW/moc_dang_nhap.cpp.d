@@ -361,5 +361,4 @@ D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_8_0_MinGW_64_bit-Deb
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sys/types.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
-  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
-  D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/globals.h
+  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h
