@@ -10,11 +10,10 @@ CauHoiDaChon* taoMangCauHoiDaChon() {
     CauHoi* current = headCauhoi;
     int index = 0;
 
-    // Khởi tạo mỗi phần tử trong mảng với giá trị mặc định
     while (current != nullptr && index < questions) {
-        mangCauHoiDaChon[index].id = current->id;    // Lấy id từ câu hỏi và gán vào mảng
-        mangCauHoiDaChon[index].dapAn = '\0'; // Đáp án mặc định là ký tự rỗng
-        current = current->next; // Chuyển sang câu hỏi tiếp theo
+        mangCauHoiDaChon[index].id = current->id;
+        mangCauHoiDaChon[index].dapAn = '\0';
+        current = current->next;
         index++;
     }
 

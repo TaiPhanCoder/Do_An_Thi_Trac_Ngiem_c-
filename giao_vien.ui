@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="title">
-     <string>Tuỳ chọn</string>
+     <string>Tuỳ Chọn</string>
     </property>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
@@ -143,8 +143,34 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
      </rect>
     </property>
     <property name="title">
-     <string>GroupBox</string>
+     <string>Tính Năng</string>
     </property>
+    <widget class="QLineEdit" name="timMSSV">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>261</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>MSSV</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>261</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Tìm kiếm:</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QTableWidget" name="bangDuLieu">
     <property name="geometry">

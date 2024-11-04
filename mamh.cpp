@@ -6,7 +6,6 @@ MaMH::MaMH() {}
 #include<QFile>
 using namespace std;
 
-
 typedef NodeMonHoc* ptrMonHoc;
 
 // Hàm tính chiều cao của node

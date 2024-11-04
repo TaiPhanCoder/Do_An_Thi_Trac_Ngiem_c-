@@ -14,6 +14,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -34,6 +35,8 @@ public:
     QLabel *logo;
     QLabel *label_2;
     QGroupBox *groupBox_2;
+    QLineEdit *timMSSV;
+    QLabel *label;
     QTableWidget *bangDuLieu;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -97,6 +100,12 @@ public:
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName("groupBox_2");
         groupBox_2->setGeometry(QRect(319, 0, 1201, 191));
+        timMSSV = new QLineEdit(groupBox_2);
+        timMSSV->setObjectName("timMSSV");
+        timMSSV->setGeometry(QRect(10, 60, 261, 28));
+        label = new QLabel(groupBox_2);
+        label->setObjectName("label");
+        label->setGeometry(QRect(10, 30, 261, 20));
         bangDuLieu = new QTableWidget(centralwidget);
         bangDuLieu->setObjectName("bangDuLieu");
         bangDuLieu->setGeometry(QRect(325, 191, 1201, 671));
@@ -117,13 +126,15 @@ public:
     void retranslateUi(QMainWindow *GIao_Vien)
     {
         GIao_Vien->setWindowTitle(QCoreApplication::translate("GIao_Vien", "MainWindow", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("GIao_Vien", "Tu\341\273\263 ch\341\273\215n", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("GIao_Vien", "Tu\341\273\263 Ch\341\273\215n", nullptr));
         pushButton->setText(QCoreApplication::translate("GIao_Vien", "L\341\273\233p", nullptr));
         pushButton_2->setText(QCoreApplication::translate("GIao_Vien", "Sinh Vi\303\252n", nullptr));
         pushButton_3->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
         logo->setText(QString());
         label_2->setText(QCoreApplication::translate("GIao_Vien", "H\341\273\215c Vi\341\273\207n Ho\303\240ng Gia HCM", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("GIao_Vien", "GroupBox", nullptr));
+        groupBox_2->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
+        timMSSV->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "MSSV", nullptr));
+        label->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));
     } // retranslateUi
 
 };

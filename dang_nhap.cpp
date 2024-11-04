@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QDialog>
 #include "sinhvien.h"
+#include "lop.h"
 
 Dang_Nhap::Dang_Nhap(QWidget *parent)
     : QDialog(parent)
@@ -76,6 +77,79 @@ void Dang_Nhap::loadSinhVienFromFile(const QString &filename) {
     file.close();  // Đóng tệp sau khi đọc
 }
 
+// void Dang_Nhap::loadSinhVienFromFile(const QString &filename) {
+//     QFile file(filename);
+//     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+//         qDebug() << "Cannot open file!";
+//         return;
+//     }
+
+//     QTextStream in(&file);
+//     Lop* currentLop = nullptr;
+//     int lopIndex = 0;
+
+//     while (!in.atEnd()) {
+//         QString line = in.readLine().trimmed();
+
+//         // Kiểm tra xem đây có phải là dòng lớp học hay không
+//         if (line.contains('-')) {  // Giả sử mã lớp chứa dấu '-'
+//             QStringList lopFields = line.split('|');
+//             if (lopFields.size() == 2) {
+//                 QString malop = lopFields.at(0).trimmed();
+//                 QString tenlop = lopFields.at(1).trimmed();
+
+//                 // Tạo đối tượng lớp mới
+//                 currentLop = new Lop;
+//                 currentLop->MALOP = malop;
+//                 currentLop->TENLOP = tenlop;
+//                 currentLop->DSSV = nullptr; // Chưa có sinh viên trong danh sách
+
+//                 // Thêm lớp mới vào danh sách lớp
+//                 if (lopIndex < 10000) {
+//                     danhSachLop[lopIndex++] = currentLop;
+//                 } else {
+//                     qDebug() << "Danh sách lớp đã đầy!";
+//                     break;
+//                 }
+
+//                 qDebug() << "Mã lớp mới: " << malop << "| Tên lớp: " << tenlop; // Debug thông tin lớp mới
+//             } else {
+//                 qDebug() << "Invalid class line format: " << line;
+//             }
+//         } else if (currentLop) {
+//             // Đây là dòng sinh viên
+//             QStringList fields = line.split('|');
+//             if (fields.size() == 5) {
+//                 QString masv = fields.at(0).trimmed();
+//                 QString ho = fields.at(1).trimmed();
+//                 QString ten = fields.at(2).trimmed();
+//                 QString phai = fields.at(3).trimmed();
+//                 QString password = fields.at(4).trimmed();
+
+//                 // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
+//                 SinhVien* newSV = new SinhVien{masv, ho, ten, phai, nullptr};
+
+//                 if (currentLop->DSSV == nullptr) {
+//                     currentLop->DSSV = newSV;
+//                 } else {
+//                     SinhVien* tail = currentLop->DSSV;
+//                     while (tail->next) {
+//                         tail = tail->next;
+//                     }
+//                     tail->next = newSV;
+//                 }
+
+//                 // Debug thông tin sinh viên
+//                 qDebug() << "Mã lớp:" << currentLop->MALOP << "| Mã SV:" << newSV->masv;
+//             } else {
+//                 qDebug() << "Invalid student line format: " << line;
+//             }
+//         }
+//     }
+
+//     file.close();
+// }
+
 void Dang_Nhap::on_DangNhapButton_clicked() {
     QString username = ui->TaiKhoan->text();
     QString password = ui->MatKhau->text();
@@ -127,12 +201,11 @@ bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &entere
 
 void Dang_Nhap::onTaiKhoanInput(const QString &inputText)
 {
-    // Chỉnh sửa nội dung inputText theo yêu cầu của bạn
-    QString updatedText = inputText.toUpper(); // Ví dụ: chuyển thành chữ hoa
+    QString updatedText = inputText.toUpper();
 
     // Đặt lại nội dung vào QLineEdit TaiKhoan
-    disconnect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput); // Tạm thời ngắt kết nối để tránh gọi lại sự kiện
+    disconnect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
     ui->TaiKhoan->setText(updatedText);
-    connect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput); // Kết nối lại sau khi cập nhật
+    connect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
 }
 

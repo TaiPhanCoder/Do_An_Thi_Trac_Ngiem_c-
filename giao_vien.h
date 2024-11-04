@@ -2,6 +2,7 @@
 #define GIAO_VIEN_H
 
 #include <QMainWindow>
+#include "ui_giao_vien.h"
 
 namespace Ui {
 class GIao_Vien;
@@ -16,6 +17,8 @@ public:
     ~GIao_Vien();
 
     void populateTable();
+    void onTextEdited(const QString &text);
+    void onSearchTextChanged(const QString &text);
 
 private:
     Ui::GIao_Vien *ui;

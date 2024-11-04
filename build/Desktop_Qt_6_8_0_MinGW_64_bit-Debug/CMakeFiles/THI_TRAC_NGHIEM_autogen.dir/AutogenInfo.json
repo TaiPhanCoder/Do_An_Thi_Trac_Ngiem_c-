@@ -297,6 +297,12 @@
 			null
 		],
 		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/lop.h",
+			"MU",
+			"EWIEGA46WW/moc_lop.cpp",
+			null
+		],
+		[
 			"D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/mamh.h",
 			"MU",
 			"EWIEGA46WW/moc_mamh.cpp",
@@ -401,6 +407,7 @@
 		[ "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/dang_nhap.cpp", "MU", null ],
 		[ "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/giao_vien.cpp", "MU", null ],
 		[ "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/globals.cpp", "MU", null ],
+		[ "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/lop.cpp", "MU", null ],
 		[ "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/main.cpp", "MU", null ],
 		[ "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/mamh.cpp", "MU", null ],
 		[ "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/sinhvien.cpp", "MU", null ],

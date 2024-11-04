@@ -1,3 +1,4 @@
+E23CQCN01-N|Công nghệ thông tin CLC 2023
 1|Pham Van|Hung|Nam|123
 2|Nguyen Thi|Lan|Nu|123
 N23DCCN003|Tran Minh|Hoang|Nam|123
@@ -14,3 +15,16 @@ N23DCCN013|Tran Van|Tuan|Nam|123
 N23DCCN014|Le Thi|Hue|Nu|123
 N23DCCN015|Nguyen Van|Bao|Nam|123
 N23DCCN016|Pham Thi|Linh|Nu|123
+
+E23CQCN02-N|Công nghệ thông tin CLC 2023
+N23DCDK090|Tran Van|Binh|Nam|123
+N23DCDK091|Le Thi|Huong|Nu|123
+N23DCDK092|Hoang Van|Khanh|Nam|123
+N23DCDK093|Nguyen Thi|Mai|Nu|123
+N23DCDK094|Phan Van|Hieu|Nam|123
+N23DCDK095|Dang Thi|Thu|Nu|123
+N23DCDK096|Do Van|Phong|Nam|123
+N23DCDK097|Bui Thi|Lien|Nu|123
+N23DCDK098|Tran Van|Son|Nam|123
+N23DCDK099|Nguyen Thi|Ha|Nu|123
+N23DCDK100|Le Van|Tung|Nam|123
