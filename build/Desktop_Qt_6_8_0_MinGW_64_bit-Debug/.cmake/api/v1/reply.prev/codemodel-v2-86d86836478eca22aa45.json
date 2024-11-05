@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-4ad5fd820b03b395be83.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "THI_TRAC_NGHIEM",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "THI_TRAC_NGHIEM::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-THI_TRAC_NGHIEM-Debug-ac9de58f6689c62a4bca.json",
+					"name" : "THI_TRAC_NGHIEM",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "THI_TRAC_NGHIEM_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-THI_TRAC_NGHIEM_autogen-Debug-8a8232b80f5a9462bc5a.json",
+					"name" : "THI_TRAC_NGHIEM_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "THI_TRAC_NGHIEM_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-THI_TRAC_NGHIEM_autogen_timestamp_deps-Debug-ef3de7195c61e5196cf0.json",
+					"name" : "THI_TRAC_NGHIEM_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+		"source" : "D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

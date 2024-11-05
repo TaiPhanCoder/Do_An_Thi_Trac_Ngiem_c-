@@ -2,6 +2,7 @@
 #define THONG_TIN_THI_H
 
 #include <QDialog>
+#include <QCompleter>
 
 namespace Ui {
 class Thong_Tin_Thi;
@@ -24,6 +25,7 @@ private slots:
 private:
     Ui::Thong_Tin_Thi *ui;
     QStringList danhSachMonHoc;
+    QCompleter *completer;
 };
 
 #endif // THONG_TIN_THI_H

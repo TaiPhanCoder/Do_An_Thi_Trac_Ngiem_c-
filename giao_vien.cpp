@@ -13,7 +13,18 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);
     ui->logo->setPixmap(scaledPixmap);
     int rows = demSinhVien();
-    qDebug() << rows;
+    //tạo context menu
+    setContextMenuPolicy(Qt::CustomContextMenu);
+
+    contextMenu = new QMenu(this);
+    deleteAction = new QAction("Xóa", this);
+
+    contextMenu->addAction(deleteAction);
+
+    connect(this, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
+
+    connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
+
     ui->bangDuLieu->setRowCount(rows);
     ui->bangDuLieu->setColumnCount(4);
     ui->bangDuLieu->setColumnWidth(0, 350);
@@ -33,6 +44,12 @@ GIao_Vien::~GIao_Vien()
 {
     delete ui;
 }
+
+void GIao_Vien::showContextMenu(const QPoint &pos) {
+    contextMenu->exec(mapToGlobal(pos));
+}
+
+void GIao_Vien::xoaSV(){}
 
 void GIao_Vien::populateTable() {
     int row = 0;

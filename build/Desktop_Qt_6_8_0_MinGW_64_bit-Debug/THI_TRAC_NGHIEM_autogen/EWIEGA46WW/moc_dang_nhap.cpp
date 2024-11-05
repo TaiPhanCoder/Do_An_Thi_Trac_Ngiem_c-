@@ -36,7 +36,7 @@ namespace {
 struct qt_meta_stringdata_CLASSDang_NhapENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSDang_NhapENDCLASS = QtMocHelpers::stringData(
     "Dang_Nhap",
-    "loadSinhVienFromFile",
+    "lapdssinhvien",
     "",
     "filename",
     "on_sharingan_clicked",
@@ -86,7 +86,7 @@ Q_CONSTINIT const QMetaObject Dang_Nhap::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSDang_NhapENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<Dang_Nhap, std::true_type>,
-        // method 'loadSinhVienFromFile'
+        // method 'lapdssinhvien'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'on_sharingan_clicked'
@@ -106,7 +106,7 @@ void Dang_Nhap::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         auto *_t = static_cast<Dang_Nhap *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->loadSinhVienFromFile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 0: _t->lapdssinhvien((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 1: _t->on_sharingan_clicked(); break;
         case 2: _t->onTaiKhoanInput((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 3: _t->on_DangNhapButton_clicked(); break;

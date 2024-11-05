@@ -28,7 +28,7 @@ private:
     bool userIsGV = false;
 
 private slots:
-    void loadSinhVienFromFile(const QString &filename);
+    void lapdssinhvien(const QString &filename);
     void on_sharingan_clicked();
     void onTaiKhoanInput(const QString &inputText);
     void on_DangNhapButton_clicked();

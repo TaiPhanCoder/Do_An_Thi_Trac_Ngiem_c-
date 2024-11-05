@@ -2,6 +2,9 @@
 #define GIAO_VIEN_H
 
 #include <QMainWindow>
+#include <QMenu>
+#include <QAction>
+#include <QTableWidget>
 #include "ui_giao_vien.h"
 
 namespace Ui {
@@ -20,8 +23,16 @@ public:
     void onTextEdited(const QString &text);
     void onSearchTextChanged(const QString &text);
 
+private slots:
+    void showContextMenu(const QPoint &pos);
+    void xoaSV();
+
 private:
     Ui::GIao_Vien *ui;
+    QMenu *contextMenu;
+    QAction *editAction;
+    QAction *deleteAction;
 };
+
 
 #endif // GIAO_VIEN_H

@@ -5,6 +5,7 @@ D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_8_0_MinGW_64_bit-Deb
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20memory.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q23utility.h \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qarraydata.h \
@@ -46,11 +47,13 @@ D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_8_0_MinGW_64_bit-Deb
   C:/Qt/6.8.0/mingw_64/include/QtCore/qhash.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qhashfunctions.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qiodevicebase.h \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/qitemselectionmodel.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qiterable.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qiterator.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qlatin1stringview.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qline.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qlist.h \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qlogging.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qmalloc.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qmap.h \
@@ -71,6 +74,7 @@ D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_8_0_MinGW_64_bit-Deb
   C:/Qt/6.8.0/mingw_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qrect.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/qregularexpression.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qset.h \
@@ -120,6 +124,7 @@ D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_8_0_MinGW_64_bit-Deb
   C:/Qt/6.8.0/mingw_64/include/QtCore/qversiontagging.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qyieldcpu.h \
+  C:/Qt/6.8.0/mingw_64/include/QtGui/QAction \
   C:/Qt/6.8.0/mingw_64/include/QtGui/qaction.h \
   C:/Qt/6.8.0/mingw_64/include/QtGui/qbitmap.h \
   C:/Qt/6.8.0/mingw_64/include/QtGui/qbrush.h \
@@ -143,11 +148,28 @@ D:/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/build/Desktop_Qt_6_8_0_MinGW_64_bit-Deb
   C:/Qt/6.8.0/mingw_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.8.0/mingw_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.8.0/mingw_64/include/QtGui/qtransform.h \
+  C:/Qt/6.8.0/mingw_64/include/QtGui/qvalidator.h \
   C:/Qt/6.8.0/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.8.0/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMenu \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/QTableWidget \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractslider.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmenu.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qslider.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qstyle.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qstyleoption.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabbar.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtableview.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtablewidget.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtwidgetsexports.h \

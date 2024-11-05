@@ -17,7 +17,6 @@ CauHoiDaChon* taoMangCauHoiDaChon() {
         index++;
     }
 
-    // Trả về con trỏ đến mảng vừa tạo
     return mangCauHoiDaChon;
 }
 

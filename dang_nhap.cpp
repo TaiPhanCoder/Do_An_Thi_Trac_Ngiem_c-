@@ -37,124 +37,74 @@ Dang_Nhap::~Dang_Nhap()
     delete ui;
 }
 
-
-void Dang_Nhap::loadSinhVienFromFile(const QString &filename) {
-    SinhVien* tail = nullptr;
-
-    QFile file(filename);  // Sử dụng QFile để mở tệp từ resource
+void Dang_Nhap::lapdssinhvien(const QString &filename) {
+    QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Cannot open file!";
         return;
     }
 
     QTextStream in(&file);
+    Lop* currentLop = nullptr;
+    int lopIndex = 0;
 
     while (!in.atEnd()) {
-        QString line = in.readLine();  // Đọc từng dòng
-        QStringList fields = line.split('|');  // Tách chuỗi theo dấu '|'
+        QString line = in.readLine().trimmed();
 
-        if (fields.size() == 5) {  // Kiểm tra nếu có đúng 5 trường
-            QString masv = fields.at(0);
-            QString ho = fields.at(1);
-            QString ten = fields.at(2);
-            QString phai = fields.at(3);
-            QString password = fields.at(4);
+        if (line.contains('-')) {
+            QStringList lopFields = line.split('|');
+            if (lopFields.size() == 2) {
+                QString malop = lopFields.at(0).trimmed();
+                QString tenlop = lopFields.at(1).trimmed();
 
-            SinhVien* newSV = taoNodeSinhVien(masv, ho, ten, phai, password);
+                currentLop = new Lop;
+                currentLop->MALOP = malop;
+                currentLop->TENLOP = tenlop;
+                currentLop->DSSV = nullptr;
 
-            if (tail == nullptr) {
-                headDsachSV = newSV;
-                tail = newSV;
+                if (lopIndex < 10000) {
+                    danhSachLop[lopIndex++] = currentLop;
+                } else {
+                    qDebug() << "Danh sách lớp đã đầy!";
+                    break;
+                }          }
+        } else if (currentLop) {
+            QStringList fields = line.split('|');
+            if (fields.size() == 5) {
+                QString masv = fields.at(0).trimmed();
+                QString ho = fields.at(1).trimmed();
+                QString ten = fields.at(2).trimmed();
+                QString phai = fields.at(3).trimmed();
+                QString password = fields.at(4).trimmed();
+
+                // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
+                SinhVien* newSV = new SinhVien{masv, ho, ten, phai, password};
+
+                if (currentLop->DSSV == nullptr) {
+                    currentLop->DSSV = newSV;
+                } else {
+                    SinhVien* tail = currentLop->DSSV;
+                    while (tail->next) {
+                        tail = tail->next;
+                    }
+                    tail->next = newSV;
+                }
+
+                qDebug() << "Mã lớp:" << currentLop->MALOP << "| Mã SV:" << newSV->masv;
             } else {
-                tail->next = newSV;
-                tail = newSV;
+                qDebug() << "Invalid student line format: " << line;
             }
-        } else {
-            qDebug() << "Invalid line format: " << line;
         }
     }
 
-    file.close();  // Đóng tệp sau khi đọc
+    file.close();
 }
-
-// void Dang_Nhap::loadSinhVienFromFile(const QString &filename) {
-//     QFile file(filename);
-//     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-//         qDebug() << "Cannot open file!";
-//         return;
-//     }
-
-//     QTextStream in(&file);
-//     Lop* currentLop = nullptr;
-//     int lopIndex = 0;
-
-//     while (!in.atEnd()) {
-//         QString line = in.readLine().trimmed();
-
-//         // Kiểm tra xem đây có phải là dòng lớp học hay không
-//         if (line.contains('-')) {  // Giả sử mã lớp chứa dấu '-'
-//             QStringList lopFields = line.split('|');
-//             if (lopFields.size() == 2) {
-//                 QString malop = lopFields.at(0).trimmed();
-//                 QString tenlop = lopFields.at(1).trimmed();
-
-//                 // Tạo đối tượng lớp mới
-//                 currentLop = new Lop;
-//                 currentLop->MALOP = malop;
-//                 currentLop->TENLOP = tenlop;
-//                 currentLop->DSSV = nullptr; // Chưa có sinh viên trong danh sách
-
-//                 // Thêm lớp mới vào danh sách lớp
-//                 if (lopIndex < 10000) {
-//                     danhSachLop[lopIndex++] = currentLop;
-//                 } else {
-//                     qDebug() << "Danh sách lớp đã đầy!";
-//                     break;
-//                 }
-
-//                 qDebug() << "Mã lớp mới: " << malop << "| Tên lớp: " << tenlop; // Debug thông tin lớp mới
-//             } else {
-//                 qDebug() << "Invalid class line format: " << line;
-//             }
-//         } else if (currentLop) {
-//             // Đây là dòng sinh viên
-//             QStringList fields = line.split('|');
-//             if (fields.size() == 5) {
-//                 QString masv = fields.at(0).trimmed();
-//                 QString ho = fields.at(1).trimmed();
-//                 QString ten = fields.at(2).trimmed();
-//                 QString phai = fields.at(3).trimmed();
-//                 QString password = fields.at(4).trimmed();
-
-//                 // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
-//                 SinhVien* newSV = new SinhVien{masv, ho, ten, phai, nullptr};
-
-//                 if (currentLop->DSSV == nullptr) {
-//                     currentLop->DSSV = newSV;
-//                 } else {
-//                     SinhVien* tail = currentLop->DSSV;
-//                     while (tail->next) {
-//                         tail = tail->next;
-//                     }
-//                     tail->next = newSV;
-//                 }
-
-//                 // Debug thông tin sinh viên
-//                 qDebug() << "Mã lớp:" << currentLop->MALOP << "| Mã SV:" << newSV->masv;
-//             } else {
-//                 qDebug() << "Invalid student line format: " << line;
-//             }
-//         }
-//     }
-
-//     file.close();
-// }
 
 void Dang_Nhap::on_DangNhapButton_clicked() {
     QString username = ui->TaiKhoan->text();
     QString password = ui->MatKhau->text();
 
-    loadSinhVienFromFile(":/TK-MK-PTIT/TK-MK.txt");
+    lapdssinhvien(":/TK-MK-PTIT/TK-MK.txt");
 
     if (checkLogin(username, password)) {
         ui->ThongBao->setText("Đăng nhập thành công!");
@@ -182,22 +132,30 @@ bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &entere
         return true;
     }
 
-    SinhVien* current = headDsachSV;
-    while (current != nullptr) {
-        if (current->masv == enteredUsername && current->password == enteredPassword) {
-            mainUser.masv = current->masv;
-            mainUser.ho = current->ho;
-            mainUser.ten = current->ten;
-            mainUser.phai = current->phai;
-            mainUser.password = current->password;
-            mainUser.ds_diemthi = current->ds_diemthi;
-            mainUser.next = nullptr;
-            return true;
+    // Duyệt qua mảng lớp
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
         }
-        current = current->next;
+        SinhVien* current = danhSachLop[i]->DSSV;
+        // Duyệt qua danh sách sinh viên của lớp hiện tại
+        while (current != nullptr) {
+            if (current->masv == enteredUsername && current->password == enteredPassword) {
+                mainUser.masv = current->masv;
+                mainUser.ho = current->ho;
+                mainUser.ten = current->ten;
+                mainUser.phai = current->phai;
+                mainUser.password = current->password;
+                mainUser.ds_diemthi = current->ds_diemthi;
+                mainUser.next = nullptr;
+                return true;
+            }
+            current = current->next;
+        }
     }
     return false;
 }
+
 
 void Dang_Nhap::onTaiKhoanInput(const QString &inputText)
 {

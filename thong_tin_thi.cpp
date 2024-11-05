@@ -31,40 +31,29 @@ Thong_Tin_Thi::Thong_Tin_Thi(QWidget *parent)
         ui->DSachMonHoc->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
     }
 
-    connect(ui->DSachMonHoc, &QComboBox::activated, [=]() {
-        ui->DSachMonHoc->setEditable(true);  // Bật chế độ editable
-        QCompleter *completer = new QCompleter(danhSachMonHoc, this);
-        completer->setCaseSensitivity(Qt::CaseInsensitive);
-        ui->DSachMonHoc->setCompleter(completer);
-    });
+    completer = new QCompleter(danhSachMonHoc, this);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+    completer->setFilterMode(Qt::MatchContains);
+    ui->DSachMonHoc->setCompleter(completer);
+    ui->DSachMonHoc->setEditable(true);
+    ui->DSachMonHoc->completer()->setCompletionMode(QCompleter::PopupCompletion);
 
     ui->DangNhapButton->setAutoDefault(false);
-
 }
-
 
 Thong_Tin_Thi::~Thong_Tin_Thi()
 {
     delete ui;
+    delete completer;
 }
 
 bool Thong_Tin_Thi::eventFilter(QObject *obj, QEvent *event) {
     if (obj == ui->DSachMonHoc && event->type() == QEvent::MouseButtonPress) {
-        // Khi người dùng click vào combobox, bật chế độ editable và cài đặt QCompleter
         ui->DSachMonHoc->setEditable(true);
-
-        // Tạo QCompleter và gán cho combobox
-        QCompleter *completer = new QCompleter(danhSachMonHoc, this);
-        completer->setCaseSensitivity(Qt::CaseInsensitive);
-        ui->DSachMonHoc->setCompleter(completer);
-
-        // Sổ danh sách thả xuống
         ui->DSachMonHoc->showPopup();
-
         return true;  // Đã xử lý sự kiện
     }
 
-    // Trả lại sự kiện cho lớp cơ sở nếu không xử lý
     return QWidget::eventFilter(obj, event);
 }
 
