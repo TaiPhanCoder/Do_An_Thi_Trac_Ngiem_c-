@@ -1,6 +1,7 @@
 #include "sinhvien.h"
 #include "globals.h"
 #include "QString"
+#include "lop.h"
 
 sinhvien::sinhvien() {}
 
@@ -18,11 +19,19 @@ SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, Q
 
 int demSinhVien() {
     int count = 0;
-    struct SinhVien* current = headDsachSV;
 
-    while (current != NULL) {
-        count++;
-        current = current->next;
+    // Duyệt qua mảng lớp
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+        SinhVien* current = danhSachLop[i]->DSSV;
+
+        // Duyệt qua danh sách sinh viên của lớp hiện tại
+        while (current != nullptr) {
+            count++;
+            current = current->next;
+        }
     }
 
     return count;

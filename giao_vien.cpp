@@ -1,6 +1,7 @@
 #include "giao_vien.h"
 #include "ui_giao_vien.h"
 #include"sinhvien.h"
+#include"lop.h"
 #include<QDebug>
 
 GIao_Vien::GIao_Vien(QWidget *parent)
@@ -26,15 +27,16 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
 
     ui->bangDuLieu->setRowCount(rows);
-    ui->bangDuLieu->setColumnCount(4);
+    ui->bangDuLieu->setColumnCount(5);
     ui->bangDuLieu->setColumnWidth(0, 350);
     ui->bangDuLieu->setColumnWidth(1, 400);
     ui->bangDuLieu->setColumnWidth(2, 200);
     ui->bangDuLieu->setColumnWidth(3, 200);
+    ui->bangDuLieu->setColumnWidth(4, 200);
     QStringList headers;
-    headers << "MSSV" << "Họ" << "Tên" << "Giới tính";
+    headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
-    populateTable();
+    loadSinhVien();
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
     connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::onSearchTextChanged);
 
@@ -51,26 +53,36 @@ void GIao_Vien::showContextMenu(const QPoint &pos) {
 
 void GIao_Vien::xoaSV(){}
 
-void GIao_Vien::populateTable() {
+void GIao_Vien::loadSinhVien() {
     int row = 0;
-    SinhVien* current = headDsachSV;
 
-    while (current != nullptr) {
-        // Tạo và thêm các mục cho từng cột trong hàng
-        QTableWidgetItem *masvItem = new QTableWidgetItem(current->masv);
-        QTableWidgetItem *hoItem = new QTableWidgetItem(current->ho);
-        QTableWidgetItem *tenItem = new QTableWidgetItem(current->ten);
-        QTableWidgetItem *phaiItem = new QTableWidgetItem(current->phai);
+    // Duyệt qua mảng lớp
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+        SinhVien* current = danhSachLop[i]->DSSV;
+        QString tenLop = danhSachLop[i]->TENLOP;
 
-        // Đặt các mục vào bảng
-        ui->bangDuLieu->setItem(row, 0, masvItem);
-        ui->bangDuLieu->setItem(row, 1, hoItem);
-        ui->bangDuLieu->setItem(row, 2, tenItem);
-        ui->bangDuLieu->setItem(row, 3, phaiItem);
+        // Duyệt qua danh sách sinh viên của lớp hiện tại
+        while (current != nullptr) {
+            // Tạo và thêm các mục cho từng cột trong hàng
+            QTableWidgetItem *masvItem = new QTableWidgetItem(current->masv);
+            QTableWidgetItem *hoItem = new QTableWidgetItem(current->ho);
+            QTableWidgetItem *tenItem = new QTableWidgetItem(current->ten);
+            QTableWidgetItem *phaiItem = new QTableWidgetItem(current->phai);
+            QTableWidgetItem *tenLopItem = new QTableWidgetItem(tenLop);
 
-        // Chuyển đến sinh viên tiếp theo trong danh sách
-        current = current->next;
-        row++;
+            // Đặt các mục vào bảng
+            ui->bangDuLieu->setItem(row, 0, masvItem);
+            ui->bangDuLieu->setItem(row, 1, hoItem);
+            ui->bangDuLieu->setItem(row, 2, tenItem);
+            ui->bangDuLieu->setItem(row, 3, tenLopItem);
+            ui->bangDuLieu->setItem(row, 4, phaiItem);
+            qDebug() << "MSSV:" << current->masv;
+            current = current->next;
+            row++;
+        }
     }
 }
 

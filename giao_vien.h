@@ -19,7 +19,7 @@ public:
     explicit GIao_Vien(QWidget *parent = nullptr);
     ~GIao_Vien();
 
-    void populateTable();
+    void loadSinhVien();
     void onTextEdited(const QString &text);
     void onSearchTextChanged(const QString &text);
 
