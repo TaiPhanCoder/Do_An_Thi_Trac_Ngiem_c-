@@ -37,6 +37,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         sinhvien.h sinhvien.cpp
         lop.h lop.cpp
         excel.h excel.cpp
+        them_sinh_vien.h them_sinh_vien.cpp them_sinh_vien.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET THI_TRAC_NGHIEM APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

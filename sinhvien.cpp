@@ -3,6 +3,8 @@
 #include "QString"
 #include "lop.h"
 
+#include<QDebug>
+
 sinhvien::sinhvien() {}
 
 SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, QString password) {
@@ -15,6 +17,20 @@ SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, Q
     sv->ds_diemthi = nullptr;
     sv->next = nullptr;
     return sv;
+}
+
+void themSinhVienVaoLop(SinhVien* newSV, const QString &lop){
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+        if (danhSachLop[i]->TENLOP == lop) {
+            newSV->next = danhSachLop[i]->DSSV;
+            danhSachLop[i]->DSSV = newSV;
+            qDebug() << "Đã thêm sinh viên vào lớp:" << lop;
+            break;
+        }
+    }
 }
 
 int demSinhVien() {

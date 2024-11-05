@@ -1,7 +1,8 @@
 #include "giao_vien.h"
 #include "ui_giao_vien.h"
-#include"sinhvien.h"
+#include "sinhvien.h"
 #include"lop.h"
+#include"them_sinh_vien.h"
 #include<QDebug>
 
 GIao_Vien::GIao_Vien(QWidget *parent)
@@ -14,25 +15,24 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);
     ui->logo->setPixmap(scaledPixmap);
     int rows = demSinhVien();
-    //tạo context menu
-    setContextMenuPolicy(Qt::CustomContextMenu);
+
+    ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
 
     contextMenu = new QMenu(this);
     deleteAction = new QAction("Xóa", this);
 
     contextMenu->addAction(deleteAction);
 
-    connect(this, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
-
+    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
     connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
 
     ui->bangDuLieu->setRowCount(rows);
     ui->bangDuLieu->setColumnCount(5);
-    ui->bangDuLieu->setColumnWidth(0, 350);
-    ui->bangDuLieu->setColumnWidth(1, 400);
-    ui->bangDuLieu->setColumnWidth(2, 200);
+    ui->bangDuLieu->setColumnWidth(0, 300);
+    ui->bangDuLieu->setColumnWidth(1, 350);
+    ui->bangDuLieu->setColumnWidth(2, 150);
     ui->bangDuLieu->setColumnWidth(3, 200);
-    ui->bangDuLieu->setColumnWidth(4, 200);
+    ui->bangDuLieu->setColumnWidth(4, 150);
     QStringList headers;
     headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
@@ -48,10 +48,71 @@ GIao_Vien::~GIao_Vien()
 }
 
 void GIao_Vien::showContextMenu(const QPoint &pos) {
-    contextMenu->exec(mapToGlobal(pos));
+    QModelIndex index = ui->bangDuLieu->indexAt(pos);
+    if (!index.isValid()) {
+        return;
+    }
+
+    ui->bangDuLieu->selectRow(index.row());
+
+    contextMenu->exec(ui->bangDuLieu->viewport()->mapToGlobal(pos));
 }
 
-void GIao_Vien::xoaSV(){}
+void xoaSinhVienKhoiDanhSach(const QString &masv, const QString &tenLop) {
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+
+        if (danhSachLop[i]->TENLOP == tenLop) {
+            SinhVien* current = danhSachLop[i]->DSSV;
+            SinhVien* previous = nullptr;
+
+            while (current != nullptr) {
+                if (current->masv == masv) {
+                    if (previous == nullptr) {
+                        danhSachLop[i]->DSSV = current->next;
+                    } else {
+                        previous->next = current->next;
+                    }
+
+                    delete current;
+                    qDebug() << "Sinh viên với MSSV:" << masv << "đã bị xóa khỏi lớp:" << tenLop;
+                    return;
+                }
+
+                previous = current;
+                current = current->next;
+            }
+        }
+    }
+}
+
+QString GIao_Vien::getSelectedStudentMasv(int row) {
+    return ui->bangDuLieu->item(row, 0)->text();
+}
+
+QString GIao_Vien::getSelectedStudentLop(int row) {
+    return ui->bangDuLieu->item(row, 3)->text();
+}
+
+void GIao_Vien::xoaSV() {
+    QModelIndexList selectedRows = ui->bangDuLieu->selectionModel()->selectedRows();
+    if (selectedRows.isEmpty()) {
+        return;
+    }
+
+    int row = selectedRows.first().row();
+
+    QString masv = getSelectedStudentMasv(row);
+    QString tenLop = getSelectedStudentLop(row);
+
+    qDebug() << "Người dùng muốn xóa MSSV:" << masv << ", thuộc lớp:" << tenLop;
+
+    xoaSinhVienKhoiDanhSach(masv, tenLop);
+
+    ui->bangDuLieu->removeRow(row);
+}
 
 void GIao_Vien::loadSinhVien() {
     int row = 0;
@@ -62,7 +123,7 @@ void GIao_Vien::loadSinhVien() {
             break;
         }
         SinhVien* current = danhSachLop[i]->DSSV;
-        QString tenLop = danhSachLop[i]->TENLOP;
+        QString tenLop = danhSachLop[i]->MALOP;
 
         // Duyệt qua danh sách sinh viên của lớp hiện tại
         while (current != nullptr) {
@@ -97,21 +158,56 @@ void GIao_Vien::onTextEdited(const QString &text) {
 void GIao_Vien::onSearchTextChanged(const QString &text) {
     ui->bangDuLieu->setRowCount(0);
 
-    SinhVien* current = headDsachSV;
     int row = 0;
 
-    while (current != nullptr) {
-        if (current->masv.contains(text, Qt::CaseInsensitive)) {
-            ui->bangDuLieu->insertRow(row);
-
-            ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->masv));
-            ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(current->ho));
-            ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->ten));
-            ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(current->phai));
-
-            row++;
+    // Duyệt qua mảng lớp
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
         }
+        SinhVien* current = danhSachLop[i]->DSSV;
+        QString tenLop = danhSachLop[i]->TENLOP;
 
-        current = current->next;
+        // Duyệt qua danh sách sinh viên của lớp hiện tại
+        while (current != nullptr) {
+            if (current->masv.contains(text, Qt::CaseInsensitive)) {
+                ui->bangDuLieu->insertRow(row);
+
+                ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->masv));
+                ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(current->ho));
+                ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->ten));
+                ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(tenLop));
+                ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(current->phai));
+
+                row++;
+            }
+
+            current = current->next;
+        }
+    }
+}
+
+void GIao_Vien::on_them1sv_clicked() {
+    Them_Sinh_Vien dialog(this);
+    if (dialog.exec() == QDialog::Accepted) {
+        QString masv = dialog.getMSSV();
+        QString ho = dialog.getHo();
+        QString ten = dialog.getTen();
+        QString phai = dialog.getGioiTinh();
+        QString lop = dialog.getLop();
+
+        SinhVien* newSV = taoNodeSinhVien(masv, ho, ten, phai, "");
+
+        themSinhVienVaoLop(newSV, lop);
+
+        int row = ui->bangDuLieu->rowCount();
+        ui->bangDuLieu->insertRow(row);
+        ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(newSV->masv));
+        ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(newSV->ho));
+        ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(newSV->ten));
+        ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(lop));
+        ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(newSV->phai));
+
+        qDebug() << "Đã thêm sinh viên mới vào bảng dữ liệu.";
     }
 }

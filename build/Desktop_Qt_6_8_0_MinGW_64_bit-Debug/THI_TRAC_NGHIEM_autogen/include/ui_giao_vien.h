@@ -37,6 +37,9 @@ public:
     QGroupBox *groupBox_2;
     QLineEdit *timMSSV;
     QLabel *label;
+    QGroupBox *groupBox_3;
+    QPushButton *them1sv;
+    QPushButton *pushButton_5;
     QTableWidget *bangDuLieu;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -106,6 +109,15 @@ public:
         label = new QLabel(groupBox_2);
         label->setObjectName("label");
         label->setGeometry(QRect(10, 30, 261, 20));
+        groupBox_3 = new QGroupBox(groupBox_2);
+        groupBox_3->setObjectName("groupBox_3");
+        groupBox_3->setGeometry(QRect(10, 90, 261, 91));
+        them1sv = new QPushButton(groupBox_3);
+        them1sv->setObjectName("them1sv");
+        them1sv->setGeometry(QRect(10, 30, 231, 29));
+        pushButton_5 = new QPushButton(groupBox_3);
+        pushButton_5->setObjectName("pushButton_5");
+        pushButton_5->setGeometry(QRect(10, 60, 231, 29));
         bangDuLieu = new QTableWidget(centralwidget);
         bangDuLieu->setObjectName("bangDuLieu");
         bangDuLieu->setGeometry(QRect(325, 191, 1201, 671));
@@ -135,6 +147,9 @@ public:
         groupBox_2->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
         timMSSV->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "MSSV", nullptr));
         label->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m Sinh Vi\303\252n", nullptr));
+        them1sv->setText(QCoreApplication::translate("GIao_Vien", "Th\303\252m m\341\273\231t ng\306\260\341\273\235i", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("GIao_Vien", "Th\303\252m nhi\341\273\201u ng\306\260\341\273\235i", nullptr));
     } // retranslateUi
 
 };

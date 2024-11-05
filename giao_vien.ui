@@ -171,6 +171,45 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
       <string>Tìm kiếm:</string>
      </property>
     </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>261</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Thêm Sinh Viên</string>
+     </property>
+     <widget class="QPushButton" name="them1sv">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>231</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Thêm một người</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>231</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Thêm nhiều người</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QTableWidget" name="bangDuLieu">
     <property name="geometry">

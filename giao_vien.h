@@ -26,6 +26,10 @@ public:
 private slots:
     void showContextMenu(const QPoint &pos);
     void xoaSV();
+    QString getSelectedStudentMasv(int row);
+    QString getSelectedStudentLop(int row);
+
+    void on_them1sv_clicked();
 
 private:
     Ui::GIao_Vien *ui;
