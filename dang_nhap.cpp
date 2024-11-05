@@ -3,7 +3,6 @@
 #include "globals.h"
 #include <QFile>
 #include <QDialog>
-#include "sinhvien.h"
 #include "lop.h"
 
 Dang_Nhap::Dang_Nhap(QWidget *parent)

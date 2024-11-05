@@ -24,7 +24,7 @@ void themSinhVienVaoLop(SinhVien* newSV, const QString &lop){
         if (danhSachLop[i] == nullptr) {
             break;
         }
-        if (danhSachLop[i]->TENLOP == lop) {
+        if (danhSachLop[i]->MALOP == lop) {
             newSV->next = danhSachLop[i]->DSSV;
             danhSachLop[i]->DSSV = newSV;
             qDebug() << "Đã thêm sinh viên vào lớp:" << lop;

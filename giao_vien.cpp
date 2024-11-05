@@ -14,32 +14,7 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
     QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);
     ui->logo->setPixmap(scaledPixmap);
-    int rows = demSinhVien();
-
-    ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
-
-    contextMenu = new QMenu(this);
-    deleteAction = new QAction("Xóa", this);
-
-    contextMenu->addAction(deleteAction);
-
-    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
-    connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
-
-    ui->bangDuLieu->setRowCount(rows);
-    ui->bangDuLieu->setColumnCount(5);
-    ui->bangDuLieu->setColumnWidth(0, 300);
-    ui->bangDuLieu->setColumnWidth(1, 350);
-    ui->bangDuLieu->setColumnWidth(2, 150);
-    ui->bangDuLieu->setColumnWidth(3, 200);
-    ui->bangDuLieu->setColumnWidth(4, 150);
-    QStringList headers;
-    headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
-    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
-    loadSinhVien();
-    connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
-    connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::onSearchTextChanged);
-
+    on_sinhVien_clicked();
 }
 
 GIao_Vien::~GIao_Vien()
@@ -114,6 +89,23 @@ void GIao_Vien::xoaSV() {
     ui->bangDuLieu->removeRow(row);
 }
 
+// void duyetDanhSach() {
+//     for (int i = 0; i < 10000; ++i) {
+//         if (danhSachLop[i] == nullptr) {
+//             break;
+//         }
+
+//         QString tenLop = danhSachLop[i]->MALOP;
+//         SinhVien* currentSV = danhSachLop[i]->DSSV;
+//         qDebug() << "Duyệt lớp: " << tenLop;
+
+//         while (currentSV != nullptr) {
+//             qDebug() << "MSSV: " << currentSV->masv;
+//             currentSV = currentSV->next;
+//         }
+//     }
+// }
+
 void GIao_Vien::loadSinhVien() {
     int row = 0;
 
@@ -140,7 +132,6 @@ void GIao_Vien::loadSinhVien() {
             ui->bangDuLieu->setItem(row, 2, tenItem);
             ui->bangDuLieu->setItem(row, 3, tenLopItem);
             ui->bangDuLieu->setItem(row, 4, phaiItem);
-            qDebug() << "MSSV:" << current->masv;
             current = current->next;
             row++;
         }
@@ -155,7 +146,7 @@ void GIao_Vien::onTextEdited(const QString &text) {
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
 }
 
-void GIao_Vien::onSearchTextChanged(const QString &text) {
+void GIao_Vien::timSinhVien(const QString &text) {
     ui->bangDuLieu->setRowCount(0);
 
     int row = 0;
@@ -200,14 +191,38 @@ void GIao_Vien::on_them1sv_clicked() {
 
         themSinhVienVaoLop(newSV, lop);
 
-        int row = ui->bangDuLieu->rowCount();
-        ui->bangDuLieu->insertRow(row);
-        ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(newSV->masv));
-        ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(newSV->ho));
-        ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(newSV->ten));
-        ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(lop));
-        ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(newSV->phai));
+        loadSinhVien();
 
-        qDebug() << "Đã thêm sinh viên mới vào bảng dữ liệu.";
+        qDebug() << "Đã thêm sinh viên mới vào bảng dữ liệu. Thông tin sinh viên: MSSV:" << newSV->masv << ", Họ:" << newSV->ho << ", Tên:" << newSV->ten << ", Giới tính:" << newSV->phai << ", Lớp:" << lop;
     }
 }
+
+
+void GIao_Vien::on_sinhVien_clicked() {
+    int rows = demSinhVien();
+
+    ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
+
+    contextMenu = new QMenu(this);
+    deleteAction = new QAction("Xóa", this);
+
+    contextMenu->addAction(deleteAction);
+
+    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
+    connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
+
+    ui->bangDuLieu->setRowCount(rows);
+    ui->bangDuLieu->setColumnCount(5);
+    ui->bangDuLieu->setColumnWidth(0, 300);
+    ui->bangDuLieu->setColumnWidth(1, 350);
+    ui->bangDuLieu->setColumnWidth(2, 150);
+    ui->bangDuLieu->setColumnWidth(3, 200);
+    ui->bangDuLieu->setColumnWidth(4, 150);
+    QStringList headers;
+    headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
+    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
+    loadSinhVien();
+    connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
+    connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::timSinhVien);
+}
+

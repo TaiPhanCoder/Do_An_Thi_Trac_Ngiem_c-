@@ -62,3 +62,55 @@ QString Them_Sinh_Vien::getGioiTinh() const {
 QString Them_Sinh_Vien::getLop() const {
     return ui->Lop->currentText();
 }
+
+void Them_Sinh_Vien::accept() {
+    if (thongBaoLoi()) {
+        QDialog::accept();
+    }
+}
+
+bool Them_Sinh_Vien::thongBaoLoi() {
+    bool isValid = true;
+
+    if (getMSSV().isEmpty()) {
+        ui->LoiMSSV->setText("MSSV không được để trống");
+        ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        isValid = false;
+    } else {
+        ui->LoiMSSV->clear();
+    }
+
+    if (getHo().isEmpty()) {
+        ui->LoiHo->setText("Họ không được để trống");
+        ui->LoiHo->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        isValid = false;
+    } else {
+        ui->LoiHo->clear();
+    }
+
+    if (getTen().isEmpty()) {
+        ui->LoiTen->setText("Tên không được để trống");
+        ui->LoiTen->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        isValid = false;
+    } else {
+        ui->LoiTen->clear();
+    }
+
+    if (getGioiTinh().isEmpty()) {
+        ui->LoiGioiTinh->setText("Giới tính không được để trống");
+        ui->LoiGioiTinh->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        isValid = false;
+    } else {
+        ui->LoiGioiTinh->clear();
+    }
+
+    if (getLop().isEmpty()) {
+        ui->LoiLop->setText("Lớp không được để trống");
+        ui->LoiLop->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        isValid = false;
+    } else {
+        ui->LoiLop->clear();
+    }
+
+    return isValid;
+}

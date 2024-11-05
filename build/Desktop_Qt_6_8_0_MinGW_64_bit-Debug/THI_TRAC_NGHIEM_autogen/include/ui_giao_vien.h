@@ -30,7 +30,7 @@ public:
     QWidget *centralwidget;
     QGroupBox *groupBox;
     QPushButton *pushButton;
-    QPushButton *pushButton_2;
+    QPushButton *sinhVien;
     QPushButton *pushButton_3;
     QLabel *logo;
     QLabel *label_2;
@@ -65,10 +65,10 @@ public:
 "padding: 10px 20px;\n"
 "font-weight: bold;\n"
 "box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
-        pushButton_2 = new QPushButton(groupBox);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(80, 100, 151, 61));
-        pushButton_2->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+        sinhVien = new QPushButton(groupBox);
+        sinhVien->setObjectName("sinhVien");
+        sinhVien->setGeometry(QRect(80, 100, 151, 61));
+        sinhVien->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;\n"
 "background-color: rgb(255, 35, 35);\n"
 "color: white;\n"
@@ -140,7 +140,7 @@ public:
         GIao_Vien->setWindowTitle(QCoreApplication::translate("GIao_Vien", "MainWindow", nullptr));
         groupBox->setTitle(QCoreApplication::translate("GIao_Vien", "Tu\341\273\263 Ch\341\273\215n", nullptr));
         pushButton->setText(QCoreApplication::translate("GIao_Vien", "L\341\273\233p", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("GIao_Vien", "Sinh Vi\303\252n", nullptr));
+        sinhVien->setText(QCoreApplication::translate("GIao_Vien", "Sinh Vi\303\252n", nullptr));
         pushButton_3->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
         logo->setText(QString());
         label_2->setText(QCoreApplication::translate("GIao_Vien", "H\341\273\215c Vi\341\273\207n Ho\303\240ng Gia HCM", nullptr));

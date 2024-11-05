@@ -19,8 +19,10 @@ public:
     QString getTen() const;
     QString getGioiTinh() const;
     QString getLop() const;
+    bool thongBaoLoi();
 
 private slots:
+    void accept();
 private:
     Ui::Them_Sinh_Vien *ui;
 };

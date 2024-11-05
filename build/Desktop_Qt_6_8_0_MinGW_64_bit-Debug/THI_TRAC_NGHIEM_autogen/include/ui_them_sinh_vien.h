@@ -30,6 +30,11 @@ public:
     QLineEdit *Ho;
     QLineEdit *Ten;
     QComboBox *GioiTinh;
+    QLabel *LoiLop;
+    QLabel *LoiMSSV;
+    QLabel *LoiTen;
+    QLabel *LoiHo;
+    QLabel *LoiGioiTinh;
 
     void setupUi(QDialog *Them_Sinh_Vien)
     {
@@ -94,7 +99,7 @@ public:
 "padding-left: 85px;"));
         Ho = new QLineEdit(Them_Sinh_Vien);
         Ho->setObjectName("Ho");
-        Ho->setGeometry(QRect(40, 190, 251, 51));
+        Ho->setGeometry(QRect(40, 210, 251, 51));
         Ho->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;\n"
 "background-color: #F0F0F0;\n"
@@ -103,7 +108,7 @@ public:
 "padding-left: 85px;"));
         Ten = new QLineEdit(Them_Sinh_Vien);
         Ten->setObjectName("Ten");
-        Ten->setGeometry(QRect(310, 190, 251, 51));
+        Ten->setGeometry(QRect(310, 210, 251, 51));
         Ten->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;\n"
 "background-color: #F0F0F0;\n"
@@ -112,7 +117,7 @@ public:
 "padding-left: 85px;"));
         GioiTinh = new QComboBox(Them_Sinh_Vien);
         GioiTinh->setObjectName("GioiTinh");
-        GioiTinh->setGeometry(QRect(170, 260, 251, 51));
+        GioiTinh->setGeometry(QRect(170, 300, 251, 51));
         GioiTinh->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "	border: 2px solid gray;\n"
 "	border-radius: 20px;\n"
@@ -149,6 +154,21 @@ public:
 "}\n"
 "\n"
 ""));
+        LoiLop = new QLabel(Them_Sinh_Vien);
+        LoiLop->setObjectName("LoiLop");
+        LoiLop->setGeometry(QRect(40, 180, 251, 20));
+        LoiMSSV = new QLabel(Them_Sinh_Vien);
+        LoiMSSV->setObjectName("LoiMSSV");
+        LoiMSSV->setGeometry(QRect(310, 180, 251, 20));
+        LoiTen = new QLabel(Them_Sinh_Vien);
+        LoiTen->setObjectName("LoiTen");
+        LoiTen->setGeometry(QRect(310, 270, 251, 20));
+        LoiHo = new QLabel(Them_Sinh_Vien);
+        LoiHo->setObjectName("LoiHo");
+        LoiHo->setGeometry(QRect(40, 270, 251, 20));
+        LoiGioiTinh = new QLabel(Them_Sinh_Vien);
+        LoiGioiTinh->setObjectName("LoiGioiTinh");
+        LoiGioiTinh->setGeometry(QRect(170, 360, 251, 20));
 
         retranslateUi(Them_Sinh_Vien);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, Them_Sinh_Vien, qOverload<>(&QDialog::accept));
@@ -167,6 +187,11 @@ public:
         Ten->setText(QString());
         Ten->setPlaceholderText(QCoreApplication::translate("Them_Sinh_Vien", "    T\303\252n", nullptr));
         GioiTinh->setPlaceholderText(QCoreApplication::translate("Them_Sinh_Vien", "                      Gi\341\273\233i T\303\255nh", nullptr));
+        LoiLop->setText(QString());
+        LoiMSSV->setText(QString());
+        LoiTen->setText(QString());
+        LoiHo->setText(QString());
+        LoiGioiTinh->setText(QString());
     } // retranslateUi
 
 };

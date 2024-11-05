@@ -117,7 +117,7 @@ padding-left: 85px;</string>
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>190</y>
+     <y>210</y>
      <width>251</width>
      <height>51</height>
     </rect>
@@ -138,7 +138,7 @@ padding-left: 85px;</string>
    <property name="geometry">
     <rect>
      <x>310</x>
-     <y>190</y>
+     <y>210</y>
      <width>251</width>
      <height>51</height>
     </rect>
@@ -162,7 +162,7 @@ padding-left: 85px;</string>
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>260</y>
+     <y>300</y>
      <width>251</width>
      <height>51</height>
     </rect>
@@ -206,6 +206,71 @@ QComboBox QAbstractItemView {
    </property>
    <property name="placeholderText">
     <string>                      Giới Tính</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LoiLop">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>180</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LoiMSSV">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>180</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LoiTen">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>270</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LoiHo">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>270</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LoiGioiTinh">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>360</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

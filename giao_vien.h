@@ -21,7 +21,7 @@ public:
 
     void loadSinhVien();
     void onTextEdited(const QString &text);
-    void onSearchTextChanged(const QString &text);
+    void timSinhVien(const QString &text);
 
 private slots:
     void showContextMenu(const QPoint &pos);
@@ -30,6 +30,10 @@ private slots:
     QString getSelectedStudentLop(int row);
 
     void on_them1sv_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_sinhVien_clicked();
 
 private:
     Ui::GIao_Vien *ui;
