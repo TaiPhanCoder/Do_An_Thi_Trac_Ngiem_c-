@@ -31,9 +31,10 @@ private slots:
 
     void on_them1sv_clicked();
 
-    void on_pushButton_2_clicked();
 
     void on_sinhVien_clicked();
+
+    void on_sapXep_clicked();
 
 private:
     Ui::GIao_Vien *ui;

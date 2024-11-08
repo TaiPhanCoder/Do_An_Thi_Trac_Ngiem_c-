@@ -210,6 +210,19 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
       </property>
      </widget>
     </widget>
+    <widget class="QPushButton" name="sapXep">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>60</y>
+       <width>231</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sắp xếp theo tên</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QTableWidget" name="bangDuLieu">
     <property name="geometry">

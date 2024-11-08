@@ -226,3 +226,57 @@ void GIao_Vien::on_sinhVien_clicked() {
     connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::timSinhVien);
 }
 
+void GIao_Vien::on_sapXep_clicked()
+{
+    for (int i = 0; i < 10000; ++i) {
+        qDebug() << "CB sap xep";
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+
+        SinhVien* head = danhSachLop[i]->DSSV;
+        if (head == nullptr || head->next == nullptr) {
+            continue;
+        }
+
+        bool swapped;
+        do {
+            swapped = false;
+            SinhVien* current = head;
+            SinhVien* prev = nullptr;
+            SinhVien* next = current->next;
+
+            while (next != nullptr) {
+                if (current->ten > next->ten) {
+                    // Đổi chỗ hai node
+                    if (prev == nullptr) {
+                        // Đổi chỗ tại đầu danh sách
+                        head = next;
+                    } else {
+                        prev->next = next;
+                    }
+                    current->next = next->next;
+                    next->next = current;
+
+                    // Cập nhật con trỏ
+                    swapped = true;
+                    prev = next;
+                    next = current->next;
+                } else {
+                    // Di chuyển con trỏ
+                    prev = current;
+                    current = next;
+                    next = next->next;
+                }
+            }
+        } while (swapped);
+
+        // Cập nhật lại danh sách sinh viên của lớp
+        danhSachLop[i]->DSSV = head;
+    }
+
+    // Tải lại bảng sinh viên sau khi sắp xếp
+    loadSinhVien();
+    qDebug() << "Đã sắp xếp danh sách sinh viên theo tên.";
+}
+

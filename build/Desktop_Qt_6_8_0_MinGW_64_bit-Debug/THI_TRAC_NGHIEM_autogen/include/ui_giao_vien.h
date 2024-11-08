@@ -40,6 +40,7 @@ public:
     QGroupBox *groupBox_3;
     QPushButton *them1sv;
     QPushButton *pushButton_5;
+    QPushButton *sapXep;
     QTableWidget *bangDuLieu;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -118,6 +119,9 @@ public:
         pushButton_5 = new QPushButton(groupBox_3);
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setGeometry(QRect(10, 60, 231, 29));
+        sapXep = new QPushButton(groupBox_2);
+        sapXep->setObjectName("sapXep");
+        sapXep->setGeometry(QRect(330, 60, 231, 29));
         bangDuLieu = new QTableWidget(centralwidget);
         bangDuLieu->setObjectName("bangDuLieu");
         bangDuLieu->setGeometry(QRect(325, 191, 1201, 671));
@@ -150,6 +154,7 @@ public:
         groupBox_3->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m Sinh Vi\303\252n", nullptr));
         them1sv->setText(QCoreApplication::translate("GIao_Vien", "Th\303\252m m\341\273\231t ng\306\260\341\273\235i", nullptr));
         pushButton_5->setText(QCoreApplication::translate("GIao_Vien", "Th\303\252m nhi\341\273\201u ng\306\260\341\273\235i", nullptr));
+        sapXep->setText(QCoreApplication::translate("GIao_Vien", "S\341\272\257p x\341\272\277p theo t\303\252n", nullptr));
     } // retranslateUi
 
 };

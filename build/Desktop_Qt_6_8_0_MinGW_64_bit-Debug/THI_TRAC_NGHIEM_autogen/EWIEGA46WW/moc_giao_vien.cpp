@@ -44,8 +44,8 @@ constexpr auto qt_meta_stringdata_CLASSGIao_VienENDCLASS = QtMocHelpers::stringD
     "row",
     "getSelectedStudentLop",
     "on_them1sv_clicked",
-    "on_pushButton_2_clicked",
-    "on_sinhVien_clicked"
+    "on_sinhVien_clicked",
+    "on_sapXep_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -108,9 +108,9 @@ Q_CONSTINIT const QMetaObject GIao_Vien::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_them1sv_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pushButton_2_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_sinhVien_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_sapXep_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -130,6 +130,7 @@ void GIao_Vien::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 4: _t->on_them1sv_clicked(); break;
         case 5: _t->on_sinhVien_clicked(); break;
+        case 6: _t->on_sapXep_clicked(); break;
         default: ;
         }
     }
