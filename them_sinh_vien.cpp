@@ -7,6 +7,7 @@ Them_Sinh_Vien::Them_Sinh_Vien(QWidget *parent)
     , ui(new Ui::Them_Sinh_Vien)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Thêm Sinh Viên");
     ui->Lop->clear();
     for (int i = 0; i < 10000; ++i) {
         if (danhSachLop[i] == nullptr) {

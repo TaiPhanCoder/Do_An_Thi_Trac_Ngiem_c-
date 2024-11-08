@@ -107,6 +107,12 @@ public:
         timMSSV = new QLineEdit(groupBox_2);
         timMSSV->setObjectName("timMSSV");
         timMSSV->setGeometry(QRect(10, 60, 261, 28));
+        timMSSV->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: #F0F0F0;\n"
+"color: black;\n"
+"font-size: 16px;\n"
+"padding-left: 85px;"));
         label = new QLabel(groupBox_2);
         label->setObjectName("label");
         label->setGeometry(QRect(10, 30, 261, 20));
@@ -115,13 +121,34 @@ public:
         groupBox_3->setGeometry(QRect(10, 90, 261, 91));
         them1sv = new QPushButton(groupBox_3);
         them1sv->setObjectName("them1sv");
-        them1sv->setGeometry(QRect(10, 30, 231, 29));
+        them1sv->setGeometry(QRect(10, 28, 111, 51));
+        them1sv->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
         pushButton_5 = new QPushButton(groupBox_3);
         pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(10, 60, 231, 29));
+        pushButton_5->setGeometry(QRect(140, 28, 111, 51));
+        pushButton_5->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
         sapXep = new QPushButton(groupBox_2);
         sapXep->setObjectName("sapXep");
-        sapXep->setGeometry(QRect(330, 60, 231, 29));
+        sapXep->setGeometry(QRect(320, 60, 231, 29));
+        sapXep->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
         bangDuLieu = new QTableWidget(centralwidget);
         bangDuLieu->setObjectName("bangDuLieu");
         bangDuLieu->setGeometry(QRect(325, 191, 1201, 671));
@@ -152,8 +179,8 @@ public:
         timMSSV->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "MSSV", nullptr));
         label->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m Sinh Vi\303\252n", nullptr));
-        them1sv->setText(QCoreApplication::translate("GIao_Vien", "Th\303\252m m\341\273\231t ng\306\260\341\273\235i", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("GIao_Vien", "Th\303\252m nhi\341\273\201u ng\306\260\341\273\235i", nullptr));
+        them1sv->setText(QCoreApplication::translate("GIao_Vien", "M\341\273\231t Ng\306\260\341\273\235i", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("GIao_Vien", "Danh S\303\241ch", nullptr));
         sapXep->setText(QCoreApplication::translate("GIao_Vien", "S\341\272\257p x\341\272\277p theo t\303\252n", nullptr));
     } // retranslateUi
 

@@ -87,7 +87,7 @@ public:
 ""));
         ThongTin = new QLabel(Them_Sinh_Vien);
         ThongTin->setObjectName("ThongTin");
-        ThongTin->setGeometry(QRect(70, 20, 421, 61));
+        ThongTin->setGeometry(QRect(90, 30, 421, 61));
         MSSV = new QLineEdit(Them_Sinh_Vien);
         MSSV->setObjectName("MSSV");
         MSSV->setGeometry(QRect(310, 120, 251, 51));
@@ -181,7 +181,7 @@ public:
     {
         Them_Sinh_Vien->setWindowTitle(QCoreApplication::translate("Them_Sinh_Vien", "Dialog", nullptr));
         Lop->setPlaceholderText(QCoreApplication::translate("Them_Sinh_Vien", "                  Ch\341\273\215n L\341\273\233p", nullptr));
-        ThongTin->setText(QCoreApplication::translate("Them_Sinh_Vien", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt; font-weight:700; color:#ff0000;\">Th\303\252m Sinh Vi\303\252n</span></p></body></html>", nullptr));
+        ThongTin->setText(QCoreApplication::translate("Them_Sinh_Vien", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:700; color:#ff0000;\">Th\303\252m Sinh Vi\303\252n</span></p></body></html>", nullptr));
         MSSV->setPlaceholderText(QCoreApplication::translate("Them_Sinh_Vien", "    MSSV", nullptr));
         Ho->setPlaceholderText(QCoreApplication::translate("Them_Sinh_Vien", "    H\341\273\215", nullptr));
         Ten->setText(QString());

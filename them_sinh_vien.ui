@@ -82,14 +82,14 @@ QComboBox QAbstractItemView {
   <widget class="QLabel" name="ThongTin">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>20</y>
+     <x>90</x>
+     <y>30</y>
      <width>421</width>
      <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt; font-weight:700; color:#ff0000;&quot;&gt;Thêm Sinh Viên&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:700; color:#ff0000;&quot;&gt;Thêm Sinh Viên&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="MSSV">
