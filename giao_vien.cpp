@@ -1,9 +1,11 @@
 #include "giao_vien.h"
 #include "ui_giao_vien.h"
 #include "sinhvien.h"
+#include "hieuchinh.h"
 #include"lop.h"
 #include"them_sinh_vien.h"
 #include<QDebug>
+#include<QTableWidget>
 
 GIao_Vien::GIao_Vien(QWidget *parent)
     : QMainWindow(parent)
@@ -15,12 +17,14 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);
     ui->logo->setPixmap(scaledPixmap);
     on_sinhVien_clicked();
+    ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 GIao_Vien::~GIao_Vien()
 {
     delete ui;
 }
+
 
 void GIao_Vien::showContextMenu(const QPoint &pos) {
     QModelIndex index = ui->bangDuLieu->indexAt(pos);
@@ -197,6 +201,19 @@ void GIao_Vien::on_them1sv_clicked() {
     }
 }
 
+void GIao_Vien::hieuChinhSV() {
+    int row = ui->bangDuLieu->currentRow();
+
+    QString mssv = ui->bangDuLieu->item(row, 0)->text();
+    QString ho = ui->bangDuLieu->item(row, 1)->text();
+    QString ten = ui->bangDuLieu->item(row, 2)->text();
+    QString lop = ui->bangDuLieu->item(row, 3)->text();
+    QString gioiTinh = ui->bangDuLieu->item(row, 4)->text();
+    HieuChinh dialog(mssv, ho, ten, lop, gioiTinh, this);
+
+    dialog.exec();
+}
+
 
 void GIao_Vien::on_sinhVien_clicked() {
     int rows = demSinhVien();
@@ -205,11 +222,14 @@ void GIao_Vien::on_sinhVien_clicked() {
 
     contextMenu = new QMenu(this);
     deleteAction = new QAction("Xóa", this);
+    editAction = new QAction("Hiệu chỉnh", this);
 
     contextMenu->addAction(deleteAction);
+    contextMenu->addAction(editAction);
 
     connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
     connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
+    connect(editAction, &QAction::triggered, this, &GIao_Vien::hieuChinhSV);
 
     ui->bangDuLieu->setRowCount(rows);
     ui->bangDuLieu->setColumnCount(5);
@@ -278,5 +298,11 @@ void GIao_Vien::on_sapXep_clicked()
     // Tải lại bảng sinh viên sau khi sắp xếp
     loadSinhVien();
     qDebug() << "Đã sắp xếp danh sách sinh viên theo tên.";
+}
+
+
+void GIao_Vien::on_pushButton_3_clicked()
+{
+
 }
 

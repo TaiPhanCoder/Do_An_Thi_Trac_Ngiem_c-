@@ -20,18 +20,30 @@ SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, Q
 }
 
 void themSinhVienVaoLop(SinhVien* newSV, const QString &lop){
-    for (int i = 0; i < 10000; ++i) {
-        if (danhSachLop[i] == nullptr) {
-            break;
-        }
+    int i = 0;
+    while (danhSachLop[i] != nullptr) {
         if (danhSachLop[i]->MALOP == lop) {
-            newSV->next = danhSachLop[i]->DSSV;
-            danhSachLop[i]->DSSV = newSV;
-            qDebug() << "Đã thêm sinh viên vào lớp:" << lop;
-            break;
+            SinhVien* current = danhSachLop[i]->DSSV;
+            SinhVien* prev = nullptr;
+
+            while (current != nullptr && current->ten < newSV->ten) {
+                prev = current;
+                current = current->next;
+            }
+
+            if (prev == nullptr) {
+                newSV->next = danhSachLop[i]->DSSV;
+                danhSachLop[i]->DSSV = newSV;
+            } else {
+                prev->next = newSV;
+                newSV->next = current;
+            }
+            return;
         }
+        ++i;
     }
 }
+
 
 int demSinhVien() {
     int count = 0;

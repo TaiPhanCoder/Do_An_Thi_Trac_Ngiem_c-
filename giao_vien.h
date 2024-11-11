@@ -28,13 +28,11 @@ private slots:
     void xoaSV();
     QString getSelectedStudentMasv(int row);
     QString getSelectedStudentLop(int row);
-
     void on_them1sv_clicked();
-
-
+    void hieuChinhSV();
     void on_sinhVien_clicked();
-
     void on_sapXep_clicked();
+    void on_pushButton_3_clicked();
 
 private:
     Ui::GIao_Vien *ui;

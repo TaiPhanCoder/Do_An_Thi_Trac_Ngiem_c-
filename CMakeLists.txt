@@ -38,6 +38,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         lop.h lop.cpp
         excel.h excel.cpp
         them_sinh_vien.h them_sinh_vien.cpp them_sinh_vien.ui
+        hieuchinh.h hieuchinh.cpp hieuchinh.ui
 
     )
 # Define target properties for Android with Qt 6 as:
