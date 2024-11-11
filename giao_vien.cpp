@@ -161,7 +161,7 @@ void GIao_Vien::timSinhVien(const QString &text) {
             break;
         }
         SinhVien* current = danhSachLop[i]->DSSV;
-        QString tenLop = danhSachLop[i]->TENLOP;
+        QString tenLop = danhSachLop[i]->MALOP;
 
         // Duyệt qua danh sách sinh viên của lớp hiện tại
         while (current != nullptr) {
@@ -211,7 +211,9 @@ void GIao_Vien::hieuChinhSV() {
     QString gioiTinh = ui->bangDuLieu->item(row, 4)->text();
     HieuChinh dialog(mssv, ho, ten, lop, gioiTinh, this);
 
-    dialog.exec();
+    if (dialog.exec() == QDialog::Accepted){
+        loadSinhVien();
+    }
 }
 
 

@@ -34,6 +34,7 @@ public:
     QLineEdit *Ten;
     QComboBox *Lop;
     QLabel *LoiLop;
+    QLabel *LoiGioiTinh;
 
     void setupUi(QDialog *HieuChinh)
     {
@@ -165,6 +166,9 @@ public:
         LoiLop = new QLabel(HieuChinh);
         LoiLop->setObjectName("LoiLop");
         LoiLop->setGeometry(QRect(40, 180, 251, 20));
+        LoiGioiTinh = new QLabel(HieuChinh);
+        LoiGioiTinh->setObjectName("LoiGioiTinh");
+        LoiGioiTinh->setGeometry(QRect(170, 360, 251, 20));
 
         retranslateUi(HieuChinh);
         QObject::connect(buttonBox, &QDialogButtonBox::accepted, HieuChinh, qOverload<>(&QDialog::accept));
@@ -187,6 +191,7 @@ public:
         Ten->setPlaceholderText(QCoreApplication::translate("HieuChinh", "    T\303\252n", nullptr));
         Lop->setPlaceholderText(QCoreApplication::translate("HieuChinh", "                  Ch\341\273\215n L\341\273\233p", nullptr));
         LoiLop->setText(QString());
+        LoiGioiTinh->setText(QString());
     } // retranslateUi
 
 };

@@ -34,10 +34,10 @@ public:
     QPushButton *pushButton_3;
     QLabel *logo;
     QLabel *label_2;
-    QGroupBox *groupBox_2;
+    QGroupBox *tinhNangSinhVien;
     QLineEdit *timMSSV;
     QLabel *label;
-    QGroupBox *groupBox_3;
+    QGroupBox *themSinhVien;
     QPushButton *them1sv;
     QPushButton *pushButton_5;
     QPushButton *sapXep;
@@ -101,10 +101,10 @@ public:
 "    qproperty-alignment: 'AlignCenter';  /* C\304\203n gi\341\273\257a n\341\273\231i dung */\n"
 "}\n"
 ""));
-        groupBox_2 = new QGroupBox(centralwidget);
-        groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(319, 0, 1201, 191));
-        timMSSV = new QLineEdit(groupBox_2);
+        tinhNangSinhVien = new QGroupBox(centralwidget);
+        tinhNangSinhVien->setObjectName("tinhNangSinhVien");
+        tinhNangSinhVien->setGeometry(QRect(319, 0, 1201, 191));
+        timMSSV = new QLineEdit(tinhNangSinhVien);
         timMSSV->setObjectName("timMSSV");
         timMSSV->setGeometry(QRect(10, 60, 261, 28));
         timMSSV->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
@@ -113,13 +113,13 @@ public:
 "color: black;\n"
 "font-size: 16px;\n"
 "padding-left: 85px;"));
-        label = new QLabel(groupBox_2);
+        label = new QLabel(tinhNangSinhVien);
         label->setObjectName("label");
         label->setGeometry(QRect(10, 30, 261, 20));
-        groupBox_3 = new QGroupBox(groupBox_2);
-        groupBox_3->setObjectName("groupBox_3");
-        groupBox_3->setGeometry(QRect(10, 90, 261, 91));
-        them1sv = new QPushButton(groupBox_3);
+        themSinhVien = new QGroupBox(tinhNangSinhVien);
+        themSinhVien->setObjectName("themSinhVien");
+        themSinhVien->setGeometry(QRect(10, 90, 261, 91));
+        them1sv = new QPushButton(themSinhVien);
         them1sv->setObjectName("them1sv");
         them1sv->setGeometry(QRect(10, 28, 111, 51));
         them1sv->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
@@ -129,7 +129,7 @@ public:
 "font-size: 16px;\n"
 "font-weight: bold;\n"
 "box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
-        pushButton_5 = new QPushButton(groupBox_3);
+        pushButton_5 = new QPushButton(themSinhVien);
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setGeometry(QRect(140, 28, 111, 51));
         pushButton_5->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
@@ -139,7 +139,7 @@ public:
 "font-size: 16px;\n"
 "font-weight: bold;\n"
 "box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
-        sapXep = new QPushButton(groupBox_2);
+        sapXep = new QPushButton(tinhNangSinhVien);
         sapXep->setObjectName("sapXep");
         sapXep->setGeometry(QRect(320, 60, 231, 29));
         sapXep->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
@@ -175,10 +175,10 @@ public:
         pushButton_3->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
         logo->setText(QString());
         label_2->setText(QCoreApplication::translate("GIao_Vien", "H\341\273\215c Vi\341\273\207n Ho\303\240ng Gia HCM", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
+        tinhNangSinhVien->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
         timMSSV->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "MSSV", nullptr));
         label->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m Sinh Vi\303\252n", nullptr));
+        themSinhVien->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m Sinh Vi\303\252n", nullptr));
         them1sv->setText(QCoreApplication::translate("GIao_Vien", "M\341\273\231t Ng\306\260\341\273\235i", nullptr));
         pushButton_5->setText(QCoreApplication::translate("GIao_Vien", "Danh S\303\241ch", nullptr));
         sapXep->setText(QCoreApplication::translate("GIao_Vien", "S\341\272\257p x\341\272\277p theo t\303\252n", nullptr));

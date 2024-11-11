@@ -133,7 +133,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
      <string>Học Viện Hoàng Gia HCM</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="tinhNangSinhVien">
     <property name="geometry">
      <rect>
       <x>319</x>
@@ -179,7 +179,7 @@ padding-left: 85px;</string>
       <string>Tìm kiếm:</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="groupBox_3">
+    <widget class="QGroupBox" name="themSinhVien">
      <property name="geometry">
       <rect>
        <x>10</x>

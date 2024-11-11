@@ -260,6 +260,19 @@ QComboBox QAbstractItemView {
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="LoiGioiTinh">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>360</y>
+     <width>251</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
