@@ -25,7 +25,6 @@ public:
 private slots:
     void setupComboBoxes();
     bool thongBaoLoi();
-    bool checkMSSV();
     void chinhSuaSinhVien();
     void capNhatThongTinSinhVien(SinhVien* sv);
 

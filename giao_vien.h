@@ -33,6 +33,11 @@ private slots:
     void on_sinhVien_clicked();
     void on_sapXep_clicked();
     void on_pushButton_3_clicked();
+    void on_themNhieuSV_clicked();
+    void loadLopVaoComboBox();
+    void loadSinhVienLop(const QString &lop);
+    void onLopComboBoxChanged(int index);
+    void setupComboBoxFilter(QComboBox *comboBox);
 
 private:
     Ui::GIao_Vien *ui;

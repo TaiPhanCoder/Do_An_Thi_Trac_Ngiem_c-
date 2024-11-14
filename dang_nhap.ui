@@ -22,6 +22,9 @@
      <height>431</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <widget class="QLabel" name="labelDN">
     <property name="geometry">
      <rect>
@@ -91,7 +94,7 @@ padding-left: 85px;
 </string>
     </property>
     <property name="placeholderText">
-     <string>    Mật Khẩu</string>
+     <string>     Mật Khẩu</string>
     </property>
    </widget>
    <widget class="QPushButton" name="DangNhapButton">

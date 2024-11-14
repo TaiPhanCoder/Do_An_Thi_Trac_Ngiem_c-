@@ -109,26 +109,6 @@ void HieuChinh::accept() {
     }
 }
 
-bool HieuChinh::checkMSSV() {
-    QString newMssv = getMSSV();
-    if (oldMssv != newMssv) {
-        for (int i = 0; i < 10000; ++i) {
-            if (danhSachLop[i] == nullptr) {
-                break;
-            }
-            SinhVien* current = danhSachLop[i]->DSSV;
-            while (current != nullptr) {
-                if (current->masv == newMssv) {
-                    qDebug() << "MSSV bị trùng:" << newMssv;
-                    return false;
-                }
-                current = current->next;
-            }
-        }
-    }
-    return true;
-}
-
 bool HieuChinh::thongBaoLoi() {
     bool isValid = true;
 
@@ -136,7 +116,7 @@ bool HieuChinh::thongBaoLoi() {
         ui->LoiMSSV->setText("MSSV không được để trống");
         ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
-    } else if (!checkMSSV()) {
+    } else if (!checkMSSV(getMSSV())) {
         ui->LoiMSSV->setText("MSSV đã tồn tại");
         ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;

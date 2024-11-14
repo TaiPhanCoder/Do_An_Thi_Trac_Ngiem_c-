@@ -1,67 +1,68 @@
-// #include "excel.h"
-// #include <QDebug>
-// #include <OpenXLSX,hpp>
-// #include <QString>
+#include <QFileDialog>
+#include <OpenXLSX.hpp>
+#include <QString>
+#include <QDebug>
+#include "globals.h"
+#include "sinhvien.h"
+#include "lop.h"
 
-// excel::excel() {}
+void loadSinhVienTuFile(const QString &fileName)
+{
+    OpenXLSX::XLDocument xlsx;
+    try {
+        xlsx.open(fileName.toStdString());
+    } catch (const std::exception &e) {
+        qDebug() << "Failed to load the file.";
+        return;
+    }
 
-// void manageStudentData(const QString& filePath, const QString& action, const QString& mssv, const QString& ho, const QString& ten, const QString& phai) {
-//     // Chuyển đổi đường dẫn từ QString sang std::string
-//     std::string path = filePath.toStdString();
+    auto workbook = xlsx.workbook();
+    auto worksheet = workbook.worksheet("Sheet1");
 
-//     // Mở file Excel
-//     OpenXLSX::XLDocument doc;
-//     doc.open(path);
-//     auto worksheet = doc.workbook().sheet(0); // Giả sử bạn làm việc với sheet đầu tiên
+    // Lấy thông tin lớp từ file Excel
+    QString lop = QString::fromStdString(worksheet.cell("B1").value().get<std::string>()).trimmed();
+    if (lop.isEmpty()) {
+        qDebug() << "Lớp không được để trống.";
+        return;
+    }
 
-//     if (action == "add") {
-//         // Tìm hàng cuối cùng có dữ liệu
-//         int row = 1;
-//         while (!worksheet.cell("A" + std::to_string(row)).value().isEmpty()) {
-//             row++;
-//         }
+    // Kiểm tra xem lớp đã tồn tại trong danh sách lớp hay chưa, nếu chưa thì thêm mới
+    Lop* currentLop = nullptr;
+    int i = 0;
+    while (danhSachLop[i] != nullptr) {
+        if (danhSachLop[i]->MALOP == lop) {
+            currentLop = danhSachLop[i];
+            break;
+        }
+        ++i;
+    }
 
-//         // Thêm dữ liệu sinh viên vào hàng mới
-//         worksheet.cell("A" + std::to_string(row)).value() = mssv.toStdString();
-//         worksheet.cell("B" + std::to_string(row)).value() = ho.toStdString();
-//         worksheet.cell("C" + std::to_string(row)).value() = ten.toStdString();
-//         worksheet.cell("D" + std::to_string(row)).value() = phai.toStdString();
+    if (currentLop == nullptr) {
+        currentLop = new Lop;
+        currentLop->MALOP = lop;
+        currentLop->TENLOP = lop;  // Giả sử tên lớp giống mã lớp
+        currentLop->DSSV = nullptr;
+        danhSachLop[i] = currentLop;
+        danhSachLop[i + 1] = nullptr; // Cập nhật danh sách lớp
+        qDebug() << "Đã thêm lớp mới:" << lop;
+    }
 
-//         qDebug() << "Sinh viên đã được thêm vào danh sách.";
-//     } else if (action == "delete") {
-//         // Tìm sinh viên cần xóa
-//         int row = 1;
-//         while (!worksheet.cell("A" + std::to_string(row)).value().isEmpty()) {
-//             if (worksheet.cell("A" + std::to_string(row)).value().get<std::string>() == mssv.toStdString()) {
-//                 // Xóa dữ liệu bằng cách làm rỗng các ô
-//                 worksheet.cell("A" + std::to_string(row)).value().clear();
-//                 worksheet.cell("B" + std::to_string(row)).value().clear();
-//                 worksheet.cell("C" + std::to_string(row)).value().clear();
-//                 worksheet.cell("D" + std::to_string(row)).value().clear();
-//                 qDebug() << "Sinh viên có MSSV" << mssv << "đã được xóa.";
-//                 break;
-//             }
-//             row++;
-//         }
-//     } else if (action == "edit") {
-//         // Tìm sinh viên cần chỉnh sửa
-//         int row = 1;
-//         while (!worksheet.cell("A" + std::to_string(row)).value().isEmpty()) {
-//             if (worksheet.cell("A" + std::to_string(row)).value().get<std::string>() == mssv.toStdString()) {
-//                 // Cập nhật thông tin sinh viên
-//                 worksheet.cell("B" + std::to_string(row)).value() = ho.toStdString();
-//                 worksheet.cell("C" + std::to_string(row)).value() = ten.toStdString();
-//                 worksheet.cell("D" + std::to_string(row)).value() = phai.toStdString();
-//                 qDebug() << "Thông tin sinh viên có MSSV" << mssv << "đã được cập nhật.";
-//                 break;
-//             }
-//             row++;
-//         }
-//     } else {
-//         qDebug() << "Hành động không hợp lệ.";
-//     }
+    // Đọc danh sách sinh viên bắt đầu từ hàng 4
+    int row = 4;
+    while (true) {
+        QString masv = QString::fromStdString(worksheet.cell(row, 2).value().get<std::string>()).trimmed();
+        QString ho = QString::fromStdString(worksheet.cell(row, 3).value().get<std::string>()).trimmed();
+        QString ten = QString::fromStdString(worksheet.cell(row, 4).value().get<std::string>()).trimmed();
+        QString phai = QString::fromStdString(worksheet.cell(row, 5).value().get<std::string>()).trimmed();
 
-//     // Lưu file và đóng
-//     doc.save();
-//     doc.close();
-// }
+        if (masv.isEmpty()) {
+            break; // Hết sinh viên để đọc
+        }
+
+        SinhVien* newSV = taoNodeSinhVien(masv, ho, ten, phai, "");
+        themSinhVienVaoLop(newSV, lop);
+
+        qDebug() << "Đã thêm sinh viên MSSV:" << masv << "Họ:" << ho << "Tên:" << ten << "Phái:" << phai;
+        ++row;
+    }
+}

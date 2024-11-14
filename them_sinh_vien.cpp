@@ -1,6 +1,7 @@
 #include "them_sinh_vien.h"
 #include "ui_them_sinh_vien.h"
 #include "lop.h"
+#include "sinhvien.h"
 
 Them_Sinh_Vien::Them_Sinh_Vien(QWidget *parent)
     : QDialog(parent)
@@ -75,6 +76,10 @@ bool Them_Sinh_Vien::thongBaoLoi() {
 
     if (getMSSV().isEmpty()) {
         ui->LoiMSSV->setText("MSSV không được để trống");
+        ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        isValid = false;
+    } else if (!checkMSSV(getMSSV())) {
+        ui->LoiMSSV->setText("MSSV đã tồn tại");
         ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
     } else {
