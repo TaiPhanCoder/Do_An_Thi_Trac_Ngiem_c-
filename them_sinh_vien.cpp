@@ -66,8 +66,22 @@ QString Them_Sinh_Vien::getLop() const {
 }
 
 void Them_Sinh_Vien::accept() {
-    if (thongBaoLoi()) {
-        QDialog::accept();
+    bool continueAdding = true;
+
+    while (continueAdding) {
+        if (thongBaoLoi()) {
+            QDialog::accept();
+            qDebug() << "Đã thêm sinh viên.";
+
+            Them_Sinh_Vien dialog(this);
+            if (dialog.exec() == QDialog::Accepted) {
+                continueAdding = true;
+            } else {
+                continueAdding = false;
+            }
+        } else {
+            continueAdding = false;
+        }
     }
 }
 

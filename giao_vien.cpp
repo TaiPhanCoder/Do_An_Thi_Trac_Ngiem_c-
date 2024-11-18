@@ -4,6 +4,7 @@
 #include "hieuchinh.h"
 #include "excel.h"
 #include"lop.h"
+#include "mamh.h"
 #include"them_sinh_vien.h"
 #include<QDebug>
 #include<QTableWidget>
@@ -13,6 +14,7 @@
 #include <QLineEdit>
 
 bool dasapxep = false;
+NodeMonHoc* root = loadToanBoCauHoi();
 
 GIao_Vien::GIao_Vien(QWidget *parent)
     : QMainWindow(parent)
@@ -241,6 +243,7 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
     }
 
     ui->bangDuLieu->setRowCount(0);
+    ui->bangDuLieu->setColumnCount(0);
 
     for (int i = 0; i < 10000; ++i) {
         if (danhSachLop[i] == nullptr) {
@@ -306,9 +309,18 @@ void GIao_Vien::hieuChinhSV() {
     }
 }
 
+void GIao_Vien::on_cauHoi_clicked()
+{
+    ui->tinhNangSinhVien->hide();
+    ui->tinhNangCauHoi->show();
+    ui->bangDuLieu->clear();
+    ui->bangDuLieu->setColumnCount(0);
+    ui->bangDuLieu->setRowCount(0);
+}
 
 void GIao_Vien::on_sinhVien_clicked() {
-    int rows = demSinhVien();
+    ui->tinhNangCauHoi->hide();
+    ui->tinhNangSinhVien->show();
 
     ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
 
@@ -323,7 +335,6 @@ void GIao_Vien::on_sinhVien_clicked() {
     connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
     connect(editAction, &QAction::triggered, this, &GIao_Vien::hieuChinhSV);
 
-    ui->bangDuLieu->setRowCount(rows);
     ui->bangDuLieu->setColumnCount(5);
     ui->bangDuLieu->setColumnWidth(0, 300);
     ui->bangDuLieu->setColumnWidth(1, 350);
@@ -394,10 +405,6 @@ void GIao_Vien::on_sapXep_clicked()
 }
 
 
-void GIao_Vien::on_pushButton_3_clicked()
-{
-
-}
 
 
 void GIao_Vien::on_themNhieuSV_clicked()
@@ -409,4 +416,3 @@ void GIao_Vien::on_themNhieuSV_clicked()
     loadSinhVienTuFile(fileName);
     loadSinhVien();
 }
-

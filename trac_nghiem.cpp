@@ -9,15 +9,16 @@
 
 DaThi* mangDaThi = nullptr;
 int countcauhoi = 1;
-CauHoi* current = headCauhoi;
 QTimer *timer;
 QTime timeLeft;
+CauHoi* cauhoiHienTai = nullptr;
 
 Trac_Nghiem::Trac_Nghiem(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Trac_Nghiem)
 {
     mangDaThi = new DaThi[questions];
+    cauhoiHienTai = headCauhoi;
     ui->setupUi(this);
     this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
     QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
@@ -84,7 +85,6 @@ void Trac_Nghiem::updateTime() {
 void Trac_Nghiem::handleAnswerSelection() {
     int index = countcauhoi - 1;
 
-    // Cập nhật đáp án vào mảng khi người dùng chọn
     if (ui->AQ->isChecked()) {
         mangDaThi[index].dapAn = QChar('A');
     } else if (ui->BQ->isChecked()) {
@@ -137,8 +137,11 @@ void Trac_Nghiem::updateRadioButtonState() {
 }
 
 void Trac_Nghiem::indsach() {
-    CauHoi* temp = headCauhoi;
+    CauHoi* temp = cauhoiHienTai;
     int stt = 1;
+    if(cauhoiHienTai == nullptr){
+        qDebug() << "Cau Hoi Hien Tai Rong";
+    }
     while (temp != nullptr) {
         qDebug() << "STT: " << stt << " | ID: " << temp->id;
         temp = temp->next;
@@ -186,15 +189,16 @@ void prev(){
 
 void Trac_Nghiem::on_right_arow_clicked()
 {
+    qDebug() << cauhoiHienTai->noiDung;
     if(countcauhoi < questions){
         next();
+        qDebug() << cauhoiHienTai->noiDung;
         ui->cau_hoi->setText("Câu " + QString::number(countcauhoi) + ": " + cauhoiHienTai->noiDung);
         ui->AQ->setText(cauhoiHienTai->A);
         ui->BQ->setText(cauhoiHienTai->B);
         ui->CQ->setText(cauhoiHienTai->C);
         ui->DQ->setText(cauhoiHienTai->D);
 
-        // Chỉ gọi hàm updateRadioButtonState khi phát hiện đã sang câu khác
         updateRadioButtonState();
     }
 }
@@ -236,7 +240,6 @@ void Trac_Nghiem::handleListWidgetClick(QListWidgetItem *item)
     ui->CQ->setText(cauhoiHienTai->C);
     ui->DQ->setText(cauhoiHienTai->D);
 
-    // Chỉ gọi hàm updateRadioButtonState khi phát hiện đã sang câu khác
     updateRadioButtonState();
 }
 
@@ -299,4 +302,3 @@ void Trac_Nghiem::on_NopBai_clicked()
         luuDuLieuMangDaThi();
     }
 }
-

@@ -61,17 +61,18 @@ void Thong_Tin_Thi::on_DangNhapButton_clicked()
 {
     bool hasError = false;
     QString MonHoc = ui->DSachMonHoc->currentText();
-
+    int soCauHoi = 0;
+    CauHoi** mangCauHoi= loadCauHoiThi(MonHoc,questions,soCauHoi);
     if (ui->spinBox->value() == 0) {
         ui->LoiCauHoi->setText("Vui Lòng Nhập Số Câu Hỏi Thi");
         ui->LoiCauHoi->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         hasError = true;
     }
-    // else if(ui->spinBox->value() > so_luong_cau_hoi){
-    //     ui->LoiCauHoi->setText("Số lượng câu hỏi đề thi: " + QString::number(so_luong_cau_hoi) + ". Vui lòng nhập ít hơn");
-    //     ui->LoiCauHoi->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
-    //     hasError = true;
-    //     }
+    else if(ui->spinBox->value() > soCauHoi){
+        ui->LoiCauHoi->setText("Số lượng câu hỏi đề thi: " + QString::number(soCauHoi) + ". Vui lòng nhập ít hơn");
+        ui->LoiCauHoi->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        hasError = true;
+        }
     else {
         ui->LoiCauHoi->clear();  // Xóa thông báo lỗi nếu không có lỗi
     }
@@ -97,10 +98,9 @@ void Thong_Tin_Thi::on_DangNhapButton_clicked()
     if (!hasError) {
         times = ui->spinBox_2->value();
         questions = ui->spinBox->value();
-        headCauhoi = docCauHoiTuFile(MonHoc);
         monhoc = MonHoc;
-        cauhoiHienTai = headCauhoi;
-        // inDanhSachCauHoi(headCauhoi);
+        shuffleArray(mangCauHoi,questions);
+        headCauhoi = DsachCauHoiThi(mangCauHoi,questions);
         accept();
     }
 }

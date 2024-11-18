@@ -28,5 +28,7 @@ typedef NodeMonHoc* ptrMonHoc;
 
 ptrMonHoc readFileAndBuildAVL();
 void duyetLNR(ptrMonHoc root, QStringList &danhSachMonHoc);
+ptrMonHoc loadToanBoCauHoi();
+void duyetLRN(ptrMonHoc p);
 
 #endif // MAMH_H

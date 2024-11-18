@@ -1,4 +1,4 @@
-INT1303|AN TOÀN BẢO MẬT HỆ THỐNG THÔNG TIN|headDsachCauHoiINT1303
+INT1303|AN TOÀN BẢO MẬT HỆ THỐNG THÔNG TIN
 10
 1|1 + 1 bằng mấy?|A. 1|B. 2|C. 3|D. 4|B
 2|Thủ đô của Việt Nam là thành phố nào?|A. Hồ Chí Minh|B. Đà Nẵng|C. Hà Nội|D. Hải Phòng|C
@@ -11,7 +11,7 @@ INT1303|AN TOÀN BẢO MẬT HỆ THỐNG THÔNG TIN|headDsachCauHoiINT1303
 9|VPN là viết tắt của?|A. Virtual Private Network|B. Virus Protection Network|C. Visual Processing Node|D. Virtual Port Network|A
 10|Tấn công lừa đảo (Phishing) là gì?|A. Gửi email giả mạo để lấy cắp thông tin|B. Tấn công bằng phần mềm độc hại|C. Tấn công vào mạng không dây|D. Tấn công lấy cắp dữ liệu|A
 
-INT1474|CÁC GIAO THỨC CỦA INTERNET|headDsachCauHoiINT1474
+INT1474|CÁC GIAO THỨC CỦA INTERNET
 10
 1|HTTP là viết tắt của?|A. HyperText Transfer Page|B. HyperText Transfer Protocol|C. HyperTerminal Text Protocol|D. HyperLink Text Protocol|B
 2|Giao thức dùng để gửi email?|A. SMTP|B. FTP|C. HTTP|D. TCP|A
@@ -24,7 +24,7 @@ INT1474|CÁC GIAO THỨC CỦA INTERNET|headDsachCauHoiINT1474
 9|Giao thức nào được sử dụng để truyền dữ liệu web?|A. FTP|B. SMTP|C. HTTP|D. SSH|C
 10|Telnet được sử dụng để?|A. Kết nối từ xa|B. Truyền email|C. Bảo mật thông tin|D. Tải tệp tin|A
 
-INT1306|CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT|headDsachCauHoiINT1306
+INT1306|CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT
 10
 1|Độ phức tạp của thuật toán tìm kiếm nhị phân?|A. O(n)|B. O(log n)|C. O(n^2)|D. O(1)|B
 2|Kiểu dữ liệu nào là LIFO?|A. Queue|B. Stack|C. List|D. Map|B

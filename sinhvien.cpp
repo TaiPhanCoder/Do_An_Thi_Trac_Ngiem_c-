@@ -102,7 +102,6 @@ void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop) {
 int demSinhVien() {
     int count = 0;
 
-    // Duyệt qua mảng lớp
     for (int i = 0; i < 10000; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;

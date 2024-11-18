@@ -1,5 +1,6 @@
 #ifndef TRAC_NGHIEM_H
 #define TRAC_NGHIEM_H
+#include "cau_hoi.h"
 #include <QListWidgetItem>
 
 #include <QMainWindow>

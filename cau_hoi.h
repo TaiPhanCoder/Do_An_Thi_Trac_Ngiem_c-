@@ -22,11 +22,11 @@ struct  CauHoi{
 
 extern CauHoi *headCauhoi;
 
-CauHoi* docCauHoiTuFile(const QString& monHoc);
+CauHoi** loadCauHoiThi(const QString &monHoc, int &questions, int &soCauHoi);
+CauHoi* DsachCauHoiThi(CauHoi** cauhoiArray, int questions);
+void shuffleArray(CauHoi* arr[], int questions);
+void duyetDSach(CauHoi* head);
+CauHoi* taoNodeCauHoi(QString id, QString noiDung, QString A, QString B, QString C, QString D, QChar dapAnDung);
 
-void inDanhSachCauHoi(CauHoi* head);
-extern CauHoi *cauhoiHienTai;
-extern int so_luong_cau_hoi;
-int* taoRanDom(int question_count, int bank_size);
 
 #endif // CAU_HOI_H

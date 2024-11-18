@@ -13,7 +13,6 @@ int main(int argc, char *argv[])
     if (loginDlg->exec() == QDialog::Accepted) {
 
         if (GV) {
-            // Nếu là giảng viên, mở giao diện giảng viên
             GIao_Vien gvWindow;
             gvWindow.setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
             gvWindow.showMaximized();

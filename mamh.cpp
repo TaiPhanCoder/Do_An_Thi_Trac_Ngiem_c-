@@ -1,4 +1,5 @@
 #include "mamh.h"
+#include "cau_hoi.h"
 
 MaMH::MaMH() {}
 #include<algorithm>
@@ -15,15 +16,13 @@ int height(ptrMonHoc n) {
     return n->height;
 }
 
-
-// Hàm tạo node mới
 ptrMonHoc newNode(QString mamh_input, QString tenmh_input) {
     ptrMonHoc node = new NodeMonHoc;
-    node->MH.MAMH = mamh_input;       // Sử dụng QString trực tiếp
-    node->MH.TENMH = tenmh_input;     // Sử dụng QString trực tiếp
-    node->height = 1;                 // node mới được thêm có chiều cao là 1
-    node->left = NULL;                // Con trỏ trái ban đầu là NULL
-    node->right = NULL;               // Con trỏ phải ban đầu là NULL
+    node->MH.MAMH = mamh_input;
+    node->MH.TENMH = tenmh_input;
+    node->height = 1;
+    node->left = NULL;
+    node->right = NULL;
     return node;
 }
 
@@ -103,7 +102,7 @@ ptrMonHoc insertNodeAVL(ptrMonHoc node, QString mamh_input, QString tenmh_input)
 }
 
 ptrMonHoc readFileAndBuildAVL() {
-    ptrMonHoc root = nullptr;  // Gốc của cây AVL
+    ptrMonHoc root = nullptr;
     QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qWarning() << "Không thể mở file!";
@@ -127,9 +126,7 @@ ptrMonHoc readFileAndBuildAVL() {
     return root;
 }
 
-// Hàm thêm môn học vào cây AVL
 
-// Hàm tìm node có giá trị nhỏ nhất (sử dụng cho việc xóa)
 ptrMonHoc minValueNode(ptrMonHoc node) {
     ptrMonHoc current = node;
     while (current->left != NULL)
@@ -137,7 +134,6 @@ ptrMonHoc minValueNode(ptrMonHoc node) {
     return current;
 }
 
-// Hàm xóa môn học trong cây AVL
 ptrMonHoc deleteNodeAVL(ptrMonHoc root, QString mamh_input) {
     if (root == nullptr)
         return root;
@@ -240,4 +236,54 @@ int demNode(ptrMonHoc p) {
     if (p == NULL)
         return 0;
     return 1 + demNode(p->left) + demNode(p->right);
+}
+
+ptrMonHoc loadToanBoCauHoi() {
+    ptrMonHoc root = nullptr;
+    QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qWarning() << "Không thể mở file!";
+        return root;
+    }
+
+    QTextStream in(&file);
+    ptrMonHoc currentNode = nullptr;
+    while (!in.atEnd()) {
+        QString line = in.readLine().trimmed();
+        QStringList parts = line.split("|");
+
+        // Kiểm tra nếu đây là phần mã môn học và tên môn học
+        if (parts.size() == 2) {
+            QString mamh = parts[0].trimmed();
+            QString tenmh = parts[1].trimmed();
+            root = insertNodeAVL(root, mamh, tenmh);
+            currentNode = SearchNode(root, mamh);
+        }
+        // Nếu là câu hỏi
+        else if (parts.size() == 7 && currentNode != nullptr) {
+            QString id = parts[0];
+            QString noiDung = parts[1];
+            QString A = parts[2];
+            QString B = parts[3];
+            QString C = parts[4];
+            QString D = parts[5];
+            QChar dapAnDung = parts[6].at(0);
+
+            CauHoi* newCauHoi = taoNodeCauHoi(id, noiDung, A, B, C, D, dapAnDung);
+
+            // Thêm câu hỏi vào danh sách liên kết đơn của môn học hiện tại
+            if (currentNode->MH.headCauhoi == nullptr) {
+                currentNode->MH.headCauhoi = newCauHoi;
+            } else {
+                CauHoi* temp = currentNode->MH.headCauhoi;
+                while (temp->next != nullptr) {
+                    temp = temp->next;
+                }
+                temp->next = newCauHoi;
+            }
+        }
+    }
+
+    file.close();
+    return root;
 }
