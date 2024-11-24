@@ -22,9 +22,11 @@ Dang_Nhap::Dang_Nhap(QWidget *parent)
     connect(ui->TaiKhoan, &QLineEdit::returnPressed, [=]() {
         ui->MatKhau->setFocus();
     });
+
     connect(ui->sharingan, &QPushButton::clicked, [=]() {
         on_sharingan_clicked();
     });
+
     connect(ui->MatKhau, &QLineEdit::returnPressed, this, &Dang_Nhap::on_DangNhapButton_clicked);
 
     ui->DangNhapButton->setAutoDefault(false);
@@ -139,15 +141,19 @@ bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &entere
         SinhVien* current = danhSachLop[i]->DSSV;
         // Duyệt qua danh sách sinh viên của lớp hiện tại
         while (current != nullptr) {
-            if (current->masv == enteredUsername && current->password == enteredPassword) {
-                mainUser.masv = current->masv;
-                mainUser.ho = current->ho;
-                mainUser.ten = current->ten;
-                mainUser.phai = current->phai;
-                mainUser.password = current->password;
-                mainUser.ds_diemthi = current->ds_diemthi;
-                mainUser.next = nullptr;
-                return true;
+            if (current->masv == enteredUsername) {
+                if (current->password == enteredPassword) {
+                    mainUser.masv = current->masv;
+                    mainUser.ho = current->ho;
+                    mainUser.ten = current->ten;
+                    mainUser.phai = current->phai;
+                    mainUser.password = current->password;
+                    mainUser.ds_diemthi = current->ds_diemthi;
+                    mainUser.next = nullptr;
+                    return true;
+                } else {
+                    return false;
+                }
             }
             current = current->next;
         }
@@ -155,12 +161,10 @@ bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &entere
     return false;
 }
 
-
 void Dang_Nhap::onTaiKhoanInput(const QString &inputText)
 {
     QString updatedText = inputText.toUpper();
 
-    // Đặt lại nội dung vào QLineEdit TaiKhoan
     disconnect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
     ui->TaiKhoan->setText(updatedText);
     connect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);

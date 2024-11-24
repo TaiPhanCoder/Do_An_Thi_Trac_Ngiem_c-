@@ -238,9 +238,21 @@ int demNode(ptrMonHoc p) {
     return 1 + demNode(p->left) + demNode(p->right);
 }
 
+int demTatCaCauHoi(ptrMonHoc root) {
+    if (root == nullptr) {
+        return 0;
+    }
+
+    int leftCount = demTatCaCauHoi(root->left);
+    int rightCount = demTatCaCauHoi(root->right);
+    int currentCount = demCauHoi(root->MH.headCauhoi);
+
+    return leftCount + rightCount + currentCount;
+}
+
 ptrMonHoc loadToanBoCauHoi() {
     ptrMonHoc root = nullptr;
-    QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
+    QFile file(":/TK-MK-PTIT/TK-MK.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qWarning() << "Không thể mở file!";
         return root;

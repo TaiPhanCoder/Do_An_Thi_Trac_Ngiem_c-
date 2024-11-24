@@ -1,0 +1,228 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide/nowide_autogen",
+	"CMAKE_BINARY_DIR" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide",
+	"CMAKE_CURRENT_SOURCE_DIR" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide",
+	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/CMakeLists.txt",
+		"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/cmake/NowideAddWarnings.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide/nowide_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "nowide_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/args.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_args.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/config.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_config.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/convert.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_convert.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/cstdio.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_cstdio.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/cstdlib.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_cstdlib.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/convert.hpp",
+			"MU",
+			"2CMTKFAIMV/moc_convert.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/is_path.hpp",
+			"MU",
+			"2CMTKFAIMV/moc_is_path.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/is_string_container.hpp",
+			"MU",
+			"2CMTKFAIMV/moc_is_string_container.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/utf.hpp",
+			"MU",
+			"2CMTKFAIMV/moc_utf.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/filebuf.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_filebuf.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/filesystem.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_filesystem.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/fstream.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_fstream.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/iostream.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_iostream.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/replacement.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_replacement.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/stackstring.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_stackstring.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/stat.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_stat.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/utf/convert.hpp",
+			"MU",
+			"5QFQEH4ZWI/moc_convert.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/utf/utf.hpp",
+			"MU",
+			"5QFQEH4ZWI/moc_utf.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/utf8_codecvt.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_utf8_codecvt.cpp",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/windows.hpp",
+			"MU",
+			"6J4FLTB6SB/moc_windows.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide/nowide_autogen/include",
+	"MOC_COMPILATION_FILE" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide/nowide_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "NOWIDE_NO_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include",
+		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed",
+		"C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"C:/Qt/Tools/mingw1310_64/bin/g++.exe",
+		"-std=c++17",
+		"-dM",
+		"-E",
+		"-c",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide/nowide_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide/CMakeFiles/nowide_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/external/nowide/CMakeFiles/nowide_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/cstdio.cpp",
+			"MU",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/cstdlib.cpp",
+			"MU",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/filebuf.cpp",
+			"MU",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/iostream.cpp",
+			"MU",
+			null
+		],
+		[
+			"F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/stat.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

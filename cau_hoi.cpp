@@ -1,6 +1,4 @@
 #include "cau_hoi.h"
-#include "mamh.h"
-#include "globals.h"
 #include <QString>
 #include <QFile>
 #include <QDebug>
@@ -109,18 +107,6 @@ int demCauHoi(CauHoi* head) {
         current = current->next;
     }
     return count;
-}
-
-int demTatCaCauHoi(ptrMonHoc root) {
-    if (root == nullptr) {
-        return 0;
-    }
-
-    int leftCount = demTatCaCauHoi(root->left);
-    int rightCount = demTatCaCauHoi(root->right);
-    int currentCount = demCauHoi(root->MH.headCauhoi);
-
-    return leftCount + rightCount + currentCount;
 }
 
 void duyetDSach(CauHoi* head) {

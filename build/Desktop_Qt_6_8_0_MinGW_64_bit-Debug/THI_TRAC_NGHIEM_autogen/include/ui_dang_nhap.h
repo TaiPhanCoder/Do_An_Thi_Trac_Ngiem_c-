@@ -44,6 +44,7 @@ public:
         centralwidget = new QWidget(Dang_Nhap);
         centralwidget->setObjectName("centralwidget");
         centralwidget->setGeometry(QRect(0, 0, 591, 431));
+        centralwidget->setStyleSheet(QString::fromUtf8(""));
         labelDN = new QLabel(centralwidget);
         labelDN->setObjectName("labelDN");
         labelDN->setGeometry(QRect(120, 30, 351, 61));
@@ -115,7 +116,7 @@ public:
         labelDN->setText(QCoreApplication::translate("Dang_Nhap", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt; font-weight:700; color:#ff0000;\">\304\220\304\203ng Nh\341\272\255p T\303\240i Kho\341\272\243n</span></p></body></html>", nullptr));
         logo->setText(QString());
         TaiKhoan->setPlaceholderText(QCoreApplication::translate("Dang_Nhap", "    T\303\240i Kho\341\272\243n", nullptr));
-        MatKhau->setPlaceholderText(QCoreApplication::translate("Dang_Nhap", "    M\341\272\255t Kh\341\272\251u", nullptr));
+        MatKhau->setPlaceholderText(QCoreApplication::translate("Dang_Nhap", "     M\341\272\255t Kh\341\272\251u", nullptr));
         DangNhapButton->setText(QCoreApplication::translate("Dang_Nhap", "\304\220\304\203ng Nh\341\272\255p", nullptr));
         sharingan->setText(QString());
         ThongBao->setText(QString());

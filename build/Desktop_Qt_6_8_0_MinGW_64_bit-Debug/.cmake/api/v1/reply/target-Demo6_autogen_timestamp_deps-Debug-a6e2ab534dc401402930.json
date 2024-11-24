@@ -1,0 +1,34 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"OpenXLSX/Examples/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 0,
+			"id" : "OpenXLSX::@a10863c5946955c16ed7"
+		}
+	],
+	"id" : "Demo6_autogen_timestamp_deps::@23e067449c913171a783",
+	"isGeneratorProvided" : true,
+	"name" : "Demo6_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "OpenXLSX/Examples",
+		"source" : "OpenXLSX/Examples"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

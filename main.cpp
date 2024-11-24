@@ -5,10 +5,12 @@
 #include "thong_tin_thi.h"
 
 #include <QApplication>
+#include <QPalette>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
     Dang_Nhap *loginDlg = new Dang_Nhap();
     if (loginDlg->exec() == QDialog::Accepted) {
 

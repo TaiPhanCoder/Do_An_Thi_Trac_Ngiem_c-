@@ -30,5 +30,6 @@ ptrMonHoc readFileAndBuildAVL();
 void duyetLNR(ptrMonHoc root, QStringList &danhSachMonHoc);
 ptrMonHoc loadToanBoCauHoi();
 void duyetLRN(ptrMonHoc p);
+int demTatCaCauHoi(ptrMonHoc root);
 
 #endif // MAMH_H

@@ -27,6 +27,6 @@ CauHoi* DsachCauHoiThi(CauHoi** cauhoiArray, int questions);
 void shuffleArray(CauHoi* arr[], int questions);
 void duyetDSach(CauHoi* head);
 CauHoi* taoNodeCauHoi(QString id, QString noiDung, QString A, QString B, QString C, QString D, QChar dapAnDung);
-
+int demCauHoi(CauHoi* head);
 
 #endif // CAU_HOI_H

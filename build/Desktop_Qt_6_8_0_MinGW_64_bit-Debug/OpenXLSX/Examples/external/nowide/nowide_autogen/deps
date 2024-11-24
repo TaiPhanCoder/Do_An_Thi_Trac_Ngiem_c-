@@ -1,0 +1,31 @@
+nowide_autogen/timestamp: \
+	C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/CMakeLists.txt \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/cmake/NowideAddWarnings.cmake \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/args.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/config.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/convert.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/cstdio.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/cstdlib.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/convert.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/is_path.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/is_string_container.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/detail/utf.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/filebuf.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/filesystem.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/fstream.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/iostream.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/replacement.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/stackstring.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/stat.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/utf/convert.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/utf/utf.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/utf8_codecvt.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/include/nowide/windows.hpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/cstdio.cpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/cstdlib.cpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/filebuf.cpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/iostream.cpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/Examples/external/nowide/src/stat.cpp \
+	F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
+	C:/Qt/Tools/CMake_64/bin/cmake.exe

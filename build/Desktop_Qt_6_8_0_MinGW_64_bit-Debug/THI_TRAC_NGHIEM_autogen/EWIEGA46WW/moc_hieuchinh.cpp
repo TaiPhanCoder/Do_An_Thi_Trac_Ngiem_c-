@@ -39,7 +39,6 @@ constexpr auto qt_meta_stringdata_CLASSHieuChinhENDCLASS = QtMocHelpers::stringD
     "setupComboBoxes",
     "",
     "thongBaoLoi",
-    "checkMSSV",
     "chinhSuaSinhVien",
     "capNhatThongTinSinhVien",
     "SinhVien*",
@@ -56,7 +55,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSHieuChinhENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,18 +63,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSHieuChinhENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   44,    2, 0x08,    1 /* Private */,
-       3,    0,   45,    2, 0x08,    2 /* Private */,
-       4,    0,   46,    2, 0x08,    3 /* Private */,
-       5,    0,   47,    2, 0x08,    4 /* Private */,
-       6,    1,   48,    2, 0x08,    5 /* Private */,
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    0,   39,    2, 0x08,    2 /* Private */,
+       4,    0,   40,    2, 0x08,    3 /* Private */,
+       5,    1,   41,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Bool,
-    QMetaType::Bool,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 7,    8,
+    QMetaType::Void, 0x80000000 | 6,    7,
 
        0        // eod
 };
@@ -92,8 +89,6 @@ Q_CONSTINIT const QMetaObject HieuChinh::staticMetaObject = { {
         // method 'setupComboBoxes'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'thongBaoLoi'
-        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
-        // method 'checkMSSV'
         QtPrivate::TypeAndForceComplete<bool, std::false_type>,
         // method 'chinhSuaSinhVien'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -113,10 +108,8 @@ void HieuChinh::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: _t->setupComboBoxes(); break;
         case 1: { bool _r = _t->thongBaoLoi();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 2: { bool _r = _t->checkMSSV();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 3: _t->chinhSuaSinhVien(); break;
-        case 4: _t->capNhatThongTinSinhVien((*reinterpret_cast< std::add_pointer_t<SinhVien*>>(_a[1]))); break;
+        case 2: _t->chinhSuaSinhVien(); break;
+        case 3: _t->capNhatThongTinSinhVien((*reinterpret_cast< std::add_pointer_t<SinhVien*>>(_a[1]))); break;
         default: ;
         }
     }
@@ -141,13 +134,13 @@ int HieuChinh::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 5;
+        _id -= 4;
     }
     return _id;
 }

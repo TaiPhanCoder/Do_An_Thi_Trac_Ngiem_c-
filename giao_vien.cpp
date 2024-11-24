@@ -37,8 +37,6 @@ GIao_Vien::~GIao_Vien()
     delete ui;
 }
 
-
-
 void GIao_Vien::showContextMenu(const QPoint &pos) {
     QModelIndex index = ui->bangDuLieu->indexAt(pos);
     if (!index.isValid()) {
@@ -129,6 +127,10 @@ void duyetDanhSach() {
 }
 
 void GIao_Vien::loadSinhVien() {
+    ui->bangDuLieu->clear();
+    QStringList headers;
+    headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
+    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
     int rows = demSinhVien();
     ui->bangDuLieu->setRowCount(rows);
     int row = 0;
@@ -243,7 +245,6 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
     }
 
     ui->bangDuLieu->setRowCount(0);
-    ui->bangDuLieu->setColumnCount(0);
 
     for (int i = 0; i < 10000; ++i) {
         if (danhSachLop[i] == nullptr) {
@@ -313,9 +314,16 @@ void GIao_Vien::on_cauHoi_clicked()
 {
     ui->tinhNangSinhVien->hide();
     ui->tinhNangCauHoi->show();
+
     ui->bangDuLieu->clear();
-    ui->bangDuLieu->setColumnCount(0);
-    ui->bangDuLieu->setRowCount(0);
+    ui->bangDuLieu->setColumnCount(3);
+
+    QStringList headers;
+    headers << "Mã MH" << "Tên Môn Học" << "Câu Hỏi";
+    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
+
+    int totalQuestions = demTatCaCauHoi(root);
+    ui->bangDuLieu->setRowCount(totalQuestions);
 }
 
 void GIao_Vien::on_sinhVien_clicked() {
@@ -341,9 +349,6 @@ void GIao_Vien::on_sinhVien_clicked() {
     ui->bangDuLieu->setColumnWidth(2, 150);
     ui->bangDuLieu->setColumnWidth(3, 200);
     ui->bangDuLieu->setColumnWidth(4, 150);
-    QStringList headers;
-    headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
-    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
     loadSinhVien();
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
     connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::timSinhVien);
@@ -416,3 +421,4 @@ void GIao_Vien::on_themNhieuSV_clicked()
     loadSinhVienTuFile(fileName);
     loadSinhVien();
 }
+
