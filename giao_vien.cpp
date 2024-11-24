@@ -14,7 +14,7 @@
 #include <QLineEdit>
 
 bool dasapxep = false;
-NodeMonHoc* root = loadToanBoCauHoi();
+NodeMonHoc* root = nullptr;
 
 GIao_Vien::GIao_Vien(QWidget *parent)
     : QMainWindow(parent)
@@ -25,6 +25,7 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
     QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);
     ui->logo->setPixmap(scaledPixmap);
+    root =loadToanBoCauHoi();
     on_sinhVien_clicked();
     ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
     loadLopVaoComboBox();
@@ -316,13 +317,13 @@ void GIao_Vien::on_cauHoi_clicked()
     ui->tinhNangCauHoi->show();
 
     ui->bangDuLieu->clear();
-    ui->bangDuLieu->setColumnCount(3);
+    ui->bangDuLieu->setColumnCount(7);
 
     QStringList headers;
-    headers << "Mã MH" << "Tên Môn Học" << "Câu Hỏi";
+    headers << "Mã MH" << "Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
-
     int totalQuestions = demTatCaCauHoi(root);
+    qDebug() << totalQuestions;
     ui->bangDuLieu->setRowCount(totalQuestions);
 }
 
@@ -408,9 +409,6 @@ void GIao_Vien::on_sapXep_clicked()
     loadSinhVien();
     qDebug() << "Đã sắp xếp danh sách sinh viên theo tên.";
 }
-
-
-
 
 void GIao_Vien::on_themNhieuSV_clicked()
 {

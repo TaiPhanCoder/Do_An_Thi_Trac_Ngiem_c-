@@ -20,7 +20,7 @@
       <x>0</x>
       <y>180</y>
       <width>321</width>
-      <height>681</height>
+      <height>641</height>
      </rect>
     </property>
     <property name="title">
@@ -315,7 +315,7 @@ QComboBox QAbstractItemView {
       <x>325</x>
       <y>191</y>
       <width>1201</width>
-      <height>671</height>
+      <height>631</height>
      </rect>
     </property>
    </widget>

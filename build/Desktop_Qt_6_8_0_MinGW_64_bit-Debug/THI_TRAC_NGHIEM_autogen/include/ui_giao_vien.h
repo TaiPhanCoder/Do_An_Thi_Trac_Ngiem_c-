@@ -63,7 +63,7 @@ public:
         centralwidget->setObjectName("centralwidget");
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(0, 180, 321, 681));
+        groupBox->setGeometry(QRect(0, 180, 321, 641));
         pushButton = new QPushButton(groupBox);
         pushButton->setObjectName("pushButton");
         pushButton->setGeometry(QRect(80, 180, 151, 61));
@@ -199,7 +199,7 @@ public:
 ""));
         bangDuLieu = new QTableWidget(centralwidget);
         bangDuLieu->setObjectName("bangDuLieu");
-        bangDuLieu->setGeometry(QRect(325, 191, 1201, 671));
+        bangDuLieu->setGeometry(QRect(325, 191, 1201, 631));
         tinhNangCauHoi = new QGroupBox(centralwidget);
         tinhNangCauHoi->setObjectName("tinhNangCauHoi");
         tinhNangCauHoi->setGeometry(QRect(320, 0, 1201, 191));

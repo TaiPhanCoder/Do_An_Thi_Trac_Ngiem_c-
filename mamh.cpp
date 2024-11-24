@@ -240,6 +240,7 @@ int demNode(ptrMonHoc p) {
 
 int demTatCaCauHoi(ptrMonHoc root) {
     if (root == nullptr) {
+        qDebug() << "Null lun r bay oi";
         return 0;
     }
 
@@ -247,12 +248,18 @@ int demTatCaCauHoi(ptrMonHoc root) {
     int rightCount = demTatCaCauHoi(root->right);
     int currentCount = demCauHoi(root->MH.headCauhoi);
 
+    // Debug thông tin nội dung các câu hỏi
+    CauHoi* cauhoi = root->MH.headCauhoi;
+    while (cauhoi != nullptr) {
+        qDebug() << "Nội dung câu hỏi:" << cauhoi->noiDung;
+        cauhoi = cauhoi->next;
+    }
     return leftCount + rightCount + currentCount;
 }
 
 ptrMonHoc loadToanBoCauHoi() {
     ptrMonHoc root = nullptr;
-    QFile file(":/TK-MK-PTIT/TK-MK.txt");
+    QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qWarning() << "Không thể mở file!";
         return root;
@@ -260,6 +267,8 @@ ptrMonHoc loadToanBoCauHoi() {
 
     QTextStream in(&file);
     ptrMonHoc currentNode = nullptr;
+    CauHoi* tail = nullptr;
+
     while (!in.atEnd()) {
         QString line = in.readLine().trimmed();
         QStringList parts = line.split("|");
@@ -270,8 +279,12 @@ ptrMonHoc loadToanBoCauHoi() {
             QString tenmh = parts[1].trimmed();
             root = insertNodeAVL(root, mamh, tenmh);
             currentNode = SearchNode(root, mamh);
+            tail = nullptr;  // Đặt lại tail về null khi chuyển sang môn học mới
+
+            if (currentNode == nullptr) {
+                qDebug() << "Lỗi: Không tìm thấy node môn học sau khi thêm mã môn học:" << mamh;
+            }
         }
-        // Nếu là câu hỏi
         else if (parts.size() == 7 && currentNode != nullptr) {
             QString id = parts[0];
             QString noiDung = parts[1];
@@ -283,15 +296,18 @@ ptrMonHoc loadToanBoCauHoi() {
 
             CauHoi* newCauHoi = taoNodeCauHoi(id, noiDung, A, B, C, D, dapAnDung);
 
+            if (newCauHoi == nullptr) {
+                qDebug() << "Lỗi: Không thể tạo node câu hỏi với ID:" << id;
+                continue;
+            }
+
             // Thêm câu hỏi vào danh sách liên kết đơn của môn học hiện tại
             if (currentNode->MH.headCauhoi == nullptr) {
                 currentNode->MH.headCauhoi = newCauHoi;
+                tail = newCauHoi;  // Tail sẽ là node đầu tiên
             } else {
-                CauHoi* temp = currentNode->MH.headCauhoi;
-                while (temp->next != nullptr) {
-                    temp = temp->next;
-                }
-                temp->next = newCauHoi;
+                tail->next = newCauHoi;  // Thêm node mới vào sau tail
+                tail = newCauHoi;        // Cập nhật lại tail là node vừa thêm
             }
         }
     }
@@ -299,3 +315,4 @@ ptrMonHoc loadToanBoCauHoi() {
     file.close();
     return root;
 }
+

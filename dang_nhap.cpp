@@ -90,8 +90,6 @@ void Dang_Nhap::lapdssinhvien(const QString &filename) {
                     }
                     tail->next = newSV;
                 }
-
-                qDebug() << "Mã lớp:" << currentLop->MALOP << "| Mã SV:" << newSV->masv;
             } else {
                 qDebug() << "Invalid student line format: " << line;
             }
@@ -119,7 +117,6 @@ void Dang_Nhap::on_DangNhapButton_clicked() {
 
 void Dang_Nhap::on_sharingan_clicked()
 {
-    qDebug() << "Sharingan button clicked!"; // Kiểm tra xem phương thức có được gọi
     if(ui->MatKhau->echoMode() == QLineEdit::Password) {
         ui->MatKhau->setEchoMode(QLineEdit::Normal); // Hiển thị mật khẩu
     } else {

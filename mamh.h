@@ -12,7 +12,7 @@ public:
 struct MonHoc {
     QString MAMH;  // Mã môn học
     QString TENMH; // Tên môn học
-    CauHoi *headCauhoi;
+    CauHoi *headCauhoi = nullptr;
 };
 
 // Hàm tạo node mới
