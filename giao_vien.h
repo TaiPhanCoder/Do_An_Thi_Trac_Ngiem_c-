@@ -6,6 +6,7 @@
 #include <QAction>
 #include <QTableWidget>
 #include "ui_giao_vien.h"
+#include "mamh.h"
 
 namespace Ui {
 class GIao_Vien;
@@ -34,16 +35,20 @@ private slots:
     void on_sapXep_clicked();
     void on_themNhieuSV_clicked();
     void loadLopVaoComboBox();
+    bool eventFilter(QObject *watched, QEvent *event);
+    void dsMonHoc(NodeMonHoc* root);
     void loadSinhVienLop(const QString &lop);
     void onLopComboBoxChanged(int index);
     void setupComboBoxFilter(QComboBox *comboBox);
     void on_cauHoi_clicked();
+    void loadCauHoi(ptrMonHoc root, int &row);
 
 private:
     Ui::GIao_Vien *ui;
     QMenu *contextMenu;
     QAction *editAction;
     QAction *deleteAction;
+    bool isEditing = false;
 };
 
 

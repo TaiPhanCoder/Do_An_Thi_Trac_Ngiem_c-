@@ -115,7 +115,7 @@ ptrMonHoc readFileAndBuildAVL() {
         QStringList parts = line.split("|");
 
         // Kiểm tra nếu dòng có đúng 3 phần
-        if (parts.size() == 3) {
+        if (parts.size() == 2) {
             QString mamh = parts[0].trimmed();  // Mã môn học
             QString tenmh = parts[1].trimmed(); // Tên môn học
             root = insertNodeAVL(root, mamh, tenmh); // Thêm node vào cây AVL
@@ -247,13 +247,6 @@ int demTatCaCauHoi(ptrMonHoc root) {
     int leftCount = demTatCaCauHoi(root->left);
     int rightCount = demTatCaCauHoi(root->right);
     int currentCount = demCauHoi(root->MH.headCauhoi);
-
-    // Debug thông tin nội dung các câu hỏi
-    CauHoi* cauhoi = root->MH.headCauhoi;
-    while (cauhoi != nullptr) {
-        qDebug() << "Nội dung câu hỏi:" << cauhoi->noiDung;
-        cauhoi = cauhoi->next;
-    }
     return leftCount + rightCount + currentCount;
 }
 

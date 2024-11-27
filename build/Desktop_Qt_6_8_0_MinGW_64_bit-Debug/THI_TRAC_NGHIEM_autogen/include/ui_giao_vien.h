@@ -45,12 +45,12 @@ public:
     QComboBox *locLop;
     QTableWidget *bangDuLieu;
     QGroupBox *tinhNangCauHoi;
-    QLineEdit *timMSSV_3;
+    QLineEdit *timCauHoi;
     QLabel *label_4;
     QGroupBox *themSinhVien_3;
     QPushButton *them1sv_3;
     QPushButton *themNhieuSV_3;
-    QComboBox *locLop_3;
+    QComboBox *locCauHoi;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -203,10 +203,10 @@ public:
         tinhNangCauHoi = new QGroupBox(centralwidget);
         tinhNangCauHoi->setObjectName("tinhNangCauHoi");
         tinhNangCauHoi->setGeometry(QRect(320, 0, 1201, 191));
-        timMSSV_3 = new QLineEdit(tinhNangCauHoi);
-        timMSSV_3->setObjectName("timMSSV_3");
-        timMSSV_3->setGeometry(QRect(10, 60, 261, 28));
-        timMSSV_3->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+        timCauHoi = new QLineEdit(tinhNangCauHoi);
+        timCauHoi->setObjectName("timCauHoi");
+        timCauHoi->setGeometry(QRect(10, 60, 261, 28));
+        timCauHoi->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 10px;\n"
 "background-color: #F0F0F0;\n"
 "color: black;\n"
@@ -238,10 +238,10 @@ public:
 "font-size: 16px;\n"
 "font-weight: bold;\n"
 "box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
-        locLop_3 = new QComboBox(tinhNangCauHoi);
-        locLop_3->setObjectName("locLop_3");
-        locLop_3->setGeometry(QRect(310, 120, 251, 51));
-        locLop_3->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+        locCauHoi = new QComboBox(tinhNangCauHoi);
+        locCauHoi->setObjectName("locCauHoi");
+        locCauHoi->setGeometry(QRect(310, 120, 251, 51));
+        locCauHoi->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "	border: 2px solid gray;\n"
 "	border-radius: 20px;\n"
 "	background-color: #F0F0F0;\n"
@@ -309,12 +309,12 @@ public:
         sapXep->setText(QCoreApplication::translate("GIao_Vien", "S\341\272\257p x\341\272\277p theo t\303\252n", nullptr));
         locLop->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "                      L\341\273\215c L\341\273\233p", nullptr));
         tinhNangCauHoi->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
-        timMSSV_3->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "MSSV", nullptr));
+        timCauHoi->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "T\303\254m C\303\242u H\341\273\217i", nullptr));
         label_4->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));
         themSinhVien_3->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m Sinh Vi\303\252n", nullptr));
         them1sv_3->setText(QCoreApplication::translate("GIao_Vien", "M\341\273\231t Ng\306\260\341\273\235i", nullptr));
         themNhieuSV_3->setText(QCoreApplication::translate("GIao_Vien", "Danh S\303\241ch", nullptr));
-        locLop_3->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "                      L\341\273\215c L\341\273\233p", nullptr));
+        locCauHoi->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "                   L\341\273\215c C\303\242u H\341\273\217i", nullptr));
     } // retranslateUi
 
 };

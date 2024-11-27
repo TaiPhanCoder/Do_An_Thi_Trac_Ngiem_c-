@@ -28,9 +28,12 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     root =loadToanBoCauHoi();
     on_sinhVien_clicked();
     ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    loadLopVaoComboBox();
-    connect(ui->locLop, &QComboBox::currentIndexChanged, this, &GIao_Vien::onLopComboBoxChanged);
     setupComboBoxFilter(ui->locLop);
+    connect(ui->locLop, QOverload<int>::of(&QComboBox::activated), this, [this]() {
+        ui->locLop->setEditable(false); // Tắt chỉnh sửa khi người dùng chọn mục
+    });
+    loadLopVaoComboBox();
+    dsMonHoc(root);
 }
 
 GIao_Vien::~GIao_Vien()
@@ -203,6 +206,22 @@ void GIao_Vien::timSinhVien(const QString &text) {
     }
 }
 
+void GIao_Vien::dsMonHoc(NodeMonHoc* root) {
+    if (root == nullptr) {
+        return;
+    }
+
+    dsMonHoc(root->left);
+
+    ui->locCauHoi->addItem(root->MH.MAMH);
+
+    int index = ui->locCauHoi->count() - 1;
+    ui->locCauHoi->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
+
+    dsMonHoc(root->right);
+}
+
+
 void GIao_Vien::loadLopVaoComboBox() {
     ui->locLop->clear();
 
@@ -220,23 +239,31 @@ void GIao_Vien::loadLopVaoComboBox() {
     }
 }
 
-void GIao_Vien::setupComboBoxFilter(QComboBox *comboBox) {
-    // Thiết lập completer để bật chức năng lọc các mục trong combobox
-    QCompleter *completer = new QCompleter(comboBox);
-    completer->setCaseSensitivity(Qt::CaseInsensitive); // Không phân biệt chữ hoa chữ thường khi lọc
-    completer->setFilterMode(Qt::MatchContains); // Lọc theo các mục chứa chuỗi nhập vào
-    comboBox->setCompleter(completer);
-
-    comboBox->setEditable(true); // Cho phép người dùng điền vào combobox
-
-    // Tự động chuyển đổi đầu vào của người dùng thành chữ in hoa
-    QLineEdit *lineEdit = comboBox->lineEdit();
-    if (lineEdit) {
-        connect(lineEdit, &QLineEdit::textEdited, this, [comboBox](const QString &text) {
-            QString upperText = text.toUpper(); // Chuyển đổi văn bản thành chữ in hoa
-            comboBox->setEditText(upperText); // Cập nhật lại văn bản trong combobox
-        });
+bool GIao_Vien::eventFilter(QObject *watched, QEvent *event) {
+    if (watched == ui->locLop && event->type() == QEvent::MouseButtonPress) {
+        // Kiểm tra trạng thái chỉnh sửa
+        if (ui->locLop->isEditable()) {
+            ui->locLop->setEditable(false); // Tắt chỉnh sửa và sổ danh sách
+            ui->locLop->showPopup();
+        } else {
+            ui->locLop->setEditable(true);  // Bật chỉnh sửa
+            ui->locLop->lineEdit()->setFocus();
+        }
+        return true; // Ngăn sự kiện được xử lý tiếp
     }
+    return QMainWindow::eventFilter(watched, event);
+}
+
+
+void GIao_Vien::setupComboBoxFilter(QComboBox *comboBox) {
+    comboBox->setEditable(false); // Mặc định không cho chỉnh sửa
+    comboBox->installEventFilter(this); // Cài đặt bộ lọc sự kiện
+
+    // Thêm QCompleter để hỗ trợ gợi ý
+    QCompleter *completer = new QCompleter(comboBox);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+    completer->setFilterMode(Qt::MatchContains);
+    comboBox->setCompleter(completer);
 }
 
 void GIao_Vien::loadSinhVienLop(const QString &lop) {
@@ -319,12 +346,50 @@ void GIao_Vien::on_cauHoi_clicked()
     ui->bangDuLieu->clear();
     ui->bangDuLieu->setColumnCount(7);
 
+    ui->bangDuLieu->setColumnWidth(0, 100);
+    ui->bangDuLieu->setColumnWidth(1, 250);
+    ui->bangDuLieu->setColumnWidth(2, 300);
+    ui->bangDuLieu->setColumnWidth(3, 200);
+    ui->bangDuLieu->setColumnWidth(4, 200);
+    ui->bangDuLieu->setColumnWidth(5, 200);
+    ui->bangDuLieu->setColumnWidth(6, 200);
+
     QStringList headers;
     headers << "Mã MH" << "Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
     int totalQuestions = demTatCaCauHoi(root);
     qDebug() << totalQuestions;
     ui->bangDuLieu->setRowCount(totalQuestions);
+    int row = 0;
+    loadCauHoi(root, row);
+}
+
+void GIao_Vien::loadCauHoi(ptrMonHoc root, int &row)
+{
+    if (root == nullptr) {
+        qDebug() << "Root la nullptr, tra ve.";
+        return;
+    }
+
+    qDebug() << "Dang load cay con ben trai cua: " << root->MH.MAMH;
+    loadCauHoi(root->left, row);
+
+    CauHoi* cauHoi = root->MH.headCauhoi;
+    while (cauHoi != nullptr) {
+        qDebug() << "Dang load cau hoi: " << cauHoi->noiDung;
+        ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(root->MH.MAMH));
+        ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(root->MH.TENMH));
+        ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(cauHoi->noiDung));
+        ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(cauHoi->A));
+        ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(cauHoi->B));
+        ui->bangDuLieu->setItem(row, 5, new QTableWidgetItem(cauHoi->C));
+        ui->bangDuLieu->setItem(row, 6, new QTableWidgetItem(cauHoi->D));
+        cauHoi = cauHoi->next;
+        row++;
+    }
+
+    qDebug() << "Dang load cay con ben phai cua: " << root->MH.MAMH;
+    loadCauHoi(root->right, row);
 }
 
 void GIao_Vien::on_sinhVien_clicked() {

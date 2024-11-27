@@ -109,7 +109,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="resources.qrc">:/logo/ad27bc12ca81e862ceb35328122757ee.png</pixmap>
+     <pixmap>:/logo/ad27bc12ca81e862ceb35328122757ee.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -331,7 +331,7 @@ QComboBox QAbstractItemView {
     <property name="title">
      <string>Tính Năng</string>
     </property>
-    <widget class="QLineEdit" name="timMSSV_3">
+    <widget class="QLineEdit" name="timCauHoi">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -349,7 +349,7 @@ font-size: 16px;
 padding-left: 85px;</string>
      </property>
      <property name="placeholderText">
-      <string>MSSV</string>
+      <string>Tìm Câu Hỏi</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
@@ -422,7 +422,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
       </property>
      </widget>
     </widget>
-    <widget class="QComboBox" name="locLop_3">
+    <widget class="QComboBox" name="locCauHoi">
      <property name="geometry">
       <rect>
        <x>310</x>
@@ -469,7 +469,7 @@ QComboBox QAbstractItemView {
 </string>
      </property>
      <property name="placeholderText">
-      <string>                      Lọc Lớp</string>
+      <string>                   Lọc Câu Hỏi</string>
      </property>
     </widget>
    </widget>
@@ -486,8 +486,6 @@ QComboBox QAbstractItemView {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
