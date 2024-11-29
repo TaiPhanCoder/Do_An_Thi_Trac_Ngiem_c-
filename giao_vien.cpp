@@ -29,11 +29,7 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     on_sinhVien_clicked();
     ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
     setupComboBoxFilter(ui->locLop);
-    connect(ui->locLop, QOverload<int>::of(&QComboBox::activated), this, [this]() {
-        ui->locLop->setEditable(false); // Tắt chỉnh sửa khi người dùng chọn mục
-    });
     loadLopVaoComboBox();
-    dsMonHoc(root);
 }
 
 GIao_Vien::~GIao_Vien()
@@ -206,21 +202,91 @@ void GIao_Vien::timSinhVien(const QString &text) {
     }
 }
 
-void GIao_Vien::dsMonHoc(NodeMonHoc* root) {
+void GIao_Vien::dsMonHoc(NodeMonHoc* root, bool isFirst) {
     if (root == nullptr) {
         return;
     }
 
-    dsMonHoc(root->left);
+    // Nếu là lần đầu tiên, xóa tất cả các item cũ trong combobox trước khi thêm mới
+    if (isFirst) {
+        ui->locCauHoi->clear();
+        ui->locCauHoi->insertItem(0, "Tất Cả Câu Hỏi");
+        int indexAllQuestions = 0;
+        ui->locCauHoi->setItemData(indexAllQuestions, Qt::AlignCenter, Qt::TextAlignmentRole);
+    }
 
-    ui->locCauHoi->addItem(root->MH.MAMH);
-
+    ui->locCauHoi->addItem(root->MH.TENMH, QVariant::fromValue(root->MH.MAMH));
     int index = ui->locCauHoi->count() - 1;
     ui->locCauHoi->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
 
-    dsMonHoc(root->right);
+    dsMonHoc(root->left, false);
+
+    dsMonHoc(root->right, false);
 }
 
+void GIao_Vien::locCauHoi(const QString& selectedCauHoi) {
+    ui->bangDuLieu->clear();
+    ui->bangDuLieu->setRowCount(0);
+    int row = 0;
+
+    // Nếu người dùng chọn "Tất Cả Câu Hỏi"
+    if (selectedCauHoi == "Tất Cả Câu Hỏi") {
+        // Lấy tổng số câu hỏi trong toàn bộ cây
+        int totalQuestions = demTatCaCauHoi(root);
+        ui->bangDuLieu->setRowCount(totalQuestions);  // Cập nhật số dòng của bảng
+        loadCauHoi(root, row);  // Tải tất cả câu hỏi vào bảng
+        return;  // Dừng hàm ngay tại đây, không cần duyệt cây nữa
+    }
+
+    // Tìm mã môn học (MAMH) từ itemData trong combobox
+    QString selectedMAMH = "";
+    int count = ui->locCauHoi->count();
+    for (int i = 0; i < count; ++i) {
+        if (ui->locCauHoi->itemText(i) == selectedCauHoi) {
+            selectedMAMH = ui->locCauHoi->itemData(i).toString();  // Lấy MAMH từ itemData
+            break;
+        }
+    }
+
+    // Duyệt qua cây để tìm mã môn học (MAMH) tương ứng
+    NodeMonHoc* current = root;
+    while (current != nullptr) {
+        if (current->MH.MAMH == selectedMAMH) {
+            CauHoi* currentCauHoi = current->MH.headCauhoi;
+            while (currentCauHoi != nullptr) {
+                QTableWidgetItem* mamhItem = new QTableWidgetItem(current->MH.MAMH);
+                QTableWidgetItem* tenmhItem = new QTableWidgetItem(current->MH.TENMH);
+                QTableWidgetItem* cauHoiItem = new QTableWidgetItem(currentCauHoi->noiDung);
+                QTableWidgetItem* answerAItem = new QTableWidgetItem(currentCauHoi->A);
+                QTableWidgetItem* answerBItem = new QTableWidgetItem(currentCauHoi->B);
+                QTableWidgetItem* answerCItem = new QTableWidgetItem(currentCauHoi->C);
+                QTableWidgetItem* answerDItem = new QTableWidgetItem(currentCauHoi->D);
+
+                ui->bangDuLieu->insertRow(row);
+                ui->bangDuLieu->setItem(row, 0, mamhItem);
+                ui->bangDuLieu->setItem(row, 1, tenmhItem);
+                ui->bangDuLieu->setItem(row, 2, cauHoiItem);
+                ui->bangDuLieu->setItem(row, 3, answerAItem);
+                ui->bangDuLieu->setItem(row, 4, answerBItem);
+                ui->bangDuLieu->setItem(row, 5, answerCItem);
+                ui->bangDuLieu->setItem(row, 6, answerDItem);
+
+                currentCauHoi = currentCauHoi->next;
+                row++;
+            }
+            break; // Dừng duyệt khi đã tìm thấy và xử lý môn học
+        } else if (selectedMAMH < current->MH.MAMH) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+    }
+}
+
+void GIao_Vien::onCauHoiComboBoxChanged(int index) {
+    QString selectedCauHoi = ui->locCauHoi->itemText(index);
+    locCauHoi(selectedCauHoi);
+}
 
 void GIao_Vien::loadLopVaoComboBox() {
     ui->locLop->clear();
@@ -239,25 +305,13 @@ void GIao_Vien::loadLopVaoComboBox() {
     }
 }
 
-bool GIao_Vien::eventFilter(QObject *watched, QEvent *event) {
-    if (watched == ui->locLop && event->type() == QEvent::MouseButtonPress) {
-        // Kiểm tra trạng thái chỉnh sửa
-        if (ui->locLop->isEditable()) {
-            ui->locLop->setEditable(false); // Tắt chỉnh sửa và sổ danh sách
-            ui->locLop->showPopup();
-        } else {
-            ui->locLop->setEditable(true);  // Bật chỉnh sửa
-            ui->locLop->lineEdit()->setFocus();
-        }
-        return true; // Ngăn sự kiện được xử lý tiếp
-    }
-    return QMainWindow::eventFilter(watched, event);
+void GIao_Vien::onLopComboBoxChanged(int index) {
+    QString selectedLop = ui->locLop->itemText(index);
+    loadSinhVienLop(selectedLop);
 }
 
-
 void GIao_Vien::setupComboBoxFilter(QComboBox *comboBox) {
-    comboBox->setEditable(false); // Mặc định không cho chỉnh sửa
-    comboBox->installEventFilter(this); // Cài đặt bộ lọc sự kiện
+    comboBox->setEditable(true); // Mặc định không cho chỉnh sửa
 
     // Thêm QCompleter để hỗ trợ gợi ý
     QCompleter *completer = new QCompleter(comboBox);
@@ -293,11 +347,6 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
             }
         }
     }
-}
-
-void GIao_Vien::onLopComboBoxChanged(int index) {
-    QString selectedLop = ui->locLop->itemText(index);
-    loadSinhVienLop(selectedLop);
 }
 
 void GIao_Vien::on_them1sv_clicked() {
@@ -358,10 +407,12 @@ void GIao_Vien::on_cauHoi_clicked()
     headers << "Mã MH" << "Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
     int totalQuestions = demTatCaCauHoi(root);
-    qDebug() << totalQuestions;
-    ui->bangDuLieu->setRowCount(totalQuestions);
     int row = 0;
+    ui->bangDuLieu->setRowCount(totalQuestions);
     loadCauHoi(root, row);
+    connect(ui->locCauHoi, SIGNAL(currentIndexChanged(int)), this, SLOT(onCauHoiComboBoxChanged(int)));
+    bool isFirst = true;
+    dsMonHoc(root, isFirst);
 }
 
 void GIao_Vien::loadCauHoi(ptrMonHoc root, int &row)
@@ -415,6 +466,8 @@ void GIao_Vien::on_sinhVien_clicked() {
     ui->bangDuLieu->setColumnWidth(2, 150);
     ui->bangDuLieu->setColumnWidth(3, 200);
     ui->bangDuLieu->setColumnWidth(4, 150);
+    connect(ui->locLop, QOverload<int>::of(&QComboBox::currentIndexChanged),
+            this, &GIao_Vien::onLopComboBoxChanged);
     loadSinhVien();
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
     connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::timSinhVien);

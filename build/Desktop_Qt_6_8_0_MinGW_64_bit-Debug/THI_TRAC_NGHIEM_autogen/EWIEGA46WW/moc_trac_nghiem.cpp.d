@@ -1,5 +1,5 @@
-F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/EWIEGA46WW/moc_trac_nghiem.cpp: F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.h \
-  F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h \
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/EWIEGA46WW/moc_trac_nghiem.cpp: D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.h \
+  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QFile \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20iterator.h \
@@ -412,4 +412,4 @@ F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
-  F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.h
+  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.h

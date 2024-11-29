@@ -51,7 +51,7 @@ add_library(OpenXLSX::OpenXLSX STATIC IMPORTED)
 
 set_target_properties(OpenXLSX::OpenXLSX PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "OPENXLSX_STATIC_DEFINE"
-  INTERFACE_INCLUDE_DIRECTORIES "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX;F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/headers;F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX"
+  INTERFACE_INCLUDE_DIRECTORIES "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX;D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/headers;D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX"
   INTERFACE_LINK_LIBRARIES "\$<LINK_ONLY:Zippy>;\$<LINK_ONLY:PugiXML>;\$<LINK_ONLY:NoWide>"
 )
 
@@ -59,7 +59,7 @@ set_target_properties(OpenXLSX::OpenXLSX PROPERTIES
 set_property(TARGET OpenXLSX::OpenXLSX APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(OpenXLSX::OpenXLSX PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/output/libOpenXLSXd.a"
+  IMPORTED_LOCATION_DEBUG "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/output/libOpenXLSXd.a"
   )
 
 # This file does not depend on other imported targets which have

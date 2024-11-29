@@ -289,7 +289,7 @@ rule CXX_EXECUTABLE_LINKER__OpenXLSXTests_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SF:\DO_AN_THI_TRAC_NGHIEM\Do_An_Thi_Trac_Ngiem_c- -BF:\DO_AN_THI_TRAC_NGHIEM\Do_An_Thi_Trac_Ngiem_c-\build\Desktop_Qt_6_8_0_MinGW_64_bit-Debug
+  command = C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SD:\DO_AN_THI_TRAC_NGHIEM\Do_An_Thi_Trac_Ngiem_c- -BD:\DO_AN_THI_TRAC_NGHIEM\Do_An_Thi_Trac_Ngiem_c-\build\Desktop_Qt_6_8_0_MinGW_64_bit-Debug
   description = Re-running CMake...
   generator = 1
 

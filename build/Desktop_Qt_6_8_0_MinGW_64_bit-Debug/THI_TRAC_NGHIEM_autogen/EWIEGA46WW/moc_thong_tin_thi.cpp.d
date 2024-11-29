@@ -1,5 +1,5 @@
-F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/EWIEGA46WW/moc_thong_tin_thi.cpp: F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.h \
-  F:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h \
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/EWIEGA46WW/moc_thong_tin_thi.cpp: D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.h \
+  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20iterator.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20memory.h \

@@ -109,7 +109,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>:/logo/ad27bc12ca81e862ceb35328122757ee.png</pixmap>
+     <pixmap resource="resources.qrc">:/logo/ad27bc12ca81e862ceb35328122757ee.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -486,6 +486,8 @@ QComboBox QAbstractItemView {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -35,8 +35,9 @@ private slots:
     void on_sapXep_clicked();
     void on_themNhieuSV_clicked();
     void loadLopVaoComboBox();
-    bool eventFilter(QObject *watched, QEvent *event);
-    void dsMonHoc(NodeMonHoc* root);
+    void dsMonHoc(NodeMonHoc* root, bool isFirst);
+    void onCauHoiComboBoxChanged(int index);
+    void locCauHoi(const QString& selectedCauHoi);
     void loadSinhVienLop(const QString &lop);
     void onLopComboBoxChanged(int index);
     void setupComboBoxFilter(QComboBox *comboBox);
@@ -48,7 +49,6 @@ private:
     QMenu *contextMenu;
     QAction *editAction;
     QAction *deleteAction;
-    bool isEditing = false;
 };
 
 
