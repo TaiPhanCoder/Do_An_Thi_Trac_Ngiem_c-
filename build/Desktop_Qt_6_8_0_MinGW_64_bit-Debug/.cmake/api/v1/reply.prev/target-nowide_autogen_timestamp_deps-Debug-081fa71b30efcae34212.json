@@ -1,0 +1,27 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"OpenXLSX/Examples/external/nowide/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"id" : "nowide_autogen_timestamp_deps::@74a63cb021cde974a5fb",
+	"isGeneratorProvided" : true,
+	"name" : "nowide_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "OpenXLSX/Examples/external/nowide",
+		"source" : "OpenXLSX/Examples/external/nowide"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

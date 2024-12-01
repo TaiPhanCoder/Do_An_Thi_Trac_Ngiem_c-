@@ -6,6 +6,7 @@
 #include"lop.h"
 #include "mamh.h"
 #include"them_sinh_vien.h"
+#include "themcauhoi.h"
 #include<QDebug>
 #include<QTableWidget>
 #include <QFileDialog>
@@ -225,20 +226,16 @@ void GIao_Vien::dsMonHoc(NodeMonHoc* root, bool isFirst) {
 }
 
 void GIao_Vien::locCauHoi(const QString& selectedCauHoi) {
-    ui->bangDuLieu->clear();
     ui->bangDuLieu->setRowCount(0);
     int row = 0;
 
-    // Nếu người dùng chọn "Tất Cả Câu Hỏi"
     if (selectedCauHoi == "Tất Cả Câu Hỏi") {
-        // Lấy tổng số câu hỏi trong toàn bộ cây
         int totalQuestions = demTatCaCauHoi(root);
-        ui->bangDuLieu->setRowCount(totalQuestions);  // Cập nhật số dòng của bảng
-        loadCauHoi(root, row);  // Tải tất cả câu hỏi vào bảng
-        return;  // Dừng hàm ngay tại đây, không cần duyệt cây nữa
+        ui->bangDuLieu->setRowCount(totalQuestions);
+        loadCauHoi(root, row);
+        return;
     }
 
-    // Tìm mã môn học (MAMH) từ itemData trong combobox
     QString selectedMAMH = "";
     int count = ui->locCauHoi->count();
     for (int i = 0; i < count; ++i) {
@@ -248,7 +245,6 @@ void GIao_Vien::locCauHoi(const QString& selectedCauHoi) {
         }
     }
 
-    // Duyệt qua cây để tìm mã môn học (MAMH) tương ứng
     NodeMonHoc* current = root;
     while (current != nullptr) {
         if (current->MH.MAMH == selectedMAMH) {
@@ -286,6 +282,12 @@ void GIao_Vien::locCauHoi(const QString& selectedCauHoi) {
 void GIao_Vien::onCauHoiComboBoxChanged(int index) {
     QString selectedCauHoi = ui->locCauHoi->itemText(index);
     locCauHoi(selectedCauHoi);
+}
+
+void GIao_Vien::on_Them1CauHoi_clicked()
+{
+    themcauhoi dialog(this, root);
+    dialog.exec();
 }
 
 void GIao_Vien::loadLopVaoComboBox() {
@@ -537,4 +539,3 @@ void GIao_Vien::on_themNhieuSV_clicked()
     loadSinhVienTuFile(fileName);
     loadSinhVien();
 }
-

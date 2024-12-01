@@ -272,14 +272,14 @@ ptrMonHoc loadToanBoCauHoi() {
             QString tenmh = parts[1].trimmed();
             root = insertNodeAVL(root, mamh, tenmh);
             currentNode = SearchNode(root, mamh);
-            tail = nullptr;  // Đặt lại tail về null khi chuyển sang môn học mới
+            tail = nullptr;
 
             if (currentNode == nullptr) {
                 qDebug() << "Lỗi: Không tìm thấy node môn học sau khi thêm mã môn học:" << mamh;
             }
         }
         else if (parts.size() == 7 && currentNode != nullptr) {
-            QString id = parts[0];
+            int id = parts[0].toInt();
             QString noiDung = parts[1];
             QString A = parts[2];
             QString B = parts[3];

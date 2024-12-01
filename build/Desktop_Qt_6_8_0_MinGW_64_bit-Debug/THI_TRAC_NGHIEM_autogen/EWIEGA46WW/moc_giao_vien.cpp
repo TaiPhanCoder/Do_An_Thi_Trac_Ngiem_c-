@@ -66,7 +66,8 @@ constexpr auto qt_meta_stringdata_CLASSGIao_VienENDCLASS = QtMocHelpers::stringD
     "on_cauHoi_clicked",
     "loadCauHoi",
     "ptrMonHoc",
-    "int&"
+    "int&",
+    "on_Them1CauHoi_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -79,7 +80,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      19,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -87,24 +88,25 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  122,    2, 0x08,    1 /* Private */,
-       4,    0,  125,    2, 0x08,    3 /* Private */,
-       5,    1,  126,    2, 0x08,    4 /* Private */,
-       7,    1,  129,    2, 0x08,    6 /* Private */,
-       8,    0,  132,    2, 0x08,    8 /* Private */,
-       9,    0,  133,    2, 0x08,    9 /* Private */,
-      10,    0,  134,    2, 0x08,   10 /* Private */,
-      11,    0,  135,    2, 0x08,   11 /* Private */,
-      12,    0,  136,    2, 0x08,   12 /* Private */,
-      13,    0,  137,    2, 0x08,   13 /* Private */,
-      14,    2,  138,    2, 0x08,   14 /* Private */,
-      18,    1,  143,    2, 0x08,   17 /* Private */,
-      20,    1,  146,    2, 0x08,   19 /* Private */,
-      22,    1,  149,    2, 0x08,   21 /* Private */,
-      24,    1,  152,    2, 0x08,   23 /* Private */,
-      25,    1,  155,    2, 0x08,   25 /* Private */,
-      28,    0,  158,    2, 0x08,   27 /* Private */,
-      29,    2,  159,    2, 0x08,   28 /* Private */,
+       1,    1,  128,    2, 0x08,    1 /* Private */,
+       4,    0,  131,    2, 0x08,    3 /* Private */,
+       5,    1,  132,    2, 0x08,    4 /* Private */,
+       7,    1,  135,    2, 0x08,    6 /* Private */,
+       8,    0,  138,    2, 0x08,    8 /* Private */,
+       9,    0,  139,    2, 0x08,    9 /* Private */,
+      10,    0,  140,    2, 0x08,   10 /* Private */,
+      11,    0,  141,    2, 0x08,   11 /* Private */,
+      12,    0,  142,    2, 0x08,   12 /* Private */,
+      13,    0,  143,    2, 0x08,   13 /* Private */,
+      14,    2,  144,    2, 0x08,   14 /* Private */,
+      18,    1,  149,    2, 0x08,   17 /* Private */,
+      20,    1,  152,    2, 0x08,   19 /* Private */,
+      22,    1,  155,    2, 0x08,   21 /* Private */,
+      24,    1,  158,    2, 0x08,   23 /* Private */,
+      25,    1,  161,    2, 0x08,   25 /* Private */,
+      28,    0,  164,    2, 0x08,   27 /* Private */,
+      29,    2,  165,    2, 0x08,   28 /* Private */,
+      32,    0,  170,    2, 0x08,   31 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QPoint,    3,
@@ -125,6 +127,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
     QMetaType::Void, 0x80000000 | 26,   27,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 30, 0x80000000 | 31,   16,    6,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -185,7 +188,9 @@ Q_CONSTINIT const QMetaObject GIao_Vien::staticMetaObject = { {
         // method 'loadCauHoi'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<ptrMonHoc, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int &, std::false_type>
+        QtPrivate::TypeAndForceComplete<int &, std::false_type>,
+        // method 'on_Them1CauHoi_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -216,6 +221,7 @@ void GIao_Vien::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 15: _t->setupComboBoxFilter((*reinterpret_cast< std::add_pointer_t<QComboBox*>>(_a[1]))); break;
         case 16: _t->on_cauHoi_clicked(); break;
         case 17: _t->loadCauHoi((*reinterpret_cast< std::add_pointer_t<ptrMonHoc>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int&>>(_a[2]))); break;
+        case 18: _t->on_Them1CauHoi_clicked(); break;
         default: ;
         }
     }
@@ -240,13 +246,13 @@ int GIao_Vien::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 19;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 19)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 18;
+        _id -= 19;
     }
     return _id;
 }

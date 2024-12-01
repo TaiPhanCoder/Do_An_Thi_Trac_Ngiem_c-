@@ -365,7 +365,7 @@ padding-left: 85px;</string>
       <string>Tìm kiếm:</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="themSinhVien_3">
+    <widget class="QGroupBox" name="ThemCauHoi">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -375,9 +375,9 @@ padding-left: 85px;</string>
       </rect>
      </property>
      <property name="title">
-      <string>Thêm Sinh Viên</string>
+      <string>Thêm Câu Hỏi</string>
      </property>
-     <widget class="QPushButton" name="them1sv_3">
+     <widget class="QPushButton" name="Them1CauHoi">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -396,7 +396,7 @@ font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
       </property>
       <property name="text">
-       <string>Một Người</string>
+       <string>Câu Hỏi</string>
       </property>
      </widget>
      <widget class="QPushButton" name="themNhieuSV_3">

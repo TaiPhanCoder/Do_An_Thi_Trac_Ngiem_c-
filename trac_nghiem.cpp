@@ -150,20 +150,20 @@ void Trac_Nghiem::indsach() {
 }
 
 void Trac_Nghiem::initializeMangDaThi() {
-    if (headCauhoi == nullptr) {
-        qDebug() << "Danh sách câu hỏi trống.";
-        return;
-    }
+    // if (headCauhoi == nullptr) {
+    //     qDebug() << "Danh sách câu hỏi trống.";
+    //     return;
+    // }
 
-    CauHoi* temp = headCauhoi;
-    int index = 0;
-    while (temp != nullptr && index < questions) {
-        mangDaThi[index].id = temp->id;
-        mangDaThi[index].dapAn = QChar();  // Khởi tạo giá trị mặc định cho dapAn
-        qDebug() << "id: " << mangDaThi[index].id << '\t' << "dapAn: " << mangDaThi[index].dapAn;
-        temp = temp->next;
-        index++;
-    }
+    // CauHoi* temp = headCauhoi;
+    // int index = 0;
+    // while (temp != nullptr && index < questions) {
+    //     mangDaThi[index].id = temp->id;
+    //     mangDaThi[index].dapAn = QChar();  // Khởi tạo giá trị mặc định cho dapAn
+    //     qDebug() << "id: " << mangDaThi[index].id << '\t' << "dapAn: " << mangDaThi[index].dapAn;
+    //     temp = temp->next;
+    //     index++;
+    // }
 }
 
 void next(){
@@ -245,22 +245,22 @@ void Trac_Nghiem::handleListWidgetClick(QListWidgetItem *item)
 
 float tinhDiemSinhVien()
 {
-    int soCauDung = 0;
-    CauHoi* current = headCauhoi;
-    for (int i = 0; i < questions; ++i) {
-        while (current != nullptr) {
-            if (current->id == mangDaThi[i].id) {
-                if (current->dapAnDung == mangDaThi[i].dapAn) {
-                    soCauDung++;
-                }
-                break;
-            }
-            current = current->next;
-        }
-        current = headCauhoi;
-    }
-    float diem = (static_cast<float>(soCauDung) / questions) * 10;
-    return round(diem * 10) / 10;
+    // int soCauDung = 0;
+    // CauHoi* current = headCauhoi;
+    // for (int i = 0; i < questions; ++i) {
+    //     while (current != nullptr) {
+    //         if (current->id == mangDaThi[i].id) {
+    //             if (current->dapAnDung == mangDaThi[i].dapAn) {
+    //                 soCauDung++;
+    //             }
+    //             break;
+    //         }
+    //         current = current->next;
+    //     }
+    //     current = headCauhoi;
+    // }
+    // float diem = (static_cast<float>(soCauDung) / questions) * 10;
+    // return round(diem * 10) / 10;
 }
 
 void luuDuLieuMangDaThi()

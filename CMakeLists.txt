@@ -41,6 +41,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(THI_TRAC_NGHIEM
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        themcauhoi.h themcauhoi.cpp themcauhoi.ui
+
     )
 else()
     if(ANDROID)

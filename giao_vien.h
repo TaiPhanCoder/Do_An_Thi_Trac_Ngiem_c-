@@ -44,6 +44,8 @@ private slots:
     void on_cauHoi_clicked();
     void loadCauHoi(ptrMonHoc root, int &row);
 
+    void on_Them1CauHoi_clicked();
+
 private:
     Ui::GIao_Vien *ui;
     QMenu *contextMenu;

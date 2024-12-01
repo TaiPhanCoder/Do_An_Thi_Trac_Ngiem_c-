@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>themcauhoi</class>
+ <widget class="QDialog" name="themcauhoi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>692</width>
+    <height>519</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>470</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="noiDung">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>190</y>
+     <width>621</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;</string>
+   </property>
+   <property name="placeholderText">
+    <string>                                                             Nội Dung Câu Hỏi</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ThongTin">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>30</y>
+     <width>421</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:700; color:#ff0000;&quot;&gt;Thêm Câu Hỏi&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="monHoc">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>120</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+	border: 2px solid gray;
+	border-radius: 20px;
+	background-color: #F0F0F0;
+	color: black;
+	font-size: 16px;
+text-align: center;
+}
+
+QComboBox::drop-down {
+width: 30px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+}
+
+QComboBox::down-arrow {
+    image: url(:/logo/down-arrow (1).png); /* Đường dẫn hình ảnh mũi tên */
+    width: 20px;
+    height: 20px;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    selection-background-color: lightblue;  /* Màu nền của mục được chọn */
+    selection-color: black;  /* Màu chữ của mục được chọn */
+    padding: 5px;
+	font-size: 12px;
+}
+
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>                           Môn Học</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="A">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>330</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>                           Đáp án A</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="idMonHoc">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>119</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;</string>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ID Môn Học&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="B">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>330</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>                           Đáp án B</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="D">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>400</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>                           Đáp án D</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="C">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>400</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 16px;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>                           Đáp án C</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="dapAnDung">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>260</y>
+     <width>291</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+	border: 2px solid gray;
+	border-radius: 20px;
+	background-color: #F0F0F0;
+	color: black;
+	font-size: 16px;
+text-align: center;
+}
+
+QComboBox::drop-down {
+width: 30px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+}
+
+QComboBox::down-arrow {
+    image: url(:/logo/down-arrow (1).png); /* Đường dẫn hình ảnh mũi tên */
+    width: 20px;
+    height: 20px;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    selection-background-color: lightblue;  /* Màu nền của mục được chọn */
+    selection-color: black;  /* Màu chữ của mục được chọn */
+    padding: 5px;
+	font-size: 12px;
+}
+
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>                        Đáp án đúng</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiNoiDung">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>240</y>
+     <width>621</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiMonHoc">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>170</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiId">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>170</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiDapAn">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>310</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiA">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>380</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiB">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>380</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiD">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>450</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="loiC">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>450</y>
+     <width>291</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>themcauhoi</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>themcauhoi</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

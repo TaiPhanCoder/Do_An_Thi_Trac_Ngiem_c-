@@ -7,7 +7,7 @@ CauHoi *headCauhoi = nullptr;
 
 cau_hoi::cau_hoi() {}
 
-CauHoi* taoNodeCauHoi(QString id, QString noiDung, QString A, QString B, QString C, QString D, QChar dapAnDung) {
+CauHoi* taoNodeCauHoi(int id, QString noiDung, QString A, QString B, QString C, QString D, QChar dapAnDung) {
 
     CauHoi* cauHoi = new CauHoi;
     cauHoi->id = id;
@@ -62,7 +62,7 @@ CauHoi** loadCauHoiThi(const QString &monHoc, int &questions, int &soCauHoi) {
                 QString cauHoiLine = in.readLine().trimmed();
                 QStringList parts = cauHoiLine.split('|');
                 if (parts.size() == 7) {
-                    QString id = parts[0];
+                    int id = parts[0].toInt();
                     QString noiDung = parts[1];
                     QString A = parts[2];
                     QString B = parts[3];
