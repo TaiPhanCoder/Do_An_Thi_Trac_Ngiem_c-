@@ -43,7 +43,8 @@ private slots:
     void setupComboBoxFilter(QComboBox *comboBox);
     void on_cauHoi_clicked();
     void loadCauHoi(ptrMonHoc root, int &row);
-
+    void xoaCauHoi();
+    void hieuChinhCauHoi();
     void on_Them1CauHoi_clicked();
 
 private:

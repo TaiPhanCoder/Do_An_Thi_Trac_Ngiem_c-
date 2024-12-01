@@ -303,9 +303,9 @@
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.h",
 			"MU",
-			"EWIEGA46WW/moc_hieuchinh.cpp",
+			"EWIEGA46WW/moc_hieuchinh_SinhVien.cpp",
 			null
 		],
 		[
@@ -457,7 +457,7 @@
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh.cpp",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.cpp",
 			"MU",
 			null
 		],

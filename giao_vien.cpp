@@ -1,7 +1,7 @@
 #include "giao_vien.h"
 #include "ui_giao_vien.h"
 #include "sinhvien.h"
-#include "hieuchinh.h"
+#include "hieuchinh_SinhVien.h"
 #include "excel.h"
 #include"lop.h"
 #include "mamh.h"
@@ -284,11 +284,26 @@ void GIao_Vien::onCauHoiComboBoxChanged(int index) {
     locCauHoi(selectedCauHoi);
 }
 
-void GIao_Vien::on_Them1CauHoi_clicked()
-{
-    themcauhoi dialog(this, root);
-    dialog.exec();
+void GIao_Vien::on_Them1CauHoi_clicked() {
+    int currentIndex = -1;
+
+    while (true) {
+        themcauhoi dialog(this, root, &currentIndex);
+
+        int result = dialog.exec();
+
+        if (result == QDialog::Accepted) {
+            qDebug() << "Môn học đã chọn có index: " << currentIndex;
+        } else {
+            int totalQuestions = demTatCaCauHoi(root);
+            int row = 0;
+            ui->bangDuLieu->setRowCount(totalQuestions);
+            loadCauHoi(root, row);
+            break;
+        }
+    }
 }
+
 
 void GIao_Vien::loadLopVaoComboBox() {
     ui->locLop->clear();
@@ -395,19 +410,23 @@ void GIao_Vien::on_cauHoi_clicked()
     ui->tinhNangCauHoi->show();
 
     ui->bangDuLieu->clear();
-    ui->bangDuLieu->setColumnCount(7);
+    ui->bangDuLieu->setColumnCount(8);
 
     ui->bangDuLieu->setColumnWidth(0, 100);
     ui->bangDuLieu->setColumnWidth(1, 250);
-    ui->bangDuLieu->setColumnWidth(2, 300);
-    ui->bangDuLieu->setColumnWidth(3, 200);
+    ui->bangDuLieu->setColumnWidth(2, 250);
+    ui->bangDuLieu->setColumnWidth(3, 300);
     ui->bangDuLieu->setColumnWidth(4, 200);
     ui->bangDuLieu->setColumnWidth(5, 200);
     ui->bangDuLieu->setColumnWidth(6, 200);
+    ui->bangDuLieu->setColumnWidth(7, 200);
 
     QStringList headers;
-    headers << "Mã MH" << "Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
+    headers << "Mã MH" << "ID câu hỏi" <<"Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
+    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
+    connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaCauHoi);
+    connect(editAction, &QAction::triggered, this, &GIao_Vien::hieuChinhCauHoi);
     int totalQuestions = demTatCaCauHoi(root);
     int row = 0;
     ui->bangDuLieu->setRowCount(totalQuestions);
@@ -415,6 +434,16 @@ void GIao_Vien::on_cauHoi_clicked()
     connect(ui->locCauHoi, SIGNAL(currentIndexChanged(int)), this, SLOT(onCauHoiComboBoxChanged(int)));
     bool isFirst = true;
     dsMonHoc(root, isFirst);
+}
+
+void GIao_Vien::xoaCauHoi()
+{
+
+}
+
+void GIao_Vien::hieuChinhCauHoi()
+{
+
 }
 
 void GIao_Vien::loadCauHoi(ptrMonHoc root, int &row)
@@ -430,13 +459,17 @@ void GIao_Vien::loadCauHoi(ptrMonHoc root, int &row)
     CauHoi* cauHoi = root->MH.headCauhoi;
     while (cauHoi != nullptr) {
         qDebug() << "Dang load cau hoi: " << cauHoi->noiDung;
+
         ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(root->MH.MAMH));
-        ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(root->MH.TENMH));
-        ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(cauHoi->noiDung));
-        ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(cauHoi->A));
-        ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(cauHoi->B));
-        ui->bangDuLieu->setItem(row, 5, new QTableWidgetItem(cauHoi->C));
-        ui->bangDuLieu->setItem(row, 6, new QTableWidgetItem(cauHoi->D));
+        QString idCauHoi = root->MH.MAMH + QString::number(cauHoi->id);
+        ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(idCauHoi));
+        ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(root->MH.TENMH));
+        ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(cauHoi->noiDung));
+        ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(cauHoi->A));
+        ui->bangDuLieu->setItem(row, 5, new QTableWidgetItem(cauHoi->B));
+        ui->bangDuLieu->setItem(row, 6, new QTableWidgetItem(cauHoi->C));
+        ui->bangDuLieu->setItem(row, 7, new QTableWidgetItem(cauHoi->D));
+
         cauHoi = cauHoi->next;
         row++;
     }

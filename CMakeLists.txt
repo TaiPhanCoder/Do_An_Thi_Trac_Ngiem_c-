@@ -34,7 +34,7 @@ set(PROJECT_SOURCES
     lop.h lop.cpp
     excel.h excel.cpp
     them_sinh_vien.h them_sinh_vien.cpp them_sinh_vien.ui
-    hieuchinh.h hieuchinh.cpp hieuchinh.ui
+    hieuchinh_SinhVien.h hieuchinh_SinhVien.cpp hieuchinh_SinhVien.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

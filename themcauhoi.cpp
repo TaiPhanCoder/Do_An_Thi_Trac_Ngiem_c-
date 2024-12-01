@@ -1,14 +1,18 @@
 #include "themcauhoi.h"
 #include "ui_themcauhoi.h"
+#include "cau_hoi.h"
 
-themcauhoi::themcauhoi(QWidget *parent, NodeMonHoc* root)
-    : QDialog(parent), ui(new Ui::themcauhoi), m_root(root)
+themcauhoi::themcauhoi(QWidget *parent, NodeMonHoc* root, int* index)
+    : QDialog(parent), ui(new Ui::themcauhoi), m_root(root), m_index(index)
 {
     ui->setupUi(this);
     this->setWindowTitle("Thêm Câu Hỏi");
     themDapAnVaoComboBox();
     connect(ui->monHoc, &QComboBox::currentIndexChanged, this, &themcauhoi::randomID);
     dsMonHoc(m_root);
+    if (*m_index != -1) {
+        ui->monHoc->setCurrentIndex(*m_index);
+    }
 }
 
 themcauhoi::~themcauhoi()
@@ -20,10 +24,10 @@ void themcauhoi::themDapAnVaoComboBox()
 {
     ui->dapAnDung->clear();
 
-    ui->dapAnDung->addItem("Đáp án đúng: A");
-    ui->dapAnDung->addItem("Đáp án đúng: B");
-    ui->dapAnDung->addItem("Đáp án đúng: C");
-    ui->dapAnDung->addItem("Đáp án đúng: D");
+    ui->dapAnDung->addItem("Đáp án đúng: A", QVariant::fromValue('A'));
+    ui->dapAnDung->addItem("Đáp án đúng: B", QVariant::fromValue('B'));
+    ui->dapAnDung->addItem("Đáp án đúng: C", QVariant::fromValue('C'));
+    ui->dapAnDung->addItem("Đáp án đúng: D", QVariant::fromValue('D'));
 
     int itemCount = ui->dapAnDung->count();
     for (int i = 0; i < itemCount; ++i) {
@@ -139,8 +143,35 @@ bool themcauhoi::thongBaoLoi() {
     return isValid;
 }
 
+void themcauhoi::luuCauHoi() {
+    QString noiDung = getNoiDung();
+    QString monHoc = ui->monHoc->itemData(ui->monHoc->currentIndex()).toString();
+    QChar dapAnDung = ui->dapAnDung->itemData(ui->dapAnDung->currentIndex()).value<QChar>();
+    QString a = getA();
+    QString b = getB();
+    QString c = getC();
+    QString d = getD();
+
+    CauHoi* newCauHoi = taoNodeCauHoi(randomId, noiDung, a, b, c, d, dapAnDung);
+
+    NodeMonHoc* current = m_root;
+    while (current != nullptr) {
+        if (current->MH.MAMH == monHoc) {
+            newCauHoi->next = current->MH.headCauhoi;
+            current->MH.headCauhoi = newCauHoi;
+            break;
+        } else if (monHoc < current->MH.MAMH) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+    }
+}
+
 void themcauhoi::accept() {
     if (thongBaoLoi()) {
+        luuCauHoi();
+        *m_index = ui->monHoc->currentIndex();
         QDialog::accept();
     }
 }
@@ -170,12 +201,9 @@ void themcauhoi::randomID(int index)
         }
     }
 
-    // Sinh số ngẫu nhiên và kiểm tra sự trùng lặp
     srand(time(0));
-    int randomId;
     while (true) {
         randomId = rand() % 1000;
-        // Nếu ID chưa được sử dụng, thoát khỏi vòng lặp
         if (idNgauNhien[randomId] == 0) {
             break;
         }
