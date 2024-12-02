@@ -42,6 +42,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         themcauhoi.h themcauhoi.cpp themcauhoi.ui
+        hieuchinh_cauhoi.h hieuchinh_cauhoi.cpp hieuchinh_cauhoi.ui
 
     )
 else()

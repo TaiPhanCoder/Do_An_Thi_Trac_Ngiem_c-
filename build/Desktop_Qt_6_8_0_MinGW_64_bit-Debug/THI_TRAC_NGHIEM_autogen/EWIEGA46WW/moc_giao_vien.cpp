@@ -36,9 +36,10 @@ namespace {
 struct qt_meta_stringdata_CLASSGIao_VienENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSGIao_VienENDCLASS = QtMocHelpers::stringData(
     "GIao_Vien",
-    "showContextMenu",
+    "showSinhVienContextMenu",
     "",
     "pos",
+    "showCauHoiContextMenu",
     "xoaSV",
     "getSelectedStudentMasv",
     "row",
@@ -82,7 +83,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      21,   14, // methods
+      22,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -90,47 +91,49 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  140,    2, 0x08,    1 /* Private */,
-       4,    0,  143,    2, 0x08,    3 /* Private */,
-       5,    1,  144,    2, 0x08,    4 /* Private */,
-       7,    1,  147,    2, 0x08,    6 /* Private */,
-       8,    0,  150,    2, 0x08,    8 /* Private */,
-       9,    0,  151,    2, 0x08,    9 /* Private */,
-      10,    0,  152,    2, 0x08,   10 /* Private */,
-      11,    0,  153,    2, 0x08,   11 /* Private */,
-      12,    0,  154,    2, 0x08,   12 /* Private */,
-      13,    0,  155,    2, 0x08,   13 /* Private */,
-      14,    2,  156,    2, 0x08,   14 /* Private */,
-      18,    1,  161,    2, 0x08,   17 /* Private */,
-      20,    1,  164,    2, 0x08,   19 /* Private */,
-      22,    1,  167,    2, 0x08,   21 /* Private */,
-      24,    1,  170,    2, 0x08,   23 /* Private */,
-      25,    1,  173,    2, 0x08,   25 /* Private */,
-      28,    0,  176,    2, 0x08,   27 /* Private */,
-      29,    2,  177,    2, 0x08,   28 /* Private */,
-      32,    0,  182,    2, 0x08,   31 /* Private */,
-      33,    0,  183,    2, 0x08,   32 /* Private */,
-      34,    0,  184,    2, 0x08,   33 /* Private */,
+       1,    1,  146,    2, 0x08,    1 /* Private */,
+       4,    1,  149,    2, 0x08,    3 /* Private */,
+       5,    0,  152,    2, 0x08,    5 /* Private */,
+       6,    1,  153,    2, 0x08,    6 /* Private */,
+       8,    1,  156,    2, 0x08,    8 /* Private */,
+       9,    0,  159,    2, 0x08,   10 /* Private */,
+      10,    0,  160,    2, 0x08,   11 /* Private */,
+      11,    0,  161,    2, 0x08,   12 /* Private */,
+      12,    0,  162,    2, 0x08,   13 /* Private */,
+      13,    0,  163,    2, 0x08,   14 /* Private */,
+      14,    0,  164,    2, 0x08,   15 /* Private */,
+      15,    2,  165,    2, 0x08,   16 /* Private */,
+      19,    1,  170,    2, 0x08,   19 /* Private */,
+      21,    1,  173,    2, 0x08,   21 /* Private */,
+      23,    1,  176,    2, 0x08,   23 /* Private */,
+      25,    1,  179,    2, 0x08,   25 /* Private */,
+      26,    1,  182,    2, 0x08,   27 /* Private */,
+      29,    0,  185,    2, 0x08,   29 /* Private */,
+      30,    2,  186,    2, 0x08,   30 /* Private */,
+      33,    0,  191,    2, 0x08,   33 /* Private */,
+      34,    0,  192,    2, 0x08,   34 /* Private */,
+      35,    0,  193,    2, 0x08,   35 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QPoint,    3,
+    QMetaType::Void, QMetaType::QPoint,    3,
     QMetaType::Void,
-    QMetaType::QString, QMetaType::Int,    6,
-    QMetaType::QString, QMetaType::Int,    6,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::QString, QMetaType::Int,    7,
+    QMetaType::QString, QMetaType::Int,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 15, QMetaType::Bool,   16,   17,
-    QMetaType::Void, QMetaType::Int,   19,
-    QMetaType::Void, QMetaType::QString,   21,
-    QMetaType::Void, QMetaType::QString,   23,
-    QMetaType::Void, QMetaType::Int,   19,
-    QMetaType::Void, 0x80000000 | 26,   27,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 30, 0x80000000 | 31,   16,    6,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 16, QMetaType::Bool,   17,   18,
+    QMetaType::Void, QMetaType::Int,   20,
+    QMetaType::Void, QMetaType::QString,   22,
+    QMetaType::Void, QMetaType::QString,   24,
+    QMetaType::Void, QMetaType::Int,   20,
+    QMetaType::Void, 0x80000000 | 27,   28,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 31, 0x80000000 | 32,   17,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -147,7 +150,10 @@ Q_CONSTINIT const QMetaObject GIao_Vien::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSGIao_VienENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<GIao_Vien, std::true_type>,
-        // method 'showContextMenu'
+        // method 'showSinhVienContextMenu'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>,
+        // method 'showCauHoiContextMenu'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QPoint &, std::false_type>,
         // method 'xoaSV'
@@ -211,29 +217,30 @@ void GIao_Vien::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         auto *_t = static_cast<GIao_Vien *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->showContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
-        case 1: _t->xoaSV(); break;
-        case 2: { QString _r = _t->getSelectedStudentMasv((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 0: _t->showSinhVienContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 1: _t->showCauHoiContextMenu((*reinterpret_cast< std::add_pointer_t<QPoint>>(_a[1]))); break;
+        case 2: _t->xoaSV(); break;
+        case 3: { QString _r = _t->getSelectedStudentMasv((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 3: { QString _r = _t->getSelectedStudentLop((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
+        case 4: { QString _r = _t->getSelectedStudentLop((*reinterpret_cast< std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
-        case 4: _t->on_them1sv_clicked(); break;
-        case 5: _t->hieuChinhSV(); break;
-        case 6: _t->on_sinhVien_clicked(); break;
-        case 7: _t->on_sapXep_clicked(); break;
-        case 8: _t->on_themNhieuSV_clicked(); break;
-        case 9: _t->loadLopVaoComboBox(); break;
-        case 10: _t->dsMonHoc((*reinterpret_cast< std::add_pointer_t<NodeMonHoc*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
-        case 11: _t->onCauHoiComboBoxChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 12: _t->locCauHoi((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 13: _t->loadSinhVienLop((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 14: _t->onLopComboBoxChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 15: _t->setupComboBoxFilter((*reinterpret_cast< std::add_pointer_t<QComboBox*>>(_a[1]))); break;
-        case 16: _t->on_cauHoi_clicked(); break;
-        case 17: _t->loadCauHoi((*reinterpret_cast< std::add_pointer_t<ptrMonHoc>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int&>>(_a[2]))); break;
-        case 18: _t->xoaCauHoi(); break;
-        case 19: _t->hieuChinhCauHoi(); break;
-        case 20: _t->on_Them1CauHoi_clicked(); break;
+        case 5: _t->on_them1sv_clicked(); break;
+        case 6: _t->hieuChinhSV(); break;
+        case 7: _t->on_sinhVien_clicked(); break;
+        case 8: _t->on_sapXep_clicked(); break;
+        case 9: _t->on_themNhieuSV_clicked(); break;
+        case 10: _t->loadLopVaoComboBox(); break;
+        case 11: _t->dsMonHoc((*reinterpret_cast< std::add_pointer_t<NodeMonHoc*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<bool>>(_a[2]))); break;
+        case 12: _t->onCauHoiComboBoxChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 13: _t->locCauHoi((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 14: _t->loadSinhVienLop((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 15: _t->onLopComboBoxChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 16: _t->setupComboBoxFilter((*reinterpret_cast< std::add_pointer_t<QComboBox*>>(_a[1]))); break;
+        case 17: _t->on_cauHoi_clicked(); break;
+        case 18: _t->loadCauHoi((*reinterpret_cast< std::add_pointer_t<ptrMonHoc>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int&>>(_a[2]))); break;
+        case 19: _t->xoaCauHoi(); break;
+        case 20: _t->hieuChinhCauHoi(); break;
+        case 21: _t->on_Them1CauHoi_clicked(); break;
         default: ;
         }
     }
@@ -258,13 +265,13 @@ int GIao_Vien::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 21)
+        if (_id < 22)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 21;
+        _id -= 22;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 21)
+        if (_id < 22)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 21;
+        _id -= 22;
     }
     return _id;
 }

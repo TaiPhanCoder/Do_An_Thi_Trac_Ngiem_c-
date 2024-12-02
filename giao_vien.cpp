@@ -7,6 +7,7 @@
 #include "mamh.h"
 #include"them_sinh_vien.h"
 #include "themcauhoi.h"
+#include "hieuchinh_cauhoi.h"
 #include<QDebug>
 #include<QTableWidget>
 #include <QFileDialog>
@@ -31,6 +32,27 @@ GIao_Vien::GIao_Vien(QWidget *parent)
     ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
     setupComboBoxFilter(ui->locLop);
     loadLopVaoComboBox();
+
+    //Tạo context menu
+    sinhVienContextMenu = new QMenu(this);
+    sinhVienDeleteAction = new QAction("Xóa Sinh Viên", this);
+    sinhVienEditAction = new QAction("Hiệu chỉnh Sinh Viên", this);
+
+    sinhVienContextMenu->addAction(sinhVienDeleteAction);
+    sinhVienContextMenu->addAction(sinhVienEditAction);
+
+    cauHoiContextMenu = new QMenu(this);
+    cauHoiDeleteAction = new QAction("Xóa Câu Hỏi", this);
+    cauHoiEditAction = new QAction("Hiệu chỉnh Câu Hỏi", this);
+
+    cauHoiContextMenu->addAction(cauHoiDeleteAction);
+    cauHoiContextMenu->addAction(cauHoiEditAction);
+
+    connect(sinhVienDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
+    connect(sinhVienEditAction, &QAction::triggered, this, &GIao_Vien::hieuChinhSV);
+
+    connect(cauHoiDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaCauHoi);
+    connect(cauHoiEditAction, &QAction::triggered, this, &GIao_Vien::hieuChinhCauHoi);
 }
 
 GIao_Vien::~GIao_Vien()
@@ -38,15 +60,30 @@ GIao_Vien::~GIao_Vien()
     delete ui;
 }
 
-void GIao_Vien::showContextMenu(const QPoint &pos) {
+void GIao_Vien::showSinhVienContextMenu(const QPoint &pos) {
     QModelIndex index = ui->bangDuLieu->indexAt(pos);
     if (!index.isValid()) {
         return;
     }
 
+    // Chọn dòng tương ứng
     ui->bangDuLieu->selectRow(index.row());
 
-    contextMenu->exec(ui->bangDuLieu->viewport()->mapToGlobal(pos));
+    // Hiển thị context menu của sinh viên
+    sinhVienContextMenu->exec(ui->bangDuLieu->viewport()->mapToGlobal(pos));
+}
+
+void GIao_Vien::showCauHoiContextMenu(const QPoint &pos) {
+    QModelIndex index = ui->bangDuLieu->indexAt(pos);
+    if (!index.isValid()) {
+        return;
+    }
+
+    // Chọn dòng tương ứng
+    ui->bangDuLieu->selectRow(index.row());
+
+    // Hiển thị context menu của câu hỏi
+    cauHoiContextMenu->exec(ui->bangDuLieu->viewport()->mapToGlobal(pos));
 }
 
 void xoaSinhVienKhoiDanhSach(const QString &masv, const QString &tenLop) {
@@ -404,10 +441,14 @@ void GIao_Vien::hieuChinhSV() {
     }
 }
 
-void GIao_Vien::on_cauHoi_clicked()
-{
+void GIao_Vien::on_cauHoi_clicked() {
     ui->tinhNangSinhVien->hide();
     ui->tinhNangCauHoi->show();
+
+    // Thiết lập context menu cho bảng Câu hỏi
+    ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
+    disconnect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showSinhVienContextMenu);
+    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showCauHoiContextMenu);
 
     ui->bangDuLieu->clear();
     ui->bangDuLieu->setColumnCount(8);
@@ -422,11 +463,8 @@ void GIao_Vien::on_cauHoi_clicked()
     ui->bangDuLieu->setColumnWidth(7, 200);
 
     QStringList headers;
-    headers << "Mã MH" << "ID câu hỏi" <<"Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
+    headers << "Mã MH" << "ID câu hỏi" << "Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
-    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
-    connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaCauHoi);
-    connect(editAction, &QAction::triggered, this, &GIao_Vien::hieuChinhCauHoi);
     int totalQuestions = demTatCaCauHoi(root);
     int row = 0;
     ui->bangDuLieu->setRowCount(totalQuestions);
@@ -443,7 +481,17 @@ void GIao_Vien::xoaCauHoi()
 
 void GIao_Vien::hieuChinhCauHoi()
 {
+    int currentRow = ui->bangDuLieu->currentRow();
 
+    QString monHoc = ui->bangDuLieu->item(currentRow, 0)->text();
+    QString fullId = ui->bangDuLieu->item(currentRow, 1)->text();
+
+    QString mamh = monHoc;
+    QString idStr = fullId.mid(mamh.length());
+    int id = idStr.toInt();
+
+    hieuchinh_CauHoi dialog(this, mamh, id, root);
+    dialog.exec();
 }
 
 void GIao_Vien::loadCauHoi(ptrMonHoc root, int &row)
@@ -482,18 +530,10 @@ void GIao_Vien::on_sinhVien_clicked() {
     ui->tinhNangCauHoi->hide();
     ui->tinhNangSinhVien->show();
 
+    // Thiết lập context menu cho bảng Sinh viên
     ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
-
-    contextMenu = new QMenu(this);
-    deleteAction = new QAction("Xóa", this);
-    editAction = new QAction("Hiệu chỉnh", this);
-
-    contextMenu->addAction(deleteAction);
-    contextMenu->addAction(editAction);
-
-    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showContextMenu);
-    connect(deleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
-    connect(editAction, &QAction::triggered, this, &GIao_Vien::hieuChinhSV);
+    disconnect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showCauHoiContextMenu);
+    connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showSinhVienContextMenu);
 
     ui->bangDuLieu->setColumnCount(5);
     ui->bangDuLieu->setColumnWidth(0, 300);
@@ -501,6 +541,7 @@ void GIao_Vien::on_sinhVien_clicked() {
     ui->bangDuLieu->setColumnWidth(2, 150);
     ui->bangDuLieu->setColumnWidth(3, 200);
     ui->bangDuLieu->setColumnWidth(4, 150);
+
     connect(ui->locLop, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &GIao_Vien::onLopComboBoxChanged);
     loadSinhVien();

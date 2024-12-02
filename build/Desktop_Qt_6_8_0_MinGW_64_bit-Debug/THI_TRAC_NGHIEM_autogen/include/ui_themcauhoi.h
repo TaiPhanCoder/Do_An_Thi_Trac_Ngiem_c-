@@ -49,12 +49,12 @@ public:
         themcauhoi->resize(692, 519);
         buttonBox = new QDialogButtonBox(themcauhoi);
         buttonBox->setObjectName("buttonBox");
-        buttonBox->setGeometry(QRect(310, 470, 341, 32));
+        buttonBox->setGeometry(QRect(470, 470, 181, 32));
         buttonBox->setOrientation(Qt::Orientation::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
         noiDung = new QLineEdit(themcauhoi);
         noiDung->setObjectName("noiDung");
-        noiDung->setGeometry(QRect(40, 190, 621, 51));
+        noiDung->setGeometry(QRect(40, 190, 611, 51));
         noiDung->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;\n"
 "background-color: #F0F0F0;\n"

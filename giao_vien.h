@@ -25,7 +25,8 @@ public:
     void timSinhVien(const QString &text);
 
 private slots:
-    void showContextMenu(const QPoint &pos);
+    void showSinhVienContextMenu(const QPoint &pos);
+    void showCauHoiContextMenu(const QPoint &pos);
     void xoaSV();
     QString getSelectedStudentMasv(int row);
     QString getSelectedStudentLop(int row);
@@ -49,9 +50,13 @@ private slots:
 
 private:
     Ui::GIao_Vien *ui;
-    QMenu *contextMenu;
-    QAction *editAction;
-    QAction *deleteAction;
+    QMenu* sinhVienContextMenu;
+    QAction* sinhVienDeleteAction;
+    QAction* sinhVienEditAction;
+
+    QMenu* cauHoiContextMenu;
+    QAction* cauHoiDeleteAction;
+    QAction* cauHoiEditAction;
 };
 
 
