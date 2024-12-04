@@ -2,6 +2,8 @@
 #include "ui_trac_nghiem.h"
 #include "globals.h"
 #include "cau_hoi.h"
+#include "lop.h"
+#include "cau_hoi_da_thi.h"
 #include <QDebug>
 #include <QMessageBox>
 #include <QTimer>
@@ -65,7 +67,6 @@ void Trac_Nghiem::startCountdown(int times) {
     ui->timerLabel->setAlignment(Qt::AlignCenter);
     ui->timerLabel->setText(timeLeft.toString("mm:ss"));
 
-    // Bắt đầu đếm ngược, mỗi giây một lần
     timer->start(1000);
 }
 
@@ -94,7 +95,7 @@ void Trac_Nghiem::handleAnswerSelection() {
     } else if (ui->DQ->isChecked()) {
         mangDaThi[index].dapAn = QChar('D');
     } else {
-        mangDaThi[index].dapAn = QChar();  // Không chọn đáp án nào
+        mangDaThi[index].dapAn = QChar();
     }
 
     qDebug() << "Câu hỏi " << countcauhoi << " đã chọn đáp án: " << mangDaThi[index].dapAn;
@@ -150,20 +151,20 @@ void Trac_Nghiem::indsach() {
 }
 
 void Trac_Nghiem::initializeMangDaThi() {
-    // if (headCauhoi == nullptr) {
-    //     qDebug() << "Danh sách câu hỏi trống.";
-    //     return;
-    // }
+    if (headCauhoi == nullptr) {
+        qDebug() << "Danh sách câu hỏi trống.";
+        return;
+    }
 
-    // CauHoi* temp = headCauhoi;
-    // int index = 0;
-    // while (temp != nullptr && index < questions) {
-    //     mangDaThi[index].id = temp->id;
-    //     mangDaThi[index].dapAn = QChar();  // Khởi tạo giá trị mặc định cho dapAn
-    //     qDebug() << "id: " << mangDaThi[index].id << '\t' << "dapAn: " << mangDaThi[index].dapAn;
-    //     temp = temp->next;
-    //     index++;
-    // }
+    CauHoi* temp = headCauhoi;
+    int index = 0;
+    while (temp != nullptr && index < questions) {
+        mangDaThi[index].id = temp->id;
+        mangDaThi[index].dapAn = QChar();
+        qDebug() << "id: " << mangDaThi[index].id << '\t' << "dapAn: " << mangDaThi[index].dapAn;
+        temp = temp->next;
+        index++;
+    }
 }
 
 void next(){
@@ -245,28 +246,28 @@ void Trac_Nghiem::handleListWidgetClick(QListWidgetItem *item)
 
 float tinhDiemSinhVien()
 {
-    // int soCauDung = 0;
-    // CauHoi* current = headCauhoi;
-    // for (int i = 0; i < questions; ++i) {
-    //     while (current != nullptr) {
-    //         if (current->id == mangDaThi[i].id) {
-    //             if (current->dapAnDung == mangDaThi[i].dapAn) {
-    //                 soCauDung++;
-    //             }
-    //             break;
-    //         }
-    //         current = current->next;
-    //     }
-    //     current = headCauhoi;
-    // }
-    // float diem = (static_cast<float>(soCauDung) / questions) * 10;
-    // return round(diem * 10) / 10;
+    int soCauDung = 0;
+    CauHoi* current = headCauhoi;
+    for (int i = 0; i < questions; ++i) {
+        while (current != nullptr) {
+            if (current->id == mangDaThi[i].id) {
+                if (current->dapAnDung == mangDaThi[i].dapAn) {
+                    soCauDung++;
+                }
+                break;
+            }
+            current = current->next;
+        }
+        current = headCauhoi;
+    }
+    float diem = (static_cast<float>(soCauDung) / questions) * 10;
+    return round(diem * 10) / 10;
 }
 
 void luuDuLieuMangDaThi()
 {
     float diem = tinhDiemSinhVien();
-    QFile file("C:/1.Code/C++/DO_AN_THI_TRAC_NGHIEM/THI_TRAC_NGHIEM/DsachDalLamBai.txt");
+    QFile file("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/DsachDalLamBai.txt");
     if (!file.open(QIODevice::Append | QIODevice::Text)) {
         qDebug() << "Không thể mở file để ghi dữ liệu.";
         return;

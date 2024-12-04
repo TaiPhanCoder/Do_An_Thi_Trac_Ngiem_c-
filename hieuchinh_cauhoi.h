@@ -22,6 +22,7 @@ private slots:
     void themDapAnVaoComboBox();
     void dsMonHoc(NodeMonHoc* root);
     void setupHieuChinh();
+    void setDapAn(QChar dapAn);
     QString getNoiDung();
     QString getMonHoc();
     QString getDapAn();
@@ -36,12 +37,7 @@ private:
     Ui::hieuchinh_CauHoi *ui;
     QString m_monHoc;
     int m_id;
-    QString m_noiDung;
-    QString m_A;
-    QString m_B;
-    QString m_C;
-    QString m_D;
-    QString m_dapAnDung;
+    CauHoi* cauhoi;
     NodeMonHoc* m_root;
 };
 

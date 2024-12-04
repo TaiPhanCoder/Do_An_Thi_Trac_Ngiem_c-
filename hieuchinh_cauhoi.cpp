@@ -1,5 +1,6 @@
 #include "hieuchinh_cauhoi.h"
 #include "ui_hieuchinh_cauhoi.h"
+#include "mamh.h"
 
 hieuchinh_CauHoi::hieuchinh_CauHoi(QWidget *parent, QString mamh, int id, NodeMonHoc* root)
     : QDialog(parent), ui(new Ui::hieuchinh_CauHoi), m_monHoc(mamh), m_id(id), m_root(root)
@@ -8,6 +9,7 @@ hieuchinh_CauHoi::hieuchinh_CauHoi(QWidget *parent, QString mamh, int id, NodeMo
     this->setWindowTitle("Thêm Câu Hỏi");
     dsMonHoc(m_root);
     themDapAnVaoComboBox();
+    cauhoi = findCauHoi(m_root, m_monHoc, m_id);
     setupHieuChinh();
 }
 
@@ -50,20 +52,37 @@ void hieuchinh_CauHoi::setupHieuChinh()
     QString idCombined = m_monHoc + QString::number(m_id);
     ui->idMonHoc->setText(idCombined);
     ui->idMonHoc->setAlignment(Qt::AlignCenter);
-    ui->noiDung->setText(m_noiDung);
-    ui->A->setText(m_A);
-    ui->B->setText(m_B);
-    ui->C->setText(m_C);
-    ui->D->setText(m_D);
+    ui->noiDung->setText(cauhoi->noiDung);
+    ui->A->setText(cauhoi->A);
+    ui->B->setText(cauhoi->B);
+    ui->C->setText(cauhoi->C);
+    ui->D->setText(cauhoi->D);
 
     int indexMonHoc = ui->monHoc->findData(QVariant::fromValue(m_monHoc));
     if (indexMonHoc != -1) {
         ui->monHoc->setCurrentIndex(indexMonHoc);
     }
 
-    int indexDapAn = ui->dapAnDung->findData(QVariant::fromValue(m_dapAnDung.at(0)));
-    if (indexDapAn != -1) {
-        ui->dapAnDung->setCurrentIndex(indexDapAn);
+    setDapAn(cauhoi->dapAnDung);
+}
+
+void hieuchinh_CauHoi::setDapAn(QChar dapAn)
+{
+    switch (dapAn.toLatin1()) {
+    case 'A':
+        ui->dapAnDung->setCurrentIndex(0);
+        break;
+    case 'B':
+        ui->dapAnDung->setCurrentIndex(1);
+        break;
+    case 'C':
+        ui->dapAnDung->setCurrentIndex(2);
+        break;
+    case 'D':
+        ui->dapAnDung->setCurrentIndex(3);
+        break;
+    default:
+        break;
     }
 }
 

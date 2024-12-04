@@ -31,5 +31,6 @@ void duyetLNR(ptrMonHoc root, QStringList &danhSachMonHoc);
 ptrMonHoc loadToanBoCauHoi();
 void duyetLRN(ptrMonHoc p);
 int demTatCaCauHoi(ptrMonHoc root);
+CauHoi* findCauHoi(NodeMonHoc* root, QString mamh, int id);
 
 #endif // MAMH_H

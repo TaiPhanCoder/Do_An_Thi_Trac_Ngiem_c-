@@ -18,12 +18,6 @@ struct SinhVien{
     SinhVien* next;
 };
 
-struct DaThi {
-    QString id;
-    QChar dapAn;
-};
-
-
 extern bool GV;
 extern int times;
 extern int questions;

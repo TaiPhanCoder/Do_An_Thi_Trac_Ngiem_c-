@@ -250,6 +250,38 @@ int demTatCaCauHoi(ptrMonHoc root) {
     return leftCount + rightCount + currentCount;
 }
 
+NodeMonHoc* findMonHoc(NodeMonHoc* root, QString mamh)
+{
+    NodeMonHoc* current = root;
+    while (current != nullptr) {
+        if (current->MH.MAMH == mamh) {
+            return current;
+        } else if (mamh < current->MH.MAMH) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+    }
+    return nullptr;
+}
+
+CauHoi* findCauHoi(NodeMonHoc* root, QString mamh, int id)
+{
+    NodeMonHoc* monHocNode = findMonHoc(root, mamh);
+    if (monHocNode == nullptr) {
+        return nullptr;
+    }
+    CauHoi* headCauHoi = monHocNode->MH.headCauhoi;
+    CauHoi* cauHoi = headCauHoi;
+    while (cauHoi != nullptr) {
+        if (cauHoi->id == id) {
+            return cauHoi;
+        }
+        cauHoi = cauHoi->next;
+    }
+    return nullptr;
+}
+
 ptrMonHoc loadToanBoCauHoi() {
     ptrMonHoc root = nullptr;
     QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
@@ -308,4 +340,5 @@ ptrMonHoc loadToanBoCauHoi() {
     file.close();
     return root;
 }
+
 

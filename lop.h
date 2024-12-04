@@ -8,6 +8,7 @@ class lop
 {
 public:
     lop();
+    int demSoLop();
 };
 
 struct Lop {
@@ -15,6 +16,9 @@ struct Lop {
     QString TENLOP;
     SinhVien* DSSV;
 };
+
+int demSoLop();
+int demSVLop(Lop* lop);
 
 extern Lop* danhSachLop[MAX];
 

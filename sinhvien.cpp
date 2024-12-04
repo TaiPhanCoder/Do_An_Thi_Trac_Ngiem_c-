@@ -102,13 +102,12 @@ void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop) {
 int demSinhVien() {
     int count = 0;
 
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
         SinhVien* current = danhSachLop[i]->DSSV;
 
-        // Duyệt qua danh sách sinh viên của lớp hiện tại
         while (current != nullptr) {
             count++;
             current = current->next;
