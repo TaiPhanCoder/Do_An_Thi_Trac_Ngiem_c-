@@ -1,6 +1,8 @@
 #ifndef TRAC_NGHIEM_H
 #define TRAC_NGHIEM_H
+#include "globals.h"
 #include "cau_hoi.h"
+#include "cau_hoi_da_thi.h"
 #include <QListWidgetItem>
 
 #include <QMainWindow>
@@ -27,11 +29,12 @@ private slots:
     void initializeMangDaThi();
     void handleAnswerSelection();
     void updateRadioButtonState();
-
+    void setupTracNghiem();
     void on_NopBai_clicked();
 
 private:
     Ui::Trac_Nghiem *ui;
+    void taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int questions);
 };
 
     extern int countcauhoi;

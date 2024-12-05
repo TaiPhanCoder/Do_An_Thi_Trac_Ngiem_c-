@@ -1,21 +1,33 @@
 #include "cau_hoi_da_thi.h"
-#include "globals.h"
-#include "cau_hoi.h"
+#include <QDebug>
 
 cau_hoi_da_thi::cau_hoi_da_thi() {}
 
-monHoc* newMonHoc(const QString& mamh, float diem, int questions) {
-    monHoc* newMH = new monHoc;
+void themMonHoc(monHocDaThi*& head, monHocDaThi* monHocMoi) {
+    if (monHocMoi == nullptr) {
+        qDebug() << "Môn học không hợp lệ!";
+        return;
+    }
+
+    // Thêm monHocMoi vào đầu danh sách
+    monHocMoi->next = head;
+    head = monHocMoi;
+}
+
+
+monHocDaThi* newmonHocDaThi(const QString& mamh, float diem, int questions) {
+    monHocDaThi* newMH = new monHocDaThi;
     newMH->maMH = mamh;
     newMH->diem = diem;
+    newMH->soCauThi = questions;
     newMH->mangDaThi = new DaThi[questions];
     newMH->next = nullptr;
     return newMH;
 }
 
-int demSoMonThi(monHoc* head) {
+int demSoMonThi(monHocDaThi* head) {
     int count = 0;
-    monHoc* current = head;
+    monHocDaThi* current = head;
 
     while (current != nullptr) {
         count++;

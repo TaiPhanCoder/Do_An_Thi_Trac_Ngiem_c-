@@ -1,6 +1,7 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 #include<QString>
+#include "cau_hoi_da_thi.h"
 
 struct DiemThi{
     QString maMH;
@@ -14,7 +15,7 @@ struct SinhVien{
     QString ten;
     QString phai;
     QString password;
-    DiemThi* ds_diemthi;
+    monHocDaThi* ds_diemthi;
     SinhVien* next;
 };
 
@@ -24,6 +25,6 @@ extern int questions;
 extern QString monhoc;
 extern QString maMH;
 extern SinhVien *headDsachSV;
-extern SinhVien mainUser;
+extern SinhVien *mainUser;
 
 #endif

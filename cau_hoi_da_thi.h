@@ -18,13 +18,16 @@ struct DaThi {
     QChar dapAn;
 };
 
-struct monHoc {
+struct monHocDaThi {
     QString maMH;
     float diem;
+    int soCauThi;
     DaThi* mangDaThi;
-    monHoc* next;
+    monHocDaThi* next;
 };
 
-monHoc* newMonHoc(const QString& mamh, float diem, int questions);
+void themMonHoc(monHocDaThi*& head, monHocDaThi* monHocMoi);
+monHocDaThi* newmonHocDaThi(const QString& mamh, float diem, int questions);
+int demSoMonThi(monHocDaThi* head);
 
 #endif // CAU_HOI_DA_THI_H

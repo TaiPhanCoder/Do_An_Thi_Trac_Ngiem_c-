@@ -16,8 +16,8 @@ Thong_Tin_Thi::Thong_Tin_Thi(QWidget *parent)
     this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
     this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
 
-    ui->MSSV->setText("  MSSV: " + mainUser.masv);
-    ui->TEN->setText("  Tên: " + mainUser.ho + " " + mainUser.ten);
+    ui->MSSV->setText("  MSSV: " + mainUser->masv);
+    ui->TEN->setText("  Tên: " + mainUser->ho + " " + mainUser->ten);
 
     ptrMonHoc root = readFileAndBuildAVL();
     QStringList danhSachMonHoc;

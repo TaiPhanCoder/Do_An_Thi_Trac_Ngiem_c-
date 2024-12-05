@@ -140,13 +140,7 @@ bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &entere
         while (current != nullptr) {
             if (current->masv == enteredUsername) {
                 if (current->password == enteredPassword) {
-                    mainUser.masv = current->masv;
-                    mainUser.ho = current->ho;
-                    mainUser.ten = current->ten;
-                    mainUser.phai = current->phai;
-                    mainUser.password = current->password;
-                    mainUser.ds_diemthi = current->ds_diemthi;
-                    mainUser.next = nullptr;
+                    mainUser = current;
                     return true;
                 } else {
                     return false;

@@ -10,7 +10,7 @@
 #include <QTime>
 
 DaThi* mangDaThi = nullptr;
-int countcauhoi = 1;
+int cauHienTai = 1;
 QTimer *timer;
 QTime timeLeft;
 CauHoi* cauhoiHienTai = nullptr;
@@ -25,39 +25,68 @@ Trac_Nghiem::Trac_Nghiem(QWidget *parent)
     this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
     QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
     QTime timeLeft(0, times, 0);
-    qDebug() << "Thoi Gian Thi" << times;
     startCountdown(times);
-    // initializeMangDaThi();
-    ui->MSSV->setText("MSSV: " + mainUser.masv);
-    ui->TEN->setText("Tên: " + mainUser.ho + " " + mainUser.ten);
-    ui->Questions->setText("Số Câu Hỏi: " + QString::number(questions));
-    ui->Times->setText("Số Phút Thi: " + QString::number(times));
-    ui->MonHoc->setText("Môn Thi: " + monhoc);
-    ui->maMH->setText("Môn Thi: " + maMH);
-    ui->logo_PTIT->setPixmap(pixmap);
-    ui->logo_PTIT->setScaledContents(true);
-    // inDanhSachCauHoi(headCauhoi);
-    ui->cau_hoi->setText("Câu " + QString::number(1) +": "+ headCauhoi->noiDung);
-    ui->AQ->setText(headCauhoi->A);
-    ui->BQ->setText(headCauhoi->B);
-    ui->CQ->setText(headCauhoi->C);
-    ui->DQ->setText(headCauhoi->D);
-    for (int var = 1; var <= questions; ++var) {
-        ui->listWidget->addItem("Câu hỏi " + QString::number(var) + ": ");
-    }
-    connect(ui->listWidget, &QListWidget::itemClicked, this, &Trac_Nghiem::handleListWidgetClick);
+    setupTracNghiem();
     indsach();
     initializeMangDaThi();
-    connect(ui->AQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
-    connect(ui->BQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
-    connect(ui->CQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
-    connect(ui->DQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
+    taoMonHocDangThi(mainUser,maMH, questions);
 }
 
 Trac_Nghiem::~Trac_Nghiem()
 {
     delete ui;
 }
+
+void Trac_Nghiem::setupTracNghiem() {
+    // Hiển thị thông tin sinh viên
+    ui->MSSV->setText("MSSV: " + mainUser->masv);
+    ui->TEN->setText("Tên: " + mainUser->ho + " " + mainUser->ten);
+
+    // Hiển thị thông tin thi
+    ui->Questions->setText("Số Câu Hỏi: " + QString::number(questions));
+    ui->Times->setText("Số Phút Thi: " + QString::number(times));
+    ui->MonHoc->setText("Môn Thi: " + monhoc);
+    ui->maMH->setText("Môn Thi: " + maMH);
+
+    // Cập nhật logo PTIT
+    QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
+    ui->logo_PTIT->setPixmap(pixmap);
+    ui->logo_PTIT->setScaledContents(true);
+
+    // Cập nhật câu hỏi đầu tiên
+    ui->cau_hoi->setText("Câu " + QString::number(1) + ": " + headCauhoi->noiDung);
+    ui->AQ->setText(headCauhoi->A);
+    ui->BQ->setText(headCauhoi->B);
+    ui->CQ->setText(headCauhoi->C);
+    ui->DQ->setText(headCauhoi->D);
+
+    // Thêm câu hỏi vào danh sách
+    for (int var = 1; var <= questions; ++var) {
+        ui->listWidget->addItem("Câu hỏi " + QString::number(var) + ": ");
+    }
+
+    // Kết nối các sự kiện
+    connect(ui->listWidget, &QListWidget::itemClicked, this, &Trac_Nghiem::handleListWidgetClick);
+
+    connect(ui->AQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
+    connect(ui->BQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
+    connect(ui->CQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
+    connect(ui->DQ, &QRadioButton::toggled, this, &Trac_Nghiem::handleAnswerSelection);
+}
+
+void Trac_Nghiem::taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int questions) {
+    if (sinhVien == nullptr) {
+        qDebug() << "Sinh viên không hợp lệ!";
+        return;
+    }
+
+    monHocDaThi* monHocMoi = newmonHocDaThi(maMH, 0.0f, questions);
+
+    monHocMoi->mangDaThi = mangDaThi;
+
+    themMonHoc(sinhVien->ds_diemthi, monHocMoi);
+}
+
 
 void Trac_Nghiem::startCountdown(int times) {
     timeLeft = QTime(0, times, 0);
@@ -84,7 +113,7 @@ void Trac_Nghiem::updateTime() {
 }
 
 void Trac_Nghiem::handleAnswerSelection() {
-    int index = countcauhoi - 1;
+    int index = cauHienTai - 1;
 
     if (ui->AQ->isChecked()) {
         mangDaThi[index].dapAn = QChar('A');
@@ -95,17 +124,17 @@ void Trac_Nghiem::handleAnswerSelection() {
     } else if (ui->DQ->isChecked()) {
         mangDaThi[index].dapAn = QChar('D');
     } else {
-        mangDaThi[index].dapAn = QChar();
+        mangDaThi[index].dapAn = '-';
     }
 
-    qDebug() << "Câu hỏi " << countcauhoi << " đã chọn đáp án: " << mangDaThi[index].dapAn;
+    qDebug() << "Câu hỏi " << cauHienTai << " đã chọn đáp án: " << mangDaThi[index].dapAn;
 }
 
 void Trac_Nghiem::updateRadioButtonState() {
-    int index = countcauhoi - 1;
+    int index = cauHienTai - 1;
 
     // Kiểm tra nếu chưa có đáp án, bỏ chọn tất cả các RadioButton
-    if (mangDaThi[index].dapAn.isNull() || mangDaThi[index].dapAn == QChar()) {
+    if (mangDaThi[index].dapAn == '-' || mangDaThi[index].dapAn.isNull()) {
         ui->AQ->setAutoExclusive(false);
         ui->BQ->setAutoExclusive(false);
         ui->CQ->setAutoExclusive(false);
@@ -160,7 +189,7 @@ void Trac_Nghiem::initializeMangDaThi() {
     int index = 0;
     while (temp != nullptr && index < questions) {
         mangDaThi[index].id = temp->id;
-        mangDaThi[index].dapAn = QChar();
+        mangDaThi[index].dapAn = '-';
         qDebug() << "id: " << mangDaThi[index].id << '\t' << "dapAn: " << mangDaThi[index].dapAn;
         temp = temp->next;
         index++;
@@ -168,22 +197,22 @@ void Trac_Nghiem::initializeMangDaThi() {
 }
 
 void next(){
-    countcauhoi++;
+    cauHienTai++;
 
     cauhoiHienTai = cauhoiHienTai->next;
-    qDebug() << countcauhoi;
+    qDebug() << cauHienTai;
     qDebug() << headCauhoi->id;
     qDebug() << cauhoiHienTai->id;
 }
 
 void prev(){
-    countcauhoi--;
-    // qDebug() << countcauhoi;
+    cauHienTai--;
+    // qDebug() << cauHienTai;
     cauhoiHienTai = headCauhoi;
-    for (int i = 1; i < countcauhoi; i++) {
+    for (int i = 1; i < cauHienTai; i++) {
         cauhoiHienTai = cauhoiHienTai->next;
     }
-    qDebug() << countcauhoi;
+    qDebug() << cauHienTai;
     qDebug() << headCauhoi->id;
     qDebug() << cauhoiHienTai->id;
 }
@@ -191,10 +220,10 @@ void prev(){
 void Trac_Nghiem::on_right_arow_clicked()
 {
     qDebug() << cauhoiHienTai->noiDung;
-    if(countcauhoi < questions){
+    if(cauHienTai < questions){
         next();
         qDebug() << cauhoiHienTai->noiDung;
-        ui->cau_hoi->setText("Câu " + QString::number(countcauhoi) + ": " + cauhoiHienTai->noiDung);
+        ui->cau_hoi->setText("Câu " + QString::number(cauHienTai) + ": " + cauhoiHienTai->noiDung);
         ui->AQ->setText(cauhoiHienTai->A);
         ui->BQ->setText(cauhoiHienTai->B);
         ui->CQ->setText(cauhoiHienTai->C);
@@ -204,12 +233,11 @@ void Trac_Nghiem::on_right_arow_clicked()
     }
 }
 
-
 void Trac_Nghiem::on_left_arow_clicked()
 {
-    if(countcauhoi>1){
+    if(cauHienTai>1){
         prev();
-        ui->cau_hoi->setText("Câu " + QString::number(countcauhoi) + ": " +cauhoiHienTai->noiDung);
+        ui->cau_hoi->setText("Câu " + QString::number(cauHienTai) + ": " +cauhoiHienTai->noiDung);
         ui->AQ->setText(cauhoiHienTai->A);
         ui->BQ->setText(cauhoiHienTai->B);
         ui->CQ->setText(cauhoiHienTai->C);
@@ -224,7 +252,7 @@ void cauHoi(){
     cauhoiHienTai = headCauhoi;
     int count = 1;  // Đếm vị trí của node hiện tại
     // Duyệt đến câu hỏi tại vị trí index trong danh sách liên kết head
-    while (cauhoiHienTai != nullptr && count < countcauhoi) {
+    while (cauhoiHienTai != nullptr && count < cauHienTai) {
         cauhoiHienTai = cauhoiHienTai->next;
         count++;
     }
@@ -233,9 +261,9 @@ void cauHoi(){
 void Trac_Nghiem::handleListWidgetClick(QListWidgetItem *item)
 {
     int row = ui->listWidget->row(item);
-    countcauhoi = row + 1;
+    cauHienTai = row + 1;
     cauHoi();
-    ui->cau_hoi->setText("Câu " + QString::number(countcauhoi) + ": " + cauhoiHienTai->noiDung);
+    ui->cau_hoi->setText("Câu " + QString::number(cauHienTai) + ": " + cauhoiHienTai->noiDung);
     ui->AQ->setText(cauhoiHienTai->A);
     ui->BQ->setText(cauhoiHienTai->B);
     ui->CQ->setText(cauhoiHienTai->C);
@@ -266,29 +294,60 @@ float tinhDiemSinhVien()
 
 void luuDuLieuMangDaThi()
 {
-    float diem = tinhDiemSinhVien();
     QFile file("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/DsachDalLamBai.txt");
-    if (!file.open(QIODevice::Append | QIODevice::Text)) {
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {  // Sửa chế độ mở file thành WriteOnly
         qDebug() << "Không thể mở file để ghi dữ liệu.";
         return;
     }
 
     QTextStream out(&file);
 
-    out << mainUser.masv << "|" << maMH << "|" << questions << "|" << diem << "\n";
+    // Ghi số lượng lớp hiện tại
+    int soLop = demSoLop();
+    out << soLop << "\n";
 
-    for (int i = 0; i < questions; ++i) {
-        out << mangDaThi[i].id << "|";
-        if (!mangDaThi[i].dapAn.isNull()) {
-            out << mangDaThi[i].dapAn;
-        } else {
-            out << "NULL";
+    // Vòng lặp ghi thông tin cho từng lớp
+    for (int i = 0; i < soLop; ++i) {
+        Lop* lop = danhSachLop[i];
+        if (lop == nullptr) {
+            continue;
         }
-        if (i < questions - 1) {
-            out << "|";
+
+        // Ghi thông tin lớp học
+        out << lop->MALOP << "|" << lop->TENLOP << "\n";
+
+        // Đếm số sinh viên trong lớp và ghi thông tin
+        int soSinhVien = demSVLop(lop);
+        out << soSinhVien << "\n";
+
+        // Ghi thông tin của từng sinh viên
+        SinhVien* sv = lop->DSSV;
+        while (sv != nullptr) {
+            out << sv->masv << "|" << sv->ho << "|" << sv->ten << "|" << sv->phai << "|" << sv->password << "\n";
+
+            // Đếm số môn học đã thi và ghi thông tin
+            monHocDaThi* diemThi = sv->ds_diemthi;
+            int soMonHocDaThi = demSoMonThi(diemThi);
+            out << soMonHocDaThi << "\n";
+
+            // Ghi thông tin từng môn học đã thi
+            diemThi = sv->ds_diemthi;
+            while (diemThi != nullptr) {
+                out << diemThi->maMH << "|" << diemThi->diem << "\n";
+
+                // Ghi số lượng câu hỏi đã thi
+                int soCauThi = diemThi->soCauThi;
+                out << soCauThi << "\n";
+
+                // Ghi danh sách câu hỏi và đáp án của sinh viên
+                for (int j = 0; j < soCauThi; ++j) {
+                    out << diemThi->mangDaThi[j].id << "|" << diemThi->mangDaThi[j].dapAn << "\n";
+                }
+                diemThi = diemThi->next;
+            }
+            sv = sv->next;
         }
     }
-    out << "\n";
 
     file.close();
     qDebug() << "Dữ liệu đã được lưu thành công.";
