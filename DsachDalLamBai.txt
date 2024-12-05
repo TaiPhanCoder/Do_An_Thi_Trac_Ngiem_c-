@@ -3,13 +3,13 @@ E23CQCN01-N|Công nghệ thông tin CLC 2023
 16
 1|Pham Van|Hung|Nam|123
 1
-|0
+INT1306|8
 5
-5|C
-4|B
-3|-
-7|-
-10|-
+3|B
+6|B
+8|B
+9|D
+5|B
 2|Nguyen Thi|Lan|Nữ|123
 0
 N23DCCN003|Tran Minh|Hoang|Nam|123

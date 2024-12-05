@@ -38,29 +38,91 @@ Dang_Nhap::~Dang_Nhap()
     delete ui;
 }
 
+// void Dang_Nhap::lapdssinhvien(const QString &filename) {
+//     QFile file(filename);
+//     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+//         qDebug() << "Cannot open file!";
+//         return;
+//     }
+
+//     QTextStream in(&file);
+//     Lop* currentLop = nullptr;
+//     int lopIndex = 0;
+
+//     while (!in.atEnd()) {
+//         QString line = in.readLine().trimmed();
+
+//         if (line.contains('-')) {
+//             QStringList lopFields = line.split('|');
+//             if (lopFields.size() == 2) {
+//                 QString malop = lopFields.at(0).trimmed();
+//                 QString tenlop = lopFields.at(1).trimmed();
+
+//                 currentLop = new Lop;
+//                 currentLop->MALOP = malop;
+//                 currentLop->TENLOP = tenlop;
+//                 currentLop->DSSV = nullptr;
+
+//                 if (lopIndex < 10000) {
+//                     danhSachLop[lopIndex++] = currentLop;
+//                 } else {
+//                     qDebug() << "Danh sách lớp đã đầy!";
+//                     break;
+//                 }          }
+//         } else if (currentLop) {
+//             QStringList fields = line.split('|');
+//             if (fields.size() == 5) {
+//                 QString masv = fields.at(0).trimmed();
+//                 QString ho = fields.at(1).trimmed();
+//                 QString ten = fields.at(2).trimmed();
+//                 QString phai = fields.at(3).trimmed();
+//                 QString password = fields.at(4).trimmed();
+
+//                 // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
+//                 SinhVien* newSV = new SinhVien{masv, ho, ten, phai, password};
+
+//                 if (currentLop->DSSV == nullptr) {
+//                     currentLop->DSSV = newSV;
+//                 } else {
+//                     SinhVien* tail = currentLop->DSSV;
+//                     while (tail->next) {
+//                         tail = tail->next;
+//                     }
+//                     tail->next = newSV;
+//                 }
+//             } else {
+//                 qDebug() << "Invalid student line format: " << line;
+//             }
+//         }
+//     }
+
+//     file.close();
+// }
+
 void Dang_Nhap::lapdssinhvien(const QString &filename) {
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "Cannot open file!";
+        qDebug() << "Không thể mở file!";
         return;
     }
 
     QTextStream in(&file);
     Lop* currentLop = nullptr;
+    SinhVien* currentSV = nullptr;
+    monHocDaThi* currentMonHoc = nullptr;
+
     int lopIndex = 0;
+    int soLop = in.readLine().toInt();  // Đọc số lượng lớp
 
-    while (!in.atEnd()) {
+    for (int i = 0; i < soLop; ++i) {
+        // Đọc thông tin lớp
         QString line = in.readLine().trimmed();
-
-        if (line.contains('-')) {
+        if (line.contains('|')) {
             QStringList lopFields = line.split('|');
             if (lopFields.size() == 2) {
-                QString malop = lopFields.at(0).trimmed();
-                QString tenlop = lopFields.at(1).trimmed();
-
                 currentLop = new Lop;
-                currentLop->MALOP = malop;
-                currentLop->TENLOP = tenlop;
+                currentLop->MALOP = lopFields.at(0).trimmed();
+                currentLop->TENLOP = lopFields.at(1).trimmed();
                 currentLop->DSSV = nullptr;
 
                 if (lopIndex < 10000) {
@@ -68,18 +130,27 @@ void Dang_Nhap::lapdssinhvien(const QString &filename) {
                 } else {
                     qDebug() << "Danh sách lớp đã đầy!";
                     break;
-                }          }
-        } else if (currentLop) {
-            QStringList fields = line.split('|');
-            if (fields.size() == 5) {
-                QString masv = fields.at(0).trimmed();
-                QString ho = fields.at(1).trimmed();
-                QString ten = fields.at(2).trimmed();
-                QString phai = fields.at(3).trimmed();
-                QString password = fields.at(4).trimmed();
+                }
+            }
+        }
+
+        // Đọc số lượng sinh viên trong lớp
+        int soSinhVien = in.readLine().toInt();
+
+        for (int j = 0; j < soSinhVien; ++j) {
+            line = in.readLine().trimmed();
+            QStringList studentFields = line.split('|');
+            if (studentFields.size() == 5) {
+                // Đọc thông tin sinh viên
+                QString masv = studentFields.at(0).trimmed();
+                QString ho = studentFields.at(1).trimmed();
+                QString ten = studentFields.at(2).trimmed();
+                QString phai = studentFields.at(3).trimmed();
+                QString password = studentFields.at(4).trimmed();
 
                 // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
                 SinhVien* newSV = new SinhVien{masv, ho, ten, phai, password};
+                newSV->next = nullptr;
 
                 if (currentLop->DSSV == nullptr) {
                     currentLop->DSSV = newSV;
@@ -90,20 +161,69 @@ void Dang_Nhap::lapdssinhvien(const QString &filename) {
                     }
                     tail->next = newSV;
                 }
-            } else {
-                qDebug() << "Invalid student line format: " << line;
+                currentSV = newSV;
+
+                // Đọc số môn học đã thi
+                int soMonHocDaThi = in.readLine().toInt();
+                for (int k = 0; k < soMonHocDaThi; ++k) {
+                    // Đọc thông tin môn học đã thi
+                    line = in.readLine().trimmed();
+                    QStringList monHocFields = line.split('|');
+                    if (monHocFields.size() == 2) {
+                        QString maMH = monHocFields.at(0).trimmed();
+                        float diem = monHocFields.at(1).toFloat();
+
+                        // Tạo môn học mới
+                        monHocDaThi* newMonHoc = new monHocDaThi;
+                        newMonHoc->maMH = maMH;
+                        newMonHoc->diem = diem;
+                        newMonHoc->mangDaThi = nullptr;
+                        newMonHoc->next = nullptr;
+
+                        // Thêm môn học vào danh sách môn học đã thi của sinh viên
+                        if (currentSV->ds_diemthi == nullptr) {
+                            currentSV->ds_diemthi = newMonHoc;
+                        } else {
+                            monHocDaThi* tailMonHoc = currentSV->ds_diemthi;
+                            while (tailMonHoc->next) {
+                                tailMonHoc = tailMonHoc->next;
+                            }
+                            tailMonHoc->next = newMonHoc;
+                        }
+                        currentMonHoc = newMonHoc;
+
+                        // Đọc số câu hỏi đã thi
+                        int soCauThi = in.readLine().toInt();
+                        currentMonHoc->soCauThi = soCauThi;
+                        currentMonHoc->mangDaThi = new DaThi[soCauThi];
+
+                        // Đọc các câu hỏi và đáp án
+                        for (int m = 0; m < soCauThi; ++m) {
+                            line = in.readLine().trimmed();
+                            QStringList cauHoiFields = line.split('|');
+                            if (cauHoiFields.size() == 2) {
+                                int id = cauHoiFields.at(0).toInt();
+                                QChar dapAn = cauHoiFields.at(1).trimmed().at(0);  // Giả sử đáp án chỉ có một ký tự
+
+                                currentMonHoc->mangDaThi[m].id = id;
+                                currentMonHoc->mangDaThi[m].dapAn = dapAn;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
 
     file.close();
+    qDebug() << "Dữ liệu đã được đọc thành công.";
 }
 
 void Dang_Nhap::on_DangNhapButton_clicked() {
     QString username = ui->TaiKhoan->text();
     QString password = ui->MatKhau->text();
 
-    lapdssinhvien(":/TK-MK-PTIT/TK-MK.txt");
+    lapdssinhvien(":/TK-MK-PTIT/DsachDalLamBai.txt");
 
     if (checkLogin(username, password)) {
         ui->ThongBao->setText("Đăng nhập thành công!");

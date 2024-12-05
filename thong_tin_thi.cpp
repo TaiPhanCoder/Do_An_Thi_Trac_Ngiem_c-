@@ -20,16 +20,8 @@ Thong_Tin_Thi::Thong_Tin_Thi(QWidget *parent)
     ui->TEN->setText("  Tên: " + mainUser->ho + " " + mainUser->ten);
 
     ptrMonHoc root = readFileAndBuildAVL();
-    QStringList danhSachMonHoc;
-    duyetLNR(root, danhSachMonHoc);
-    // Cài đặt bộ lọc sự kiện và các mục khác
-    ui->DSachMonHoc->addItems(danhSachMonHoc);
+    setUpDSMonHoc(root);
     ui->DSachMonHoc->installEventFilter(this);
-
-    // Căn giữa các mục trong danh sách thả xuống
-    for (int i = 0; i < ui->DSachMonHoc->count(); ++i) {
-        ui->DSachMonHoc->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
-    }
 
     completer = new QCompleter(danhSachMonHoc, this);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
@@ -37,7 +29,6 @@ Thong_Tin_Thi::Thong_Tin_Thi(QWidget *parent)
     ui->DSachMonHoc->setCompleter(completer);
     ui->DSachMonHoc->setEditable(true);
     ui->DSachMonHoc->completer()->setCompletionMode(QCompleter::PopupCompletion);
-
     ui->DangNhapButton->setAutoDefault(false);
 }
 
@@ -45,6 +36,21 @@ Thong_Tin_Thi::~Thong_Tin_Thi()
 {
     delete ui;
     delete completer;
+}
+
+void Thong_Tin_Thi::setUpDSMonHoc(NodeMonHoc* root){
+    if (root == nullptr) {
+        return;
+    }
+
+    ui->DSachMonHoc->addItem(root->MH.TENMH, QVariant::fromValue(root->MH.MAMH));
+
+    int index = ui->DSachMonHoc->count() - 1;
+    ui->DSachMonHoc->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
+
+    setUpDSMonHoc(root->left);
+
+    setUpDSMonHoc(root->right);
 }
 
 bool Thong_Tin_Thi::eventFilter(QObject *obj, QEvent *event) {
@@ -99,6 +105,7 @@ void Thong_Tin_Thi::on_DangNhapButton_clicked()
         times = ui->spinBox_2->value();
         questions = ui->spinBox->value();
         monhoc = MonHoc;
+        maMH = ui->DSachMonHoc->currentData().toString();
         shuffleArray(mangCauHoi,questions);
         headCauhoi = DsachCauHoiThi(mangCauHoi,questions);
         accept();

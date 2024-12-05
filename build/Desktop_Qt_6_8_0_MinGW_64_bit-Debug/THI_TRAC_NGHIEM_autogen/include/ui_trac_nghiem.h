@@ -39,7 +39,7 @@ public:
     QLabel *logo_PTIT;
     QGroupBox *groupBox;
     QLabel *timerLabel;
-    QGroupBox *groupBox_2;
+    QGroupBox *grLamBai;
     QFrame *Lam_Bai;
     QLabel *cau_hoi;
     QRadioButton *AQ;
@@ -49,9 +49,18 @@ public:
     QPushButton *left_arow;
     QPushButton *right_arow;
     QPushButton *NopBai;
-    QGroupBox *groupBox_3;
+    QGroupBox *grCauHoi;
     QListWidget *listWidget;
     QGroupBox *groupBox_4;
+    QGroupBox *ketQuaThi;
+    QLabel *mssv;
+    QLabel *ten;
+    QLabel *label_3;
+    QLabel *diem;
+    QLabel *soCauDung;
+    QLabel *thoiGianLamBai;
+    QLabel *tenMH;
+    QLabel *mamh;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -73,10 +82,10 @@ public:
         MSSV->setObjectName("MSSV");
         MSSV->setGeometry(QRect(170, 30, 251, 31));
         MSSV->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
-"	border-radius: 20px;\n"
-"	background-color: #F0F0F0;\n"
-"	color: black;\n"
-"	font-size: 14px;\n"
+"border-radius: 20px;\n"
+"background-color: #F0F0F0;\n"
+"color: black;\n"
+"font-size: 14px;\n"
 "text-align: center;"));
         TEN = new QLabel(Khung_Thong_Tin);
         TEN->setObjectName("TEN");
@@ -116,12 +125,12 @@ public:
 "    border-radius: 10px;\n"
 "}\n"
 ""));
-        groupBox_2 = new QGroupBox(centralwidget);
-        groupBox_2->setObjectName("groupBox_2");
-        groupBox_2->setGeometry(QRect(19, 169, 1231, 691));
-        Lam_Bai = new QFrame(groupBox_2);
+        grLamBai = new QGroupBox(centralwidget);
+        grLamBai->setObjectName("grLamBai");
+        grLamBai->setGeometry(QRect(19, 169, 1231, 651));
+        Lam_Bai = new QFrame(grLamBai);
         Lam_Bai->setObjectName("Lam_Bai");
-        Lam_Bai->setGeometry(QRect(30, 50, 1171, 551));
+        Lam_Bai->setGeometry(QRect(30, 50, 1171, 501));
         Lam_Bai->setFrameShape(QFrame::Shape::StyledPanel);
         Lam_Bai->setFrameShadow(QFrame::Shadow::Raised);
         cau_hoi = new QLabel(Lam_Bai);
@@ -145,27 +154,27 @@ public:
         DQ->setObjectName("DQ");
         DQ->setGeometry(QRect(100, 360, 1000, 50));
         DQ->setStyleSheet(QString::fromUtf8("font-size: 16pt; color: #000000;"));
-        left_arow = new QPushButton(groupBox_2);
+        left_arow = new QPushButton(grLamBai);
         left_arow->setObjectName("left_arow");
-        left_arow->setGeometry(QRect(390, 620, 151, 51));
+        left_arow->setGeometry(QRect(350, 580, 151, 51));
         left_arow->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;"));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/logo/left-long-solid.svg"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         left_arow->setIcon(icon);
         left_arow->setIconSize(QSize(40, 150));
-        right_arow = new QPushButton(groupBox_2);
+        right_arow = new QPushButton(grLamBai);
         right_arow->setObjectName("right_arow");
-        right_arow->setGeometry(QRect(710, 620, 151, 51));
+        right_arow->setGeometry(QRect(670, 580, 151, 51));
         right_arow->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;"));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/logo/right-long-solid.svg"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         right_arow->setIcon(icon1);
         right_arow->setIconSize(QSize(40, 150));
-        NopBai = new QPushButton(groupBox_2);
+        NopBai = new QPushButton(grLamBai);
         NopBai->setObjectName("NopBai");
-        NopBai->setGeometry(QRect(560, 620, 131, 51));
+        NopBai->setGeometry(QRect(520, 580, 131, 51));
         NopBai->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border: 2px solid gray;\n"
 "border-radius: 20px;\n"
@@ -180,16 +189,16 @@ public:
 "}\n"
 "\n"
 ""));
-        groupBox_3 = new QGroupBox(centralwidget);
-        groupBox_3->setObjectName("groupBox_3");
-        groupBox_3->setGeometry(QRect(1279, 169, 241, 691));
-        groupBox_3->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+        grCauHoi = new QGroupBox(centralwidget);
+        grCauHoi->setObjectName("grCauHoi");
+        grCauHoi->setGeometry(QRect(1279, 169, 241, 651));
+        grCauHoi->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;\n"
 "	color: black;\n"
 "	font-size: 14px;"));
-        listWidget = new QListWidget(groupBox_3);
+        listWidget = new QListWidget(grCauHoi);
         listWidget->setObjectName("listWidget");
-        listWidget->setGeometry(QRect(10, 41, 221, 631));
+        listWidget->setGeometry(QRect(10, 41, 221, 591));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName("groupBox_4");
         groupBox_4->setGeometry(QRect(1279, 9, 231, 151));
@@ -197,6 +206,47 @@ public:
 "border-radius: 20px;\n"
 "	color: black;\n"
 "	font-size: 14px;"));
+        ketQuaThi = new QGroupBox(centralwidget);
+        ketQuaThi->setObjectName("ketQuaThi");
+        ketQuaThi->setGeometry(QRect(530, 170, 601, 651));
+        ketQuaThi->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 20px;\n"
+"color: black;\n"
+"font-size: 14px;"));
+        mssv = new QLabel(ketQuaThi);
+        mssv->setObjectName("mssv");
+        mssv->setGeometry(QRect(40, 120, 261, 41));
+        mssv->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"background-color: #F0F0F0;\n"
+"color: black;\n"
+"font-size: 14px;\n"
+"text-align: center;"));
+        ten = new QLabel(ketQuaThi);
+        ten->setObjectName("ten");
+        ten->setGeometry(QRect(320, 120, 261, 41));
+        label_3 = new QLabel(ketQuaThi);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(60, 40, 451, 51));
+        diem = new QLabel(ketQuaThi);
+        diem->setObjectName("diem");
+        diem->setGeometry(QRect(180, 250, 261, 101));
+        soCauDung = new QLabel(ketQuaThi);
+        soCauDung->setObjectName("soCauDung");
+        soCauDung->setGeometry(QRect(40, 380, 261, 51));
+        thoiGianLamBai = new QLabel(ketQuaThi);
+        thoiGianLamBai->setObjectName("thoiGianLamBai");
+        thoiGianLamBai->setGeometry(QRect(40, 460, 261, 51));
+        tenMH = new QLabel(ketQuaThi);
+        tenMH->setObjectName("tenMH");
+        tenMH->setGeometry(QRect(320, 180, 261, 41));
+        mamh = new QLabel(ketQuaThi);
+        mamh->setObjectName("mamh");
+        mamh->setGeometry(QRect(40, 180, 261, 41));
+        mamh->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"background-color: #F0F0F0;\n"
+"color: black;\n"
+"font-size: 14px;\n"
+"text-align: center;"));
         Trac_Nghiem->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Trac_Nghiem);
         menubar->setObjectName("menubar");
@@ -224,7 +274,7 @@ public:
         logo_PTIT->setText(QString());
         groupBox->setTitle(QCoreApplication::translate("Trac_Nghiem", "Th\341\273\235i Gian Thi", nullptr));
         timerLabel->setText(QCoreApplication::translate("Trac_Nghiem", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt;\">25:00</span></p></body></html>", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("Trac_Nghiem", "Ph\341\272\247n L\303\240m B\303\240i", nullptr));
+        grLamBai->setTitle(QCoreApplication::translate("Trac_Nghiem", "Ph\341\272\247n L\303\240m B\303\240i", nullptr));
         cau_hoi->setText(QCoreApplication::translate("Trac_Nghiem", "<html><head/><body><p><span style=\" font-size:22pt; font-weight:700; color:#ff0000;\">C\303\242u h\341\273\217i: Th\341\273\247 \304\221\303\264 c\341\273\247a Vi\341\273\207t Nam l\303\240 th\303\240nh ph\341\273\221 n\303\240o?</span></p></body></html>", nullptr));
         AQ->setText(QCoreApplication::translate("Trac_Nghiem", "A. H\341\273\223 Ch\303\255 Minh", nullptr));
         BQ->setText(QCoreApplication::translate("Trac_Nghiem", "B. \304\220\303\240 N\341\272\265ng", nullptr));
@@ -233,8 +283,17 @@ public:
         left_arow->setText(QString());
         right_arow->setText(QString());
         NopBai->setText(QCoreApplication::translate("Trac_Nghiem", "N\341\273\231p B\303\240i", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("Trac_Nghiem", "Danh S\303\241ch C\303\242u H\341\273\217i", nullptr));
+        grCauHoi->setTitle(QCoreApplication::translate("Trac_Nghiem", "Danh S\303\241ch C\303\242u H\341\273\217i", nullptr));
         groupBox_4->setTitle(QCoreApplication::translate("Trac_Nghiem", "H\306\260\341\273\233ng D\341\272\253n L\303\240m B\303\240i", nullptr));
+        ketQuaThi->setTitle(QCoreApplication::translate("Trac_Nghiem", "K\341\272\277t Qu\341\272\243 Thi", nullptr));
+        mssv->setText(QCoreApplication::translate("Trac_Nghiem", "TextLabel", nullptr));
+        ten->setText(QCoreApplication::translate("Trac_Nghiem", "TextLabel", nullptr));
+        label_3->setText(QCoreApplication::translate("Trac_Nghiem", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:700; color:#ff0000;\">K\341\272\277t Qu\341\272\243 Thi</span></p></body></html>", nullptr));
+        diem->setText(QCoreApplication::translate("Trac_Nghiem", "TextLabel", nullptr));
+        soCauDung->setText(QCoreApplication::translate("Trac_Nghiem", "TextLabel", nullptr));
+        thoiGianLamBai->setText(QCoreApplication::translate("Trac_Nghiem", "TextLabel", nullptr));
+        tenMH->setText(QCoreApplication::translate("Trac_Nghiem", "TextLabel", nullptr));
+        mamh->setText(QCoreApplication::translate("Trac_Nghiem", "TextLabel", nullptr));
     } // retranslateUi
 
 };

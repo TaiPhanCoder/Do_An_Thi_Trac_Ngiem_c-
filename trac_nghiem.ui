@@ -43,10 +43,10 @@ border-radius: 20px;
      </property>
      <property name="styleSheet">
       <string notr="true">border: 2px solid gray;
-	border-radius: 20px;
-	background-color: #F0F0F0;
-	color: black;
-	font-size: 14px;
+border-radius: 20px;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
 text-align: center;</string>
      </property>
      <property name="text">
@@ -178,13 +178,13 @@ border-radius: 20px;
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="grLamBai">
     <property name="geometry">
      <rect>
       <x>19</x>
       <y>169</y>
       <width>1231</width>
-      <height>691</height>
+      <height>651</height>
      </rect>
     </property>
     <property name="title">
@@ -196,7 +196,7 @@ border-radius: 20px;
        <x>30</x>
        <y>50</y>
        <width>1171</width>
-       <height>551</height>
+       <height>501</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -292,8 +292,8 @@ border-radius: 20px;
     <widget class="QPushButton" name="left_arow">
      <property name="geometry">
       <rect>
-       <x>390</x>
-       <y>620</y>
+       <x>350</x>
+       <y>580</y>
        <width>151</width>
        <height>51</height>
       </rect>
@@ -319,8 +319,8 @@ border-radius: 20px;</string>
     <widget class="QPushButton" name="right_arow">
      <property name="geometry">
       <rect>
-       <x>710</x>
-       <y>620</y>
+       <x>670</x>
+       <y>580</y>
        <width>151</width>
        <height>51</height>
       </rect>
@@ -346,8 +346,8 @@ border-radius: 20px;</string>
     <widget class="QPushButton" name="NopBai">
      <property name="geometry">
       <rect>
-       <x>560</x>
-       <y>620</y>
+       <x>520</x>
+       <y>580</y>
        <width>131</width>
        <height>51</height>
       </rect>
@@ -373,13 +373,13 @@ QPushButton:hover {
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_3">
+   <widget class="QGroupBox" name="grCauHoi">
     <property name="geometry">
      <rect>
       <x>1279</x>
       <y>169</y>
       <width>241</width>
-      <height>691</height>
+      <height>651</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -397,7 +397,7 @@ border-radius: 20px;
        <x>10</x>
        <y>41</y>
        <width>221</width>
-       <height>631</height>
+       <height>591</height>
       </rect>
      </property>
     </widget>
@@ -420,6 +420,143 @@ border-radius: 20px;
     <property name="title">
      <string>Hướng Dẫn Làm Bài</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="ketQuaThi">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>170</y>
+      <width>601</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid gray;
+border-radius: 20px;
+color: black;
+font-size: 14px;</string>
+    </property>
+    <property name="title">
+     <string>Kết Quả Thi</string>
+    </property>
+    <widget class="QLabel" name="mssv">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>120</y>
+       <width>261</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="ten">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>120</y>
+       <width>261</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>40</y>
+       <width>451</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:700; color:#ff0000;&quot;&gt;Kết Quả Thi&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="diem">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>250</y>
+       <width>261</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="soCauDung">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>380</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="thoiGianLamBai">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>460</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="tenMH">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>180</y>
+       <width>261</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="mamh">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>180</y>
+       <width>261</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
+text-align: center;</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

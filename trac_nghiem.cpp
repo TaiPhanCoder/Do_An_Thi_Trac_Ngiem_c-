@@ -24,12 +24,13 @@ Trac_Nghiem::Trac_Nghiem(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
     QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
+    ui->ketQuaThi->setVisible(false);
     QTime timeLeft(0, times, 0);
     startCountdown(times);
     setupTracNghiem();
     indsach();
     initializeMangDaThi();
-    taoMonHocDangThi(mainUser,maMH, questions);
+    taoMonHocDangThi(mainUser, maMH, questions);
 }
 
 Trac_Nghiem::~Trac_Nghiem()
@@ -45,8 +46,8 @@ void Trac_Nghiem::setupTracNghiem() {
     // Hiển thị thông tin thi
     ui->Questions->setText("Số Câu Hỏi: " + QString::number(questions));
     ui->Times->setText("Số Phút Thi: " + QString::number(times));
-    ui->MonHoc->setText("Môn Thi: " + monhoc);
-    ui->maMH->setText("Môn Thi: " + maMH);
+    ui->MonHoc->setText("Tên Môn Học: " + monhoc);
+    ui->maMH->setText("Mã Môn Học: " + maMH);
 
     // Cập nhật logo PTIT
     QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
@@ -79,8 +80,7 @@ void Trac_Nghiem::taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int 
         qDebug() << "Sinh viên không hợp lệ!";
         return;
     }
-
-    monHocDaThi* monHocMoi = newmonHocDaThi(maMH, 0.0f, questions);
+    monHocMoi = newmonHocDaThi(maMH, 0.0f, questions);
 
     monHocMoi->mangDaThi = mangDaThi;
 
@@ -207,7 +207,6 @@ void next(){
 
 void prev(){
     cauHienTai--;
-    // qDebug() << cauHienTai;
     cauhoiHienTai = headCauhoi;
     for (int i = 1; i < cauHienTai; i++) {
         cauhoiHienTai = cauhoiHienTai->next;
@@ -295,7 +294,7 @@ float tinhDiemSinhVien()
 void luuDuLieuMangDaThi()
 {
     QFile file("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/DsachDalLamBai.txt");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {  // Sửa chế độ mở file thành WriteOnly
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         qDebug() << "Không thể mở file để ghi dữ liệu.";
         return;
     }
@@ -348,7 +347,6 @@ void luuDuLieuMangDaThi()
             sv = sv->next;
         }
     }
-
     file.close();
     qDebug() << "Dữ liệu đã được lưu thành công.";
 }
@@ -359,6 +357,25 @@ void Trac_Nghiem::on_NopBai_clicked()
     reply = QMessageBox::question(this, "Xác nhận", "Bạn có chắc chắn muốn nộp bài?",
                                   QMessageBox::Yes | QMessageBox::No);
     if (reply == QMessageBox::Yes) {
+        float diem =tinhDiemSinhVien();
+        monHocMoi->diem = diem;
         luuDuLieuMangDaThi();
+        ketQuaLamBai(diem);
     }
+}
+
+void Trac_Nghiem::ketQuaLamBai(const float & diem) {
+    ui->grLamBai->setVisible(false);
+    ui->grCauHoi->setVisible(false);
+    ui->ketQuaThi->setVisible(true);
+    ui->mssv->setAlignment(Qt::AlignCenter);
+    ui->ten->setAlignment(Qt::AlignCenter);
+    ui->diem->setAlignment(Qt::AlignCenter);
+    ui->soCauDung->setAlignment(Qt::AlignCenter);
+    ui->mamh->setAlignment(Qt::AlignCenter);
+    ui->tenMH->setAlignment(Qt::AlignCenter);
+    ui->thoiGianLamBai->setAlignment(Qt::AlignCenter);
+    ui->mssv->setText("MSSV: " + mainUser->masv);
+    ui->ten->setText("Tên: " + mainUser->ho + " " + mainUser->ten);
+    ui->diem->setText("Điểm: " + QString::number(diem));
 }

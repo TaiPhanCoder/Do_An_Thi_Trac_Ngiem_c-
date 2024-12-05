@@ -31,10 +31,12 @@ private slots:
     void updateRadioButtonState();
     void setupTracNghiem();
     void on_NopBai_clicked();
+    void ketQuaLamBai(const float &diem);
 
 private:
     Ui::Trac_Nghiem *ui;
     void taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int questions);
+    monHocDaThi* monHocMoi;
 };
 
     extern int countcauhoi;

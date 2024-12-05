@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QCompleter>
+#include "mamh.h"
 
 namespace Ui {
 class Thong_Tin_Thi;
@@ -21,6 +22,7 @@ protected:
 
 private slots:
     void on_DangNhapButton_clicked();
+    void setUpDSMonHoc(NodeMonHoc* root);
 
 private:
     Ui::Thong_Tin_Thi *ui;
