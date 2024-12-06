@@ -2,7 +2,9 @@
 #include "trac_nghiem.h"
 #include "giao_vien.h"
 #include "globals.h"
+#include "sinhvien.h"
 #include "thong_tin_thi.h"
+#include "lop.h"
 
 #include <QApplication>
 #include <QPalette>
@@ -11,20 +13,22 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    Dang_Nhap *loginDlg = new Dang_Nhap();
-    if (loginDlg->exec() == QDialog::Accepted) {
+    SinhVien* mainUser = nullptr;
+    Lop* danhSachLop[MAX] = {nullptr};
 
-        if (GV) {
-            GIao_Vien gvWindow;
-            gvWindow.setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
+    lapdssinhvien(":/TK-MK-PTIT/DsachDalLamBai.txt", danhSachLop);
+
+    Dang_Nhap* loginDlg = new Dang_Nhap(mainUser, danhSachLop);
+    if (loginDlg->exec() == QDialog::Accepted) {
+        if (mainUser == nullptr) {
+            GIao_Vien gvWindow(danhSachLop);
             gvWindow.showMaximized();
             return a.exec();
         } else {
-            Thong_Tin_Thi *TTThi = new Thong_Tin_Thi();
+            // Nếu mainUser != nullptr, mở giao diện thông tin thi
+            Thong_Tin_Thi* TTThi = new Thong_Tin_Thi(mainUser, danhSachLop);
             if (TTThi->exec() == QDialog::Accepted) {
-                // Nếu thông tin thi được chấp nhận, mở giao diện Trắc Nghiệm
-                Trac_Nghiem w;
-                w.setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
+                Trac_Nghiem w(mainUser, danhSachLop);
                 w.showMaximized();
                 return a.exec();
             }

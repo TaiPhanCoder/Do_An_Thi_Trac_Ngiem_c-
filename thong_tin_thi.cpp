@@ -7,8 +7,8 @@
 #include <QAbstractItemView>
 #include "mamh.h"
 
-Thong_Tin_Thi::Thong_Tin_Thi(QWidget *parent)
-    : QDialog(parent)
+Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* user, Lop* danhSachLop[], QWidget* parent)
+    : QDialog(parent) , mainUser(user), danhSachLop(danhSachLop)
     , ui(new Ui::Thong_Tin_Thi)
 {
     ui->setupUi(this);

@@ -3,11 +3,9 @@
 #include "lop.h"
 #include "sinhvien.h"
 
-HieuChinh::HieuChinh(const QString &mssv, const QString &ho, const QString &ten, const QString &lop, const QString &gioiTinh, QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::HieuChinh),
-    oldMssv(mssv),
-    oldLop(lop)
+HieuChinh::HieuChinh(const QString &mssv, const QString &ho, const QString &ten,
+                     const QString &lop, const QString &gioiTinh, Lop* danhSachLop[], QWidget *parent)
+    : QDialog(parent), ui(new Ui::HieuChinh), oldMssv(mssv), oldLop(lop), danhSachLop(danhSachLop)
 {
     ui->setupUi(this);
     this->setWindowTitle("Hiệu Chỉnh");

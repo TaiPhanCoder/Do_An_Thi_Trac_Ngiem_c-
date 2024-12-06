@@ -15,9 +15,8 @@ QTimer *timer;
 QTime timeLeft;
 CauHoi* cauhoiHienTai = nullptr;
 
-Trac_Nghiem::Trac_Nghiem(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::Trac_Nghiem)
+Trac_Nghiem::Trac_Nghiem(SinhVien* user, Lop* danhSachLop[], QWidget* parent)
+    : QMainWindow(parent), ui(new Ui::Trac_Nghiem), mainUser(user), danhSachLop(danhSachLop)
 {
     mangDaThi = new DaThi[questions];
     cauhoiHienTai = headCauhoi;
@@ -291,7 +290,7 @@ float tinhDiemSinhVien()
     return round(diem * 10) / 10;
 }
 
-void luuDuLieuMangDaThi()
+void luuDuLieuMangDaThi(Lop* danhSachLop[])
 {
     QFile file("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/DsachDalLamBai.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -302,7 +301,7 @@ void luuDuLieuMangDaThi()
     QTextStream out(&file);
 
     // Ghi số lượng lớp hiện tại
-    int soLop = demSoLop();
+    int soLop = demSoLop(danhSachLop);
     out << soLop << "\n";
 
     // Vòng lặp ghi thông tin cho từng lớp
@@ -359,7 +358,7 @@ void Trac_Nghiem::on_NopBai_clicked()
     if (reply == QMessageBox::Yes) {
         float diem =tinhDiemSinhVien();
         monHocMoi->diem = diem;
-        luuDuLieuMangDaThi();
+        luuDuLieuMangDaThi(danhSachLop);
         ketQuaLamBai(diem);
     }
 }

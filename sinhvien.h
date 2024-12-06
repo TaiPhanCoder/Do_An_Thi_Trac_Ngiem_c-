@@ -8,8 +8,21 @@ public:
     sinhvien();
 };
 
+struct SinhVien{
+    QString masv;
+    QString ho;
+    QString ten;
+    QString phai;
+    QString password;
+    monHocDaThi* ds_diemthi;
+    SinhVien* next;
+};
+
+extern SinhVien *headDsachSV;
+
 SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, QString password);
 int demSinhVien();
+void themSinhVien(SinhVien*& head, SinhVien* newSV);
 void themSinhVienVaoLopCoThuTu(SinhVien* newSV, const QString &lop);
 SinhVien* timSinhVien(const QString& mssv, const QString& lop);
 void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop);

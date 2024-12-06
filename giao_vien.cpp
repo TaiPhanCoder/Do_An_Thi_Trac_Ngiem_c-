@@ -8,6 +8,7 @@
 #include"them_sinh_vien.h"
 #include "themcauhoi.h"
 #include "hieuchinh_cauhoi.h"
+
 #include<QDebug>
 #include<QTableWidget>
 #include <QFileDialog>
@@ -18,8 +19,9 @@
 bool dasapxep = false;
 NodeMonHoc* root = nullptr;
 
-GIao_Vien::GIao_Vien(QWidget *parent)
+GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     : QMainWindow(parent)
+    , danhSachLop(danhSachLop)
     , ui(new Ui::GIao_Vien)
 {
     ui->setupUi(this);
@@ -86,7 +88,7 @@ void GIao_Vien::showCauHoiContextMenu(const QPoint &pos) {
     cauHoiContextMenu->exec(ui->bangDuLieu->viewport()->mapToGlobal(pos));
 }
 
-void xoaSinhVienKhoiDanhSach(const QString &masv, const QString &tenLop) {
+void xoaSinhVienKhoiDanhSach(Lop* danhSachLop[], const QString &masv, const QString &tenLop) {
     for (int i = 0; i < 10000; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
@@ -142,13 +144,13 @@ void GIao_Vien::xoaSV() {
         return;
     }
 
-    xoaSinhVienKhoiDanhSach(masv, tenLop);
+    xoaSinhVienKhoiDanhSach(danhSachLop, masv, tenLop);
 
     ui->bangDuLieu->removeRow(row);
 }
 
-void duyetDanhSach() {
-    for (int i = 0; i < 10000; ++i) {
+void duyetDanhSach(Lop* danhSachLop[]) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -163,6 +165,7 @@ void duyetDanhSach() {
         }
     }
 }
+
 
 void GIao_Vien::loadSinhVien() {
     ui->bangDuLieu->clear();
@@ -404,7 +407,7 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
 }
 
 void GIao_Vien::on_them1sv_clicked() {
-    Them_Sinh_Vien dialog(this);
+    Them_Sinh_Vien dialog(danhSachLop, this);
     if (dialog.exec() == QDialog::Accepted) {
         QString masv = dialog.getMSSV();
         QString ho = dialog.getHo();
@@ -434,7 +437,7 @@ void GIao_Vien::hieuChinhSV() {
     QString ten = ui->bangDuLieu->item(row, 2)->text();
     QString lop = ui->bangDuLieu->item(row, 3)->text();
     QString gioiTinh = ui->bangDuLieu->item(row, 4)->text();
-    HieuChinh dialog(mssv, ho, ten, lop, gioiTinh, this);
+    HieuChinh dialog(mssv, ho, ten, lop, gioiTinh, danhSachLop, this);
 
     if (dialog.exec() == QDialog::Accepted){
         loadSinhVien();
@@ -610,6 +613,6 @@ void GIao_Vien::on_themNhieuSV_clicked()
     if (!fileName.isEmpty()) {
         qDebug() << "File selected:" << fileName;
     }
-    loadSinhVienTuFile(fileName);
+    // loadSinhVienTuFile(danhSachLop, fileName);
     loadSinhVien();
 }

@@ -4,6 +4,8 @@
 #include <QDialog>
 #include <QCompleter>
 #include "mamh.h"
+#include "sinhvien.h"
+#include "lop.h"
 
 namespace Ui {
 class Thong_Tin_Thi;
@@ -14,7 +16,7 @@ class Thong_Tin_Thi : public QDialog
     Q_OBJECT
 
 public:
-    explicit Thong_Tin_Thi(QWidget *parent = nullptr);
+    explicit Thong_Tin_Thi(SinhVien* mainUser, Lop* danhSachLop[], QWidget* parent = nullptr);
     ~Thong_Tin_Thi();
 
 protected:
@@ -26,6 +28,9 @@ private slots:
 
 private:
     Ui::Thong_Tin_Thi *ui;
+    SinhVien* mainUser;
+    Lop** danhSachLop;
+
     QStringList danhSachMonHoc;
     QCompleter *completer;
 };

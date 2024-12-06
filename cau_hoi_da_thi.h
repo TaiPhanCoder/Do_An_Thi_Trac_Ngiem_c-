@@ -8,11 +8,6 @@ public:
     cau_hoi_da_thi();
 };
 
-// struct CauHoiDaChon {
-//     int id;
-//     QChar dapAn;
-// };
-
 struct DaThi {
     int id;
     QChar dapAn;

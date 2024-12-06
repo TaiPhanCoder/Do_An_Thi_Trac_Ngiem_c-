@@ -1,8 +1,9 @@
 #ifndef LOP_H
 #define LOP_H
-#define MAX 10000
 #include<QString>
 #include"sinhvien.h"
+
+#define MAX 10000
 
 class lop
 {
@@ -17,9 +18,8 @@ struct Lop {
     SinhVien* DSSV;
 };
 
-int demSoLop();
+int demSoLop(Lop* danhSachLop[]);
 int demSVLop(Lop* lop);
-
-extern Lop* danhSachLop[MAX];
+void lapdssinhvien(const QString &filename, Lop* danhSachLop[]);
 
 #endif // LOP_H

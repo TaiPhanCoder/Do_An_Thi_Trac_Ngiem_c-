@@ -7,6 +7,7 @@
 #include <QTableWidget>
 #include "ui_giao_vien.h"
 #include "mamh.h"
+#include "lop.h"
 
 namespace Ui {
 class GIao_Vien;
@@ -17,7 +18,7 @@ class GIao_Vien : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit GIao_Vien(QWidget *parent = nullptr);
+    explicit GIao_Vien(Lop* danhSachLop[], QWidget* parent = nullptr);
     ~GIao_Vien();
 
     void loadSinhVien();
@@ -50,6 +51,8 @@ private slots:
 
 private:
     Ui::GIao_Vien *ui;
+    Lop** danhSachLop;
+
     QMenu* sinhVienContextMenu;
     QAction* sinhVienDeleteAction;
     QAction* sinhVienEditAction;

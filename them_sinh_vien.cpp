@@ -3,9 +3,8 @@
 #include "lop.h"
 #include "sinhvien.h"
 
-Them_Sinh_Vien::Them_Sinh_Vien(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::Them_Sinh_Vien)
+Them_Sinh_Vien::Them_Sinh_Vien(Lop* danhSachLop[], QWidget* parent)
+    : QDialog(parent), ui(new Ui::Them_Sinh_Vien), danhSachLop(danhSachLop)
 {
     ui->setupUi(this);
     this->setWindowTitle("Thêm Sinh Viên");
@@ -73,7 +72,7 @@ void Them_Sinh_Vien::accept() {
             QDialog::accept();
             qDebug() << "Đã thêm sinh viên.";
 
-            Them_Sinh_Vien dialog(this);
+            Them_Sinh_Vien dialog(danhSachLop, this);
             if (dialog.exec() == QDialog::Accepted) {
                 continueAdding = true;
             } else {

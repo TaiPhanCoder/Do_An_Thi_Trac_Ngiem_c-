@@ -6,7 +6,7 @@
 #include "sinhvien.h"
 #include "lop.h"
 
-void loadSinhVienTuFile(const QString &fileName)
+void loadSinhVienTuFile(Lop* danhSachLop[], const QString &fileName)
 {
     OpenXLSX::XLDocument xlsx;
     try {

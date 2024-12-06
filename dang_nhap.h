@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QString>
+#include "sinhvien.h"
+#include "lop.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -15,13 +17,15 @@ class Dang_Nhap : public QDialog
     Q_OBJECT
 
 public:
-    explicit Dang_Nhap(QWidget *parent = nullptr);
+    explicit Dang_Nhap(SinhVien*& mainUser, Lop* danhSachLop[], QWidget *parent = nullptr);
     ~Dang_Nhap();
     bool isGV() const;
 
 private:
     Ui::Dang_Nhap *ui;
     bool userIsGV = false;
+    SinhVien*& mainUser;
+    Lop** danhSachLop;
 
     void setupWindowProperties();
     void setupLogo();

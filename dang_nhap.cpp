@@ -5,9 +5,8 @@
 #include <QDialog>
 #include "lop.h"
 
-Dang_Nhap::Dang_Nhap(QWidget *parent)
-    : QDialog(parent)
-    , ui(new Ui::Dang_Nhap)
+Dang_Nhap::Dang_Nhap(SinhVien*& user, Lop* danhSachLop[], QWidget* parent)
+    : QDialog(parent), ui(new Ui::Dang_Nhap), mainUser(user), danhSachLop(danhSachLop)
 {
     ui->setupUi(this);
     setupWindowProperties();
@@ -181,7 +180,7 @@ void Dang_Nhap::lapdssinhvien(const QString &filename) {
                 QString password = studentFields.at(4).trimmed();
 
                 // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
-                SinhVien* newSV = new SinhVien{masv, ho, ten, phai, password};
+                SinhVien* newSV = taoNodeSinhVien(masv,ho,ten,phai,password);
                 newSV->next = nullptr;
 
                 if (currentLop->DSSV == nullptr) {
@@ -205,23 +204,11 @@ void Dang_Nhap::lapdssinhvien(const QString &filename) {
                         QString maMH = monHocFields.at(0).trimmed();
                         float diem = monHocFields.at(1).toFloat();
 
-                        // Tạo môn học mới
-                        monHocDaThi* newMonHoc = new monHocDaThi;
-                        newMonHoc->maMH = maMH;
-                        newMonHoc->diem = diem;
-                        newMonHoc->mangDaThi = nullptr;
-                        newMonHoc->next = nullptr;
+                        monHocDaThi* newMonHoc = newmonHocDaThi(maMH, diem, 0);
 
-                        // Thêm môn học vào danh sách môn học đã thi của sinh viên
-                        if (currentSV->ds_diemthi == nullptr) {
-                            currentSV->ds_diemthi = newMonHoc;
-                        } else {
-                            monHocDaThi* tailMonHoc = currentSV->ds_diemthi;
-                            while (tailMonHoc->next) {
-                                tailMonHoc = tailMonHoc->next;
-                            }
-                            tailMonHoc->next = newMonHoc;
-                        }
+                        // Thêm môn học mới vào danh sách môn học của sinh viên
+                        themMonHoc(currentSV->ds_diemthi, newMonHoc);
+
                         currentMonHoc = newMonHoc;
 
                         // Đọc số câu hỏi đã thi
