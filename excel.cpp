@@ -2,7 +2,6 @@
 #include <OpenXLSX.hpp>
 #include <QString>
 #include <QDebug>
-#include "globals.h"
 #include "sinhvien.h"
 #include "lop.h"
 

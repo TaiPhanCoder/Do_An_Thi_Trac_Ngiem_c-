@@ -23,8 +23,8 @@ set(PROJECT_SOURCES
     resources.qrc
     trac_nghiem.h trac_nghiem.cpp trac_nghiem.ui
     giao_vien.h giao_vien.cpp giao_vien.ui
-    globals.h
-    globals.cpp
+
+
     thong_tin_thi.h thong_tin_thi.cpp thong_tin_thi.ui
     cau_hoi.h cau_hoi.cpp
     test.cpp

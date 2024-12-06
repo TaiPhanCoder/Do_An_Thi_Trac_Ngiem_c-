@@ -18,7 +18,10 @@ class Thong_Tin_Thi : public QDialog
 public:
     explicit Thong_Tin_Thi(SinhVien* mainUser, Lop* danhSachLop[], QWidget* parent = nullptr);
     ~Thong_Tin_Thi();
-
+    int getTime() const;
+    int getQuestions() const;
+    QString getMonHoc() const;
+    QString getMaMH() const;
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;
 
@@ -30,6 +33,11 @@ private:
     Ui::Thong_Tin_Thi *ui;
     SinhVien* mainUser;
     Lop** danhSachLop;
+
+    int times;
+    int questions;
+    QString monhoc;
+    QString maMH;
 
     QStringList danhSachMonHoc;
     QCompleter *completer;

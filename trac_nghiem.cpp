@@ -1,6 +1,5 @@
 #include "trac_nghiem.h"
 #include "ui_trac_nghiem.h"
-#include "globals.h"
 #include "cau_hoi.h"
 #include "lop.h"
 #include "cau_hoi_da_thi.h"
@@ -15,8 +14,10 @@ QTimer *timer;
 QTime timeLeft;
 CauHoi* cauhoiHienTai = nullptr;
 
-Trac_Nghiem::Trac_Nghiem(SinhVien* user, Lop* danhSachLop[], QWidget* parent)
-    : QMainWindow(parent), ui(new Ui::Trac_Nghiem), mainUser(user), danhSachLop(danhSachLop)
+Trac_Nghiem::Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], int times, int questions,
+                         const QString &monhoc, const QString &maMH, QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::Trac_Nghiem), mainUser(mainUser), danhSachLop(danhSachLop),
+    times(times), questions(questions), monhoc(monhoc), maMH(maMH)
 {
     mangDaThi = new DaThi[questions];
     cauhoiHienTai = headCauhoi;
@@ -270,7 +271,7 @@ void Trac_Nghiem::handleListWidgetClick(QListWidgetItem *item)
     updateRadioButtonState();
 }
 
-float tinhDiemSinhVien()
+float Trac_Nghiem::tinhDiemSinhVien()
 {
     int soCauDung = 0;
     CauHoi* current = headCauhoi;

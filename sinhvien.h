@@ -1,6 +1,8 @@
 #ifndef SINHVIEN_H
 #define SINHVIEN_H
-#include"globals.h"
+
+#include "cau_hoi_da_thi.h"
+#include <QString>
 
 class sinhvien
 {

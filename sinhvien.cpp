@@ -1,5 +1,4 @@
 #include "sinhvien.h"
-#include "globals.h"
 #include "QString"
 #include "lop.h"
 

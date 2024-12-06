@@ -1,7 +1,6 @@
 #include "thong_tin_thi.h"
 #include "ui_thong_tin_thi.h"
 #include "cau_hoi.h"
-#include "globals.h"
 #include <QLineEdit>
 #include <QCompleter>
 #include <QAbstractItemView>
@@ -63,6 +62,23 @@ bool Thong_Tin_Thi::eventFilter(QObject *obj, QEvent *event) {
     return QWidget::eventFilter(obj, event);
 }
 
+int Thong_Tin_Thi::getTime() const {
+    return ui->spinBox_2->value(); // Lấy giá trị từ spinBox_2
+}
+
+int Thong_Tin_Thi::getQuestions() const {
+    return ui->spinBox->value(); // Lấy giá trị từ spinBox
+}
+
+QString Thong_Tin_Thi::getMonHoc() const {
+    return ui->DSachMonHoc->currentText(); // Lấy tên môn học từ combobox
+}
+
+QString Thong_Tin_Thi::getMaMH() const {
+    return ui->DSachMonHoc->currentData().toString(); // Lấy mã môn học từ dữ liệu combobox
+}
+
+
 void Thong_Tin_Thi::on_DangNhapButton_clicked()
 {
     bool hasError = false;
@@ -102,10 +118,6 @@ void Thong_Tin_Thi::on_DangNhapButton_clicked()
     }
 
     if (!hasError) {
-        times = ui->spinBox_2->value();
-        questions = ui->spinBox->value();
-        monhoc = MonHoc;
-        maMH = ui->DSachMonHoc->currentData().toString();
         shuffleArray(mangCauHoi,questions);
         headCauhoi = DsachCauHoiThi(mangCauHoi,questions);
         accept();

@@ -1,6 +1,5 @@
 #ifndef TRAC_NGHIEM_H
 #define TRAC_NGHIEM_H
-#include "globals.h"
 #include "cau_hoi.h"
 #include "sinhvien.h"
 #include "lop.h"
@@ -18,7 +17,8 @@ class Trac_Nghiem : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], QWidget *parent = nullptr);
+    explicit Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], int times, int questions,
+                         const QString &monhoc, const QString &maMH, QWidget *parent = nullptr);
     ~Trac_Nghiem();
 
 private slots:
@@ -36,9 +36,16 @@ private slots:
     void ketQuaLamBai(const float &diem);
 
 private:
+
+    float tinhDiemSinhVien();
+
     Ui::Trac_Nghiem *ui;
     SinhVien* mainUser;
     Lop** danhSachLop;
+    int times;
+    int questions;
+    QString monhoc;
+    QString maMH;
 
     void taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int questions);
     monHocDaThi* monHocMoi;

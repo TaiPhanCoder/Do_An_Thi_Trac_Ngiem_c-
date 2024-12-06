@@ -1,6 +1,5 @@
 #include "dang_nhap.h"
 #include "./ui_dang_nhap.h"
-#include "globals.h"
 #include <QFile>
 #include <QDialog>
 #include "lop.h"
@@ -69,7 +68,6 @@ void Dang_Nhap::on_sharingan_clicked()
 
 bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &enteredPassword) {
     if (enteredUsername == "GV" && enteredPassword == "GV") {
-        GV = true;
         return true;
     }
 
