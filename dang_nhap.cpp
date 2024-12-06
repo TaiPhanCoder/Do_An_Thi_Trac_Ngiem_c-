@@ -10,27 +10,10 @@ Dang_Nhap::Dang_Nhap(QWidget *parent)
     , ui(new Ui::Dang_Nhap)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
-    this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
-    this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
-    QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");  // Đường dẫn tới logo
-    QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);  // Thay đổi kích thước logo
-    ui->logo->setPixmap(scaledPixmap);
-    connect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
-    ui->MatKhau->setEchoMode(QLineEdit::Password);
-
-    connect(ui->TaiKhoan, &QLineEdit::returnPressed, [=]() {
-        ui->MatKhau->setFocus();
-    });
-
-    connect(ui->sharingan, &QPushButton::clicked, [=]() {
-        on_sharingan_clicked();
-    });
-
-    connect(ui->MatKhau, &QLineEdit::returnPressed, this, &Dang_Nhap::on_DangNhapButton_clicked);
-
-    ui->DangNhapButton->setAutoDefault(false);
-    connect(ui->DangNhapButton, &QPushButton::clicked, this, &Dang_Nhap::on_DangNhapButton_clicked);
+    setupWindowProperties();
+    setupLogo();
+    setupLineEditConnections();
+    setupButtonConnections();
 }
 
 Dang_Nhap::~Dang_Nhap()
@@ -38,66 +21,115 @@ Dang_Nhap::~Dang_Nhap()
     delete ui;
 }
 
-// void Dang_Nhap::lapdssinhvien(const QString &filename) {
-//     QFile file(filename);
-//     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-//         qDebug() << "Cannot open file!";
-//         return;
-//     }
+// Thiết lập logo trên cửa sổ
+void Dang_Nhap::setupLogo() {
+    QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
+    QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);
+    ui->logo->setPixmap(scaledPixmap);
+}
 
-//     QTextStream in(&file);
-//     Lop* currentLop = nullptr;
-//     int lopIndex = 0;
+// Cài đặt các thuộc tính của cửa sổ (tiêu đề, icon, kiểu cửa sổ)
+void Dang_Nhap::setupWindowProperties() {
+    this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
+    this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
+    this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
+}
 
-//     while (!in.atEnd()) {
-//         QString line = in.readLine().trimmed();
+// Kết nối các tín hiệu liên quan đến ô nhập liệu (LineEdit)
+void Dang_Nhap::setupLineEditConnections() {
+    connect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
+    ui->MatKhau->setEchoMode(QLineEdit::Password);  // Ẩn mật khẩu
 
-//         if (line.contains('-')) {
-//             QStringList lopFields = line.split('|');
-//             if (lopFields.size() == 2) {
-//                 QString malop = lopFields.at(0).trimmed();
-//                 QString tenlop = lopFields.at(1).trimmed();
+    // Chuyển focus sang ô mật khẩu khi nhấn Enter
+    connect(ui->TaiKhoan, &QLineEdit::returnPressed, this, [=]() {
+        ui->MatKhau->setFocus();
+    });
 
-//                 currentLop = new Lop;
-//                 currentLop->MALOP = malop;
-//                 currentLop->TENLOP = tenlop;
-//                 currentLop->DSSV = nullptr;
+    // Gửi sự kiện nhấn nút đăng nhập khi nhấn Enter ở ô mật khẩu
+    connect(ui->MatKhau, &QLineEdit::returnPressed, this, &Dang_Nhap::on_DangNhapButton_clicked);
+}
 
-//                 if (lopIndex < 10000) {
-//                     danhSachLop[lopIndex++] = currentLop;
-//                 } else {
-//                     qDebug() << "Danh sách lớp đã đầy!";
-//                     break;
-//                 }          }
-//         } else if (currentLop) {
-//             QStringList fields = line.split('|');
-//             if (fields.size() == 5) {
-//                 QString masv = fields.at(0).trimmed();
-//                 QString ho = fields.at(1).trimmed();
-//                 QString ten = fields.at(2).trimmed();
-//                 QString phai = fields.at(3).trimmed();
-//                 QString password = fields.at(4).trimmed();
+// Kết nối các tín hiệu liên quan đến các nút bấm (Button)
+void Dang_Nhap::setupButtonConnections() {
+    ui->DangNhapButton->setAutoDefault(false);  // Ngăn tự động focus vào nút
+    ui->sharingan->setAutoDefault(false);
+}
 
-//                 // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
-//                 SinhVien* newSV = new SinhVien{masv, ho, ten, phai, password};
+void Dang_Nhap::on_sharingan_clicked()
+{
+    qDebug() << "Ham on_sharingan_clicked() da duoc goi.";
 
-//                 if (currentLop->DSSV == nullptr) {
-//                     currentLop->DSSV = newSV;
-//                 } else {
-//                     SinhVien* tail = currentLop->DSSV;
-//                     while (tail->next) {
-//                         tail = tail->next;
-//                     }
-//                     tail->next = newSV;
-//                 }
-//             } else {
-//                 qDebug() << "Invalid student line format: " << line;
-//             }
-//         }
-//     }
+    if (ui->MatKhau->echoMode() == QLineEdit::Password) {
+        ui->MatKhau->setEchoMode(QLineEdit::Normal);
+        qDebug() << "Chuyen sang che do hien thi mat khau.";
+    } else {
+        ui->MatKhau->setEchoMode(QLineEdit::Password);
+        qDebug() << "Chuyen sang che do an mat khau.";
+    }
+}
 
-//     file.close();
-// }
+bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &enteredPassword) {
+    if (enteredUsername == "GV" && enteredPassword == "GV") {
+        GV = true;
+        return true;
+    }
+
+    // Duyệt qua mảng lớp
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+        SinhVien* current = danhSachLop[i]->DSSV;
+        // Duyệt qua danh sách sinh viên của lớp hiện tại
+        while (current != nullptr) {
+            if (current->masv == enteredUsername) {
+                if (current->password == enteredPassword) {
+                    mainUser = current;
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            current = current->next;
+        }
+    }
+    return false;
+}
+
+void Dang_Nhap::onTaiKhoanInput(const QString &inputText)
+{
+    // Loại bỏ ký tự không phải chữ hoặc số
+    QString filteredText;
+    for (const QChar &ch : inputText) {
+        if (ch.isLetterOrNumber()) {
+            filteredText.append(ch.toUpper());
+        }
+    }
+
+    // Chỉ cập nhật text nếu có thay đổi
+    if (ui->TaiKhoan->text() != filteredText) {
+        disconnect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
+        ui->TaiKhoan->setText(filteredText);
+        connect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
+    }
+}
+
+
+void Dang_Nhap::on_DangNhapButton_clicked() {
+    QString username = ui->TaiKhoan->text();
+    QString password = ui->MatKhau->text();
+
+    lapdssinhvien(":/TK-MK-PTIT/DsachDalLamBai.txt");
+
+    if (checkLogin(username, password)) {
+        ui->ThongBao->setText("Đăng nhập thành công!");
+        ui->ThongBao->setStyleSheet("QLabel { color : green; }");
+        accept();
+    } else {
+        ui->ThongBao->setText("Sai tài khoản hoặc mật khẩu!");
+        ui->ThongBao->setStyleSheet("QLabel { color : red; }");
+    }
+}
 
 void Dang_Nhap::lapdssinhvien(const QString &filename) {
     QFile file(filename);
@@ -218,66 +250,3 @@ void Dang_Nhap::lapdssinhvien(const QString &filename) {
     file.close();
     qDebug() << "Dữ liệu đã được đọc thành công.";
 }
-
-void Dang_Nhap::on_DangNhapButton_clicked() {
-    QString username = ui->TaiKhoan->text();
-    QString password = ui->MatKhau->text();
-
-    lapdssinhvien(":/TK-MK-PTIT/DsachDalLamBai.txt");
-
-    if (checkLogin(username, password)) {
-        ui->ThongBao->setText("Đăng nhập thành công!");
-        ui->ThongBao->setStyleSheet("QLabel { color : green; }");
-        accept();
-    } else {
-        ui->ThongBao->setText("Sai tài khoản hoặc mật khẩu!");
-        ui->ThongBao->setStyleSheet("QLabel { color : red; }");
-    }
-}
-
-void Dang_Nhap::on_sharingan_clicked()
-{
-    if(ui->MatKhau->echoMode() == QLineEdit::Password) {
-        ui->MatKhau->setEchoMode(QLineEdit::Normal); // Hiển thị mật khẩu
-    } else {
-        ui->MatKhau->setEchoMode(QLineEdit::Password); // Ẩn mật khẩu
-    }
-}
-
-bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &enteredPassword) {
-    if (enteredUsername == "GV" && enteredPassword == "GV") {
-        GV = true;
-        return true;
-    }
-
-    // Duyệt qua mảng lớp
-    for (int i = 0; i < 10000; ++i) {
-        if (danhSachLop[i] == nullptr) {
-            break;
-        }
-        SinhVien* current = danhSachLop[i]->DSSV;
-        // Duyệt qua danh sách sinh viên của lớp hiện tại
-        while (current != nullptr) {
-            if (current->masv == enteredUsername) {
-                if (current->password == enteredPassword) {
-                    mainUser = current;
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            current = current->next;
-        }
-    }
-    return false;
-}
-
-void Dang_Nhap::onTaiKhoanInput(const QString &inputText)
-{
-    QString updatedText = inputText.toUpper();
-
-    disconnect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
-    ui->TaiKhoan->setText(updatedText);
-    connect(ui->TaiKhoan, &QLineEdit::textEdited, this, &Dang_Nhap::onTaiKhoanInput);
-}
-
