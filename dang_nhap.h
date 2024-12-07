@@ -19,7 +19,6 @@ class Dang_Nhap : public QDialog
 public:
     explicit Dang_Nhap(SinhVien*& mainUser, Lop* danhSachLop[], QWidget *parent = nullptr);
     ~Dang_Nhap();
-    bool isGV() const;
 
 private:
     Ui::Dang_Nhap *ui;
@@ -34,7 +33,6 @@ private:
     bool checkLogin(const QString &enteredUsername, const QString &enteredPassword);
 
 private slots:
-    void lapdssinhvien(const QString &filename);
     void on_sharingan_clicked();
     void onTaiKhoanInput(const QString &inputText);
     void on_DangNhapButton_clicked();

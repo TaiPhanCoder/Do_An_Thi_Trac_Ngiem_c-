@@ -208,7 +208,7 @@ public:
 "	font-size: 14px;"));
         ketQuaThi = new QGroupBox(centralwidget);
         ketQuaThi->setObjectName("ketQuaThi");
-        ketQuaThi->setGeometry(QRect(530, 170, 601, 651));
+        ketQuaThi->setGeometry(QRect(530, 180, 601, 651));
         ketQuaThi->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;\n"
 "color: black;\n"

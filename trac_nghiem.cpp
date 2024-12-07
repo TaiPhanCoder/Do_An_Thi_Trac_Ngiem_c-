@@ -15,9 +15,9 @@ QTime timeLeft;
 CauHoi* cauhoiHienTai = nullptr;
 
 Trac_Nghiem::Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], int times, int questions,
-                         const QString &monhoc, const QString &maMH, QWidget *parent)
+                         const QString &monhoc, const QString &maMH, CauHoi* headCauhoi, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::Trac_Nghiem), mainUser(mainUser), danhSachLop(danhSachLop),
-    times(times), questions(questions), monhoc(monhoc), maMH(maMH)
+    times(times), questions(questions), monhoc(monhoc), maMH(maMH), headCauhoi(headCauhoi)
 {
     mangDaThi = new DaThi[questions];
     cauhoiHienTai = headCauhoi;
@@ -196,16 +196,15 @@ void Trac_Nghiem::initializeMangDaThi() {
     }
 }
 
-void next(){
+void Trac_Nghiem::next(){
     cauHienTai++;
 
     cauhoiHienTai = cauhoiHienTai->next;
     qDebug() << cauHienTai;
-    qDebug() << headCauhoi->id;
     qDebug() << cauhoiHienTai->id;
 }
 
-void prev(){
+void Trac_Nghiem::prev(){
     cauHienTai--;
     cauhoiHienTai = headCauhoi;
     for (int i = 1; i < cauHienTai; i++) {
@@ -247,7 +246,7 @@ void Trac_Nghiem::on_left_arow_clicked()
     }
 }
 
-void cauHoi(){
+void Trac_Nghiem::cauHoi(){
     cauhoiHienTai = headCauhoi;
     int count = 1;  // Đếm vị trí của node hiện tại
     // Duyệt đến câu hỏi tại vị trí index trong danh sách liên kết head

@@ -34,6 +34,7 @@ public:
     QLabel *LoiDSach;
     QLabel *LoiCauHoi;
     QLabel *LoiThoiGian;
+    QPushButton *xemDiem;
 
     void setupUi(QDialog *Thong_Tin_Thi)
     {
@@ -45,7 +46,7 @@ public:
         ThongTin->setGeometry(QRect(80, 20, 421, 61));
         DSachMonHoc = new QComboBox(Thong_Tin_Thi);
         DSachMonHoc->setObjectName("DSachMonHoc");
-        DSachMonHoc->setGeometry(QRect(90, 160, 391, 41));
+        DSachMonHoc->setGeometry(QRect(90, 160, 261, 51));
         DSachMonHoc->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "	border: 2px solid gray;\n"
 "	border-radius: 20px;\n"
@@ -161,7 +162,7 @@ public:
 ""));
         MSSV = new QLabel(Thong_Tin_Thi);
         MSSV->setObjectName("MSSV");
-        MSSV->setGeometry(QRect(90, 90, 171, 41));
+        MSSV->setGeometry(QRect(90, 100, 171, 41));
         MSSV->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "	border-radius: 10px;\n"
 "	background-color: #F0F0F0;\n"
@@ -170,7 +171,7 @@ public:
 "font-size: 12pt;"));
         TEN = new QLabel(Thong_Tin_Thi);
         TEN->setObjectName("TEN");
-        TEN->setGeometry(QRect(270, 90, 211, 41));
+        TEN->setGeometry(QRect(270, 100, 211, 41));
         TEN->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "	border-radius: 10px;\n"
 "	background-color: #F0F0F0;\n"
@@ -186,6 +187,23 @@ public:
         LoiThoiGian = new QLabel(Thong_Tin_Thi);
         LoiThoiGian->setObjectName("LoiThoiGian");
         LoiThoiGian->setGeometry(QRect(90, 340, 261, 20));
+        xemDiem = new QPushButton(Thong_Tin_Thi);
+        xemDiem->setObjectName("xemDiem");
+        xemDiem->setGeometry(QRect(370, 160, 111, 51));
+        xemDiem->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border: 2px solid gray;\n"
+"border-radius: 20px;\n"
+"background-color: rgb(255, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font-size: 18px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: rgb(200, 0, 0);  /* M\303\240u n\341\273\201n khi hover (\304\221\341\272\255m h\306\241n) */\n"
+"    cursor: pointer;  /* Con tr\341\273\217 chu\341\273\231t s\341\272\275 chuy\341\273\203n th\303\240nh h\303\254nh b\303\240n tay khi hover */\n"
+"}\n"
+"\n"
+""));
 
         retranslateUi(Thong_Tin_Thi);
 
@@ -196,7 +214,7 @@ public:
     {
         Thong_Tin_Thi->setWindowTitle(QCoreApplication::translate("Thong_Tin_Thi", "Dialog", nullptr));
         ThongTin->setText(QCoreApplication::translate("Thong_Tin_Thi", "<html><head/><body><p align=\"center\"><span style=\" font-size:20pt; font-weight:700; color:#ff0000;\">Th\303\264ng Tin Thi Tr\341\272\257c Nghi\341\273\207m</span></p></body></html>", nullptr));
-        DSachMonHoc->setPlaceholderText(QCoreApplication::translate("Thong_Tin_Thi", "                           Danh S\303\241ch M\303\264n H\341\273\215c", nullptr));
+        DSachMonHoc->setPlaceholderText(QCoreApplication::translate("Thong_Tin_Thi", "              Danh S\303\241ch M\303\264n H\341\273\215c", nullptr));
         label->setText(QCoreApplication::translate("Thong_Tin_Thi", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; color:#000000;\">S\341\273\221 C\303\242u H\341\273\217i Thi:</span></p></body></html>", nullptr));
         label_2->setText(QCoreApplication::translate("Thong_Tin_Thi", "<html><head/><body><p align=\"center\"><span style=\" font-size:14pt; color:#000000;\">S\341\273\221 Ph\303\272t Thi:</span></p></body></html>", nullptr));
         DangNhapButton->setText(QCoreApplication::translate("Thong_Tin_Thi", "Ho\303\240n Th\303\240nh", nullptr));
@@ -205,6 +223,7 @@ public:
         LoiDSach->setText(QString());
         LoiCauHoi->setText(QString());
         LoiThoiGian->setText(QString());
+        xemDiem->setText(QCoreApplication::translate("Thong_Tin_Thi", "Xem \304\220i\341\273\203m", nullptr));
     } // retranslateUi
 
 };

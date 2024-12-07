@@ -20,8 +20,6 @@ struct  CauHoi{
     CauHoi* next;
 };
 
-extern CauHoi *headCauhoi;
-
 CauHoi** loadCauHoiThi(const QString &monHoc, int &questions, int &soCauHoi);
 CauHoi* DsachCauHoiThi(CauHoi** cauhoiArray, int questions);
 void shuffleArray(CauHoi* arr[], int questions);

@@ -43,6 +43,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         themcauhoi.h themcauhoi.cpp themcauhoi.ui
         hieuchinh_cauhoi.h hieuchinh_cauhoi.cpp hieuchinh_cauhoi.ui
+        xemdiem.h xemdiem.cpp xemdiem.ui
 
     )
 else()

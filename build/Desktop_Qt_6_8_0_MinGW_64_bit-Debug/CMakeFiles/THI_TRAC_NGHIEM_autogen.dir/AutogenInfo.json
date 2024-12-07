@@ -349,6 +349,12 @@
 			"MU",
 			"EWIEGA46WW/moc_trac_nghiem.cpp",
 			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h",
+			"MU",
+			"EWIEGA46WW/moc_xemdiem.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -503,6 +509,11 @@
 		],
 		[
 			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.cpp",
 			"MU",
 			null
 		]

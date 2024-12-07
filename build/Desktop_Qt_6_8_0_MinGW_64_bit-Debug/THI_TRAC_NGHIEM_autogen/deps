@@ -629,6 +629,8 @@ THI_TRAC_NGHIEM_autogen/timestamp: \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.h \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.cpp \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.h \
+	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.cpp \
+	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/dang_nhap.ui \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/giao_vien.ui \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.ui \
@@ -637,4 +639,5 @@ THI_TRAC_NGHIEM_autogen/timestamp: \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.ui \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.ui \
 	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.ui \
+	D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

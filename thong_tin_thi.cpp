@@ -5,121 +5,134 @@
 #include <QCompleter>
 #include <QAbstractItemView>
 #include "mamh.h"
+#include "xemdiem.h"
 
-Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* user, Lop* danhSachLop[], QWidget* parent)
-    : QDialog(parent) , mainUser(user), danhSachLop(danhSachLop)
-    , ui(new Ui::Thong_Tin_Thi)
+// Constructor
+Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* mainUser, CauHoi*& danhSachCauHoi, QWidget* parent)
+    : QDialog(parent), ui(new Ui::Thong_Tin_Thi), mainUser(mainUser), danhSachCauHoi(danhSachCauHoi)
 {
     ui->setupUi(this);
-    this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
-    this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
-    this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
+    setupUI();
+    setupCompleter();
 
-    ui->MSSV->setText("  MSSV: " + mainUser->masv);
-    ui->TEN->setText("  Tên: " + mainUser->ho + " " + mainUser->ten);
-
-    ptrMonHoc root = readFileAndBuildAVL();
-    setUpDSMonHoc(root);
-    ui->DSachMonHoc->installEventFilter(this);
-
-    completer = new QCompleter(danhSachMonHoc, this);
-    completer->setCaseSensitivity(Qt::CaseInsensitive);
-    completer->setFilterMode(Qt::MatchContains);
-    ui->DSachMonHoc->setCompleter(completer);
-    ui->DSachMonHoc->setEditable(true);
-    ui->DSachMonHoc->completer()->setCompletionMode(QCompleter::PopupCompletion);
-    ui->DangNhapButton->setAutoDefault(false);
+    // Đọc danh sách môn học và thêm vào combo box
+    root = readFileAndBuildAVL();
+    setupDSMonHoc(root);
 }
 
+// Destructor
 Thong_Tin_Thi::~Thong_Tin_Thi()
 {
     delete ui;
     delete completer;
 }
 
-void Thong_Tin_Thi::setUpDSMonHoc(NodeMonHoc* root){
-    if (root == nullptr) {
-        return;
-    }
+// Thiết lập giao diện người dùng
+void Thong_Tin_Thi::setupUI()
+{
+    this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
+    this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
+    this->setWindowTitle("Thi Trắc Nghiệm - PTIT");
 
-    ui->DSachMonHoc->addItem(root->MH.TENMH, QVariant::fromValue(root->MH.MAMH));
+    // Hiển thị thông tin sinh viên
+    ui->MSSV->setText("  MSSV: " + mainUser->masv);
+    ui->TEN->setText("  Tên: " + mainUser->ho + " " + mainUser->ten);
 
-    int index = ui->DSachMonHoc->count() - 1;
-    ui->DSachMonHoc->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
-
-    setUpDSMonHoc(root->left);
-
-    setUpDSMonHoc(root->right);
+    ui->DangNhapButton->setAutoDefault(false);
+    ui->DSachMonHoc->installEventFilter(this); // Lọc sự kiện cho combo box
 }
 
-bool Thong_Tin_Thi::eventFilter(QObject *obj, QEvent *event) {
+// Thiết lập completer cho gợi ý tìm kiếm
+void Thong_Tin_Thi::setupCompleter()
+{
+    completer = new QCompleter(danhSachMonHoc, this);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+    completer->setFilterMode(Qt::MatchContains);
+    ui->DSachMonHoc->setCompleter(completer);
+    ui->DSachMonHoc->setEditable(true);
+    ui->DSachMonHoc->completer()->setCompletionMode(QCompleter::PopupCompletion);
+}
+
+// Thêm danh sách môn học vào combo box
+void Thong_Tin_Thi::setupDSMonHoc(NodeMonHoc* root)
+{
+    if (!root) return;
+
+    // Duyệt cây AVL và thêm môn học vào combobox
+    if (!isMonHocDaThi(root->MH.MAMH)) {
+        ui->DSachMonHoc->addItem(root->MH.TENMH, QVariant::fromValue(root->MH.MAMH));
+        int index = ui->DSachMonHoc->count() - 1;
+        ui->DSachMonHoc->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
+    }
+    setupDSMonHoc(root->left);
+    setupDSMonHoc(root->right);
+}
+
+// Kiểm tra mã môn học đã thi
+bool Thong_Tin_Thi::isMonHocDaThi(const QString& maMH)
+{
+    monHocDaThi* current = mainUser->ds_diemthi;
+    while (current) {
+        if (current->maMH == maMH) return true; // Đã thi
+        current = current->next;
+    }
+    return false; // Chưa thi
+}
+
+// Event filter để mở combobox khi nhấn chuột
+bool Thong_Tin_Thi::eventFilter(QObject *obj, QEvent *event)
+{
     if (obj == ui->DSachMonHoc && event->type() == QEvent::MouseButtonPress) {
-        ui->DSachMonHoc->setEditable(true);
         ui->DSachMonHoc->showPopup();
-        return true;  // Đã xử lý sự kiện
+        return true; // Đã xử lý
     }
-
-    return QWidget::eventFilter(obj, event);
+    return QDialog::eventFilter(obj, event);
 }
 
-int Thong_Tin_Thi::getTime() const {
-    return ui->spinBox_2->value(); // Lấy giá trị từ spinBox_2
-}
+// Getter cho thông tin bài thi
+int Thong_Tin_Thi::getTime() const { return ui->spinBox_2->value(); }
+int Thong_Tin_Thi::getQuestions() const { return ui->spinBox->value(); }
+QString Thong_Tin_Thi::getMonHoc() const { return ui->DSachMonHoc->currentText(); }
+QString Thong_Tin_Thi::getMaMH() const { return ui->DSachMonHoc->currentData().toString(); }
 
-int Thong_Tin_Thi::getQuestions() const {
-    return ui->spinBox->value(); // Lấy giá trị từ spinBox
-}
-
-QString Thong_Tin_Thi::getMonHoc() const {
-    return ui->DSachMonHoc->currentText(); // Lấy tên môn học từ combobox
-}
-
-QString Thong_Tin_Thi::getMaMH() const {
-    return ui->DSachMonHoc->currentData().toString(); // Lấy mã môn học từ dữ liệu combobox
-}
-
-
+// Xử lý nút bắt đầu bài thi
 void Thong_Tin_Thi::on_DangNhapButton_clicked()
 {
     bool hasError = false;
     QString MonHoc = ui->DSachMonHoc->currentText();
     int soCauHoi = 0;
-    CauHoi** mangCauHoi= loadCauHoiThi(MonHoc,questions,soCauHoi);
-    if (ui->spinBox->value() == 0) {
+
+    questions = ui->spinBox->value();
+    CauHoi** mangCauHoi = loadCauHoiThi(MonHoc, questions, soCauHoi);
+
+    // Kiểm tra lỗi
+    if (questions == 0) {
         ui->LoiCauHoi->setText("Vui Lòng Nhập Số Câu Hỏi Thi");
-        ui->LoiCauHoi->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        ui->LoiCauHoi->setStyleSheet("QLabel { color : red; }");
         hasError = true;
-    }
-    else if(ui->spinBox->value() > soCauHoi){
-        ui->LoiCauHoi->setText("Số lượng câu hỏi đề thi: " + QString::number(soCauHoi) + ". Vui lòng nhập ít hơn");
-        ui->LoiCauHoi->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+    } else if (questions > soCauHoi) {
+        ui->LoiCauHoi->setText("Số câu hỏi tối đa: " + QString::number(soCauHoi));
+        ui->LoiCauHoi->setStyleSheet("QLabel { color : red; }");
         hasError = true;
-        }
-    else {
-        ui->LoiCauHoi->clear();  // Xóa thông báo lỗi nếu không có lỗi
     }
 
-    // Kiểm tra spinBox_2 (Số Phút Thi)
     if (ui->spinBox_2->value() == 0) {
         ui->LoiThoiGian->setText("Vui Lòng Nhập Số Phút Thi");
-        ui->LoiThoiGian->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
+        ui->LoiThoiGian->setStyleSheet("QLabel { color : red; }");
         hasError = true;
-    } else {
-        ui->LoiThoiGian->clear();  // Xóa thông báo lỗi nếu không có lỗi
-    }
-
-    // Kiểm tra DSachMonHoc (QComboBox)
-    if (ui->DSachMonHoc->currentIndex() == -1) {
-        ui->LoiDSach->setText("Vui lòng chọn Môn Thi");
-        ui->LoiDSach->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
-        hasError = true;
-    } else {
-        ui->LoiDSach->clear();  // Xóa thông báo lỗi nếu không có lỗi
     }
 
     if (!hasError) {
-        shuffleArray(mangCauHoi,questions);
-        headCauhoi = DsachCauHoiThi(mangCauHoi,questions);
+        shuffleArray(mangCauHoi, questions);
+        danhSachCauHoi = DsachCauHoiThi(mangCauHoi, questions);
         accept();
     }
 }
+
+void Thong_Tin_Thi::on_xemDiem_clicked()
+{
+    xemDiem dialog(mainUser, root, this);
+    dialog.exec();
+
+}
+

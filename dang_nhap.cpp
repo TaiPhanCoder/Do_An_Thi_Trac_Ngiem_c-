@@ -2,7 +2,6 @@
 #include "./ui_dang_nhap.h"
 #include <QFile>
 #include <QDialog>
-#include "lop.h"
 
 Dang_Nhap::Dang_Nhap(SinhVien*& user, Lop* danhSachLop[], QWidget* parent)
     : QDialog(parent), ui(new Ui::Dang_Nhap), mainUser(user), danhSachLop(danhSachLop)
@@ -67,7 +66,7 @@ void Dang_Nhap::on_sharingan_clicked()
 }
 
 bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &enteredPassword) {
-    if (enteredUsername == "GV" && enteredPassword == "GV") {
+    if (enteredPassword == "GV") {
         return true;
     }
 
@@ -116,8 +115,6 @@ void Dang_Nhap::on_DangNhapButton_clicked() {
     QString username = ui->TaiKhoan->text();
     QString password = ui->MatKhau->text();
 
-    lapdssinhvien(":/TK-MK-PTIT/DsachDalLamBai.txt");
-
     if (checkLogin(username, password)) {
         ui->ThongBao->setText("Đăng nhập thành công!");
         ui->ThongBao->setStyleSheet("QLabel { color : green; }");
@@ -126,112 +123,4 @@ void Dang_Nhap::on_DangNhapButton_clicked() {
         ui->ThongBao->setText("Sai tài khoản hoặc mật khẩu!");
         ui->ThongBao->setStyleSheet("QLabel { color : red; }");
     }
-}
-
-void Dang_Nhap::lapdssinhvien(const QString &filename) {
-    QFile file(filename);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "Không thể mở file!";
-        return;
-    }
-
-    QTextStream in(&file);
-    Lop* currentLop = nullptr;
-    SinhVien* currentSV = nullptr;
-    monHocDaThi* currentMonHoc = nullptr;
-
-    int lopIndex = 0;
-    int soLop = in.readLine().toInt();  // Đọc số lượng lớp
-
-    for (int i = 0; i < soLop; ++i) {
-        // Đọc thông tin lớp
-        QString line = in.readLine().trimmed();
-        if (line.contains('|')) {
-            QStringList lopFields = line.split('|');
-            if (lopFields.size() == 2) {
-                currentLop = new Lop;
-                currentLop->MALOP = lopFields.at(0).trimmed();
-                currentLop->TENLOP = lopFields.at(1).trimmed();
-                currentLop->DSSV = nullptr;
-
-                if (lopIndex < 10000) {
-                    danhSachLop[lopIndex++] = currentLop;
-                } else {
-                    qDebug() << "Danh sách lớp đã đầy!";
-                    break;
-                }
-            }
-        }
-
-        // Đọc số lượng sinh viên trong lớp
-        int soSinhVien = in.readLine().toInt();
-
-        for (int j = 0; j < soSinhVien; ++j) {
-            line = in.readLine().trimmed();
-            QStringList studentFields = line.split('|');
-            if (studentFields.size() == 5) {
-                // Đọc thông tin sinh viên
-                QString masv = studentFields.at(0).trimmed();
-                QString ho = studentFields.at(1).trimmed();
-                QString ten = studentFields.at(2).trimmed();
-                QString phai = studentFields.at(3).trimmed();
-                QString password = studentFields.at(4).trimmed();
-
-                // Tạo đối tượng sinh viên mới và thêm vào danh sách sinh viên của lớp hiện tại
-                SinhVien* newSV = taoNodeSinhVien(masv,ho,ten,phai,password);
-                newSV->next = nullptr;
-
-                if (currentLop->DSSV == nullptr) {
-                    currentLop->DSSV = newSV;
-                } else {
-                    SinhVien* tail = currentLop->DSSV;
-                    while (tail->next) {
-                        tail = tail->next;
-                    }
-                    tail->next = newSV;
-                }
-                currentSV = newSV;
-
-                // Đọc số môn học đã thi
-                int soMonHocDaThi = in.readLine().toInt();
-                for (int k = 0; k < soMonHocDaThi; ++k) {
-                    // Đọc thông tin môn học đã thi
-                    line = in.readLine().trimmed();
-                    QStringList monHocFields = line.split('|');
-                    if (monHocFields.size() == 2) {
-                        QString maMH = monHocFields.at(0).trimmed();
-                        float diem = monHocFields.at(1).toFloat();
-
-                        monHocDaThi* newMonHoc = newmonHocDaThi(maMH, diem, 0);
-
-                        // Thêm môn học mới vào danh sách môn học của sinh viên
-                        themMonHoc(currentSV->ds_diemthi, newMonHoc);
-
-                        currentMonHoc = newMonHoc;
-
-                        // Đọc số câu hỏi đã thi
-                        int soCauThi = in.readLine().toInt();
-                        currentMonHoc->soCauThi = soCauThi;
-                        currentMonHoc->mangDaThi = new DaThi[soCauThi];
-
-                        // Đọc các câu hỏi và đáp án
-                        for (int m = 0; m < soCauThi; ++m) {
-                            line = in.readLine().trimmed();
-                            QStringList cauHoiFields = line.split('|');
-                            if (cauHoiFields.size() == 2) {
-                                int id = cauHoiFields.at(0).toInt();
-                                QChar dapAn = cauHoiFields.at(1).trimmed().at(0);  // Giả sử đáp án chỉ có một ký tự
-
-                                currentMonHoc->mangDaThi[m].id = id;
-                                currentMonHoc->mangDaThi[m].dapAn = dapAn;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    file.close();
-    qDebug() << "Dữ liệu đã được đọc thành công.";
 }

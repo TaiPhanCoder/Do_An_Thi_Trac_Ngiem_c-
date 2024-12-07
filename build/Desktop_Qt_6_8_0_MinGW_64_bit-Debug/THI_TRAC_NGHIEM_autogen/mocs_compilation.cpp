@@ -7,3 +7,4 @@
 #include "EWIEGA46WW/moc_themcauhoi.cpp"
 #include "EWIEGA46WW/moc_thong_tin_thi.cpp"
 #include "EWIEGA46WW/moc_trac_nghiem.cpp"
+#include "EWIEGA46WW/moc_xemdiem.cpp"
