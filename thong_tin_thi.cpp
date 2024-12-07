@@ -14,7 +14,6 @@ Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* mainUser, CauHoi*& danhSachCauHoi, QWidge
     ui->setupUi(this);
     setupUI();
     setupCompleter();
-
     // Đọc danh sách môn học và thêm vào combo box
     root = readFileAndBuildAVL();
     setupDSMonHoc(root);
@@ -25,6 +24,10 @@ Thong_Tin_Thi::~Thong_Tin_Thi()
 {
     delete ui;
     delete completer;
+    if (root) {
+        deleteAVLTree(root);
+        root = nullptr;
+    }
 }
 
 // Thiết lập giao diện người dùng
@@ -37,9 +40,8 @@ void Thong_Tin_Thi::setupUI()
     // Hiển thị thông tin sinh viên
     ui->MSSV->setText("  MSSV: " + mainUser->masv);
     ui->TEN->setText("  Tên: " + mainUser->ho + " " + mainUser->ten);
-
+    ui->xemDiem->setAutoDefault(false);
     ui->DangNhapButton->setAutoDefault(false);
-    ui->DSachMonHoc->installEventFilter(this); // Lọc sự kiện cho combo box
 }
 
 // Thiết lập completer cho gợi ý tìm kiếm
@@ -62,7 +64,6 @@ void Thong_Tin_Thi::setupDSMonHoc(NodeMonHoc* root)
     if (!isMonHocDaThi(root->MH.MAMH)) {
         ui->DSachMonHoc->addItem(root->MH.TENMH, QVariant::fromValue(root->MH.MAMH));
         int index = ui->DSachMonHoc->count() - 1;
-        ui->DSachMonHoc->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
     }
     setupDSMonHoc(root->left);
     setupDSMonHoc(root->right);
@@ -77,16 +78,6 @@ bool Thong_Tin_Thi::isMonHocDaThi(const QString& maMH)
         current = current->next;
     }
     return false; // Chưa thi
-}
-
-// Event filter để mở combobox khi nhấn chuột
-bool Thong_Tin_Thi::eventFilter(QObject *obj, QEvent *event)
-{
-    if (obj == ui->DSachMonHoc && event->type() == QEvent::MouseButtonPress) {
-        ui->DSachMonHoc->showPopup();
-        return true; // Đã xử lý
-    }
-    return QDialog::eventFilter(obj, event);
 }
 
 // Getter cho thông tin bài thi
@@ -125,6 +116,10 @@ void Thong_Tin_Thi::on_DangNhapButton_clicked()
     if (!hasError) {
         shuffleArray(mangCauHoi, questions);
         danhSachCauHoi = DsachCauHoiThi(mangCauHoi, questions);
+        // if (mangCauHoi) {
+        //     for (int i = 0; i < soCauHoi; ++i) delete mangCauHoi[i];
+        //     delete[] mangCauHoi;
+        // }
         accept();
     }
 }

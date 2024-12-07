@@ -36,3 +36,172 @@ INT1306|CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT
 8|Độ phức tạp của thuật toán tìm kiếm nhị phân?|A. O(log n)|B. O(n)|C. O(n^2)|D. O(1)|A
 9|Thuật toán BFS được sử dụng trên cấu trúc nào?|A. Stack|B. Tree|C. Queue|D. Graph|D
 10|DFS là thuật toán gì?|A. Depth First Search|B. Data File Search|C. Direct File Search|D. Depth File Search|A
+
+INT1470|CÁC KỸ THUẬT LẬP TRÌNH
+10
+935|Độ phức tạp của chủ đề 1 là gì?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|D
+192|Thuật toán nào phù hợp nhất cho chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|C
+414|Phương pháp nào tối ưu nhất để chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|C
+964|Độ phức tạp của chủ đề 4 là gì?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|A
+812|Lựa chọn nào mô tả đúng về chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|A
+560|Độ phức tạp của chủ đề 6 là gì?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|A
+439|Phương pháp nào tối ưu nhất để chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|A
+915|Thuật toán nào phù hợp nhất cho chủ đề 8?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|D
+528|Độ phức tạp của chủ đề 9 là gì?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|C
+59|Nội dung của câu hỏi chủ đề 10 là gì?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|B
+
+ELE1401|CAD/CAM
+10
+430|Chọn phát biểu đúng về chủ đề 1 trong ngữ cảnh của chủ đề 1?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|A
+4|Độ phức tạp của chủ đề 2 là gì?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|B
+851|Chọn phát biểu đúng về chủ đề 3 trong ngữ cảnh của chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|C
+417|Chọn phát biểu đúng về chủ đề 4 trong ngữ cảnh của chủ đề 4?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|D
+362|Khái niệm nào là đúng nhất về chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|A
+684|Phương pháp nào tối ưu nhất để chủ đề 6?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|D
+527|Phương pháp nào tối ưu nhất để chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|D
+15|Đặc điểm của chủ đề 8 là gì?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|D
+128|Tính năng chính của chủ đề 9 là gì?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|B
+721|Phương pháp nào tối ưu nhất để chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|D
+
+ELE1302|CẤU KIỆN ĐIỆN TỬ
+10
+348|Đặc điểm của chủ đề 1 là gì?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|D
+535|Lựa chọn nào mô tả đúng về chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|A
+647|Lựa chọn nào mô tả đúng về chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|D
+679|Thuật toán nào phù hợp nhất cho chủ đề 4?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|D
+634|Thuật toán nào phù hợp nhất cho chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|B
+3|Đặc điểm của chủ đề 6 là gì?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|C
+274|Phương pháp nào được sử dụng để chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|D
+939|Tính năng chính của chủ đề 8 là gì?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|B
+173|Chọn phát biểu đúng về chủ đề 9 trong ngữ cảnh của chủ đề 9?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|A
+45|Chọn phát biểu đúng về chủ đề 10 trong ngữ cảnh của chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|D
+
+INT1472|CƠ SỞ AN TOÀN THÔNG TIN
+10
+742|Chọn phát biểu đúng về chủ đề 1 trong ngữ cảnh của chủ đề 1?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|C
+842|Phương pháp nào được sử dụng để chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|D
+15|Lựa chọn nào mô tả đúng về chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|A
+517|Đặc điểm của chủ đề 4 là gì?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|C
+314|Lựa chọn nào mô tả đúng về chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|A
+604|Khái niệm nào là đúng nhất về chủ đề 6?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|D
+582|Thuật toán nào phù hợp nhất cho chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|C
+830|Khái niệm nào là đúng nhất về chủ đề 8?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|B
+299|Tính năng chính của chủ đề 9 là gì?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|D
+519|Chọn phát biểu đúng về chủ đề 10 trong ngữ cảnh của chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|C
+
+ELE1304|CƠ SỞ ĐIỀU KHIỂN TỰ ĐỘNG
+10
+737|Thuật toán nào phù hợp nhất cho chủ đề 1?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|A
+761|Phương pháp nào được sử dụng để chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|C
+149|Khái niệm nào là đúng nhất về chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|B
+464|Khái niệm nào là đúng nhất về chủ đề 4?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|C
+928|Lựa chọn nào mô tả đúng về chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|D
+387|Phương pháp nào tối ưu nhất để chủ đề 6?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|D
+576|Phương pháp nào tối ưu nhất để chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|C
+730|Lựa chọn nào mô tả đúng về chủ đề 8?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|C
+954|Đặc điểm của chủ đề 9 là gì?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|D
+774|Chọn phát biểu đúng về chủ đề 10 trong ngữ cảnh của chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|C
+
+ELE1305|CƠ SỞ ĐO LƯỜNG ĐIỆN TỬ
+10
+775|Tính năng chính của chủ đề 1 là gì?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|B
+704|Lựa chọn nào mô tả đúng về chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|B
+159|Khái niệm nào là đúng nhất về chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|A
+127|Chọn phát biểu đúng về chủ đề 4 trong ngữ cảnh của chủ đề 4?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|B
+432|Tính năng chính của chủ đề 5 là gì?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|C
+134|Tính năng chính của chủ đề 6 là gì?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|C
+90|Lựa chọn nào mô tả đúng về chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|C
+644|Nội dung của câu hỏi chủ đề 8 là gì?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|D
+728|Độ phức tạp của chủ đề 9 là gì?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|C
+339|Lựa chọn nào mô tả đúng về chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|D
+
+INT1313|CƠ SỞ DỮ LIỆU
+10
+749|Độ phức tạp của chủ đề 1 là gì?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|D
+988|Phương pháp nào tối ưu nhất để chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|B
+900|Khái niệm nào là đúng nhất về chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|D
+899|Đặc điểm của chủ đề 4 là gì?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|B
+758|Phương pháp nào được sử dụng để chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|D
+577|Tính năng chính của chủ đề 6 là gì?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|A
+352|Phương pháp nào được sử dụng để chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|A
+300|Khái niệm nào là đúng nhất về chủ đề 8?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|D
+414|Nội dung của câu hỏi chủ đề 9 là gì?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|A
+719|Thuật toán nào phù hợp nhất cho chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|D
+
+TEL1406|CƠ SỞ KỸ THUẬT THÔNG TIN QUANG
+10
+20|Đặc điểm của chủ đề 1 là gì?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|C
+244|Lựa chọn nào mô tả đúng về chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|B
+497|Tính năng chính của chủ đề 3 là gì?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|D
+438|Chọn phát biểu đúng về chủ đề 4 trong ngữ cảnh của chủ đề 4?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|A
+847|Phương pháp nào tối ưu nhất để chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|C
+576|Đặc điểm của chủ đề 6 là gì?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|D
+32|Tính năng chính của chủ đề 7 là gì?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|D
+399|Nội dung của câu hỏi chủ đề 8 là gì?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|D
+703|Thuật toán nào phù hợp nhất cho chủ đề 9?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|C
+836|Độ phức tạp của chủ đề 10 là gì?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|C
+
+TEL1407|CƠ SỞ KỸ THUẬT THÔNG TIN VÔ TUYẾN
+10
+294|Lựa chọn nào mô tả đúng về chủ đề 1?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|B
+881|Chọn phát biểu đúng về chủ đề 2 trong ngữ cảnh của chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|A
+230|Khái niệm nào là đúng nhất về chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|A
+325|Tính năng chính của chủ đề 4 là gì?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|A
+323|Phương pháp nào được sử dụng để chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|C
+186|Đặc điểm của chủ đề 6 là gì?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|A
+444|Phương pháp nào tối ưu nhất để chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|A
+171|Khái niệm nào là đúng nhất về chủ đề 8?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|A
+265|Khái niệm nào là đúng nhất về chủ đề 9?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|B
+275|Phương pháp nào được sử dụng để chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|A
+
+TEL1405|CƠ SỞ KỸ THUẬT MẠNG TRUYỀN THÔNG
+10
+429|Độ phức tạp của chủ đề 1 là gì?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|D
+518|Nội dung của câu hỏi chủ đề 2 là gì?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|C
+663|Chọn phát biểu đúng về chủ đề 3 trong ngữ cảnh của chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|C
+30|Độ phức tạp của chủ đề 4 là gì?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|D
+968|Nội dung của câu hỏi chủ đề 5 là gì?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|D
+422|Phương pháp nào tối ưu nhất để chủ đề 6?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|A
+158|Khái niệm nào là đúng nhất về chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|A
+696|Độ phức tạp của chủ đề 8 là gì?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|A
+595|Khái niệm nào là đúng nhất về chủ đề 9?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|B
+605|Phương pháp nào được sử dụng để chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|D
+
+MUL1238|CƠ SỞ TẠO HÌNH
+10
+92|Phương pháp nào tối ưu nhất để chủ đề 1?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|B
+355|Thuật toán nào phù hợp nhất cho chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|D
+68|Tính năng chính của chủ đề 3 là gì?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|D
+784|Độ phức tạp của chủ đề 4 là gì?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|B
+33|Phương pháp nào tối ưu nhất để chủ đề 5?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|D
+156|Độ phức tạp của chủ đề 6 là gì?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|D
+693|Lựa chọn nào mô tả đúng về chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|A
+606|Nội dung của câu hỏi chủ đề 8 là gì?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|D
+651|Phương pháp nào được sử dụng để chủ đề 9?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|B
+563|Thuật toán nào phù hợp nhất cho chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|A
+
+BAS1201|ĐẠI SỐ
+10
+475|Phương pháp nào tối ưu nhất để chủ đề 1?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|A
+634|Đặc điểm của chủ đề 2 là gì?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|A
+271|Tính năng chính của chủ đề 3 là gì?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|C
+377|Lựa chọn nào mô tả đúng về chủ đề 4?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|C
+785|Nội dung của câu hỏi chủ đề 5 là gì?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|C
+679|Lựa chọn nào mô tả đúng về chủ đề 6?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|C
+591|Khái niệm nào là đúng nhất về chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|B
+479|Chọn phát biểu đúng về chủ đề 8 trong ngữ cảnh của chủ đề 8?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|C
+162|Chọn phát biểu đúng về chủ đề 9 trong ngữ cảnh của chủ đề 9?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|B
+430|Phương pháp nào tối ưu nhất để chủ đề 10?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|D
+
+ELE1308|ĐIỆN TỬ CÔNG SUẤT
+10
+911|Khái niệm nào là đúng nhất về chủ đề 1?|A. Lựa chọn A cho chủ đề 1|B. Lựa chọn B cho chủ đề 1|C. Lựa chọn C cho chủ đề 1|D. Lựa chọn D cho chủ đề 1|C
+847|Chọn phát biểu đúng về chủ đề 2 trong ngữ cảnh của chủ đề 2?|A. Lựa chọn A cho chủ đề 2|B. Lựa chọn B cho chủ đề 2|C. Lựa chọn C cho chủ đề 2|D. Lựa chọn D cho chủ đề 2|C
+49|Phương pháp nào được sử dụng để chủ đề 3?|A. Lựa chọn A cho chủ đề 3|B. Lựa chọn B cho chủ đề 3|C. Lựa chọn C cho chủ đề 3|D. Lựa chọn D cho chủ đề 3|B
+607|Khái niệm nào là đúng nhất về chủ đề 4?|A. Lựa chọn A cho chủ đề 4|B. Lựa chọn B cho chủ đề 4|C. Lựa chọn C cho chủ đề 4|D. Lựa chọn D cho chủ đề 4|A
+674|Nội dung của câu hỏi chủ đề 5 là gì?|A. Lựa chọn A cho chủ đề 5|B. Lựa chọn B cho chủ đề 5|C. Lựa chọn C cho chủ đề 5|D. Lựa chọn D cho chủ đề 5|D
+610|Khái niệm nào là đúng nhất về chủ đề 6?|A. Lựa chọn A cho chủ đề 6|B. Lựa chọn B cho chủ đề 6|C. Lựa chọn C cho chủ đề 6|D. Lựa chọn D cho chủ đề 6|D
+757|Phương pháp nào tối ưu nhất để chủ đề 7?|A. Lựa chọn A cho chủ đề 7|B. Lựa chọn B cho chủ đề 7|C. Lựa chọn C cho chủ đề 7|D. Lựa chọn D cho chủ đề 7|A
+894|Thuật toán nào phù hợp nhất cho chủ đề 8?|A. Lựa chọn A cho chủ đề 8|B. Lựa chọn B cho chủ đề 8|C. Lựa chọn C cho chủ đề 8|D. Lựa chọn D cho chủ đề 8|C
+307|Phương pháp nào được sử dụng để chủ đề 9?|A. Lựa chọn A cho chủ đề 9|B. Lựa chọn B cho chủ đề 9|C. Lựa chọn C cho chủ đề 9|D. Lựa chọn D cho chủ đề 9|D
+428|Nội dung của câu hỏi chủ đề 10 là gì?|A. Lựa chọn A cho chủ đề 10|B. Lựa chọn B cho chủ đề 10|C. Lựa chọn C cho chủ đề 10|D. Lựa chọn D cho chủ đề 10|B

@@ -16,6 +16,18 @@ int height(ptrMonHoc n) {
     return n->height;
 }
 
+// Hàm xóa toàn bộ cây AVL
+void deleteAVLTree(NodeMonHoc* root) {
+    if (root == nullptr) return;
+
+    deleteAVLTree(root->left);
+
+    deleteAVLTree(root->right);
+
+    delete root;
+}
+
+
 ptrMonHoc newNode(QString mamh_input, QString tenmh_input) {
     ptrMonHoc node = new NodeMonHoc;
     node->MH.MAMH = mamh_input;

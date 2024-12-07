@@ -21,7 +21,7 @@ xemDiem::~xemDiem()
 void xemDiem::setThongTinSinhVien()
 {
     ui->mssv->setText("MSSV: " + mainUser->masv);
-    ui->ten->setText("Họ và Tên: " + mainUser->ho + " " + mainUser->ten);
+    ui->ten->setText("Tên: " + mainUser->ho + " " + mainUser->ten);
     ui->mssv->setAlignment(Qt::AlignCenter);
     ui->ten->setAlignment(Qt::AlignCenter);
 }

@@ -23,29 +23,22 @@ int main(int argc, char *argv[])
         if (mainUser == nullptr) {
             GIao_Vien gvWindow(danhSachLop);
             gvWindow.showMaximized();
+            delete loginDlg;
             return a.exec();
         } else {
             Thong_Tin_Thi* TTThi = new Thong_Tin_Thi(mainUser, danhSachCauHoi);
+            delete loginDlg;
             if (TTThi->exec() == QDialog::Accepted) {
                 // Lấy các giá trị từ TTThi ngay khi nó vẫn còn hoạt động
                 int times = TTThi->getTime();
                 int questions = TTThi->getQuestions();
                 QString monhoc = TTThi->getMonHoc();
                 QString maMH = TTThi->getMaMH();
-                if (!danhSachCauHoi) {
-                    qDebug() << "Danh sách câu hỏi đang trống.";
-                } else {
-                    qDebug() << "Danh sách câu hỏi đã được khởi tạo.";
-                }
-                // Debug để kiểm tra dữ liệu
-                qDebug() << "Môn học: " << monhoc;
-                qDebug() << "Câu hỏi đầu tiên: " << danhSachCauHoi->noiDung;
 
                 // Tạo cửa sổ Trac_Nghiem với các giá trị đã lấy được
-                Trac_Nghiem w(mainUser, danhSachLop, times, questions, monhoc, maMH, danhSachCauHoi);
-                w.showMaximized();
-
-                // Thực thi ứng dụng chính
+                Trac_Nghiem* TT = new Trac_Nghiem(mainUser, danhSachLop, times, questions, monhoc, maMH, danhSachCauHoi);
+                TT->showMaximized();
+                delete TTThi;
                 return a.exec();
             }
         }

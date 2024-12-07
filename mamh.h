@@ -27,6 +27,7 @@ struct NodeMonHoc {
 typedef NodeMonHoc* ptrMonHoc;
 
 ptrMonHoc readFileAndBuildAVL();
+void deleteAVLTree(NodeMonHoc* root);
 void duyetLNR(ptrMonHoc root, QStringList &danhSachMonHoc);
 ptrMonHoc loadToanBoCauHoi();
 void duyetLRN(ptrMonHoc p);

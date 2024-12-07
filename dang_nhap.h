@@ -22,7 +22,6 @@ public:
 
 private:
     Ui::Dang_Nhap *ui;
-    bool userIsGV = false;
     SinhVien*& mainUser;
     Lop** danhSachLop;
 

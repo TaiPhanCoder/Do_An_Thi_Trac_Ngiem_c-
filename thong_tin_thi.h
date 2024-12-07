@@ -25,9 +25,6 @@ public:
     QString getMaMH() const;
     CauHoi* getHeadCauhoi() const;
 
-protected:
-    bool eventFilter(QObject *obj, QEvent *event) override;
-
 private slots:
     void on_DangNhapButton_clicked();
 
