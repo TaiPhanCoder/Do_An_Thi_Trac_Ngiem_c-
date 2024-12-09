@@ -16,9 +16,6 @@
 #include <QCompleter>
 #include <QLineEdit>
 
-bool dasapxep = false;
-NodeMonHoc* root = nullptr;
-
 GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     : QMainWindow(parent)
     , danhSachLop(danhSachLop)
@@ -407,26 +404,12 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
 }
 
 void GIao_Vien::on_them1sv_clicked() {
-    Them_Sinh_Vien dialog(danhSachLop, this);
-    if (dialog.exec() == QDialog::Accepted) {
-        QString masv = dialog.getMSSV();
-        QString ho = dialog.getHo();
-        QString ten = dialog.getTen();
-        QString phai = dialog.getGioiTinh();
-        QString lop = dialog.getLop();
-
-        SinhVien* newSV = taoNodeSinhVien(masv, ho, ten, phai, "123");
-
-        if (dasapxep) {
-            themSinhVienVaoLopCoThuTu(newSV, lop);
-        } else {
-            themSinhVienVaoLop(newSV, lop);
-        }
-
+    Them_Sinh_Vien* dialog = new Them_Sinh_Vien(danhSachLop, dasapxep, this);
+    int result = dialog->exec();
+    if (result == QDialog::Accepted || result == QDialog::Rejected) {
         loadSinhVien();
-
-        qDebug() << "Đã thêm sinh viên mới vào bảng dữ liệu. Thông tin sinh viên: MSSV:" << newSV->masv << ", Họ:" << newSV->ho << ", Tên:" << newSV->ten << ", Giới tính:" << newSV->phai << ", Lớp:" << lop;
     }
+    delete dialog;
 }
 
 void GIao_Vien::hieuChinhSV() {

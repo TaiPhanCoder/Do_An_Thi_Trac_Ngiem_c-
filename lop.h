@@ -22,5 +22,8 @@ int demSinhVien(Lop** danhSachLop);
 int demSoLop(Lop* danhSachLop[]);
 int demSVLop(Lop* lop);
 void lapdssinhvien(const QString &filename, Lop* danhSachLop[]);
+bool checkMSSV(const QString &newMssv, Lop** danhSachLop);
+void themSinhVienVaoLop(SinhVien* newSV, const QString &lop, Lop** danhSachLop);
+void themSinhVienVaoLopCoThuTu(SinhVien* newSV, const QString &lop, Lop** danhSachLop);
 
 #endif // LOP_H

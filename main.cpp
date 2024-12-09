@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
                 int questions = TTThi->getQuestions();
                 QString monhoc = TTThi->getMonHoc();
                 QString maMH = TTThi->getMaMH();
-                qDebug() << danhSachCauHoi;
 
                 // Tạo cửa sổ Trac_Nghiem với các giá trị đã lấy được
                 Trac_Nghiem* TT = new Trac_Nghiem(mainUser, danhSachLop, times, questions, monhoc, maMH, danhSachCauHoi);

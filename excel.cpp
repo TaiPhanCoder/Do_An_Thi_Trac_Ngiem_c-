@@ -59,7 +59,7 @@ void loadSinhVienTuFile(Lop* danhSachLop[], const QString &fileName)
         }
 
         SinhVien* newSV = taoNodeSinhVien(masv, ho, ten, phai, "");
-        themSinhVienVaoLop(newSV, lop);
+        themSinhVienVaoLop(newSV, lop, danhSachLop);
 
         qDebug() << "Đã thêm sinh viên MSSV:" << masv << "Họ:" << ho << "Tên:" << ten << "Phái:" << phai;
         ++row;

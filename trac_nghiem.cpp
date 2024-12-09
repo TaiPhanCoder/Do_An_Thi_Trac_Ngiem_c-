@@ -104,14 +104,8 @@ void Trac_Nghiem::updateTimerDisplay() {
 }
 
 void Trac_Nghiem::updateTime() {
-    // Giảm 1 giây từ tổng số giây
-    totalSeconds--;
-
-    // Cập nhật thời gian hiển thị
-    updateTimerDisplay();
-
     // Nếu thời gian còn lại là 0, dừng bộ đếm và tự động nộp bài
-    if (timeLeft == QTime(0, 0, 0)) {
+    if (totalSeconds <= 0) {
         timer->stop();  // Dừng bộ đếm
 
         // Tự động tính điểm và hiển thị kết quả mà không cần xác nhận từ người dùng
@@ -121,7 +115,15 @@ void Trac_Nghiem::updateTime() {
 
         // Hiển thị kết quả bài thi
         ketQuaLamBai(diem);
+
+        return;  // Kết thúc hàm để không giảm tiếp
     }
+
+    // Giảm 1 giây từ tổng số giây
+    totalSeconds--;
+
+    // Cập nhật thời gian hiển thị
+    updateTimerDisplay();
 }
 
 void Trac_Nghiem::handleAnswerSelection() {
@@ -361,6 +363,11 @@ void Trac_Nghiem::on_NopBai_clicked()
 
     // Nếu người dùng chọn "Yes", thực hiện nộp bài
     if (reply == QMessageBox::Yes) {
+        // Dừng bộ đếm thời gian
+        if (timer && timer->isActive()) {
+            timer->stop();
+        }
+
         // Tính điểm của sinh viên
         float diem = tinhDiemSinhVien();
         monHocMoi->diem = diem;
@@ -373,10 +380,12 @@ void Trac_Nghiem::on_NopBai_clicked()
     }
 }
 
-void Trac_Nghiem::ketQuaLamBai(const float & diem) {
+void Trac_Nghiem::ketQuaLamBai(const float &diem) {
     ui->grLamBai->setVisible(false);
     ui->grCauHoi->setVisible(false);
     ui->ketQuaThi->setVisible(true);
+
+    // Căn giữa nội dung các label
     ui->mssv->setAlignment(Qt::AlignCenter);
     ui->ten->setAlignment(Qt::AlignCenter);
     ui->diem->setAlignment(Qt::AlignCenter);
@@ -384,7 +393,33 @@ void Trac_Nghiem::ketQuaLamBai(const float & diem) {
     ui->mamh->setAlignment(Qt::AlignCenter);
     ui->tenMH->setAlignment(Qt::AlignCenter);
     ui->thoiGianLamBai->setAlignment(Qt::AlignCenter);
+
+    // Cập nhật thông tin
     ui->mssv->setText("MSSV: " + mainUser->masv);
     ui->ten->setText("Tên: " + mainUser->ho + " " + mainUser->ten);
     ui->diem->setText("Điểm: " + QString::number(diem));
+
+    // Số câu trả lời đúng
+    int soCauDung = 0;
+    for (int i = 0; i < questions; ++i) {
+        if (mangDaThi[i].dapAn == headCauhoi->dapAnDung) {
+            soCauDung++;
+        }
+    }
+    ui->soCauDung->setText("Số câu đúng: " + QString::number(soCauDung) + "/" + QString::number(questions));
+
+    // Cập nhật mã môn học và tên môn học
+    ui->mamh->setText("Mã môn học: " + maMH);
+    ui->tenMH->setText("Tên môn học: " + monhoc);
+
+    // Cập nhật thời gian làm bài (hiển thị theo định dạng giờ:phút:giây)
+    int timeSpent = times * 60 - totalSeconds;  // Tổng thời gian đã dùng
+    int hours = timeSpent / 3600;
+    int minutes = (timeSpent % 3600) / 60;
+    int seconds = timeSpent % 60;
+    ui->thoiGianLamBai->setText(QString("Thời gian làm bài: %1:%2:%3")
+                                    .arg(hours, 2, 10, QChar('0'))
+                                    .arg(minutes, 2, 10, QChar('0'))
+                                    .arg(seconds, 2, 10, QChar('0')));
 }
+

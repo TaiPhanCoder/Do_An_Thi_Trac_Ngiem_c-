@@ -52,6 +52,8 @@ private slots:
 private:
     Ui::GIao_Vien *ui;
     Lop** danhSachLop;
+    bool dasapxep = false;
+    NodeMonHoc* root = nullptr;
 
     QMenu* sinhVienContextMenu;
     QAction* sinhVienDeleteAction;

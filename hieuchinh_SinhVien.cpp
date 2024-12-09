@@ -84,7 +84,7 @@ void HieuChinh::chinhSuaSinhVien() {
 
         if (sv != nullptr) {
             xoaSinhVienKhoiLop(sv, oldLop);
-            themSinhVienVaoLop(sv, newLop);
+            themSinhVienVaoLop(sv, newLop, danhSachLop);
             capNhatThongTinSinhVien(sv);
         }
     } else {
@@ -114,7 +114,7 @@ bool HieuChinh::thongBaoLoi() {
         ui->LoiMSSV->setText("MSSV không được để trống");
         ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
-    } else if (!checkMSSV(getMSSV())) {
+    } else if (!checkMSSV(getMSSV(),danhSachLop)) {
         ui->LoiMSSV->setText("MSSV đã tồn tại");
         ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
