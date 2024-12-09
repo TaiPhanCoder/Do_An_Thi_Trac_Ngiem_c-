@@ -2,6 +2,7 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64
   D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QFile \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QString \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/QTime \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20iterator.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20memory.h \
@@ -22,6 +23,7 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64
   C:/Qt/6.8.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qbytearraylist.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qbytearrayview.h \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/qcalendar.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qchar.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qcompare.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qcompare_impl.h \
@@ -35,6 +37,7 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64
   C:/Qt/6.8.0/mingw_64/include/QtCore/qcontiguouscache.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qdarwinhelpers.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qdatastream.h \
+  C:/Qt/6.8.0/mingw_64/include/QtCore/qdatetime.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qdebug.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qendian.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/qexceptionhandling.h \
@@ -157,15 +160,19 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64
   C:/Qt/6.8.0/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/QListWidgetItem \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemview.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractslider.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qdialog.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlistview.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlistwidget.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.8.0/mingw_64/include/QtWidgets/qslider.h \

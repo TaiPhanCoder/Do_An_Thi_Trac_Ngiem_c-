@@ -108,25 +108,6 @@ void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop) {
     // }
 }
 
-
-int demSinhVien() {
-    int count = 0;
-
-    // for (int i = 0; i < MAX; ++i) {
-    //     if (danhSachLop[i] == nullptr) {
-    //         break;
-    //     }
-    //     SinhVien* current = danhSachLop[i]->DSSV;
-
-    //     while (current != nullptr) {
-    //         count++;
-    //         current = current->next;
-    //     }
-    // }
-
-    return count;
-}
-
 bool checkMSSV(const QString &newMssv) {
     // for (int i = 0; i < 10000; ++i) {
     //     if (danhSachLop[i] == nullptr) {

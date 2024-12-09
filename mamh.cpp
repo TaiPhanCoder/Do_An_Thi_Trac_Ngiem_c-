@@ -352,5 +352,3 @@ ptrMonHoc loadToanBoCauHoi() {
     file.close();
     return root;
 }
-
-

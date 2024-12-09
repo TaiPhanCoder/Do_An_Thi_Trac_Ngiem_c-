@@ -17,6 +17,23 @@ int demSoLop(Lop* danhSachLop[]) {
     return count;
 }
 
+int demSinhVien(Lop** danhSachLop) {
+    int count = 0;
+
+    for (int i = 0; i < MAX; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+        SinhVien* current = danhSachLop[i]->DSSV;
+
+        while (current != nullptr) {
+            count++;
+            current = current->next;
+        }
+    }
+
+    return count;
+}
 
 int demSVLop(Lop* lop) {
     int count = 0;

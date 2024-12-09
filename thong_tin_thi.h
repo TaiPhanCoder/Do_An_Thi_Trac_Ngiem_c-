@@ -15,7 +15,7 @@ class Thong_Tin_Thi : public QDialog
     Q_OBJECT
 
 public:
-    explicit Thong_Tin_Thi(SinhVien* mainUser, CauHoi*& danhSachCauHoi, QWidget* parent = nullptr);
+    explicit Thong_Tin_Thi(SinhVien* mainUser, CauHoi* &danhSachCauHoi, QWidget* parent = nullptr);
     ~Thong_Tin_Thi();
 
     // Getter cho dữ liệu đầu ra
@@ -39,7 +39,7 @@ private:
 private:
     Ui::Thong_Tin_Thi *ui;
     SinhVien* mainUser;
-    CauHoi*& danhSachCauHoi;
+    CauHoi* &danhSachCauHoi;
     QStringList danhSachMonHoc; // Dữ liệu cho QCompleter
     QCompleter *completer;
 

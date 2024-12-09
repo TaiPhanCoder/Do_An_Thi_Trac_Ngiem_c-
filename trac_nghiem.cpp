@@ -8,12 +8,6 @@
 #include <QTimer>
 #include <QTime>
 
-DaThi* mangDaThi = nullptr;
-int cauHienTai = 1;
-QTimer *timer;
-QTime timeLeft;
-CauHoi* cauhoiHienTai = nullptr;
-
 Trac_Nghiem::Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], int times, int questions,
                          const QString &monhoc, const QString &maMH, CauHoi* headCauhoi, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::Trac_Nghiem), mainUser(mainUser), danhSachLop(danhSachLop),
@@ -28,7 +22,6 @@ Trac_Nghiem::Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], int times, int 
     QTime timeLeft(0, times, 0);
     startCountdown(times);
     setupTracNghiem();
-    indsach();
     initializeMangDaThi();
     taoMonHocDangThi(mainUser, maMH, questions);
 }
@@ -89,26 +82,45 @@ void Trac_Nghiem::taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int 
 
 
 void Trac_Nghiem::startCountdown(int times) {
-    timeLeft = QTime(0, times, 0);
+    totalSeconds = times * 60;  // Chuyển đổi thời gian từ phút sang giây
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Trac_Nghiem::updateTime);
 
     ui->timerLabel->setAlignment(Qt::AlignCenter);
-    ui->timerLabel->setText(timeLeft.toString("mm:ss"));
+    updateTimerDisplay();  // Cập nhật thời gian hiển thị ban đầu
 
-    timer->start(1000);
+    timer->start(1000);  // Mỗi giây gọi updateTime()
+}
+
+void Trac_Nghiem::updateTimerDisplay() {
+    int hours = totalSeconds / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
+
+    ui->timerLabel->setText(QString("%1:%2:%3")
+                                .arg(hours, 2, 10, QChar('0'))
+                                .arg(minutes, 2, 10, QChar('0'))
+                                .arg(seconds, 2, 10, QChar('0')));
 }
 
 void Trac_Nghiem::updateTime() {
-    // Giảm 1 giây từ thời gian hiện tại
-    timeLeft = timeLeft.addSecs(-1);
+    // Giảm 1 giây từ tổng số giây
+    totalSeconds--;
 
-    ui->timerLabel->setAlignment(Qt::AlignCenter);
-    ui->timerLabel->setText(timeLeft.toString("mm:ss"));
+    // Cập nhật thời gian hiển thị
+    updateTimerDisplay();
 
-    // Kiểm tra nếu thời gian còn lại bằng 00:00
+    // Nếu thời gian còn lại là 0, dừng bộ đếm và tự động nộp bài
     if (timeLeft == QTime(0, 0, 0)) {
-        timer->stop();
+        timer->stop();  // Dừng bộ đếm
+
+        // Tự động tính điểm và hiển thị kết quả mà không cần xác nhận từ người dùng
+        float diem = tinhDiemSinhVien();
+        monHocMoi->diem = diem;
+        luuDuLieuMangDaThi(danhSachLop);  // Lưu kết quả vào danh sách
+
+        // Hiển thị kết quả bài thi
+        ketQuaLamBai(diem);
     }
 }
 
@@ -163,19 +175,6 @@ void Trac_Nghiem::updateRadioButtonState() {
             ui->DQ->setChecked(true);
             break;
         }
-    }
-}
-
-void Trac_Nghiem::indsach() {
-    CauHoi* temp = cauhoiHienTai;
-    int stt = 1;
-    if(cauhoiHienTai == nullptr){
-        qDebug() << "Cau Hoi Hien Tai Rong";
-    }
-    while (temp != nullptr) {
-        qDebug() << "STT: " << stt << " | ID: " << temp->id;
-        temp = temp->next;
-        stt++;
     }
 }
 
@@ -290,7 +289,7 @@ float Trac_Nghiem::tinhDiemSinhVien()
     return round(diem * 10) / 10;
 }
 
-void luuDuLieuMangDaThi(Lop* danhSachLop[])
+void Trac_Nghiem::luuDuLieuMangDaThi(Lop* danhSachLop[])
 {
     QFile file("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/DsachDalLamBai.txt");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -352,13 +351,24 @@ void luuDuLieuMangDaThi(Lop* danhSachLop[])
 
 void Trac_Nghiem::on_NopBai_clicked()
 {
-    QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "Xác nhận", "Bạn có chắc chắn muốn nộp bài?",
-                                  QMessageBox::Yes | QMessageBox::No);
+    // Hiển thị hộp thoại xác nhận
+    QMessageBox::StandardButton reply = QMessageBox::question(
+        this,
+        "Xác nhận",
+        "Bạn có chắc chắn muốn nộp bài?",
+        QMessageBox::Yes | QMessageBox::No
+        );
+
+    // Nếu người dùng chọn "Yes", thực hiện nộp bài
     if (reply == QMessageBox::Yes) {
-        float diem =tinhDiemSinhVien();
+        // Tính điểm của sinh viên
+        float diem = tinhDiemSinhVien();
         monHocMoi->diem = diem;
+
+        // Lưu kết quả vào danh sách đã thi
         luuDuLieuMangDaThi(danhSachLop);
+
+        // Hiển thị kết quả bài thi
         ketQuaLamBai(diem);
     }
 }

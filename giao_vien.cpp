@@ -172,7 +172,7 @@ void GIao_Vien::loadSinhVien() {
     QStringList headers;
     headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
-    int rows = demSinhVien();
+    int rows = demSinhVien(danhSachLop);
     ui->bangDuLieu->setRowCount(rows);
     int row = 0;
 

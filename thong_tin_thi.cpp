@@ -8,7 +8,7 @@
 #include "xemdiem.h"
 
 // Constructor
-Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* mainUser, CauHoi*& danhSachCauHoi, QWidget* parent)
+Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* mainUser, CauHoi* &danhSachCauHoi, QWidget* parent)
     : QDialog(parent), ui(new Ui::Thong_Tin_Thi), mainUser(mainUser), danhSachCauHoi(danhSachCauHoi)
 {
     ui->setupUi(this);

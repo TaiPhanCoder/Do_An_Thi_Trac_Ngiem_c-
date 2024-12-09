@@ -5,8 +5,9 @@
 #include "lop.h"
 #include "cau_hoi_da_thi.h"
 #include <QListWidgetItem>
-
 #include <QMainWindow>
+#include "QTime"
+#include <QMessageBox>
 
 namespace Ui {
 class Trac_Nghiem;
@@ -17,9 +18,8 @@ class Trac_Nghiem : public QMainWindow
     Q_OBJECT
 
 public:
-explicit Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], int times, int questions,
-                    const QString &monhoc, const QString &maMH, CauHoi* headCauhoi, QWidget *parent = nullptr);
-
+    explicit Trac_Nghiem(SinhVien* mainUser, Lop* danhSachLop[], int times, int questions,
+                         const QString &monhoc, const QString &maMH, CauHoi* headCauhoi, QWidget *parent = nullptr);
     ~Trac_Nghiem();
 
 private slots:
@@ -27,21 +27,30 @@ private slots:
     void startCountdown(int times);
     void updateTime();
     void on_left_arow_clicked();
-    void indsach();
     void handleListWidgetClick(QListWidgetItem *item);
-    void initializeMangDaThi();
     void handleAnswerSelection();
-    void updateRadioButtonState();
-    void setupTracNghiem();
     void on_NopBai_clicked();
     void ketQuaLamBai(const float &diem);
+    void updateTimerDisplay();
 
 private:
+    void setupTracNghiem();
+    void luuDuLieuMangDaThi(Lop* danhSachLop[]);
+    void initializeMangDaThi();
+    void updateRadioButtonState();
     void next();
     void prev();
-    float tinhDiemSinhVien();
     void cauHoi();
+    float tinhDiemSinhVien();
+    void taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int questions);
+    void updateQuestion();
+    void on_finish_clicked();
+
     Ui::Trac_Nghiem *ui;
+
+    QTimer* timer;
+    QTime timeLeft;
+
     SinhVien* mainUser;
     Lop** danhSachLop;
     int times;
@@ -49,11 +58,11 @@ private:
     QString monhoc;
     QString maMH;
     CauHoi* headCauhoi;
-
-    void taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int questions);
     monHocDaThi* monHocMoi;
+    int cauHienTai = 1;
+    DaThi* mangDaThi;
+    CauHoi* cauhoiHienTai;
+    int totalSeconds;
 };
-
-    extern int countcauhoi;
 
 #endif // TRAC_NGHIEM_H
