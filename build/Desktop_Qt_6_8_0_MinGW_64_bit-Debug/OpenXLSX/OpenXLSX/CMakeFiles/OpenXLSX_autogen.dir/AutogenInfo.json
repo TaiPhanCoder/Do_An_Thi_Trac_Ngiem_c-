@@ -1,14 +1,14 @@
 {
 	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
-	"BUILD_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen",
-	"CMAKE_BINARY_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX",
-	"CMAKE_CURRENT_SOURCE_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX",
+	"BUILD_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen",
+	"CMAKE_BINARY_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX",
 	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/CMakeLists.txt",
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/CMakeLists.txt",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GenerateExportHeader.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CheckCompilerFlag.cmake",
@@ -25,16 +25,16 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakePackageConfigHelpers.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/WriteBasicConfigVersionFile.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in",
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/OpenXLSXConfig.cmake"
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/OpenXLSXConfig.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-",
+	"CMAKE_SOURCE_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/deps",
+	"DEP_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "OpenXLSX_autogen/timestamp",
 	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/include",
-	"MOC_COMPILATION_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/include",
+	"MOC_COMPILATION_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "CHARCONV_ENABLED", "ENABLE_NOWIDE", "OPENXLSX_STATIC_DEFINE" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -45,12 +45,12 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX",
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/headers",
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX",
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/external/zippy",
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/external/pugixml",
-		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/external/nowide",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/headers",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/external/zippy",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/external/pugixml",
+		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/external/nowide",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -78,141 +78,141 @@
 		"-c",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/OpenXLSX_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 8,
-	"PARSE_CACHE_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/CMakeFiles/OpenXLSX_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/CMakeFiles/OpenXLSX_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
-	"SETTINGS_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/CMakeFiles/OpenXLSX_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/CMakeFiles/OpenXLSX_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCell.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCell.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellIterator.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellIterator.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellRange.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellRange.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellReference.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellReference.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellValue.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLCellValue.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLColor.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLColor.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLColumn.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLColumn.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLComments.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLComments.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLContentTypes.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLContentTypes.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLDateTime.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLDateTime.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLDocument.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLDocument.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLFormula.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLFormula.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLMergeCells.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLMergeCells.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLProperties.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLProperties.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLRelationships.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLRelationships.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLRow.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLRow.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLRowData.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLRowData.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLSharedStrings.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLSharedStrings.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLSheet.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLSheet.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLStyles.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLStyles.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLWorkbook.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLWorkbook.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLXmlData.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLXmlData.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLXmlFile.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLXmlFile.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLXmlParser.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLXmlParser.cpp",
 			"MU",
 			null
 		],
 		[
-			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLZipArchive.cpp",
+			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/sources/XLZipArchive.cpp",
 			"MU",
 			null
 		]

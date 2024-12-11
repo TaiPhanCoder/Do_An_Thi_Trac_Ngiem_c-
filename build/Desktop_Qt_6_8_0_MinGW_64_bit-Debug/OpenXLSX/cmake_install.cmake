@@ -1,4 +1,4 @@
-# Install script for directory: D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX
+# Install script for directory: E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,21 +39,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/cmake_install.cmake")
+  include("E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Documentation/cmake_install.cmake")
+  include("E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Documentation/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/cmake_install.cmake")
+  include("E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Examples/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Tests/cmake_install.cmake")
+  include("E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/Tests/cmake_install.cmake")
 endif()
 

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>hieuchinh_lop</class>
+ <widget class="QDialog" name="hieuchinh_lop">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>250</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hieuChinh">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>10</y>
+     <width>421</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt; font-weight:700; color:#ff0000;&quot;&gt;Hiệu Chỉnh&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="Lop">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>251</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QComboBox {
+	border: 2px solid gray;
+	border-radius: 20px;
+	background-color: #F0F0F0;
+	color: black;
+	font-size: 16px;
+text-align: center;
+}
+
+QComboBox::drop-down {
+width: 30px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+}
+
+QComboBox::down-arrow {
+    image: url(:/logo/down-arrow (1).png); /* Đường dẫn hình ảnh mũi tên */
+    width: 20px;
+    height: 20px;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: white;
+    selection-background-color: lightblue;  /* Màu nền của mục được chọn */
+    selection-color: black;  /* Màu chữ của mục được chọn */
+    padding: 5px;
+	font-size: 12px;
+}
+
+</string>
+   </property>
+   <property name="placeholderText">
+    <string>                  Chọn Lớp</string>
+   </property>
+   <item>
+    <property name="text">
+     <string>E23CQCN01-N</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>E23CQCN02-N</string>
+    </property>
+   </item>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>hieuchinh_lop</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>hieuchinh_lop</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

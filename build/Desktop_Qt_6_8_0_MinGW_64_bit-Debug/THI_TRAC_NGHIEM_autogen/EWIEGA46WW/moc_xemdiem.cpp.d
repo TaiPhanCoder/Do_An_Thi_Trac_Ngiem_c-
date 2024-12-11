@@ -1,5 +1,5 @@
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/EWIEGA46WW/moc_xemdiem.cpp: D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h \
-  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h \
+E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/EWIEGA46WW/moc_xemdiem.cpp: E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h \
+  E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QFile \
   C:/Qt/6.8.0/mingw_64/include/QtCore/QString \
   C:/Qt/6.8.0/mingw_64/include/QtCore/q20functional.h \
@@ -393,7 +393,7 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/wctype.h \
-  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.h \
-  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.h \
-  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h \
-  D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
+  E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.h \
+  E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.h \
+  E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/mamh.h \
+  E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
