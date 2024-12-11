@@ -47,30 +47,3 @@ SinhVien* timSinhVien(const QString& mssv, const QString& lop) {
     return nullptr;
 }
 
-void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop, Lop** danhSachLop) {
-    for (int i = 0; i < 10000; ++i) {
-        if (danhSachLop[i] == nullptr) {
-            break;
-        }
-        if (danhSachLop[i]->MALOP == lop) {
-            SinhVien* current = danhSachLop[i]->DSSV;
-            SinhVien* prev = nullptr;
-            while (current != nullptr) {
-                if (current == sv) {
-                    if (prev == nullptr) {
-                        // Nếu sinh viên cần xóa là sinh viên đầu danh sách
-                        danhSachLop[i]->DSSV = current->next;
-                    } else {
-                        // Xóa sinh viên khỏi danh sách liên kết
-                        prev->next = current->next;
-                    }
-                    delete current; // Xóa đối tượng sinh viên khỏi bộ nhớ
-                    return;
-                }
-                prev = current;
-                current = current->next;
-            }
-        }
-    }
-}
-

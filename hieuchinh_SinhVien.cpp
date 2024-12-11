@@ -83,7 +83,7 @@ void HieuChinh::chinhSuaSinhVien() {
         SinhVien* sv = timSinhVien(oldMssv, oldLop);
 
         if (sv != nullptr) {
-            xoaSinhVienKhoiLop(sv, oldLop);
+            xoaSinhVienKhoiLop(sv, oldLop, danhSachLop);
             themSinhVienVaoLop(sv, newLop, danhSachLop);
             capNhatThongTinSinhVien(sv);
         }
