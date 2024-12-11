@@ -503,10 +503,10 @@ font-size: 16px;
 padding-left: 85px;</string>
      </property>
      <property name="placeholderText">
-      <string>Tìm Lop</string>
+      <string>Mã Lớp</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_5">
+    <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -519,7 +519,7 @@ padding-left: 85px;</string>
       <string>Tìm kiếm:</string>
      </property>
     </widget>
-    <widget class="QGroupBox" name="ThemLop">
+    <widget class="QGroupBox" name="themLop">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -529,7 +529,7 @@ padding-left: 85px;</string>
       </rect>
      </property>
      <property name="title">
-      <string>Thêm Lop</string>
+      <string>Thêm Lớp</string>
      </property>
      <widget class="QPushButton" name="them1lop">
       <property name="geometry">
@@ -550,7 +550,7 @@ font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
       </property>
       <property name="text">
-       <string>Lop</string>
+       <string>Một Lớp</string>
       </property>
      </widget>
      <widget class="QPushButton" name="themNhieuLop">
@@ -575,6 +575,28 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
        <string>Danh Sách</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QPushButton" name="sapXep_2">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>60</y>
+       <width>231</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: rgb(255, 35, 35);
+color: white;
+font-size: 16px;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
+     </property>
+     <property name="text">
+      <string>Sắp xếp theo mã lớp</string>
+     </property>
     </widget>
     <widget class="QComboBox" name="locLop_2">
      <property name="geometry">
@@ -623,29 +645,7 @@ QComboBox QAbstractItemView {
 </string>
      </property>
      <property name="placeholderText">
-      <string>                   Lọc Lop</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="sapXep_2">
-     <property name="geometry">
-      <rect>
-       <x>320</x>
-       <y>60</y>
-       <width>231</width>
-       <height>29</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 2px solid gray;
-border-radius: 10px;
-background-color: rgb(255, 35, 35);
-color: white;
-font-size: 16px;
-font-weight: bold;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);</string>
-     </property>
-     <property name="text">
-      <string>Sắp xếp theo ma lop</string>
+      <string>                      Lọc Lớp</string>
      </property>
     </widget>
    </widget>
