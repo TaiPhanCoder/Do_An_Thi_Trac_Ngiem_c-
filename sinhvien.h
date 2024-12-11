@@ -25,7 +25,5 @@ extern SinhVien *headDsachSV;
 SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, QString password);
 void themSinhVien(SinhVien*& head, SinhVien* newSV);
 SinhVien* timSinhVien(const QString& mssv, const QString& lop);
-void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop);
-
 
 #endif // SINHVIEN_H

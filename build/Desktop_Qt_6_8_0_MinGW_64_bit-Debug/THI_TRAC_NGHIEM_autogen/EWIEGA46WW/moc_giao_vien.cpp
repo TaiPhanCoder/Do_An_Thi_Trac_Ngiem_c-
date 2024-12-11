@@ -64,6 +64,7 @@ constexpr auto qt_meta_stringdata_CLASSGIao_VienENDCLASS = QtMocHelpers::stringD
     "setupComboBoxFilter",
     "QComboBox*",
     "comboBox",
+    "lopList",
     "on_cauHoi_clicked",
     "loadCauHoi",
     "ptrMonHoc",
@@ -107,12 +108,12 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
       21,    1,  173,    2, 0x08,   21 /* Private */,
       23,    1,  176,    2, 0x08,   23 /* Private */,
       25,    1,  179,    2, 0x08,   25 /* Private */,
-      26,    1,  182,    2, 0x08,   27 /* Private */,
-      29,    0,  185,    2, 0x08,   29 /* Private */,
-      30,    2,  186,    2, 0x08,   30 /* Private */,
-      33,    0,  191,    2, 0x08,   33 /* Private */,
-      34,    0,  192,    2, 0x08,   34 /* Private */,
-      35,    0,  193,    2, 0x08,   35 /* Private */,
+      26,    2,  182,    2, 0x08,   27 /* Private */,
+      30,    0,  187,    2, 0x08,   30 /* Private */,
+      31,    2,  188,    2, 0x08,   31 /* Private */,
+      34,    0,  193,    2, 0x08,   34 /* Private */,
+      35,    0,  194,    2, 0x08,   35 /* Private */,
+      36,    0,  195,    2, 0x08,   36 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QPoint,    3,
@@ -131,9 +132,9 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
     QMetaType::Void, QMetaType::QString,   22,
     QMetaType::Void, QMetaType::QString,   24,
     QMetaType::Void, QMetaType::Int,   20,
-    QMetaType::Void, 0x80000000 | 27,   28,
+    QMetaType::Void, 0x80000000 | 27, QMetaType::QStringList,   28,   29,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 31, 0x80000000 | 32,   17,    7,
+    QMetaType::Void, 0x80000000 | 32, 0x80000000 | 33,   17,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -195,6 +196,7 @@ Q_CONSTINIT const QMetaObject GIao_Vien::staticMetaObject = { {
         // method 'setupComboBoxFilter'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<QComboBox *, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QStringList &, std::false_type>,
         // method 'on_cauHoi_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'loadCauHoi'
@@ -235,7 +237,7 @@ void GIao_Vien::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 13: _t->locCauHoi((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 14: _t->loadSinhVienLop((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 15: _t->onLopComboBoxChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
-        case 16: _t->setupComboBoxFilter((*reinterpret_cast< std::add_pointer_t<QComboBox*>>(_a[1]))); break;
+        case 16: _t->setupComboBoxFilter((*reinterpret_cast< std::add_pointer_t<QComboBox*>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QStringList>>(_a[2]))); break;
         case 17: _t->on_cauHoi_clicked(); break;
         case 18: _t->loadCauHoi((*reinterpret_cast< std::add_pointer_t<ptrMonHoc>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<int&>>(_a[2]))); break;
         case 19: _t->xoaCauHoi(); break;

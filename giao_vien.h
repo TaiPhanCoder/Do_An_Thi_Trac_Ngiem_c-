@@ -42,7 +42,7 @@ private slots:
     void locCauHoi(const QString& selectedCauHoi);
     void loadSinhVienLop(const QString &lop);
     void onLopComboBoxChanged(int index);
-    void setupComboBoxFilter(QComboBox *comboBox);
+    void setupComboBoxFilter(QComboBox *comboBox, const QStringList &lopList) ;
     void on_cauHoi_clicked();
     void loadCauHoi(ptrMonHoc root, int &row);
     void xoaCauHoi();
@@ -54,6 +54,8 @@ private:
     Lop** danhSachLop;
     bool dasapxep = false;
     NodeMonHoc* root = nullptr;
+    QStringList lopList;
+    QStringList monHocList;
 
     QMenu* sinhVienContextMenu;
     QAction* sinhVienDeleteAction;

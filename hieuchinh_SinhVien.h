@@ -15,7 +15,7 @@ class HieuChinh : public QDialog
 
 public:
     explicit HieuChinh(const QString &mssv, const QString &ho, const QString &ten,
-                       const QString &lop, const QString &gioiTinh, Lop* danhSachLop[], QWidget *parent = nullptr);
+                       const QString &lop, const QString &gioiTinh, Lop* danhSachLop[], bool dasapxep = false, QWidget *parent = nullptr);
     ~HieuChinh();
     QString getMSSV() const;
     QString getHo() const;
@@ -35,6 +35,7 @@ private:
     Lop** danhSachLop;
     QString oldMssv;
     QString oldLop;
+    bool dasapxep;
 };
 
 #endif // HIEUCHINH_SINHVIEN_H

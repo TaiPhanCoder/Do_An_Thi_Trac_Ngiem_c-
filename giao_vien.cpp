@@ -26,10 +26,11 @@ GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     QPixmap pixmap(":/logo/ad27bc12ca81e862ceb35328122757ee.png");
     QPixmap scaledPixmap = pixmap.scaled(ui->logo->size(), Qt::KeepAspectRatio);
     ui->logo->setPixmap(scaledPixmap);
+    this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
+    this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
     root =loadToanBoCauHoi();
     on_sinhVien_clicked();
     ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    setupComboBoxFilter(ui->locLop);
     loadLopVaoComboBox();
 
     //Tạo context menu
@@ -86,7 +87,7 @@ void GIao_Vien::showCauHoiContextMenu(const QPoint &pos) {
 }
 
 void xoaSinhVienKhoiDanhSach(Lop* danhSachLop[], const QString &masv, const QString &tenLop) {
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -174,7 +175,7 @@ void GIao_Vien::loadSinhVien() {
     int row = 0;
 
     // Duyệt qua mảng lớp
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -208,37 +209,37 @@ void GIao_Vien::onTextEdited(const QString &text) {
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
 }
 
-void GIao_Vien::timSinhVien(const QString &text) {
-    ui->bangDuLieu->setRowCount(0);
+    void GIao_Vien::timSinhVien(const QString &text) {
+        ui->bangDuLieu->setRowCount(0);
 
-    int row = 0;
+        int row = 0;
 
-    // Duyệt qua mảng lớp
-    for (int i = 0; i < 10000; ++i) {
-        if (danhSachLop[i] == nullptr) {
-            break;
-        }
-        SinhVien* current = danhSachLop[i]->DSSV;
-        QString tenLop = danhSachLop[i]->MALOP;
-
-        // Duyệt qua danh sách sinh viên của lớp hiện tại
-        while (current != nullptr) {
-            if (current->masv.contains(text, Qt::CaseInsensitive)) {
-                ui->bangDuLieu->insertRow(row);
-
-                ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->masv));
-                ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(current->ho));
-                ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->ten));
-                ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(tenLop));
-                ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(current->phai));
-
-                row++;
+        // Duyệt qua mảng lớp
+        for (int i = 0; i < MAX; ++i) {
+            if (danhSachLop[i] == nullptr) {
+                break;
             }
+            SinhVien* current = danhSachLop[i]->DSSV;
+            QString tenLop = danhSachLop[i]->MALOP;
 
-            current = current->next;
+            // Duyệt qua danh sách sinh viên của lớp hiện tại
+            while (current != nullptr) {
+                if (current->masv.contains(text, Qt::CaseInsensitive)) {
+                    ui->bangDuLieu->insertRow(row);
+
+                    ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->masv));
+                    ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(current->ho));
+                    ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->ten));
+                    ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(tenLop));
+                    ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(current->phai));
+
+                    row++;
+                }
+
+                current = current->next;
+            }
         }
     }
-}
 
 void GIao_Vien::dsMonHoc(NodeMonHoc* root, bool isFirst) {
     if (root == nullptr) {
@@ -248,12 +249,18 @@ void GIao_Vien::dsMonHoc(NodeMonHoc* root, bool isFirst) {
     // Nếu là lần đầu tiên, xóa tất cả các item cũ trong combobox trước khi thêm mới
     if (isFirst) {
         ui->locCauHoi->clear();
+        monHocList.clear();
+
         ui->locCauHoi->insertItem(0, "Tất Cả Câu Hỏi");
+        monHocList << "Tất Cả Câu Hỏi";
+
         int indexAllQuestions = 0;
         ui->locCauHoi->setItemData(indexAllQuestions, Qt::AlignCenter, Qt::TextAlignmentRole);
     }
 
     ui->locCauHoi->addItem(root->MH.TENMH, QVariant::fromValue(root->MH.MAMH));
+    monHocList << root->MH.TENMH;
+
     int index = ui->locCauHoi->count() - 1;
     ui->locCauHoi->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
 
@@ -345,32 +352,39 @@ void GIao_Vien::on_Them1CauHoi_clicked() {
 void GIao_Vien::loadLopVaoComboBox() {
     ui->locLop->clear();
 
-    ui->locLop->addItem("Tất Cả Sinh Viên");
+    lopList << "Tất Cả Sinh Viên";
 
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
-        ui->locLop->addItem(danhSachLop[i]->MALOP);
+        lopList << danhSachLop[i]->MALOP;
     }
+
+    ui->locLop->addItems(lopList);
 
     for (int i = 0; i < ui->locLop->count(); ++i) {
         ui->locLop->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
     }
+
+    setupComboBoxFilter(ui->locLop, lopList);
 }
+
 
 void GIao_Vien::onLopComboBoxChanged(int index) {
     QString selectedLop = ui->locLop->itemText(index);
     loadSinhVienLop(selectedLop);
 }
 
-void GIao_Vien::setupComboBoxFilter(QComboBox *comboBox) {
-    comboBox->setEditable(true); // Mặc định không cho chỉnh sửa
+void GIao_Vien::setupComboBoxFilter(QComboBox *comboBox, const QStringList &list) {
+    comboBox->setEditable(true);
 
-    // Thêm QCompleter để hỗ trợ gợi ý
-    QCompleter *completer = new QCompleter(comboBox);
+    // Tạo QCompleter để hỗ trợ gợi ý
+    QCompleter *completer = new QCompleter(list, comboBox);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     completer->setFilterMode(Qt::MatchContains);
+    completer->setCompletionMode(QCompleter::PopupCompletion);
+
     comboBox->setCompleter(completer);
 }
 
@@ -382,7 +396,7 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
 
     ui->bangDuLieu->setRowCount(0);
 
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -420,7 +434,7 @@ void GIao_Vien::hieuChinhSV() {
     QString ten = ui->bangDuLieu->item(row, 2)->text();
     QString lop = ui->bangDuLieu->item(row, 3)->text();
     QString gioiTinh = ui->bangDuLieu->item(row, 4)->text();
-    HieuChinh dialog(mssv, ho, ten, lop, gioiTinh, danhSachLop, this);
+    HieuChinh dialog(mssv, ho, ten, lop, gioiTinh, danhSachLop, dasapxep, this);
 
     if (dialog.exec() == QDialog::Accepted){
         loadSinhVien();
@@ -458,6 +472,7 @@ void GIao_Vien::on_cauHoi_clicked() {
     connect(ui->locCauHoi, SIGNAL(currentIndexChanged(int)), this, SLOT(onCauHoiComboBoxChanged(int)));
     bool isFirst = true;
     dsMonHoc(root, isFirst);
+    setupComboBoxFilter(ui->locCauHoi, monHocList);
 }
 
 void GIao_Vien::xoaCauHoi()
@@ -538,7 +553,7 @@ void GIao_Vien::on_sinhVien_clicked() {
 void GIao_Vien::on_sapXep_clicked()
 {
     dasapxep = true;
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         qDebug() << "CB sap xep";
         if (danhSachLop[i] == nullptr) {
             break;
