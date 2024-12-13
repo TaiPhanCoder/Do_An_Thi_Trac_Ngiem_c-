@@ -129,9 +129,9 @@ QString GIao_Vien::getSelectedStudentLop(int row) {
 }
 
 void GIao_Vien::xoaSV() {
-    int row = ui->bangDuLieu->currentRow(); // Lấy hàng đang được chọn
-    QString masv = ui->bangDuLieu->item(row, 0)->text(); // Lấy MSSV từ cột 0
-    QString tenLop = ui->bangDuLieu->item(row, 3)->text(); // Lấy Tên Lớp từ cột 3
+    int row = ui->bangDuLieu->currentRow();
+    QString masv = ui->bangDuLieu->item(row, 0)->text();
+    QString tenLop = ui->bangDuLieu->item(row, 3)->text();
 
     SinhVien* sinhVien = timSinhVien(masv, tenLop, danhSachLop);
 
