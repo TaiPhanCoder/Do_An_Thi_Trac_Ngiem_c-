@@ -33,5 +33,6 @@ ptrMonHoc loadToanBoCauHoi();
 void duyetLRN(ptrMonHoc p);
 int demTatCaCauHoi(ptrMonHoc root);
 CauHoi* findCauHoi(NodeMonHoc* root, QString mamh, int id);
+MonHoc* SearchMonHoc(ptrMonHoc p, QString mamh_input);
 
 #endif // MAMH_H

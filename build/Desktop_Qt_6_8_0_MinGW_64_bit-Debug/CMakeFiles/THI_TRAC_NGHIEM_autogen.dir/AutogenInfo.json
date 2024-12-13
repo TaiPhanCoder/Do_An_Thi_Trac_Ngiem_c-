@@ -1,18 +1,18 @@
 {
 	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
-	"BUILD_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen",
-	"CMAKE_BINARY_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-",
+	"BUILD_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen",
+	"CMAKE_BINARY_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-",
 	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/CMakeLists.txt",
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/CMakeLists.txt",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake",
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake",
@@ -25,7 +25,7 @@
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake",
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeRCInformation.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
@@ -258,120 +258,126 @@
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.8.0/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/resources.qrc"
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/resources.qrc"
 	],
-	"CMAKE_SOURCE_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-",
+	"CMAKE_SOURCE_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/deps",
+	"DEP_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "THI_TRAC_NGHIEM_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.h",
 			"MU",
 			"EWIEGA46WW/moc_cau_hoi.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.h",
 			"MU",
 			"EWIEGA46WW/moc_cau_hoi_da_thi.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/dang_nhap.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/dang_nhap.h",
 			"MU",
 			"EWIEGA46WW/moc_dang_nhap.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/excel.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/excel.h",
 			"MU",
 			"EWIEGA46WW/moc_excel.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/giao_vien.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/giao_vien.h",
 			"MU",
 			"EWIEGA46WW/moc_giao_vien.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.h",
 			"MU",
 			"EWIEGA46WW/moc_hieuchinh_SinhVien.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_cauhoi.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_cauhoi.h",
 			"MU",
 			"EWIEGA46WW/moc_hieuchinh_cauhoi.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_lop.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_lop.h",
 			"MU",
 			"EWIEGA46WW/moc_hieuchinh_lop.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/lop.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/lop.h",
 			"MU",
 			"EWIEGA46WW/moc_lop.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/mamh.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h",
 			"MU",
 			"EWIEGA46WW/moc_mamh.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h",
 			"MU",
 			"EWIEGA46WW/moc_sinhvien.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/them_lop.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_lop.h",
 			"MU",
 			"EWIEGA46WW/moc_them_lop.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/them_sinh_vien.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_sinh_vien.h",
 			"MU",
 			"EWIEGA46WW/moc_them_sinh_vien.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.h",
 			"MU",
 			"EWIEGA46WW/moc_themcauhoi.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.h",
 			"MU",
 			"EWIEGA46WW/moc_thong_tin_thi.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.h",
 			"MU",
 			"EWIEGA46WW/moc_trac_nghiem.cpp",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_diem_mon.h",
+			"MU",
+			"EWIEGA46WW/moc_xem_diem_mon.cpp",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h",
 			"MU",
 			"EWIEGA46WW/moc_xemdiem.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/include",
-	"MOC_COMPILATION_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/include",
+	"MOC_COMPILATION_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
@@ -396,9 +402,9 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX",
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/headers",
-		"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/OpenXLSX/OpenXLSX/headers",
+		"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/OpenXLSX/OpenXLSX",
 		"C:/Qt/6.8.0/mingw_64/include/QtCore",
 		"C:/Qt/6.8.0/mingw_64/include",
 		"C:/Qt/6.8.0/mingw_64/mkspecs/win32-g++",
@@ -431,46 +437,119 @@
 		"-c",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
-	"PARALLEL" : 4,
-	"PARSE_CACHE_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/THI_TRAC_NGHIEM_autogen.dir/ParseCache.txt",
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/THI_TRAC_NGHIEM_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/moc.exe",
 	"QT_UIC_EXECUTABLE" : "C:/Qt/6.8.0/mingw_64/bin/uic.exe",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
-	"SETTINGS_FILE" : "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/THI_TRAC_NGHIEM_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/CMakeFiles/THI_TRAC_NGHIEM_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/dang_nhap.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/excel.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/giao_vien.cpp", "MU", null ],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.cpp",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.cpp",
 			"MU",
 			null
 		],
 		[
-			"E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_cauhoi.cpp",
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.cpp",
 			"MU",
 			null
 		],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_lop.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/lop.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/main.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/mamh.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/sinhvien.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/test.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/them_lop.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/them_sinh_vien.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.cpp", "MU", null ],
-		[ "E:/bulientuc/Do_An_Thi_Trac_Ngiem_c-/xemdiem.cpp", "MU", null ]
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/dang_nhap.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/excel.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/giao_vien.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_cauhoi.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_lop.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/lop.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/test.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_lop.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_sinh_vien.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/trac_nghiem.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_diem_mon.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

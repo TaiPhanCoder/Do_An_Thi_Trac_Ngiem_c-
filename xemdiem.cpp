@@ -1,8 +1,10 @@
 #include "xemdiem.h"
 #include "ui_xemdiem.h"
+#include "xem_diem_mon.h"
+#include "QMessageBox"
 
-xemDiem::xemDiem(SinhVien* mainUser, NodeMonHoc* root, QWidget *parent)
-    : QDialog(parent), ui(new Ui::xemDiem), mainUser(mainUser), root(root)
+xemDiem::xemDiem(SinhVien* mainUser, NodeMonHoc* root, bool isGV, QWidget *parent)
+    : QDialog(parent), ui(new Ui::xemDiem), mainUser(mainUser), root(root), isGV(isGV)
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
@@ -10,11 +12,29 @@ xemDiem::xemDiem(SinhVien* mainUser, NodeMonHoc* root, QWidget *parent)
 
     setThongTinSinhVien(); // Hiển thị MSSV và Tên
     loadBangDiem(); // Nạp điểm vào bảng
+    connect(ui->dsachdiem, &QTableWidget::cellDoubleClicked, this, &xemDiem::onTableDoubleClicked);
 }
 
 xemDiem::~xemDiem()
 {
     delete ui;
+}
+
+void xemDiem::onTableDoubleClicked(int row, int column) {
+    // Lấy Mã Môn Học từ cột đầu tiên của dòng được nhấp đúp
+    QString maMonHoc = ui->dsachdiem->item(row, 0)->text();
+
+    // Tìm môn học dựa trên Mã Môn Học
+    MonHoc* monHoc = SearchMonHoc(root, maMonHoc);
+
+    if (monHoc != nullptr) {
+        // Tạo và hiển thị dialog xem điểm môn
+        xem_Diem_Mon* dialog = new xem_Diem_Mon(mainUser, monHoc, this);
+        dialog->exec();
+        delete dialog;
+    } else {
+        qDebug() << "Không tìm thấy Mã Môn Học: " << maMonHoc;
+    }
 }
 
 // Hiển thị MSSV và Tên của sinh viên
@@ -42,7 +62,7 @@ void xemDiem::loadBangDiem()
     ui->dsachdiem->setColumnWidth(1, 385);
     ui->dsachdiem->setColumnWidth(2, 110);
 
-    ui->dsachdiem->setEditTriggers(QAbstractItemView::NoEditTriggers); // Không cho phép chỉnh sửa
+    ui->dsachdiem->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->dsachdiem->setSelectionBehavior(QAbstractItemView::SelectRows); // Chọn cả hàng khi nhấn vào ô
     ui->dsachdiem->setSelectionMode(QAbstractItemView::SingleSelection); // Chỉ chọn 1 dòng
 

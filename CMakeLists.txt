@@ -46,6 +46,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         xemdiem.h xemdiem.cpp xemdiem.ui
         them_lop.h them_lop.cpp them_lop.ui
         hieuchinh_lop.h hieuchinh_lop.cpp hieuchinh_lop.ui
+        xem_diem_mon.h xem_diem_mon.cpp xem_diem_mon.ui
 
     )
 else()

@@ -8,6 +8,7 @@
 #include"them_sinh_vien.h"
 #include "themcauhoi.h"
 #include "hieuchinh_cauhoi.h"
+#include "xemdiem.h"
 
 #include<QDebug>
 #include<QTableWidget>
@@ -37,9 +38,11 @@ GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     sinhVienContextMenu = new QMenu(this);
     sinhVienDeleteAction = new QAction("Xóa Sinh Viên", this);
     sinhVienEditAction = new QAction("Hiệu chỉnh Sinh Viên", this);
+    sinhVienViewScoreAction = new QAction("Xem Điểm", this);
 
     sinhVienContextMenu->addAction(sinhVienDeleteAction);
     sinhVienContextMenu->addAction(sinhVienEditAction);
+    sinhVienContextMenu->addAction(sinhVienViewScoreAction);
 
     cauHoiContextMenu = new QMenu(this);
     cauHoiDeleteAction = new QAction("Xóa Câu Hỏi", this);
@@ -50,6 +53,7 @@ GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
 
     connect(sinhVienDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
     connect(sinhVienEditAction, &QAction::triggered, this, &GIao_Vien::hieuChinhSV);
+    connect(sinhVienViewScoreAction, &QAction::triggered, this, &GIao_Vien::xemDiemSinhVien);
 
     connect(cauHoiDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaCauHoi);
     connect(cauHoiEditAction, &QAction::triggered, this, &GIao_Vien::hieuChinhCauHoi);
@@ -209,7 +213,7 @@ void GIao_Vien::onTextEdited(const QString &text) {
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
 }
 
-    void GIao_Vien::timSinhVien(const QString &text) {
+    void GIao_Vien::timKiemSinhVien(const QString &text) {
         ui->bangDuLieu->setRowCount(0);
 
         int row = 0;
@@ -418,13 +422,36 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
 }
 
 void GIao_Vien::on_them1sv_clicked() {
-    Them_Sinh_Vien* dialog = new Them_Sinh_Vien(danhSachLop, dasapxep, this);
+    Them_Sinh_Vien* dialog = new Them_Sinh_Vien(danhSachLop, dasapxep, this, this);
     int result = dialog->exec();
     if (result == QDialog::Accepted || result == QDialog::Rejected) {
         loadSinhVien();
     }
     delete dialog;
 }
+
+void GIao_Vien::xemDiemSinhVien() {
+    int row = ui->bangDuLieu->currentRow();
+    QString mssv = ui->bangDuLieu->item(row, 0)->text();
+    QString lop = ui->bangDuLieu->item(row, 3)->text();
+
+    // Tìm sinh viên trong danh sách lớp
+    SinhVien* sv = timSinhVien(mssv, lop, danhSachLop);
+    if (sv == nullptr) {
+        QMessageBox::warning(this, "Cảnh báo", "Không tìm thấy sinh viên trong danh sách.");
+        return;
+    }
+
+    if (sv->ds_diemthi == nullptr) {
+        QMessageBox::information(this, "Thông báo", "Sinh viên chưa thi môn nào.");
+        return;
+    }
+
+    // Mở dialog xem điểm cho sinh viên
+    xemDiem dialog(sv, root, true, this);
+    dialog.exec();
+}
+
 
 void GIao_Vien::hieuChinhSV() {
     int row = ui->bangDuLieu->currentRow();
@@ -547,7 +574,7 @@ void GIao_Vien::on_sinhVien_clicked() {
             this, &GIao_Vien::onLopComboBoxChanged);
     loadSinhVien();
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
-    connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::timSinhVien);
+    connect(ui->timMSSV, &QLineEdit::textChanged, this, &GIao_Vien::timKiemSinhVien);
 }
 
 void GIao_Vien::on_sapXep_clicked()

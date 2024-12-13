@@ -2,10 +2,12 @@
 #include "ui_hieuchinh_SinhVien.h"
 #include "lop.h"
 #include "sinhvien.h"
+#include "giao_vien.h"
 
 HieuChinh::HieuChinh(const QString &mssv, const QString &ho, const QString &ten,
-                     const QString &lop, const QString &gioiTinh, Lop* danhSachLop[], bool dasapxep, QWidget *parent)
-    : QDialog(parent), ui(new Ui::HieuChinh), oldMssv(mssv), oldLop(lop), danhSachLop(danhSachLop), dasapxep(dasapxep)
+                     const QString &lop, const QString &gioiTinh, Lop* danhSachLop[],
+                     bool dasapxep, GIao_Vien *giaoVien, QWidget *parent)
+    : QDialog(parent), ui(new Ui::HieuChinh), oldMssv(mssv), oldLop(lop), danhSachLop(danhSachLop), dasapxep(dasapxep), giaoVien(giaoVien)
 {
     ui->setupUi(this);
     this->setWindowTitle("Hiệu Chỉnh");
@@ -24,16 +26,17 @@ HieuChinh::~HieuChinh()
 }
 
 void HieuChinh::setupComboBoxes() {
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
-        ui->Lop->addItem(danhSachLop[i]->MALOP);
+        QString malop = danhSachLop[i]->MALOP;
+        ui->Lop->addItem(malop);
+        ui->Lop->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
+        lopList.append(malop);
     }
 
-    for (int i = 0; i < ui->Lop->count(); ++i) {
-        ui->Lop->setItemData(i, Qt::AlignCenter, Qt::TextAlignmentRole);
-    }
+    giaoVien->setupComboBoxFilter(ui->Lop, lopList);
 
     ui->GioiTinh->addItem("Nam");
     ui->GioiTinh->addItem("Nữ");
@@ -54,50 +57,34 @@ void HieuChinh::setupComboBoxes() {
     });
 }
 
-QString HieuChinh::getMSSV() const {
-    return ui->MSSV->text();
-}
-
-QString HieuChinh::getHo() const {
-    return ui->Ho->text();
-}
-
-QString HieuChinh::getTen() const {
-    return ui->Ten->text();
-}
-
-QString HieuChinh::getGioiTinh() const {
-    return ui->GioiTinh->currentText();
-}
-
-QString HieuChinh::getLop() const {
-    return ui->Lop->currentText();
-}
-
 void HieuChinh::chinhSuaSinhVien() {
     QString oldLop = this->oldLop;
     QString oldMssv = this->oldMssv;
-    QString newLop = getLop();
+    QString newLop = ui->Lop->currentText();
 
     if (oldLop != newLop) {
-        SinhVien* sv = timSinhVien(oldMssv, oldLop);
+        SinhVien* sv = timSinhVien(oldMssv, oldLop, danhSachLop);
 
         if (sv != nullptr) {
             xoaSinhVienKhoiLop(sv, oldLop, danhSachLop);
-            themSinhVienVaoLop(sv, newLop, danhSachLop);
+            if (dasapxep) {
+                themSinhVienVaoLopCoThuTu(sv, newLop, danhSachLop);
+            } else {
+                themSinhVienVaoLop(sv, newLop, danhSachLop);
+            }
             capNhatThongTinSinhVien(sv);
         }
     } else {
-        SinhVien* sv = timSinhVien(oldMssv, oldLop);
+        SinhVien* sv = timSinhVien(oldMssv, oldLop, danhSachLop);
         capNhatThongTinSinhVien(sv);
     }
 }
 
 void HieuChinh::capNhatThongTinSinhVien(SinhVien* sv) {
-    sv->masv = getMSSV();
-    sv->ho = getHo();
-    sv->ten = getTen();
-    sv->phai = getGioiTinh();
+    sv->masv = ui->MSSV->text();
+    sv->ho = ui->Ho->text();
+    sv->ten = ui->Ten->text();
+    sv->phai = ui->GioiTinh->currentText();
 }
 
 void HieuChinh::accept() {
@@ -110,19 +97,20 @@ void HieuChinh::accept() {
 bool HieuChinh::thongBaoLoi() {
     bool isValid = true;
 
-    if (getMSSV().isEmpty()) {
+    if (ui->MSSV->text().isEmpty()) {
         ui->LoiMSSV->setText("MSSV không được để trống");
         ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
-    } else if (!checkMSSV(getMSSV(),danhSachLop)) {
+    } else if (oldMssv != ui->MSSV->text() && !checkMSSV(ui->MSSV->text(), danhSachLop)) {
         ui->LoiMSSV->setText("MSSV đã tồn tại");
         ui->LoiMSSV->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
-    } else {
+    }
+     else {
         ui->LoiMSSV->clear();
     }
 
-    if (getHo().isEmpty()) {
+    if (ui->Ho->text().isEmpty()) {
         ui->LoiHo->setText("Họ không được để trống");
         ui->LoiHo->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -130,7 +118,7 @@ bool HieuChinh::thongBaoLoi() {
         ui->LoiHo->clear();
     }
 
-    if (getTen().isEmpty()) {
+    if (ui->Ten->text().isEmpty()) {
         ui->LoiTen->setText("Tên không được để trống");
         ui->LoiTen->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -138,7 +126,7 @@ bool HieuChinh::thongBaoLoi() {
         ui->LoiTen->clear();
     }
 
-    if (getGioiTinh().isEmpty()) {
+    if (ui->GioiTinh->currentText().isEmpty()) {
         ui->LoiGioiTinh->setText("Giới tính không được để trống");
         ui->LoiGioiTinh->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -146,7 +134,7 @@ bool HieuChinh::thongBaoLoi() {
         ui->LoiGioiTinh->clear();
     }
 
-    if (getLop().isEmpty()) {
+    if (ui->Lop->currentText().isEmpty()) {
         ui->LoiLop->setText("Lớp không được để trống");
         ui->LoiLop->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;

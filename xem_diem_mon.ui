@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>xem_Diem_Mon</class>
+ <widget class="QDialog" name="xem_Diem_Mon">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QScrollArea" name="khuVucCauHoi">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>199</y>
+     <width>601</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>599</width>
+      <height>599</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="tenMH">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>80</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
+text-align: center;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="ten">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>30</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
+text-align: center;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="maMH">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
+text-align: center;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="mssv">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>261</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
+text-align: center;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="diem">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>130</y>
+     <width>201</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 2px solid gray;
+border-radius: 10px;
+background-color: #F0F0F0;
+color: black;
+font-size: 14px;
+text-align: center;</string>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

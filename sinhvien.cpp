@@ -28,22 +28,3 @@ void themSinhVien(SinhVien*& head, SinhVien* newSV) {
     newSV->next = head;
     head = newSV;
 }
-
-SinhVien* timSinhVien(const QString& mssv, const QString& lop) {
-    // for (int i = 0; i < 10000; ++i) {
-    //     if (danhSachLop[i] == nullptr) {
-    //         break;
-    //     }
-    //     if (danhSachLop[i]->MALOP == lop) {
-    //         SinhVien* current = danhSachLop[i]->DSSV;
-    //         while (current != nullptr) {
-    //             if (current->masv == mssv) {
-    //                 return current;
-    //             }
-    //             current = current->next;
-    //         }
-    //     }
-    // }
-    return nullptr;
-}
-

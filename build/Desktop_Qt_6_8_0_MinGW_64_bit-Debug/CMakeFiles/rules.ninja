@@ -25,7 +25,7 @@ rule CXX_COMPILER__THI_TRAC_NGHIEM_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__THI_TRAC_NGHIEM_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -52,7 +52,7 @@ rule CXX_COMPILER__OpenXLSX_unscanned_Debug
 # Rule for linking CXX static library.
 
 rule CXX_STATIC_LIBRARY_LINKER__OpenXLSX_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f $TARGET_FILE && C:\Qt\Tools\mingw1310_64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\Qt\Tools\mingw1310_64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f $TARGET_FILE && C:\Qt\Tools\mingw1310_64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\Qt\Tools\mingw1310_64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
 
@@ -71,7 +71,7 @@ rule CXX_COMPILER__Demo1_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo1_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -90,7 +90,7 @@ rule CXX_COMPILER__Demo2_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo2_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -109,7 +109,7 @@ rule CXX_COMPILER__Demo3_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo3_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -128,7 +128,7 @@ rule CXX_COMPILER__Demo4_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo4_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -147,7 +147,7 @@ rule CXX_COMPILER__Demo5_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo5_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -166,7 +166,7 @@ rule CXX_COMPILER__Demo6_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo6_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -185,7 +185,7 @@ rule CXX_COMPILER__Demo7_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo7_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -204,7 +204,7 @@ rule CXX_COMPILER__Demo8_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo8_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -223,7 +223,7 @@ rule CXX_COMPILER__Demo9_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo9_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -242,7 +242,7 @@ rule CXX_COMPILER__Demo10_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__Demo10_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -261,7 +261,7 @@ rule CXX_COMPILER__nowide_unscanned_Debug
 # Rule for linking CXX static library.
 
 rule CXX_STATIC_LIBRARY_LINKER__nowide_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f $TARGET_FILE && C:\Qt\Tools\mingw1310_64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\Qt\Tools\mingw1310_64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f $TARGET_FILE && C:\Qt\Tools\mingw1310_64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\Qt\Tools\mingw1310_64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT
 
@@ -280,7 +280,7 @@ rule CXX_COMPILER__OpenXLSXTests_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__OpenXLSXTests_Debug
-  command = C:\WINDOWS\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\Qt\Tools\mingw1310_64\bin\g++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -289,7 +289,7 @@ rule CXX_EXECUTABLE_LINKER__OpenXLSXTests_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SE:\bulientuc\Do_An_Thi_Trac_Ngiem_c- -BE:\bulientuc\Do_An_Thi_Trac_Ngiem_c-\build\Desktop_Qt_6_8_0_MinGW_64_bit-Debug
+  command = C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SD:\DO_AN_THI_TRAC_NGHIEM\Do_An_Thi_Trac_Ngiem_c- -BD:\DO_AN_THI_TRAC_NGHIEM\Do_An_Thi_Trac_Ngiem_c-\build\Desktop_Qt_6_8_0_MinGW_64_bit-Debug
   description = Re-running CMake...
   generator = 1
 

@@ -15,14 +15,16 @@ class xemDiem : public QDialog
     Q_OBJECT
 
 public:
-    explicit xemDiem(SinhVien* mainUser, NodeMonHoc* root, QWidget *parent = nullptr);
+    explicit xemDiem(SinhVien* mainUser, NodeMonHoc* root, bool isGV, QWidget *parent = nullptr);
     ~xemDiem();
 
 private:
     Ui::xemDiem *ui;
     NodeMonHoc* root;
-    SinhVien* mainUser; // Con trỏ tới cây môn học
+    SinhVien* mainUser;
+    bool isGV;
 
+    void onTableDoubleClicked(int row, int column);
     void setThongTinSinhVien();
     void loadBangDiem();
     QString timTenMonHoc(const QString& maMH, NodeMonHoc* root);

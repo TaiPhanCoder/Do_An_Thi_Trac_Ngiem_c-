@@ -3,8 +3,8 @@
 #include "lop.h"
 #include "sinhvien.h"
 
-Them_Sinh_Vien::Them_Sinh_Vien(Lop* danhSachLop[], bool dasapxep, QWidget* parent)
-    : QDialog(parent), ui(new Ui::Them_Sinh_Vien), danhSachLop(danhSachLop), dasapxep(dasapxep)
+Them_Sinh_Vien::Them_Sinh_Vien(Lop* danhSachLop[], bool dasapxep, GIao_Vien *giaoVien, QWidget* parent)
+    : QDialog(parent), ui(new Ui::Them_Sinh_Vien), danhSachLop(danhSachLop), dasapxep(dasapxep), giaoVien(giaoVien)
 {
     ui->setupUi(this);
     this->setWindowTitle("Thêm Sinh Viên");
@@ -17,7 +17,10 @@ Them_Sinh_Vien::Them_Sinh_Vien(Lop* danhSachLop[], bool dasapxep, QWidget* paren
         int index = ui->Lop->count();
         ui->Lop->addItem(danhSachLop[i]->MALOP);
         ui->Lop->setItemData(index, Qt::AlignCenter, Qt::TextAlignmentRole);
+        lopList.append(danhSachLop[i]->MALOP);
     }
+
+    giaoVien->setupComboBoxFilter(ui->Lop, lopList);
 
     ui->GioiTinh->addItem("Nam");
     ui->GioiTinh->addItem("Nữ");
@@ -62,8 +65,8 @@ void Them_Sinh_Vien::accept() {
 
             oldLop = lop; // Cập nhật oldLop với lớp hiện tại
 
-            Them_Sinh_Vien dialog(danhSachLop, dasapxep, this);
-            dialog.ui->Lop->setCurrentText(oldLop); // Đặt oldLop cho combobox trong dialog mới
+            Them_Sinh_Vien dialog(danhSachLop, dasapxep, giaoVien, this);
+            dialog.ui->Lop->setCurrentText(oldLop);
             if (dialog.exec() == QDialog::Accepted) {
                 continueAdding = true;
             } else {

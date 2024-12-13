@@ -16,8 +16,8 @@ struct DaThi {
 struct monHocDaThi {
     QString maMH;
     float diem;
-    int soCauThi;
     DaThi* mangDaThi;
+    int soCauThi;
     monHocDaThi* next;
 };
 

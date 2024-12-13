@@ -1,155 +1,155 @@
 INT1303|AN TOÀN BẢO MẬT HỆ THỐNG THÔNG TIN
 10
-1|1 + 1 bằng mấy?|A. 1|B. 2|C. 3|D. 4|B
-2|Thủ đô của Việt Nam là thành phố nào?|A. Hồ Chí Minh|B. Đà Nẵng|C. Hà Nội|D. Hải Phòng|C
-3|Bảo mật thông tin liên quan đến?|A. An ninh|B. Độ tin cậy|C. Tính toàn vẹn|D. Tất cả các ý trên|D
-4|Virus máy tính là gì?|A. Một loại phần mềm độc hại|B. Một loại phần mềm bảo mật|C. Một loại phần cứng|D. Một hệ điều hành|A
-5|Mật khẩu yếu là gì?|A. Dễ đoán|B. Khó đoán|C. Chỉ có ký tự đặc biệt|D. Chỉ có số|A
-6|Tấn công từ chối dịch vụ (DoS) là gì?|A. Tấn công vào mật khẩu|B. Tấn công làm ngừng dịch vụ|C. Tấn công lấy cắp dữ liệu|D. Tấn công mạng không dây|B
-7|SSL/TLS dùng để làm gì?|A. Bảo mật kết nối|B. Gửi email|C. Điều khiển kết nối|D. Định danh địa chỉ IP|A
-8|Cách nào để bảo mật tài khoản email?|A. Sử dụng mật khẩu mạnh|B. Không bao giờ đăng nhập|C. Chia sẻ mật khẩu với người khác|D. Tắt xác thực hai yếu tố|A
-9|VPN là viết tắt của?|A. Virtual Private Network|B. Virus Protection Network|C. Visual Processing Node|D. Virtual Port Network|A
-10|Tấn công lừa đảo (Phishing) là gì?|A. Gửi email giả mạo để lấy cắp thông tin|B. Tấn công bằng phần mềm độc hại|C. Tấn công vào mạng không dây|D. Tấn công lấy cắp dữ liệu|A
+1|1 + 1 bằng mấy?|1|2|3|4|B
+2|Thủ đô của Việt Nam là thành phố nào?|Hồ Chí Minh|Đà Nẵng|Hà Nội|Hải Phòng|C
+3|Bảo mật thông tin liên quan đến?|An ninh|Độ tin cậy|Tính toàn vẹn|Tất cả các ý trên|D
+4|Virus máy tính là gì?|Một loại phần mềm độc hại|Một loại phần mềm bảo mật|Một loại phần cứng|Một hệ điều hành|A
+5|Mật khẩu yếu là gì?|Dễ đoán|Khó đoán|Chỉ có ký tự đặc biệt|Chỉ có số|A
+6|Tấn công từ chối dịch vụ (DoS) là gì?|Tấn công vào mật khẩu|Tấn công làm ngừng dịch vụ|Tấn công lấy cắp dữ liệu|Tấn công mạng không dây|B
+7|SSL/TLS dùng để làm gì?|Bảo mật kết nối|Gửi email|Điều khiển kết nối|Định danh địa chỉ IP|A
+8|Cách nào để bảo mật tài khoản email?|Sử dụng mật khẩu mạnh|Không bao giờ đăng nhập|Chia sẻ mật khẩu với người khác|Tắt xác thực hai yếu tố|A
+9|VPN là viết tắt của?|Virtual Private Network|Virus Protection Network|Visual Processing Node|Virtual Port Network|A
+10|Tấn công lừa đảo (Phishing) là gì?|Gửi email giả mạo để lấy cắp thông tin|Tấn công bằng phần mềm độc hại|Tấn công vào mạng không dây|Tấn công lấy cắp dữ liệu|A
 
 INT1474|CÁC GIAO THỨC CỦA INTERNET
 10
-1|HTTP là viết tắt của?|A. HyperText Transfer Page|B. HyperText Transfer Protocol|C. HyperTerminal Text Protocol|D. HyperLink Text Protocol|B
-2|Giao thức dùng để gửi email?|A. SMTP|B. FTP|C. HTTP|D. TCP|A
-3|Giao thức HTTPS sử dụng thêm yếu tố nào so với HTTP?|A. SSL/TLS|B. FTP|C. DNS|D. IP|A
-4|Giao thức DNS có chức năng gì?|A. Định danh địa chỉ IP|B. Gửi email|C. Chuyển tiếp dữ liệu|D. Điều khiển kết nối|A
-5|FTP là giao thức nào?|A. Chuyển tệp|B. Gửi email|C. Định danh IP|D. Bảo mật truyền tin|A
-6|TCP là viết tắt của?|A. Transmission Control Protocol|B. Transfer Communication Protocol|C. Transfer Code Procedure|D. Transmission Code Protocol|A
-7|IMAP là viết tắt của?|A. Internet Mail Access Protocol|B. Instant Messaging Access Protocol|C. Interactive Mail Access Protocol|D. Internet Message Access Protocol|A
-8|POP3 dùng để làm gì?|A. Lưu trữ email|B. Xóa email|C. Tải email từ máy chủ|D. Gửi email|C
-9|Giao thức nào được sử dụng để truyền dữ liệu web?|A. FTP|B. SMTP|C. HTTP|D. SSH|C
-10|Telnet được sử dụng để?|A. Kết nối từ xa|B. Truyền email|C. Bảo mật thông tin|D. Tải tệp tin|A
+1|HTTP là viết tắt của?|HyperText Transfer Page|HyperText Transfer Protocol|HyperTerminal Text Protocol|HyperLink Text Protocol|B
+2|Giao thức dùng để gửi email?|SMTP|FTP|HTTP|TCP|A
+3|Giao thức HTTPS sử dụng thêm yếu tố nào so với HTTP?|SSL/TLS|FTP|DNS|IP|A
+4|Giao thức DNS có chức năng gì?|Định danh địa chỉ IP|Gửi email|Chuyển tiếp dữ liệu|Điều khiển kết nối|A
+5|FTP là giao thức nào?|Chuyển tệp|Gửi email|Định danh IP|Bảo mật truyền tin|A
+6|TCP là viết tắt của?|Transmission Control Protocol|Transfer Communication Protocol|Transfer Code Procedure|Transmission Code Protocol|A
+7|IMAP là viết tắt của?|Internet Mail Access Protocol|Instant Messaging Access Protocol|Interactive Mail Access Protocol|Internet Message Access Protocol|A
+8|POP3 dùng để làm gì?|Lưu trữ email|Xóa email|Tải email từ máy chủ|Gửi email|C
+9|Giao thức nào được sử dụng để truyền dữ liệu web?|FTP|SMTP|HTTP|SSH|C
+10|Telnet được sử dụng để?|Kết nối từ xa|Truyền email|Bảo mật thông tin|Tải tệp tin|A
 
 INT1306|CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT
 10
-1|Độ phức tạp của thuật toán tìm kiếm nhị phân?|A. O(n)|B. O(log n)|C. O(n^2)|D. O(1)|B
-2|Kiểu dữ liệu nào là LIFO?|A. Queue|B. Stack|C. List|D. Map|B
-3|Độ phức tạp của thuật toán sắp xếp nổi bọt là gì?|A. O(n)|B. O(n^2)|C. O(log n)|D. O(n log n)|B
-4|Thuật toán sắp xếp nào có hiệu năng tốt nhất?|A. Bubble Sort|B. Merge Sort|C. Quick Sort|D. Insertion Sort|C
-5|Cấu trúc dữ liệu nào là FIFO?|A. Stack|B. Queue|C. Tree|D. Graph|B
-6|Big-O của thuật toán tìm kiếm tuyến tính là?|A. O(n^2)|B. O(n)|C. O(1)|D. O(log n)|B
-7|Thuật toán nào là chia để trị?|A. Quick Sort|B. Merge Sort|C. Bubble Sort|D. Insertion Sort|A
-8|Độ phức tạp của thuật toán tìm kiếm nhị phân?|A. O(log n)|B. O(n)|C. O(n^2)|D. O(1)|A
-9|Thuật toán BFS được sử dụng trên cấu trúc nào?|A. Stack|B. Tree|C. Queue|D. Graph|D
-10|DFS là thuật toán gì?|A. Depth First Search|B. Data File Search|C. Direct File Search|D. Depth File Search|A
+1|Độ phức tạp của thuật toán tìm kiếm nhị phân?|O(n)|O(log n)|O(n^2)|O(1)|B
+2|Kiểu dữ liệu nào là LIFO?|Queue|Stack|List|Map|B
+3|Độ phức tạp của thuật toán sắp xếp nổi bọt là gì?|O(n)|O(n^2)|O(log n)|O(n log n)|B
+4|Thuật toán sắp xếp nào có hiệu năng tốt nhất?|Bubble Sort|Merge Sort|Quick Sort|Insertion Sort|C
+5|Cấu trúc dữ liệu nào là FIFO?|Stack|Queue|Tree|Graph|B
+6|Big-O của thuật toán tìm kiếm tuyến tính là?|O(n^2)|O(n)|O(1)|O(log n)|B
+7|Thuật toán nào là chia để trị?|Quick Sort|Merge Sort|Bubble Sort|Insertion Sort|A
+8|Độ phức tạp của thuật toán tìm kiếm nhị phân?|O(log n)|O(n)|O(n^2)|O(1)|A
+9|Thuật toán BFS được sử dụng trên cấu trúc nào?|Stack|Tree|Queue|Graph|D
+10|DFS là thuật toán gì?|Depth First Search|Data File Search|Direct File Search|Depth File Search|A
 
 INT1470|CÁC KỸ THUẬT LẬP TRÌNH
 10
-723|Độ phức tạp của thuật toán sắp xếp chèn là?|A. O(n)|B. O(log n)|C. O(n^2)|D. O(1)|C
-152|Thuật toán nào phù hợp nhất để tìm phần tử lớn nhất trong mảng không sắp xếp?|A. Sắp xếp mảng rồi chọn phần tử cuối|B. Quét toàn bộ mảng và tìm phần tử lớn nhất|C. Sử dụng thuật toán tìm kiếm nhị phân|D. Dùng phương pháp đệ quy|B
-869|Phương pháp nào tối ưu nhất để duyệt toàn bộ phần tử trong danh sách liên kết?|A. Sử dụng vòng lặp for|B. Dùng con trỏ để duyệt từ đầu đến cuối|C. Sử dụng thuật toán đệ quy|D. Áp dụng phương pháp tìm kiếm nhị phân|B
-334|Độ phức tạp của thuật toán tìm kiếm tuần tự là?|A. O(1)|B. O(log n)|C. O(n^2)|D. O(n)|D
-481|Phương pháp nào tối ưu nhất để tìm phần tử trung vị trong mảng không sắp xếp?|A. Sắp xếp mảng rồi lấy phần tử ở giữa|B. Sử dụng thuật toán Median of Medians|C. Sử dụng tìm kiếm nhị phân|D. Dùng vòng lặp for để tìm phần tử trung vị|B
-129|Thuật toán nào được sử dụng để sắp xếp nhanh nhất trên các dữ liệu đã sắp xếp gần đúng?|A. Quick Sort|B. Merge Sort|C. Insertion Sort|D. Bubble Sort|C
-645|Phương pháp nào tối ưu nhất để đếm số lần xuất hiện của từng phần tử trong mảng?|A. Duyệt mảng và đếm từng phần tử|B. Sử dụng một bảng băm (hash table)|C. Sắp xếp mảng rồi đếm từng phần tử|D. Áp dụng phương pháp chia để trị|B
-957|Thuật toán nào phù hợp nhất để tìm kiếm phần tử trong cây nhị phân tìm kiếm (BST)?|A. Tìm kiếm tuyến tính|B. Tìm kiếm nhị phân|C. Duyệt cây theo chiều rộng (BFS)|D. Duyệt cây theo chiều sâu (DFS)|B
-211|Độ phức tạp của thuật toán tìm kiếm nhị phân là?|A. O(log n)|B. O(n)|C. O(n^2)|D. O(1)|A
-784|Phương pháp nào được sử dụng để phát hiện chu trình trong đồ thị có hướng?|A. Duyệt theo chiều sâu (DFS)|B. Duyệt theo chiều rộng (BFS)|C. Dùng thuật toán Dijkstra|D. Dùng thuật toán Floyd-Warshall|A
+723|Độ phức tạp của thuật toán sắp xếp chèn là?|O(n)|O(log n)|O(n^2)|O(1)|C
+152|Thuật toán nào phù hợp nhất để tìm phần tử lớn nhất trong mảng không sắp xếp?|Sắp xếp mảng rồi chọn phần tử cuối|Quét toàn bộ mảng và tìm phần tử lớn nhất|Sử dụng thuật toán tìm kiếm nhị phân|Dùng phương pháp đệ quy|B
+869|Phương pháp nào tối ưu nhất để duyệt toàn bộ phần tử trong danh sách liên kết?|Sử dụng vòng lặp for|Dùng con trỏ để duyệt từ đầu đến cuối|Sử dụng thuật toán đệ quy|Áp dụng phương pháp tìm kiếm nhị phân|B
+334|Độ phức tạp của thuật toán tìm kiếm tuần tự là?|O(1)|O(log n)|O(n^2)|O(n)|D
+481|Phương pháp nào tối ưu nhất để tìm phần tử trung vị trong mảng không sắp xếp?|Sắp xếp mảng rồi lấy phần tử ở giữa|Sử dụng thuật toán Median of Medians|Sử dụng tìm kiếm nhị phân|Dùng vòng lặp for để tìm phần tử trung vị|B
+129|Thuật toán nào được sử dụng để sắp xếp nhanh nhất trên các dữ liệu đã sắp xếp gần đúng?|Quick Sort|Merge Sort|Insertion Sort|Bubble Sort|C
+645|Phương pháp nào tối ưu nhất để đếm số lần xuất hiện của từng phần tử trong mảng?|Duyệt mảng và đếm từng phần tử|Sử dụng một bảng băm (hash table)|Sắp xếp mảng rồi đếm từng phần tử|Áp dụng phương pháp chia để trị|B
+957|Thuật toán nào phù hợp nhất để tìm kiếm phần tử trong cây nhị phân tìm kiếm (BST)?|Tìm kiếm tuyến tính|Tìm kiếm nhị phân|Duyệt cây theo chiều rộng (BFS)|Duyệt cây theo chiều sâu (DFS)|B
+211|Độ phức tạp của thuật toán tìm kiếm nhị phân là?|O(log n)|O(n)|O(n^2)|O(1)|A
+784|Phương pháp nào được sử dụng để phát hiện chu trình trong đồ thị có hướng?|Duyệt theo chiều sâu (DFS)|Duyệt theo chiều rộng (BFS)|Dùng thuật toán Dijkstra|Dùng thuật toán Floyd-Warshall|A
 
 ELE1401|CAD/CAM
 10
-430|Khái niệm chính trong thiết kế CAD là gì?|A. Mô hình hóa 2D|B. Mô hình hóa 3D|C. Vẽ thủ công|D. Tối ưu hóa tự động|B
-4|Phần mềm nào thường được sử dụng trong thiết kế CAD?|A. Microsoft Excel|B. AutoCAD|C. Adobe Photoshop|D. Microsoft Word|B
-851|Kỹ thuật nào được sử dụng để tạo hình bề mặt trong CAD?|A. Vẽ tay tự do|B. NURBS (Non-uniform rational B-spline)|C. Biểu đồ mặt phẳng|D. Duyệt hình ảnh|B
-417|Phương pháp nào tối ưu nhất để tạo mô hình 3D trong CAD?|A. Quét mô hình thủ công|B. Sử dụng phần mềm mô hình hóa 3D|C. Tạo mô hình vật lý trước|D. Phân tích hình ảnh 2D|B
-362|Tính năng nào của phần mềm CAM giúp tối ưu hóa quá trình gia công?|A. Phát hiện va chạm công cụ|B. Tạo bản vẽ 2D|C. Lưu trữ dữ liệu dự án|D. In tài liệu|A
-684|Công nghệ nào được sử dụng trong sản xuất CAM?|A. Máy phay CNC|B. Máy in phun màu|C. Máy ép nhựa|D. Máy quét hình ảnh|A
-527|Yếu tố nào ảnh hưởng đến thời gian gia công trên máy CNC?|A. Vật liệu phôi|B. Loại máy in 3D|C. Độ phân giải của màn hình|D. Kích thước file CAD|A
-15|Phương pháp tối ưu để thiết kế mô hình 3D phức tạp là gì?|A. Phân tích hình ảnh 2D|B. Tạo từ các mô hình đơn giản hơn|C. Dùng phần mềm mô phỏng vật lý|D. Dựa trên các bản vẽ phác thảo|B
-128|Khái niệm "tối ưu hóa thiết kế" trong CAD/CAM đề cập đến gì?|A. Giảm khối lượng vật liệu sử dụng|B. Tăng độ phức tạp của mô hình|C. Tối ưu hóa chi phí gia công|D. Giảm thời gian hiển thị hình ảnh|C
-721|Phương pháp nào được sử dụng để xác nhận tính chính xác của mô hình CAD?|A. Tạo bản in 3D thử nghiệm|B. Sử dụng phần mềm mô phỏng|C. Quét mô hình vật lý|D. Chụp ảnh mô hình 2D|B
+430|Khái niệm chính trong thiết kế CAD là gì?|Mô hình hóa 2D|Mô hình hóa 3D|Vẽ thủ công|Tối ưu hóa tự động|B
+4|Phần mềm nào thường được sử dụng trong thiết kế CAD?|Microsoft Excel|AutoCAD|Adobe Photoshop|Microsoft Word|B
+851|Kỹ thuật nào được sử dụng để tạo hình bề mặt trong CAD?|Vẽ tay tự do|NURBS (Non-uniform rational B-spline)|Biểu đồ mặt phẳng|Duyệt hình ảnh|B
+417|Phương pháp nào tối ưu nhất để tạo mô hình 3D trong CAD?|Quét mô hình thủ công|Sử dụng phần mềm mô hình hóa 3D|Tạo mô hình vật lý trước|Phân tích hình ảnh 2D|B
+362|Tính năng nào của phần mềm CAM giúp tối ưu hóa quá trình gia công?|Phát hiện va chạm công cụ|Tạo bản vẽ 2D|Lưu trữ dữ liệu dự án|In tài liệu|A
+684|Công nghệ nào được sử dụng trong sản xuất CAM?|Máy phay CNC|Máy in phun màu|Máy ép nhựa|Máy quét hình ảnh|A
+527|Yếu tố nào ảnh hưởng đến thời gian gia công trên máy CNC?|Vật liệu phôi|Loại máy in 3D|Độ phân giải của màn hình|Kích thước file CAD|A
+15|Phương pháp tối ưu để thiết kế mô hình 3D phức tạp là gì?|Phân tích hình ảnh 2D|Tạo từ các mô hình đơn giản hơn|Dùng phần mềm mô phỏng vật lý|Dựa trên các bản vẽ phác thảo|B
+128|Khái niệm "tối ưu hóa thiết kế" trong CAD/CAM đề cập đến gì?|Giảm khối lượng vật liệu sử dụng|Tăng độ phức tạp của mô hình|Tối ưu hóa chi phí gia công|Giảm thời gian hiển thị hình ảnh|C
+721|Phương pháp nào được sử dụng để xác nhận tính chính xác của mô hình CAD?|Tạo bản in 3D thử nghiệm|Sử dụng phần mềm mô phỏng|Quét mô hình vật lý|Chụp ảnh mô hình 2D|B
 
 ELE1302|CẤU KIỆN ĐIỆN TỬ
 10
-348|Loại linh kiện nào được sử dụng để lưu trữ năng lượng trong mạch điện?|A. Tụ điện|B. Điện trở|C. Cuộn cảm|D. Điốt|A
-535|Chức năng chính của điện trở là gì?|A. Lưu trữ điện|B. Hạn chế dòng điện|C. Tạo từ trường|D. Phát sóng vô tuyến|B
-647|Linh kiện nào có khả năng chỉnh lưu dòng điện?|A. Điện trở|B. Tụ điện|C. Điốt|D. Cuộn cảm|C
-679|Linh kiện nào được sử dụng để tăng cường tín hiệu trong mạch khuếch đại?|A. Tụ điện|B. Cuộn cảm|C. Điốt|D. Transistor|D
-634|Transistor có thể được sử dụng trong chế độ nào?|A. Chế độ khuếch đại|B. Chế độ chỉnh lưu|C. Chế độ lưu trữ năng lượng|D. Chế độ giảm áp|A
-3|Loại cảm biến nào được sử dụng để phát hiện ánh sáng?|A. Cảm biến quang điện (Photodiode)|B. Cảm biến nhiệt độ|C. Cảm biến siêu âm|D. Cảm biến áp suất|A
-274|Linh kiện nào có thể điều chỉnh điện áp đầu ra của mạch nguồn?|A. Ổn áp tuyến tính (Linear Regulator)|B. Biến trở|C. Tụ điện|D. Cuộn cảm|A
-939|Linh kiện nào được sử dụng trong mạch chỉnh lưu cầu?|A. 4 điốt|B. 2 tụ điện|C. 4 transistor|D. 2 cuộn cảm|A
-173|Yếu tố nào ảnh hưởng đến tần số dao động trong mạch dao động RC?|A. Giá trị của điện trở và tụ điện|B. Công suất của transistor|C. Dòng điện đầu vào|D. Điện áp ngõ ra|A
-45|Phương pháp tối ưu để kiểm tra ngắn mạch trên bo mạch in (PCB) là gì?|A. Dùng đồng hồ vạn năng để kiểm tra điện trở|B. Chụp ảnh bo mạch và kiểm tra bằng mắt|C. Phân tích logic của mạch|D. Sử dụng máy kiểm tra tự động (ICT)|D
+348|Loại linh kiện nào được sử dụng để lưu trữ năng lượng trong mạch điện?|Tụ điện|Điện trở|Cuộn cảm|Điốt|A
+535|Chức năng chính của điện trở là gì?|Lưu trữ điện|Hạn chế dòng điện|Tạo từ trường|Phát sóng vô tuyến|B
+647|Linh kiện nào có khả năng chỉnh lưu dòng điện?|Điện trở|Tụ điện|Điốt|Cuộn cảm|C
+679|Linh kiện nào được sử dụng để tăng cường tín hiệu trong mạch khuếch đại?|Tụ điện|Cuộn cảm|Điốt|Transistor|D
+634|Transistor có thể được sử dụng trong chế độ nào?|Chế độ khuếch đại|Chế độ chỉnh lưu|Chế độ lưu trữ năng lượng|Chế độ giảm áp|A
+3|Loại cảm biến nào được sử dụng để phát hiện ánh sáng?|Cảm biến quang điện (Photodiode)|Cảm biến nhiệt độ|Cảm biến siêu âm|Cảm biến áp suất|A
+274|Linh kiện nào có thể điều chỉnh điện áp đầu ra của mạch nguồn?|Ổn áp tuyến tính (Linear Regulator)|Biến trở|Tụ điện|Cuộn cảm|A
+939|Linh kiện nào được sử dụng trong mạch chỉnh lưu cầu?|4 điốt|2 tụ điện|4 transistor|2 cuộn cảm|A
+173|Yếu tố nào ảnh hưởng đến tần số dao động trong mạch dao động RC?|Giá trị của điện trở và tụ điện|Công suất của transistor|Dòng điện đầu vào|Điện áp ngõ ra|A
+45|Phương pháp tối ưu để kiểm tra ngắn mạch trên bo mạch in (PCB) là gì?|Dùng đồng hồ vạn năng để kiểm tra điện trở|Chụp ảnh bo mạch và kiểm tra bằng mắt|Phân tích logic của mạch|Sử dụng máy kiểm tra tự động (ICT)|D
 
 INT1472|CƠ SỞ AN TOÀN THÔNG TIN
 10
-742|Phương pháp mã hóa nào an toàn nhất trong các phương án sau?|A. Mã hóa XOR|B. Mã hóa đối xứng|C. Mã hóa AES|D. Mã hóa Caesar|C
-842|Yếu tố nào là cơ bản nhất trong mô hình bảo mật CIA?|A. Tính xác thực|B. Tính khả dụng|C. Tính bảo mật|D. Tính toàn vẹn|B
-15|Thuật toán nào sau đây được sử dụng để mã hóa công khai (Public Key)?|A. AES|B. DES|C. RSA|D. SHA-256|C
-517|Khái niệm nào sau đây mô tả đúng nhất về "chứng thực người dùng"?|A. Định danh người dùng|B. Xác thực danh tính người dùng|C. Tăng tốc độ xử lý|D. Nén dữ liệu|B
-314|Phương pháp nào được sử dụng để phát hiện xâm nhập mạng (IDS)?|A. Phân tích dấu vết tĩnh|B. Phân tích hành vi động|C. Mô phỏng môi trường giả lập|D. Quét lỗ hổng bảo mật|B
-604|Tính năng nào của tường lửa giúp ngăn chặn truy cập trái phép?|A. Lọc gói tin|B. Nén dữ liệu|C. Tăng tốc độ truyền tải|D. Xác thực người dùng|A
-582|Phương pháp nào được sử dụng để bảo vệ dữ liệu trong quá trình truyền tải?|A. Sử dụng VPN (Mạng riêng ảo)|B. Dùng giao thức HTTP|C. Nén dữ liệu|D. Chia nhỏ dữ liệu|A
-830|Thuật toán nào thường được sử dụng để tạo hàm băm mật mã?|A. MD5|B. SHA-256|C. RSA|D. DES|B
-299|Công cụ nào có thể được sử dụng để phát hiện phần mềm độc hại?|A. Trình phân tích gói tin (Wireshark)|B. Phần mềm chống virus|C. Trình duyệt web|D. Phần mềm xử lý văn bản|B
-519|Phương pháp bảo vệ nào là hiệu quả nhất để ngăn chặn tấn công DDoS?|A. Sử dụng tường lửa|B. Sử dụng VPN|C. Sử dụng dịch vụ CDN (Content Delivery Network)|D. Mã hóa dữ liệu|C
+742|Phương pháp mã hóa nào an toàn nhất trong các phương án sau?|Mã hóa XOR|Mã hóa đối xứng|Mã hóa AES|Mã hóa Caesar|C
+842|Yếu tố nào là cơ bản nhất trong mô hình bảo mật CIA?|Tính xác thực|Tính khả dụng|Tính bảo mật|Tính toàn vẹn|B
+15|Thuật toán nào sau đây được sử dụng để mã hóa công khai (Public Key)?|AES|DES|RSA|SHA-256|C
+517|Khái niệm nào sau đây mô tả đúng nhất về "chứng thực người dùng"?|Định danh người dùng|Xác thực danh tính người dùng|Tăng tốc độ xử lý|Nén dữ liệu|B
+314|Phương pháp nào được sử dụng để phát hiện xâm nhập mạng (IDS)?|Phân tích dấu vết tĩnh|Phân tích hành vi động|Mô phỏng môi trường giả lập|Quét lỗ hổng bảo mật|B
+604|Tính năng nào của tường lửa giúp ngăn chặn truy cập trái phép?|Lọc gói tin|Nén dữ liệu|Tăng tốc độ truyền tải|Xác thực người dùng|A
+582|Phương pháp nào được sử dụng để bảo vệ dữ liệu trong quá trình truyền tải?|Sử dụng VPN (Mạng riêng ảo)|Dùng giao thức HTTP|Nén dữ liệu|Chia nhỏ dữ liệu|A
+830|Thuật toán nào thường được sử dụng để tạo hàm băm mật mã?|MD5|SHA-256|RSA|DES|B
+299|Công cụ nào có thể được sử dụng để phát hiện phần mềm độc hại?|Trình phân tích gói tin (Wireshark)|Phần mềm chống virus|Trình duyệt web|Phần mềm xử lý văn bản|B
+519|Phương pháp bảo vệ nào là hiệu quả nhất để ngăn chặn tấn công DDoS?|Sử dụng tường lửa|Sử dụng VPN|Sử dụng dịch vụ CDN (Content Delivery Network)|Mã hóa dữ liệu|C
 
 ELE1304|CƠ SỞ ĐIỀU KHIỂN TỰ ĐỘNG
 10
-737|Loại điều khiển nào được sử dụng để điều chỉnh nhiệt độ trong lò nhiệt?|A. Điều khiển PID|B. Điều khiển tỷ lệ đơn giản|C. Điều khiển logic mờ (Fuzzy Logic)|D. Điều khiển lập trình tuyến tính|A
-761|Bộ điều khiển nào thường được sử dụng trong các hệ thống tự động hóa công nghiệp?|A. PLC (Programmable Logic Controller)|B. CPU máy tính|C. Bộ điều khiển logic mờ|D. Thiết bị đo lường|A
-149|Thành phần nào của hệ thống điều khiển được sử dụng để cảm nhận và đo lường trạng thái?|A. Cảm biến (Sensor)|B. Bộ điều khiển|C. Thiết bị truyền động (Actuator)|D. Máy tính giám sát|A
-464|Nguyên lý hoạt động của bộ điều khiển PID là gì?|A. Điều khiển dựa trên ba thành phần tỉ lệ (P), tích phân (I), đạo hàm (D)|B. Điều khiển theo quy tắc logic|C. Điều khiển trên cơ sở hàm bậc hai|D. Điều khiển thông qua cảm biến quang học|A
-928|Bộ điều khiển nào được sử dụng để điều khiển tốc độ động cơ?|A. Bộ điều khiển PID|B. Bộ điều khiển tỷ lệ đơn giản|C. Bộ điều khiển mờ|D. Bộ điều khiển on-off|A
-387|Phương pháp nào được sử dụng để giảm độ trễ trong hệ thống điều khiển?|A. Tăng tốc độ lấy mẫu tín hiệu|B. Giảm số lượng cảm biến|C. Sử dụng bộ điều khiển on-off|D. Sử dụng bộ điều khiển tỷ lệ|A
-576|Yếu tố nào ảnh hưởng đến độ ổn định của hệ thống điều khiển tự động?|A. Thời gian trễ của hệ thống|B. Kích thước của bộ điều khiển|C. Loại tín hiệu đầu vào|D. Số lượng cảm biến|A
-730|Phương pháp nào giúp cải thiện độ ổn định của hệ thống điều khiển?|A. Sử dụng bộ lọc tín hiệu|B. Tăng tốc độ của cảm biến|C. Sử dụng bộ điều khiển PID|D. Tăng tốc độ lấy mẫu|C
-954|Loại điều khiển nào thường được sử dụng trong robot tự động?|A. Điều khiển logic mờ (Fuzzy Logic)|B. Điều khiển on-off|C. Điều khiển PID|D. Điều khiển thông qua cảm biến quang học|A
-774|Phương pháp tối ưu để giám sát và điều khiển từ xa hệ thống điều khiển là gì?|A. Sử dụng hệ thống SCADA|B. Giám sát bằng mắt thường|C. Tăng tốc độ điều khiển|D. Sử dụng bộ điều khiển on-off|A
+737|Loại điều khiển nào được sử dụng để điều chỉnh nhiệt độ trong lò nhiệt?|Điều khiển PID|Điều khiển tỷ lệ đơn giản|Điều khiển logic mờ (Fuzzy Logic)|Điều khiển lập trình tuyến tính|A
+761|Bộ điều khiển nào thường được sử dụng trong các hệ thống tự động hóa công nghiệp?|PLC (Programmable Logic Controller)|CPU máy tính|Bộ điều khiển logic mờ|Thiết bị đo lường|A
+149|Thành phần nào của hệ thống điều khiển được sử dụng để cảm nhận và đo lường trạng thái?|Cảm biến (Sensor)|Bộ điều khiển|Thiết bị truyền động (Actuator)|Máy tính giám sát|A
+464|Nguyên lý hoạt động của bộ điều khiển PID là gì?|Điều khiển dựa trên ba thành phần tỉ lệ (P), tích phân (I), đạo hàm (D)|Điều khiển theo quy tắc logic|Điều khiển trên cơ sở hàm bậc hai|Điều khiển thông qua cảm biến quang học|A
+928|Bộ điều khiển nào được sử dụng để điều khiển tốc độ động cơ?|Bộ điều khiển PID|Bộ điều khiển tỷ lệ đơn giản|Bộ điều khiển mờ|Bộ điều khiển on-off|A
+387|Phương pháp nào được sử dụng để giảm độ trễ trong hệ thống điều khiển?|Tăng tốc độ lấy mẫu tín hiệu|Giảm số lượng cảm biến|Sử dụng bộ điều khiển on-off|Sử dụng bộ điều khiển tỷ lệ|A
+576|Yếu tố nào ảnh hưởng đến độ ổn định của hệ thống điều khiển tự động?|Thời gian trễ của hệ thống|Kích thước của bộ điều khiển|Loại tín hiệu đầu vào|Số lượng cảm biến|A
+730|Phương pháp nào giúp cải thiện độ ổn định của hệ thống điều khiển?|Sử dụng bộ lọc tín hiệu|Tăng tốc độ của cảm biến|Sử dụng bộ điều khiển PID|Tăng tốc độ lấy mẫu|C
+954|Loại điều khiển nào thường được sử dụng trong robot tự động?|Điều khiển logic mờ (Fuzzy Logic)|Điều khiển on-off|Điều khiển PID|Điều khiển thông qua cảm biến quang học|A
+774|Phương pháp tối ưu để giám sát và điều khiển từ xa hệ thống điều khiển là gì?|Sử dụng hệ thống SCADA|Giám sát bằng mắt thường|Tăng tốc độ điều khiển|Sử dụng bộ điều khiển on-off|A
 
 ELE1305|CƠ SỞ ĐO LƯỜNG ĐIỆN TỬ
 10
-775|Linh kiện nào được sử dụng để đo cường độ dòng điện?|A. Ampe kế|B. Vôn kế|C. Ôm kế|D. Dao động ký|A
-704|Thiết bị nào được sử dụng để đo điện áp trong mạch điện?|A. Vôn kế|B. Ampe kế|C. Ôm kế|D. Máy hiện sóng|A
-159|Yếu tố nào ảnh hưởng đến độ chính xác của phép đo trong mạch điện?|A. Nhiệt độ môi trường|B. Chiều dài dây dẫn|C. Độ dày của bo mạch|D. Độ phân giải của máy đo|D
-127|Phương pháp nào được sử dụng để đo tần số tín hiệu?|A. Sử dụng máy hiện sóng (Oscilloscope)|B. Dùng vôn kế|C. Dùng ôm kế|D. Dùng nhiệt kế|A
-432|Thiết bị nào được sử dụng để đo dạng sóng tín hiệu điện?|A. Máy hiện sóng (Oscilloscope)|B. Vôn kế|C. Ampe kế|D. Ôm kế|A
-134|Cảm biến nào thường được sử dụng để đo nhiệt độ?|A. Cảm biến nhiệt điện trở (RTD)|B. Cảm biến âm thanh|C. Cảm biến áp suất|D. Cảm biến quang học|A
-90|Công cụ nào dùng để đo trở kháng của mạch điện?|A. Máy đo trở kháng|B. Ampe kế|C. Vôn kế|D. Ôm kế|A
-644|Yếu tố nào ảnh hưởng đến độ nhạy của cảm biến?|A. Nhiệt độ môi trường|B. Tốc độ đo|C. Áp suất khí quyển|D. Tần số tín hiệu|A
-728|Phương pháp tối ưu để kiểm tra lỗi đo lường trong mạch điện là gì?|A. So sánh với dữ liệu chuẩn|B. Giám sát bằng mắt|C. Thực hiện lại phép đo nhiều lần|D. Sử dụng ôm kế|A
-339|Thiết bị nào dùng để đo biên độ tín hiệu điện áp AC?|A. Máy hiện sóng (Oscilloscope)|B. Ampe kế|C. Ôm kế|D. Biến trở|A
+775|Linh kiện nào được sử dụng để đo cường độ dòng điện?|Ampe kế|Vôn kế|Ôm kế|Dao động ký|A
+704|Thiết bị nào được sử dụng để đo điện áp trong mạch điện?|Vôn kế|Ampe kế|Ôm kế|Máy hiện sóng|A
+159|Yếu tố nào ảnh hưởng đến độ chính xác của phép đo trong mạch điện?|Nhiệt độ môi trường|Chiều dài dây dẫn|Độ dày của bo mạch|Độ phân giải của máy đo|D
+127|Phương pháp nào được sử dụng để đo tần số tín hiệu?|Sử dụng máy hiện sóng (Oscilloscope)|Dùng vôn kế|Dùng ôm kế|Dùng nhiệt kế|A
+432|Thiết bị nào được sử dụng để đo dạng sóng tín hiệu điện?|Máy hiện sóng (Oscilloscope)|Vôn kế|Ampe kế|Ôm kế|A
+134|Cảm biến nào thường được sử dụng để đo nhiệt độ?|Cảm biến nhiệt điện trở (RTD)|Cảm biến âm thanh|Cảm biến áp suất|Cảm biến quang học|A
+90|Công cụ nào dùng để đo trở kháng của mạch điện?|Máy đo trở kháng|Ampe kế|Vôn kế|Ôm kế|A
+644|Yếu tố nào ảnh hưởng đến độ nhạy của cảm biến?|Nhiệt độ môi trường|Tốc độ đo|Áp suất khí quyển|Tần số tín hiệu|A
+728|Phương pháp tối ưu để kiểm tra lỗi đo lường trong mạch điện là gì?|So sánh với dữ liệu chuẩn|Giám sát bằng mắt|Thực hiện lại phép đo nhiều lần|Sử dụng ôm kế|A
+339|Thiết bị nào dùng để đo biên độ tín hiệu điện áp AC?|Máy hiện sóng (Oscilloscope)|Ampe kế|Ôm kế|Biến trở|A
 
 TEL1406|CƠ SỞ KỸ THUẬT THÔNG TIN QUANG
 10
-20|Loại cáp quang nào có băng thông lớn nhất?|A. Cáp quang đơn mode (Single-mode)|B. Cáp quang đa mode (Multi-mode)|C. Cáp đồng trục|D. Cáp đồng|A
-244|Yếu tố nào ảnh hưởng nhiều nhất đến suy hao tín hiệu trong cáp quang?|A. Độ dài của cáp|B. Đường kính của lõi cáp|C. Vật liệu chế tạo lõi cáp|D. Môi trường ánh sáng bên ngoài|A
-497|Phương pháp nào được sử dụng để khôi phục tín hiệu quang yếu?|A. Tăng cường công suất phát|B. Sử dụng bộ khuếch đại quang EDFA|C. Giảm khoảng cách truyền tín hiệu|D. Thay đổi vật liệu cáp quang|B
-438|Thành phần nào của cáp quang chịu trách nhiệm truyền tín hiệu ánh sáng?|A. Lõi (Core)|B. Vỏ bảo vệ (Coating)|C. Áo bọc ngoài (Jacket)|D. Sợi Kevlar bảo vệ|A
-847|Thiết bị nào được sử dụng để nối hai đoạn cáp quang với nhau?|A. Máy hàn cáp quang (Fusion Splicer)|B. Máy hiện sóng|C. Đồng hồ đo điện trở|D. Bộ phân tích tín hiệu|A
-576|Hiện tượng nào gây ra suy hao tín hiệu trong cáp quang?|A. Tán xạ Rayleigh|B. Phân cực tín hiệu|C. Phản xạ nội toàn phần|D. Nhiễu sóng điện từ|A
-32|Phương pháp nào được sử dụng để kiểm tra chất lượng của cáp quang?|A. Dùng OTDR (Optical Time-Domain Reflectometer)|B. Dùng vôn kế|C. Dùng máy hiện sóng|D. Dùng đồng hồ đo điện trở|A
-399|Thiết bị nào được sử dụng để khuếch đại tín hiệu trong mạng quang?|A. EDFA (Erbium-Doped Fiber Amplifier)|B. Máy phân tích logic|C. Máy phát sóng vô tuyến|D. Máy phát tín hiệu radio|A
-703|Khái niệm "phân cực ánh sáng" trong cáp quang đề cập đến điều gì?|A. Hướng dao động của sóng ánh sáng|B. Độ dài của cáp quang|C. Đường kính của lõi cáp quang|D. Suy hao tín hiệu trong cáp quang|A
-836|Phương pháp tối ưu để phát hiện lỗi kết nối trong mạng quang là gì?|A. Sử dụng OTDR (Optical Time-Domain Reflectometer)|B. Dùng máy hiện sóng|C. Thực hiện kiểm tra tín hiệu thủ công|D. Dùng máy phân tích phổ|A
+20|Loại cáp quang nào có băng thông lớn nhất?|Cáp quang đơn mode (Single-mode)|Cáp quang đa mode (Multi-mode)|Cáp đồng trục|Cáp đồng|A
+244|Yếu tố nào ảnh hưởng nhiều nhất đến suy hao tín hiệu trong cáp quang?|Độ dài của cáp|Đường kính của lõi cáp|Vật liệu chế tạo lõi cáp|Môi trường ánh sáng bên ngoài|A
+497|Phương pháp nào được sử dụng để khôi phục tín hiệu quang yếu?|Tăng cường công suất phát|Sử dụng bộ khuếch đại quang EDFA|Giảm khoảng cách truyền tín hiệu|Thay đổi vật liệu cáp quang|B
+438|Thành phần nào của cáp quang chịu trách nhiệm truyền tín hiệu ánh sáng?|Lõi (Core)|Vỏ bảo vệ (Coating)|Áo bọc ngoài (Jacket)|Sợi Kevlar bảo vệ|A
+847|Thiết bị nào được sử dụng để nối hai đoạn cáp quang với nhau?|Máy hàn cáp quang (Fusion Splicer)|Máy hiện sóng|Đồng hồ đo điện trở|Bộ phân tích tín hiệu|A
+576|Hiện tượng nào gây ra suy hao tín hiệu trong cáp quang?|Tán xạ Rayleigh|Phân cực tín hiệu|Phản xạ nội toàn phần|Nhiễu sóng điện từ|A
+32|Phương pháp nào được sử dụng để kiểm tra chất lượng của cáp quang?|Dùng OTDR (Optical Time-Domain Reflectometer)|Dùng vôn kế|Dùng máy hiện sóng|Dùng đồng hồ đo điện trở|A
+399|Thiết bị nào được sử dụng để khuếch đại tín hiệu trong mạng quang?|EDFA (Erbium-Doped Fiber Amplifier)|Máy phân tích logic|Máy phát sóng vô tuyến|Máy phát tín hiệu radio|A
+703|Khái niệm "phân cực ánh sáng" trong cáp quang đề cập đến điều gì?|Hướng dao động của sóng ánh sáng|Độ dài của cáp quang|Đường kính của lõi cáp quang|Suy hao tín hiệu trong cáp quang|A
+836|Phương pháp tối ưu để phát hiện lỗi kết nối trong mạng quang là gì?|Sử dụng OTDR (Optical Time-Domain Reflectometer)|Dùng máy hiện sóng|Thực hiện kiểm tra tín hiệu thủ công|Dùng máy phân tích phổ|A
 
 TEL1407|CƠ SỞ KỸ THUẬT THÔNG TIN VÔ TUYẾN
 10
-294|Công nghệ nào được sử dụng trong hệ thống thông tin vô tuyến di động 4G?|A. OFDMA|B. FDMA|C. TDMA|D. CDMA|A
-881|Kỹ thuật nào được sử dụng để giảm nhiễu trong thông tin vô tuyến?|A. Lọc tín hiệu|B. Nén tín hiệu|C. Phát lại tín hiệu|D. Tăng công suất phát|A
-230|Loại ăng-ten nào thường được sử dụng trong thiết bị di động?|A. Ăng-ten PIFA (Planar Inverted-F Antenna)|B. Ăng-ten parabol|C. Ăng-ten dây|D. Ăng-ten Yagi|A
-325|Phương pháp điều chế nào được sử dụng trong hệ thống Wi-Fi (802.11)?|A. OFDM (Orthogonal Frequency-Division Multiplexing)|B. FSK (Frequency Shift Keying)|C. ASK (Amplitude Shift Keying)|D. PSK (Phase Shift Keying)|A
-323|Phương pháp nào được sử dụng để phát hiện và sửa lỗi trong thông tin vô tuyến?|A. Mã hóa Hamming|B. Mã hóa Huffman|C. Nén dữ liệu|D. Lọc thông thấp|A
-186|Kỹ thuật nào được sử dụng để tăng tốc độ dữ liệu trong mạng 5G?|A. Ghép kênh phân chia theo tần số (FDM)|B. MIMO (Multiple-Input Multiple-Output)|C. Phân kênh thời gian (TDM)|D. Sử dụng mạng vệ tinh|B
-444|Công nghệ nào cho phép nhiều thiết bị di động kết nối với cùng một trạm phát sóng?|A. MIMO (Multiple-Input Multiple-Output)|B. FDMA (Frequency Division Multiple Access)|C. CDMA (Code Division Multiple Access)|D. TDMA (Time Division Multiple Access)|C
-171|Phương pháp nào tối ưu để giảm nhiễu trong kênh truyền vô tuyến?|A. Sử dụng bộ lọc thông thấp|B. Tăng công suất phát|C. Sử dụng mã sửa lỗi|D. Giảm khoảng cách truyền|C
-265|Kỹ thuật nào cho phép truyền dữ liệu qua nhiều tần số khác nhau cùng lúc?|A. OFDM (Orthogonal Frequency-Division Multiplexing)|B. TDM (Time-Division Multiplexing)|C. FDM (Frequency-Division Multiplexing)|D. CDMA (Code-Division Multiple Access)|A
-275|Phương pháp nào được sử dụng để đo tín hiệu trong mạng vô tuyến?|A. Phân tích tín hiệu (Spectrum Analyzer)|B. Máy đo công suất|C. Đồng hồ đo điện trở|D. Vôn kế|A
+294|Công nghệ nào được sử dụng trong hệ thống thông tin vô tuyến di động 4G?|OFDMA|FDMA|TDMA|CDMA|A
+881|Kỹ thuật nào được sử dụng để giảm nhiễu trong thông tin vô tuyến?|Lọc tín hiệu|Nén tín hiệu|Phát lại tín hiệu|Tăng công suất phát|A
+230|Loại ăng-ten nào thường được sử dụng trong thiết bị di động?|Ăng-ten PIFA (Planar Inverted-F Antenna)|Ăng-ten parabol|Ăng-ten dây|Ăng-ten Yagi|A
+325|Phương pháp điều chế nào được sử dụng trong hệ thống Wi-Fi (802.11)?|OFDM (Orthogonal Frequency-Division Multiplexing)|FSK (Frequency Shift Keying)|ASK (Amplitude Shift Keying)|PSK (Phase Shift Keying)|A
+323|Phương pháp nào được sử dụng để phát hiện và sửa lỗi trong thông tin vô tuyến?|Mã hóa Hamming|Mã hóa Huffman|Nén dữ liệu|Lọc thông thấp|A
+186|Kỹ thuật nào được sử dụng để tăng tốc độ dữ liệu trong mạng 5G?|Ghép kênh phân chia theo tần số (FDM)|MIMO (Multiple-Input Multiple-Output)|Phân kênh thời gian (TDM)|Sử dụng mạng vệ tinh|B
+444|Công nghệ nào cho phép nhiều thiết bị di động kết nối với cùng một trạm phát sóng?|MIMO (Multiple-Input Multiple-Output)|FDMA (Frequency Division Multiple Access)|CDMA (Code Division Multiple Access)|TDMA (Time Division Multiple Access)|C
+171|Phương pháp nào tối ưu để giảm nhiễu trong kênh truyền vô tuyến?|Sử dụng bộ lọc thông thấp|Tăng công suất phát|Sử dụng mã sửa lỗi|Giảm khoảng cách truyền|C
+265|Kỹ thuật nào cho phép truyền dữ liệu qua nhiều tần số khác nhau cùng lúc?|OFDM (Orthogonal Frequency-Division Multiplexing)|TDM (Time-Division Multiplexing)|FDM (Frequency-Division Multiplexing)|CDMA (Code-Division Multiple Access)|A
+275|Phương pháp nào được sử dụng để đo tín hiệu trong mạng vô tuyến?|Phân tích tín hiệu (Spectrum Analyzer)|Máy đo công suất|Đồng hồ đo điện trở|Vôn kế|A
 
 TEL1405|CƠ SỞ KỸ THUẬT MẠNG TRUYỀN THÔNG
 10
-429|Giao thức nào được sử dụng để truyền dữ liệu không mất mát trên Internet?|A. TCP|B. UDP|C. IP|D. HTTP|A
-518|Lớp nào trong mô hình OSI chịu trách nhiệm định tuyến dữ liệu?|A. Lớp mạng (Network Layer)|B. Lớp liên kết dữ liệu (Data Link Layer)|C. Lớp vận chuyển (Transport Layer)|D. Lớp vật lý (Physical Layer)|A
-663|Phương thức nào được sử dụng để tránh xung đột dữ liệu trong mạng Ethernet?|A. CSMA/CD (Carrier Sense Multiple Access with Collision Detection)|B. CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)|C. TDM (Time-Division Multiplexing)|D. FDM (Frequency-Division Multiplexing)|A
-30|Giao thức nào được sử dụng để bảo mật dữ liệu trong quá trình truyền trên Internet?|A. HTTPS|B. FTP|C. HTTP|D. SMTP|A
-968|Dịch vụ nào cho phép ánh xạ địa chỉ IP thành tên miền dễ nhớ?|A. DNS (Domain Name System)|B. DHCP (Dynamic Host Configuration Protocol)|C. ARP (Address Resolution Protocol)|D. ICMP (Internet Control Message Protocol)|A
-422|Phương pháp nào được sử dụng để xác định lỗi trong khung dữ liệu?|A. Kiểm tra chẵn lẻ (Parity Check)|B. Mã hóa Hamming|C. Mã hóa Huffman|D. Phân tách tần số|A
-158|Phương pháp nào được sử dụng để quản lý động địa chỉ IP cho các thiết bị trong mạng?|A. DHCP (Dynamic Host Configuration Protocol)|B. DNS (Domain Name System)|C. ARP (Address Resolution Protocol)|D. NAT (Network Address Translation)|A
-696|Phương pháp nào được sử dụng để phát hiện và ngăn chặn các cuộc tấn công mạng?|A. IDS (Intrusion Detection System)|B. DNS (Domain Name System)|C. DHCP (Dynamic Host Configuration Protocol)|D. SNMP (Simple Network Management Protocol)|A
-595|Thiết bị nào được sử dụng để kết nối các mạng khác nhau?|A. Router|B. Switch|C. Hub|D. Repeater|A
-605|Phương pháp nào được sử dụng để kiểm tra tính toàn vẹn của dữ liệu trong quá trình truyền?|A. Sử dụng hàm băm (Hash Function)|B. Mã hóa Huffman|C. Tăng tốc độ truyền dữ liệu|D. Nén dữ liệu|A
+429|Giao thức nào được sử dụng để truyền dữ liệu không mất mát trên Internet?|TCP|UDP|IP|HTTP|A
+518|Lớp nào trong mô hình OSI chịu trách nhiệm định tuyến dữ liệu?|Lớp mạng (Network Layer)|Lớp liên kết dữ liệu (Data Link Layer)|Lớp vận chuyển (Transport Layer)|Lớp vật lý (Physical Layer)|A
+663|Phương thức nào được sử dụng để tránh xung đột dữ liệu trong mạng Ethernet?|CSMA/CD (Carrier Sense Multiple Access with Collision Detection)|CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)|TDM (Time-Division Multiplexing)|FDM (Frequency-Division Multiplexing)|A
+30|Giao thức nào được sử dụng để bảo mật dữ liệu trong quá trình truyền trên Internet?|HTTPS|FTP|HTTP|SMTP|A
+968|Dịch vụ nào cho phép ánh xạ địa chỉ IP thành tên miền dễ nhớ?|DNS (Domain Name System)|DHCP (Dynamic Host Configuration Protocol)|ARP (Address Resolution Protocol)|ICMP (Internet Control Message Protocol)|A
+422|Phương pháp nào được sử dụng để xác định lỗi trong khung dữ liệu?|Kiểm tra chẵn lẻ (Parity Check)|Mã hóa Hamming|Mã hóa Huffman|Phân tách tần số|A
+158|Phương pháp nào được sử dụng để quản lý động địa chỉ IP cho các thiết bị trong mạng?|DHCP (Dynamic Host Configuration Protocol)|DNS (Domain Name System)|ARP (Address Resolution Protocol)|NAT (Network Address Translation)|A
+696|Phương pháp nào được sử dụng để phát hiện và ngăn chặn các cuộc tấn công mạng?|IDS (Intrusion Detection System)|DNS (Domain Name System)|DHCP (Dynamic Host Configuration Protocol)|SNMP (Simple Network Management Protocol)|A
+595|Thiết bị nào được sử dụng để kết nối các mạng khác nhau?|Router|Switch|Hub|Repeater|A
+605|Phương pháp nào được sử dụng để kiểm tra tính toàn vẹn của dữ liệu trong quá trình truyền?|Sử dụng hàm băm (Hash Function)|Mã hóa Huffman|Tăng tốc độ truyền dữ liệu|Nén dữ liệu|A

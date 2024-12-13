@@ -27,6 +27,20 @@ void deleteAVLTree(NodeMonHoc* root) {
     delete root;
 }
 
+MonHoc* SearchMonHoc(ptrMonHoc p, QString mamh_input) {
+    if (p == nullptr) {
+        return nullptr; // Trả về nullptr nếu node rỗng
+    }
+    if (p->MH.MAMH == mamh_input) {
+        return &(p->MH); // Trả về địa chỉ của MonHoc nếu tìm thấy mã môn học
+    }
+    else if (mamh_input < p->MH.MAMH) {
+        return SearchMonHoc(p->left, mamh_input); // Tìm ở cây con bên trái
+    }
+    else {
+        return SearchMonHoc(p->right, mamh_input); // Tìm ở cây con bên phải
+    }
+}
 
 ptrMonHoc newNode(QString mamh_input, QString tenmh_input) {
     ptrMonHoc node = new NodeMonHoc;
@@ -232,17 +246,19 @@ void duyetLRN(ptrMonHoc p) {
 
 // Tìm kiếm môn học theo mã môn học
 ptrMonHoc SearchNode(ptrMonHoc p, QString mamh_input) {
-    while (p != nullptr) {
-        if (p->MH.MAMH == mamh_input) // So sánh giữa hai QString
-            return p;
-        else if (p->MH.MAMH > mamh_input)
-            p = p->left;
-        else
-            p = p->right;
+    if (p == nullptr) {
+        return nullptr; // Trả về nullptr nếu node rỗng
     }
-    return nullptr;
+    if (p->MH.MAMH == mamh_input) {
+        return p; // Trả về node nếu tìm thấy mã môn học
+    }
+    else if (mamh_input < p->MH.MAMH) {
+        return SearchNode(p->left, mamh_input); // Tìm ở cây con bên trái
+    }
+    else {
+        return SearchNode(p->right, mamh_input); // Tìm ở cây con bên phải
+    }
 }
-
 // Đếm số lượng node
 int demNode(ptrMonHoc p) {
     if (p == NULL)

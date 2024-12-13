@@ -1,0 +1,600 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-ee361162adb4148cf147.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						36,
+						37,
+						38
+					]
+				},
+				{
+					"build" : "OpenXLSX",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-OpenXLSX-Debug-57b3a46c75076b7e25cb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "OpenXLSX"
+				},
+				{
+					"build" : "OpenXLSX/OpenXLSX",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-OpenXLSX.OpenXLSX-Debug-619685697c766059a95f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "OpenXLSX/OpenXLSX",
+					"targetIndexes" : 
+					[
+						30,
+						34,
+						35
+					]
+				},
+				{
+					"build" : "OpenXLSX/Documentation",
+					"jsonFile" : "directory-OpenXLSX.Documentation-Debug-b426d0720605f3732262.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "OpenXLSX/Documentation"
+				},
+				{
+					"build" : "OpenXLSX/Examples",
+					"childIndexes" : 
+					[
+						5
+					],
+					"jsonFile" : "directory-OpenXLSX.Examples-Debug-7f64127d476acac1b29a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "OpenXLSX/Examples",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29
+					]
+				},
+				{
+					"build" : "OpenXLSX/Examples/external/nowide",
+					"jsonFile" : "directory-OpenXLSX.Examples.external.nowide-Debug-a600071b42397bcda833.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.9"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 5,
+					"source" : "OpenXLSX/Examples/external/nowide",
+					"targetIndexes" : 
+					[
+						39,
+						40,
+						41
+					]
+				},
+				{
+					"build" : "OpenXLSX/Tests",
+					"jsonFile" : "directory-OpenXLSX.Tests-Debug-0f176ebe860f98e99f28.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 6,
+					"source" : "OpenXLSX/Tests",
+					"targetIndexes" : 
+					[
+						31,
+						32,
+						33
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "THI_TRAC_NGHIEM",
+					"targetIndexes" : 
+					[
+						36,
+						37,
+						38
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						6
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "OpenXLSX",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "OpenXLSX.Library",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						30,
+						34,
+						35
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "OpenXLSX.Documentation",
+					"parentIndex" : 1
+				},
+				{
+					"childIndexes" : 
+					[
+						5
+					],
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "OpenXLSX.Examples",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "nowide",
+					"parentIndex" : 4,
+					"targetIndexes" : 
+					[
+						39,
+						40,
+						41
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "OpenXLSX.Tests",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						31,
+						32,
+						33
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo1::@23e067449c913171a783",
+					"jsonFile" : "target-Demo1-Debug-467f31996b2dcae80b95.json",
+					"name" : "Demo1",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo10::@23e067449c913171a783",
+					"jsonFile" : "target-Demo10-Debug-de8eaa194d7f23cf42bf.json",
+					"name" : "Demo10",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo10_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo10_autogen-Debug-815bc32a2da137cc9caa.json",
+					"name" : "Demo10_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo10_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo10_autogen_timestamp_deps-Debug-457f0f1a990c839872f5.json",
+					"name" : "Demo10_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo1_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo1_autogen-Debug-675b4c51469e542bbe15.json",
+					"name" : "Demo1_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo1_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo1_autogen_timestamp_deps-Debug-b54edb898b3c68556736.json",
+					"name" : "Demo1_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo2::@23e067449c913171a783",
+					"jsonFile" : "target-Demo2-Debug-55b8cbfc60aaf71b808e.json",
+					"name" : "Demo2",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo2_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo2_autogen-Debug-029c641b5846ad69104f.json",
+					"name" : "Demo2_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo2_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo2_autogen_timestamp_deps-Debug-247a475c65cd3c20c97f.json",
+					"name" : "Demo2_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo3::@23e067449c913171a783",
+					"jsonFile" : "target-Demo3-Debug-67461a366776345b90fa.json",
+					"name" : "Demo3",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo3_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo3_autogen-Debug-34776f95963ac45fade7.json",
+					"name" : "Demo3_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo3_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo3_autogen_timestamp_deps-Debug-03a3350edafb46ecdf00.json",
+					"name" : "Demo3_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo4::@23e067449c913171a783",
+					"jsonFile" : "target-Demo4-Debug-fdbe0d1e31574937d0ef.json",
+					"name" : "Demo4",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo4_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo4_autogen-Debug-35de3770eb04edb8d210.json",
+					"name" : "Demo4_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo4_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo4_autogen_timestamp_deps-Debug-dafbe7f6e6dc830592da.json",
+					"name" : "Demo4_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo5::@23e067449c913171a783",
+					"jsonFile" : "target-Demo5-Debug-a70f32faa00bd370c0b2.json",
+					"name" : "Demo5",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo5_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo5_autogen-Debug-ec1cf491b7d2a2fe0651.json",
+					"name" : "Demo5_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo5_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo5_autogen_timestamp_deps-Debug-a947fab152adf68adc5e.json",
+					"name" : "Demo5_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo6::@23e067449c913171a783",
+					"jsonFile" : "target-Demo6-Debug-7ecfdc0bc866b967abf5.json",
+					"name" : "Demo6",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo6_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo6_autogen-Debug-a9d55c19f011f7791bbc.json",
+					"name" : "Demo6_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo6_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo6_autogen_timestamp_deps-Debug-a6e2ab534dc401402930.json",
+					"name" : "Demo6_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo7::@23e067449c913171a783",
+					"jsonFile" : "target-Demo7-Debug-e8764ac53d22a1e5fbd8.json",
+					"name" : "Demo7",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo7_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo7_autogen-Debug-6c70930f4d868607f747.json",
+					"name" : "Demo7_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo7_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo7_autogen_timestamp_deps-Debug-0471955e0e49637bd400.json",
+					"name" : "Demo7_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo8::@23e067449c913171a783",
+					"jsonFile" : "target-Demo8-Debug-6d324b088cad252b6da2.json",
+					"name" : "Demo8",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo8_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo8_autogen-Debug-afbd339283d0ba417f18.json",
+					"name" : "Demo8_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo8_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo8_autogen_timestamp_deps-Debug-6cf2515daa39b3a77aca.json",
+					"name" : "Demo8_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo9::@23e067449c913171a783",
+					"jsonFile" : "target-Demo9-Debug-ebd0f7c530de427c01ac.json",
+					"name" : "Demo9",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo9_autogen::@23e067449c913171a783",
+					"jsonFile" : "target-Demo9_autogen-Debug-de8d5a171dd4daa9254a.json",
+					"name" : "Demo9_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Demo9_autogen_timestamp_deps::@23e067449c913171a783",
+					"jsonFile" : "target-Demo9_autogen_timestamp_deps-Debug-142d395958835fffa789.json",
+					"name" : "Demo9_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpenXLSX::@a10863c5946955c16ed7",
+					"jsonFile" : "target-OpenXLSX-Debug-8709aa4c448591987b88.json",
+					"name" : "OpenXLSX",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "OpenXLSXTests::@e82894f2a82980282a17",
+					"jsonFile" : "target-OpenXLSXTests-Debug-69eb3b50333db6b1bc1a.json",
+					"name" : "OpenXLSXTests",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "OpenXLSXTests_autogen::@e82894f2a82980282a17",
+					"jsonFile" : "target-OpenXLSXTests_autogen-Debug-ed484c738b49124d3cf7.json",
+					"name" : "OpenXLSXTests_autogen",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "OpenXLSXTests_autogen_timestamp_deps::@e82894f2a82980282a17",
+					"jsonFile" : "target-OpenXLSXTests_autogen_timestamp_deps-Debug-c958ea5b1eb50e16caa8.json",
+					"name" : "OpenXLSXTests_autogen_timestamp_deps",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpenXLSX_autogen::@a10863c5946955c16ed7",
+					"jsonFile" : "target-OpenXLSX_autogen-Debug-e309fddd6e048d2d5534.json",
+					"name" : "OpenXLSX_autogen",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "OpenXLSX_autogen_timestamp_deps::@a10863c5946955c16ed7",
+					"jsonFile" : "target-OpenXLSX_autogen_timestamp_deps-Debug-bdf45e7a4bd1652805d8.json",
+					"name" : "OpenXLSX_autogen_timestamp_deps",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "THI_TRAC_NGHIEM::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-THI_TRAC_NGHIEM-Debug-a76d5f53d5aa6e5a0715.json",
+					"name" : "THI_TRAC_NGHIEM",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "THI_TRAC_NGHIEM_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-THI_TRAC_NGHIEM_autogen-Debug-8a8232b80f5a9462bc5a.json",
+					"name" : "THI_TRAC_NGHIEM_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "THI_TRAC_NGHIEM_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-THI_TRAC_NGHIEM_autogen_timestamp_deps-Debug-9894a235d419ce6898d0.json",
+					"name" : "THI_TRAC_NGHIEM_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "nowide::@74a63cb021cde974a5fb",
+					"jsonFile" : "target-nowide-Debug-91526c833362e7f4e1a0.json",
+					"name" : "nowide",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "nowide_autogen::@74a63cb021cde974a5fb",
+					"jsonFile" : "target-nowide_autogen-Debug-d662d9ce4fd45b9aa89e.json",
+					"name" : "nowide_autogen",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "nowide_autogen_timestamp_deps::@74a63cb021cde974a5fb",
+					"jsonFile" : "target-nowide_autogen_timestamp_deps-Debug-081fa71b30efcae34212.json",
+					"name" : "nowide_autogen_timestamp_deps",
+					"projectIndex" : 5
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+		"source" : "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

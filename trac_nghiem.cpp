@@ -412,7 +412,6 @@ void Trac_Nghiem::ketQuaLamBai(const float &diem) {
     ui->mamh->setText("Mã môn học: " + maMH);
     ui->tenMH->setText("Tên môn học: " + monhoc);
 
-    // Cập nhật thời gian làm bài (hiển thị theo định dạng giờ:phút:giây)
     int timeSpent = times * 60 - totalSeconds;  // Tổng thời gian đã dùng
     int hours = timeSpent / 3600;
     int minutes = (timeSpent % 3600) / 60;

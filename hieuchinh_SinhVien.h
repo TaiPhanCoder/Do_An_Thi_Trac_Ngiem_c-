@@ -2,6 +2,7 @@
 #define HIEUCHINH_SINHVIEN_H
 #include "sinhvien.h"
 #include "lop.h"
+#include "giao_vien.h"
 
 #include <QDialog>
 
@@ -15,13 +16,10 @@ class HieuChinh : public QDialog
 
 public:
     explicit HieuChinh(const QString &mssv, const QString &ho, const QString &ten,
-                       const QString &lop, const QString &gioiTinh, Lop* danhSachLop[], bool dasapxep = false, QWidget *parent = nullptr);
+                       const QString &lop, const QString &gioiTinh, Lop* danhSachLop[],
+                       bool dasapxep, GIao_Vien *giaoVien, QWidget *parent = nullptr);
     ~HieuChinh();
-    QString getMSSV() const;
-    QString getHo() const;
-    QString getTen() const;
-    QString getGioiTinh() const;
-    QString getLop() const;
+
     void accept();
 
 private slots:
@@ -32,9 +30,11 @@ private slots:
 
 private:
     Ui::HieuChinh *ui;
+    GIao_Vien *giaoVien;
     Lop** danhSachLop;
     QString oldMssv;
     QString oldLop;
+    QStringList lopList;
     bool dasapxep;
 };
 

@@ -129,6 +129,24 @@ void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop, Lop** danhSachLop) {
     }
 }
 
+SinhVien* timSinhVien(const QString& mssv, const QString& lop, Lop** danhSachLop) {
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+        if (danhSachLop[i]->MALOP == lop) {
+            SinhVien* current = danhSachLop[i]->DSSV;
+            while (current != nullptr) {
+                if (current->masv == mssv) {
+                    return current;
+                }
+                current = current->next;
+            }
+        }
+    }
+    return nullptr;
+}
+
 void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -193,7 +211,7 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
 
                         // Đọc số câu hỏi đã thi
                         int soCauThi = in.readLine().toInt();
-                        newMonHoc->soCauThi = soCauThi;
+                        newMonHoc->soCauThi = soCauThi; // Gán số câu thi cho thuộc tính soCauThi
                         newMonHoc->mangDaThi = new DaThi[soCauThi];
 
                         for (int m = 0; m < soCauThi; ++m) {

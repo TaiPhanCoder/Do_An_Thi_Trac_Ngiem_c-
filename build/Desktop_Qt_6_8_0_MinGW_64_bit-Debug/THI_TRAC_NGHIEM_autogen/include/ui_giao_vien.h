@@ -280,7 +280,7 @@ public:
         GIao_Vien->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GIao_Vien);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1687, 25));
+        menubar->setGeometry(QRect(0, 0, 1687, 26));
         GIao_Vien->setMenuBar(menubar);
         statusbar = new QStatusBar(GIao_Vien);
         statusbar->setObjectName("statusbar");
