@@ -208,9 +208,9 @@ border-radius: 20px;
      <widget class="QLabel" name="cau_hoi">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>40</x>
         <y>30</y>
-        <width>1031</width>
+        <width>1091</width>
         <height>101</height>
        </rect>
       </property>

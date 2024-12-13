@@ -48,11 +48,7 @@ void Trac_Nghiem::setupTracNghiem() {
     ui->logo_PTIT->setScaledContents(true);
 
     // Cập nhật câu hỏi đầu tiên
-    ui->cau_hoi->setText("Câu " + QString::number(1) + ": " + headCauhoi->noiDung);
-    ui->AQ->setText(headCauhoi->A);
-    ui->BQ->setText(headCauhoi->B);
-    ui->CQ->setText(headCauhoi->C);
-    ui->DQ->setText(headCauhoi->D);
+    capNhatCauHoiUI();
 
     // Thêm câu hỏi vào danh sách
     for (int var = 1; var <= questions; ++var) {
@@ -108,13 +104,8 @@ void Trac_Nghiem::updateTime() {
     if (totalSeconds <= 0) {
         timer->stop();  // Dừng bộ đếm
 
-        // Tự động tính điểm và hiển thị kết quả mà không cần xác nhận từ người dùng
-        float diem = tinhDiemSinhVien();
-        monHocMoi->diem = diem;
-        luuDuLieuMangDaThi(danhSachLop);  // Lưu kết quả vào danh sách
-
         // Hiển thị kết quả bài thi
-        ketQuaLamBai(diem);
+        ketQuaLamBai();
 
         return;  // Kết thúc hàm để không giảm tiếp
     }
@@ -216,31 +207,38 @@ void Trac_Nghiem::prev(){
     qDebug() << cauhoiHienTai->id;
 }
 
+void Trac_Nghiem::capNhatCauHoiUI()
+{
+    QString noiDung = "Câu " + QString::number(cauHienTai) + ": " + cauhoiHienTai->noiDung;
+    QFontMetrics metrics(ui->cau_hoi->font());
+    int maxWidth = ui->cau_hoi->width();
+    QString wrappedText = metrics.elidedText(noiDung, Qt::ElideRight, maxWidth);
+    ui->cau_hoi->setText(wrappedText);
+
+    ui->AQ->setText(cauhoiHienTai->A);
+    ui->BQ->setText(cauhoiHienTai->B);
+    ui->CQ->setText(cauhoiHienTai->C);
+    ui->DQ->setText(cauhoiHienTai->D);
+}
+
+
 void Trac_Nghiem::on_right_arow_clicked()
 {
     qDebug() << cauhoiHienTai->noiDung;
-    if(cauHienTai < questions){
+    if(cauHienTai < questions) {
         next();
         qDebug() << cauhoiHienTai->noiDung;
-        ui->cau_hoi->setText("Câu " + QString::number(cauHienTai) + ": " + cauhoiHienTai->noiDung);
-        ui->AQ->setText(cauhoiHienTai->A);
-        ui->BQ->setText(cauhoiHienTai->B);
-        ui->CQ->setText(cauhoiHienTai->C);
-        ui->DQ->setText(cauhoiHienTai->D);
-
+        capNhatCauHoiUI();
         updateRadioButtonState();
     }
 }
 
+
 void Trac_Nghiem::on_left_arow_clicked()
 {
-    if(cauHienTai>1){
+    if(cauHienTai > 1) {
         prev();
-        ui->cau_hoi->setText("Câu " + QString::number(cauHienTai) + ": " +cauhoiHienTai->noiDung);
-        ui->AQ->setText(cauhoiHienTai->A);
-        ui->BQ->setText(cauhoiHienTai->B);
-        ui->CQ->setText(cauhoiHienTai->C);
-        ui->DQ->setText(cauhoiHienTai->D);
+        capNhatCauHoiUI();
 
         // Chỉ gọi hàm updateRadioButtonState khi phát hiện đã sang câu khác
         updateRadioButtonState();
@@ -262,33 +260,8 @@ void Trac_Nghiem::handleListWidgetClick(QListWidgetItem *item)
     int row = ui->listWidget->row(item);
     cauHienTai = row + 1;
     cauHoi();
-    ui->cau_hoi->setText("Câu " + QString::number(cauHienTai) + ": " + cauhoiHienTai->noiDung);
-    ui->AQ->setText(cauhoiHienTai->A);
-    ui->BQ->setText(cauhoiHienTai->B);
-    ui->CQ->setText(cauhoiHienTai->C);
-    ui->DQ->setText(cauhoiHienTai->D);
-
+    capNhatCauHoiUI();
     updateRadioButtonState();
-}
-
-float Trac_Nghiem::tinhDiemSinhVien()
-{
-    int soCauDung = 0;
-    CauHoi* current = headCauhoi;
-    for (int i = 0; i < questions; ++i) {
-        while (current != nullptr) {
-            if (current->id == mangDaThi[i].id) {
-                if (current->dapAnDung == mangDaThi[i].dapAn) {
-                    soCauDung++;
-                }
-                break;
-            }
-            current = current->next;
-        }
-        current = headCauhoi;
-    }
-    float diem = (static_cast<float>(soCauDung) / questions) * 10;
-    return round(diem * 10) / 10;
 }
 
 void Trac_Nghiem::luuDuLieuMangDaThi(Lop* danhSachLop[])
@@ -351,6 +324,26 @@ void Trac_Nghiem::luuDuLieuMangDaThi(Lop* danhSachLop[])
     qDebug() << "Dữ liệu đã được lưu thành công.";
 }
 
+float Trac_Nghiem::tinhDiemSinhVien(int& soCauDung)
+{
+    soCauDung = 0;
+    for (int i = 0; i < questions; ++i) {
+        CauHoi* current = headCauhoi;
+        while (current != nullptr) {
+            if (current->id == mangDaThi[i].id) {
+                if (current->dapAnDung == mangDaThi[i].dapAn) {
+                    soCauDung++;
+                }
+                break;
+            }
+            current = current->next;
+        }
+    }
+
+    float diem = (static_cast<float>(soCauDung) / questions) * 10;
+    return round(diem * 10) / 10;
+}
+
 void Trac_Nghiem::on_NopBai_clicked()
 {
     // Hiển thị hộp thoại xác nhận
@@ -368,19 +361,19 @@ void Trac_Nghiem::on_NopBai_clicked()
             timer->stop();
         }
 
-        // Tính điểm của sinh viên
-        float diem = tinhDiemSinhVien();
-        monHocMoi->diem = diem;
-
-        // Lưu kết quả vào danh sách đã thi
-        luuDuLieuMangDaThi(danhSachLop);
-
-        // Hiển thị kết quả bài thi
-        ketQuaLamBai(diem);
+        ketQuaLamBai();
     }
 }
 
-void Trac_Nghiem::ketQuaLamBai(const float &diem) {
+void Trac_Nghiem::ketQuaLamBai() {
+    // Tính điểm của sinh viên
+    int soCauDung = 0;
+    float diem = tinhDiemSinhVien(soCauDung);
+    monHocMoi->diem = diem;
+
+    // Lưu kết quả vào danh sách đã thi
+    luuDuLieuMangDaThi(danhSachLop);
+
     ui->grLamBai->setVisible(false);
     ui->grCauHoi->setVisible(false);
     ui->ketQuaThi->setVisible(true);
@@ -397,15 +390,10 @@ void Trac_Nghiem::ketQuaLamBai(const float &diem) {
     // Cập nhật thông tin
     ui->mssv->setText("MSSV: " + mainUser->masv);
     ui->ten->setText("Tên: " + mainUser->ho + " " + mainUser->ten);
+
     ui->diem->setText("Điểm: " + QString::number(diem));
 
     // Số câu trả lời đúng
-    int soCauDung = 0;
-    for (int i = 0; i < questions; ++i) {
-        if (mangDaThi[i].dapAn == headCauhoi->dapAnDung) {
-            soCauDung++;
-        }
-    }
     ui->soCauDung->setText("Số câu đúng: " + QString::number(soCauDung) + "/" + QString::number(questions));
 
     // Cập nhật mã môn học và tên môn học

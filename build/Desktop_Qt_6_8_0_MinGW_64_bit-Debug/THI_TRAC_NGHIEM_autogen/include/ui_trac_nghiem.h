@@ -135,7 +135,7 @@ public:
         Lam_Bai->setFrameShadow(QFrame::Shadow::Raised);
         cau_hoi = new QLabel(Lam_Bai);
         cau_hoi->setObjectName("cau_hoi");
-        cau_hoi->setGeometry(QRect(70, 30, 1031, 101));
+        cau_hoi->setGeometry(QRect(40, 30, 1091, 101));
         cau_hoi->setStyleSheet(QString::fromUtf8("font-size:22pt; font-weight:700; color:#ff0000;"));
         cau_hoi->setAlignment(Qt::AlignmentFlag::AlignCenter);
         AQ = new QRadioButton(Lam_Bai);

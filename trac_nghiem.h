@@ -30,8 +30,9 @@ private slots:
     void handleListWidgetClick(QListWidgetItem *item);
     void handleAnswerSelection();
     void on_NopBai_clicked();
-    void ketQuaLamBai(const float &diem);
+    void ketQuaLamBai();
     void updateTimerDisplay();
+    void capNhatCauHoiUI();
 
 private:
     void setupTracNghiem();
@@ -41,7 +42,7 @@ private:
     void next();
     void prev();
     void cauHoi();
-    float tinhDiemSinhVien();
+    float tinhDiemSinhVien(int& soCauDung);
     void taoMonHocDangThi(SinhVien* sinhVien, const QString& maMH, int questions);
     void updateQuestion();
     void on_finish_clicked();
