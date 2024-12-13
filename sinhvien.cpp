@@ -18,13 +18,17 @@ SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, Q
     return sv;
 }
 
-void themSinhVien(SinhVien*& head, SinhVien* newSV) {
+void themSinhVien(SinhVien*& tail, SinhVien* newSV) {
     if (newSV == nullptr) {
         qDebug() << "Sinh viên không hợp lệ!";
         return;
     }
 
-    // Thêm sinh viên mới vào đầu danh sách
-    newSV->next = head;
-    head = newSV;
+    if (tail == nullptr) {
+        qDebug() << "Danh sách hiện tại không có sinh viên!";
+        return;
+    }
+
+    tail->next = newSV;
+    tail = newSV;
 }

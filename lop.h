@@ -18,7 +18,6 @@ struct Lop {
     SinhVien* DSSV;
 };
 
-int demSinhVien(Lop** danhSachLop);
 int demSoLop(Lop* danhSachLop[]);
 int demSVLop(Lop* lop);
 void lapdssinhvien(const QString &filename, Lop* danhSachLop[]);

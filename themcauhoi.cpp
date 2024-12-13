@@ -7,6 +7,7 @@ themcauhoi::themcauhoi(QWidget *parent, NodeMonHoc* root, int* index)
 {
     ui->setupUi(this);
     this->setWindowTitle("Thêm Câu Hỏi");
+    this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
     themDapAnVaoComboBox();
     connect(ui->monHoc, &QComboBox::currentIndexChanged, this, &themcauhoi::randomID);
     dsMonHoc(m_root);
@@ -49,39 +50,11 @@ void themcauhoi::dsMonHoc(NodeMonHoc* root)
     dsMonHoc(root->right);
 }
 
-QString themcauhoi::getNoiDung() {
-    return ui->noiDung->text();
-}
-
-QString themcauhoi::getMonHoc() {
-    return ui->monHoc->currentText();
-}
-
-QString themcauhoi::getDapAn() {
-    return ui->dapAnDung->currentText();
-}
-
-QString themcauhoi::getA() {
-    return ui->A->text();
-}
-
-QString themcauhoi::getB() {
-    return ui->B->text();
-}
-
-QString themcauhoi::getC() {
-    return ui->C->text();
-}
-
-QString themcauhoi::getD() {
-    return ui->D->text();
-}
-
 bool themcauhoi::thongBaoLoi() {
     bool isValid = true;
 
     // Kiểm tra trường Nội dung
-    if (getNoiDung().isEmpty()) {
+    if (ui->noiDung->text().isEmpty()) {
         ui->loiNoiDung->setText("Nội dung không được để trống");
         ui->loiNoiDung->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -90,7 +63,7 @@ bool themcauhoi::thongBaoLoi() {
     }
 
     // Kiểm tra trường Môn học
-    if (getMonHoc().isEmpty()) {
+    if (ui->monHoc->currentText().isEmpty()) {
         ui->loiMonHoc->setText("Môn học không được để trống");
         ui->loiMonHoc->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -99,7 +72,7 @@ bool themcauhoi::thongBaoLoi() {
     }
 
     // Kiểm tra trường Đáp án
-    if (getDapAn().isEmpty()) {
+    if (ui->dapAnDung->currentText().isEmpty()) {
         ui->loiDapAn->setText("Đáp án không được để trống");
         ui->loiDapAn->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -108,7 +81,7 @@ bool themcauhoi::thongBaoLoi() {
     }
 
     // Kiểm tra các đáp án A, B, C, D
-    if (getA().isEmpty()) {
+    if (ui->A->text().isEmpty()) {
         ui->loiA->setText("Đáp án A không được để trống");
         ui->loiA->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -116,7 +89,7 @@ bool themcauhoi::thongBaoLoi() {
         ui->loiA->clear();
     }
 
-    if (getB().isEmpty()) {
+    if (ui->B->text().isEmpty()) {
         ui->loiB->setText("Đáp án B không được để trống");
         ui->loiB->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -124,7 +97,7 @@ bool themcauhoi::thongBaoLoi() {
         ui->loiB->clear();
     }
 
-    if (getC().isEmpty()) {
+    if (ui->C->text().isEmpty()) {
         ui->loiC->setText("Đáp án C không được để trống");
         ui->loiC->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -132,7 +105,7 @@ bool themcauhoi::thongBaoLoi() {
         ui->loiC->clear();
     }
 
-    if (getD().isEmpty()) {
+    if (ui->D->text().isEmpty()) {
         ui->loiD->setText("Đáp án D không được để trống");
         ui->loiD->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -144,13 +117,13 @@ bool themcauhoi::thongBaoLoi() {
 }
 
 void themcauhoi::luuCauHoi() {
-    QString noiDung = getNoiDung();
+    QString noiDung = ui->noiDung->text();
     QString monHoc = ui->monHoc->itemData(ui->monHoc->currentIndex()).toString();
     QChar dapAnDung = ui->dapAnDung->itemData(ui->dapAnDung->currentIndex()).value<QChar>();
-    QString a = getA();
-    QString b = getB();
-    QString c = getC();
-    QString d = getD();
+    QString a = ui->A->text();
+    QString b = ui->B->text();
+    QString c = ui->C->text();
+    QString d = ui->D->text();
 
     CauHoi* newCauHoi = taoNodeCauHoi(randomId, noiDung, a, b, c, d, dapAnDung);
 
@@ -187,7 +160,6 @@ void themcauhoi::randomID(int index)
         if (current->MH.MAMH == selectedMAMH) {
             CauHoi* cauHoi = current->MH.headCauhoi;
             while (cauHoi != nullptr) {
-                // Tăng giá trị trong mảng khi gặp ID đã tồn tại
                 if (cauHoi->id >= 0 && cauHoi->id < 1000) {
                     idNgauNhien[cauHoi->id]++;
                 }
@@ -209,10 +181,8 @@ void themcauhoi::randomID(int index)
         }
     }
 
-    QString result = selectedMAMH + QString::number(randomId);
-    ui->idMonHoc->setText(result);
+    ui->idMonHoc->setText(selectedMAMH + QString::number(randomId));
     ui->idMonHoc->setAlignment(Qt::AlignCenter);
 
     delete[] idNgauNhien;
 }
-

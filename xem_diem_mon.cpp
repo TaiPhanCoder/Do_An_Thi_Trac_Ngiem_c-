@@ -12,6 +12,7 @@ xem_Diem_Mon::xem_Diem_Mon(SinhVien* sinhVien, MonHoc* monHoc, QWidget *parent)
     , monHoc(monHoc)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Xem Điểm");
 
     diemthi = timMonHocDaThi(sinhVien, monHoc->MAMH);
     setupLables();

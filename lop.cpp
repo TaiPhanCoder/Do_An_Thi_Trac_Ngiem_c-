@@ -71,25 +71,6 @@ bool checkMSSV(const QString &newMssv, Lop** danhSachLop) {
     return true;
 }
 
-
-int demSinhVien(Lop** danhSachLop) {
-    int count = 0;
-
-    for (int i = 0; i < MAX; ++i) {
-        if (danhSachLop[i] == nullptr) {
-            break;
-        }
-        SinhVien* current = danhSachLop[i]->DSSV;
-
-        while (current != nullptr) {
-            count++;
-            current = current->next;
-        }
-    }
-
-    return count;
-}
-
 int demSVLop(Lop* lop) {
     int count = 0;
     SinhVien* current = lop->DSSV;
@@ -183,6 +164,7 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
 
         // Đọc số lượng sinh viên trong lớp
         int soSinhVien = in.readLine().toInt();
+        SinhVien* tail = nullptr;
         for (int j = 0; j < soSinhVien; ++j) {
             line = in.readLine().trimmed();
             QStringList studentFields = line.split('|');
@@ -194,7 +176,13 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
                 QString password = studentFields.at(4).trimmed();
 
                 SinhVien* newSV = taoNodeSinhVien(masv, ho, ten, phai, password);
-                themSinhVien(currentLop->DSSV, newSV);
+                if (currentLop->DSSV == nullptr) {
+                    currentLop->DSSV = newSV;
+                    tail = newSV;
+                } else {
+                    themSinhVien(tail, newSV);
+                    tail = newSV;
+                }
                 currentSV = newSV;
 
                 // Đọc số môn học đã thi

@@ -21,13 +21,6 @@ private slots:
     void randomID(int index);
     void themDapAnVaoComboBox();
     bool thongBaoLoi();
-    QString getNoiDung();
-    QString getMonHoc();
-    QString getDapAn();
-    QString getA();
-    QString getB();
-    QString getC();
-    QString getD();
     void accept();
     void luuCauHoi();
 

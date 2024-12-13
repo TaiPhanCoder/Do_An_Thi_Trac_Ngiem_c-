@@ -96,7 +96,7 @@ void xoaSinhVienKhoiDanhSach(Lop* danhSachLop[], const QString &masv, const QStr
             break;
         }
 
-        if (danhSachLop[i]->TENLOP == tenLop) {
+        if (danhSachLop[i]->MALOP == tenLop) {
             SinhVien* current = danhSachLop[i]->DSSV;
             SinhVien* previous = nullptr;
 
@@ -129,26 +129,29 @@ QString GIao_Vien::getSelectedStudentLop(int row) {
 }
 
 void GIao_Vien::xoaSV() {
-    QModelIndexList selectedRows = ui->bangDuLieu->selectionModel()->selectedRows();
-    if (selectedRows.isEmpty()) {
+    int row = ui->bangDuLieu->currentRow(); // Lấy hàng đang được chọn
+    QString masv = ui->bangDuLieu->item(row, 0)->text(); // Lấy MSSV từ cột 0
+    QString tenLop = ui->bangDuLieu->item(row, 3)->text(); // Lấy Tên Lớp từ cột 3
+
+    SinhVien* sinhVien = timSinhVien(masv, tenLop, danhSachLop);
+
+    if (sinhVien == nullptr) {
+        QMessageBox::warning(this, "Lỗi", "Không tìm thấy sinh viên!");
         return;
     }
 
-    int row = selectedRows.first().row();
-
-    QString masv = getSelectedStudentMasv(row);
-    QString tenLop = getSelectedStudentLop(row);
+    if (sinhVien->ds_diemthi != nullptr) {
+        QMessageBox::warning(this, "Không thể xóa", "Sinh viên đã làm bài, không thể xóa!");
+        return;
+    }
 
     QMessageBox::StandardButton reply;
-    reply = QMessageBox::question(this, "Xóa Sinh Viên", "Bạn có chắc chắn muốn xóa sinh viên với MSSV: " + masv,
-                                  QMessageBox::Yes | QMessageBox::No);
-    if (reply == QMessageBox::No) {
-        return;
+    reply = QMessageBox::question(this, "Xóa Sinh Viên", "Bạn có chắc chắn muốn xóa sinh viên này?", QMessageBox::Yes | QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        // Thực hiện xóa sinh viên
+        xoaSinhVienKhoiDanhSach(danhSachLop, masv, tenLop);
+        loadSinhVien();
     }
-
-    xoaSinhVienKhoiDanhSach(danhSachLop, masv, tenLop);
-
-    ui->bangDuLieu->removeRow(row);
 }
 
 void duyetDanhSach(Lop* danhSachLop[]) {
@@ -168,14 +171,12 @@ void duyetDanhSach(Lop* danhSachLop[]) {
     }
 }
 
-
 void GIao_Vien::loadSinhVien() {
+    ui->bangDuLieu->setRowCount(0);
     ui->bangDuLieu->clear();
     QStringList headers;
     headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
-    int rows = demSinhVien(danhSachLop);
-    ui->bangDuLieu->setRowCount(rows);
     int row = 0;
 
     // Duyệt qua mảng lớp
@@ -187,6 +188,8 @@ void GIao_Vien::loadSinhVien() {
         QString tenLop = danhSachLop[i]->MALOP;
 
         while (current != nullptr) {
+            ui->bangDuLieu->insertRow(row);
+
             QTableWidgetItem *masvItem = new QTableWidgetItem(current->masv);
             QTableWidgetItem *hoItem = new QTableWidgetItem(current->ho);
             QTableWidgetItem *tenItem = new QTableWidgetItem(current->ten);

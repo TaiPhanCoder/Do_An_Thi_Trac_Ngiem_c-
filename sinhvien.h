@@ -23,6 +23,6 @@ struct SinhVien{
 extern SinhVien *headDsachSV;
 
 SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, QString password);
-void themSinhVien(SinhVien*& head, SinhVien* newSV);
+void themSinhVien(SinhVien*& tail, SinhVien* newSV);
 
 #endif // SINHVIEN_H
