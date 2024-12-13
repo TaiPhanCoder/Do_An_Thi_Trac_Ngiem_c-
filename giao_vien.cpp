@@ -481,7 +481,7 @@ void GIao_Vien::on_cauHoi_clicked() {
     ui->bangDuLieu->setColumnCount(8);
 
     ui->bangDuLieu->setColumnWidth(0, 100);
-    ui->bangDuLieu->setColumnWidth(1, 250);
+    ui->bangDuLieu->setColumnWidth(1, 100);
     ui->bangDuLieu->setColumnWidth(2, 250);
     ui->bangDuLieu->setColumnWidth(3, 300);
     ui->bangDuLieu->setColumnWidth(4, 200);

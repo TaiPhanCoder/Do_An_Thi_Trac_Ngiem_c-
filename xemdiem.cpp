@@ -12,7 +12,9 @@ xemDiem::xemDiem(SinhVien* mainUser, NodeMonHoc* root, bool isGV, QWidget *paren
 
     setThongTinSinhVien(); // Hiển thị MSSV và Tên
     loadBangDiem(); // Nạp điểm vào bảng
-    connect(ui->dsachdiem, &QTableWidget::cellDoubleClicked, this, &xemDiem::onTableDoubleClicked);
+    if (isGV) {
+        connect(ui->dsachdiem, &QTableWidget::cellDoubleClicked, this, &xemDiem::onTableDoubleClicked);
+    }
 }
 
 xemDiem::~xemDiem()

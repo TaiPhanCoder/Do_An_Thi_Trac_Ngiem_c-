@@ -126,7 +126,7 @@ void Thong_Tin_Thi::on_DangNhapButton_clicked()
 
 void Thong_Tin_Thi::on_xemDiem_clicked()
 {
-    xemDiem dialog(mainUser, root, this);
+    xemDiem dialog(mainUser, root, false, this);
     dialog.exec();
 
 }
