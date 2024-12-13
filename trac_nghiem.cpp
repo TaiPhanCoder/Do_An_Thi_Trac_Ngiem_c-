@@ -398,7 +398,12 @@ void Trac_Nghiem::ketQuaLamBai() {
 
     // Cập nhật mã môn học và tên môn học
     ui->mamh->setText("Mã môn học: " + maMH);
-    ui->tenMH->setText("Tên môn học: " + monhoc);
+
+    QString tenMHText = "Tên môn học: " + monhoc;
+    QFontMetrics metrics(ui->tenMH->font());
+    int maxWidth = ui->tenMH->width();
+    QString elidedText = metrics.elidedText(tenMHText, Qt::ElideRight, maxWidth);
+    ui->tenMH->setText(elidedText);
 
     int timeSpent = times * 60 - totalSeconds;  // Tổng thời gian đã dùng
     int hours = timeSpent / 3600;
