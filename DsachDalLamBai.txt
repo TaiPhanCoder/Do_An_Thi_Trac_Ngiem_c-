@@ -1,4 +1,4 @@
-2
+6
 E23CQCN01-N|Công nghệ thông tin CLC 2023
 16
 1|Pham Van|Hung|Nam|123
@@ -158,4 +158,150 @@ N23DCDK098|Tran Van|Son|Nam|123
 N23DCDK099|Nguyen Thi|Ha|Nữ|123
 0
 N23DCDK100|Le Van|Tung|Nam|123
+0
+D24CQBC01-B|Báo chí
+12
+B24DCBC101|Nguyen Van|An|Nam|123
+0
+B24DCBC102|Tran Thi|Bich|Nữ|123
+0
+B24DCBC103|Le Van|Cuong|Nam|123
+0
+B24DCBC104|Hoang Thi|Dao|Nữ|123
+0
+B24DCBC105|Phan Van|Dung|Nam|123
+0
+B24DCBC106|Do Thi|Giang|Nữ|123
+0
+B24DCBC107|Bui Van|Hai|Nam|123
+0
+B24DCBC108|Nguyen Thi|Linh|Nữ|123
+0
+B24DCBC109|Pham Van|Minh|Nam|123
+0
+B24DCBC110|Vo Thi|Ngoc|Nữ|123
+0
+B24DCBC111|Le Van|Phong|Nam|123
+0
+B24DCBC112|Tran Thi|Quyen|Nữ|123
+0
+D24CQTT01-B|Truyền thông đa phương tiện
+14
+T24DCTT101|Nguyen Van|Bao|Nam|123
+0
+T24DCTT102|Tran Thi|Cam|Nữ|123
+0
+T24DCTT103|Le Van|Duc|Nam|123
+0
+T24DCTT104|Hoang Thi|Giang|Nữ|123
+0
+T24DCTT105|Phan Van|Huy|Nam|123
+0
+T24DCTT106|Do Thi|Kieu|Nữ|123
+0
+T24DCTT107|Bui Van|Long|Nam|123
+0
+T24DCTT108|Nguyen Thi|Minh|Nữ|123
+0
+T24DCTT109|Pham Van|Nhat|Nam|123
+0
+T24DCTT110|Vo Thi|Oanh|Nữ|123
+0
+T24DCTT111|Le Van|Phuc|Nam|123
+0
+T24DCTT112|Tran Thi|Quyen|Nữ|123
+0
+T24DCTT113|Pham Van|Tai|Nam|123
+0
+T24DCTT114|Nguyen Thi|Phuong|Nữ|123
+0
+D24CQPT03-B|Công nghệ đa phương tiện
+14
+P24DCPT101|Tran Van|Anh|Nam|123
+0
+P24DCPT102|Nguyen Thi|Binh|Nữ|123
+0
+P24DCPT103|Le Van|Chuong|Nam|123
+0
+P24DCPT104|Pham Thi|Dung|Nữ|123
+0
+P24DCPT105|Bui Van|Hai|Nam|123
+0
+P24DCPT106|Do Thi|Giang|Nữ|123
+0
+P24DCPT107|Nguyen Van|Hieu|Nam|123
+0
+P24DCPT108|Pham Thi|Kieu|Nữ|123
+0
+P24DCPT109|Hoang Van|Linh|Nam|123
+0
+P24DCPT110|Le Thi|Mai|Nữ|123
+0
+P24DCPT111|Tran Van|Nghia|Nam|123
+0
+P24DCPT112|Nguyen Thi|Quyen|Nữ|123
+0
+P24DCPT113|Pham Van|Tai|Nam|123
+0
+P24DCPT114|Vo Thi|Phuong|Nữ|123
+0
+D24CQGA04-B|Thiết kế và phát triển game
+14
+G24DCGA101|Nguyen Van|Bao|Nam|123
+0
+G24DCGA102|Tran Thi|Cam|Nữ|123
+0
+G24DCGA103|Le Van|Duc|Nam|123
+0
+G24DCGA104|Hoang Thi|Giang|Nữ|123
+0
+G24DCGA105|Phan Van|Huy|Nam|123
+0
+G24DCGA106|Do Thi|Kieu|Nữ|123
+0
+G24DCGA107|Bui Van|Long|Nam|123
+0
+G24DCGA108|Nguyen Thi|Minh|Nữ|123
+0
+G24DCGA109|Pham Van|Nhat|Nam|123
+0
+G24DCGA110|Vo Thi|Oanh|Nữ|123
+0
+G24DCGA111|Le Van|Phuc|Nam|123
+0
+G24DCGA112|Tran Thi|Quyen|Nữ|123
+0
+G24DCGA113|Pham Van|Tai|Nam|123
+0
+G24DCGA114|Nguyen Thi|Phuong|Nữ|123
+0
+D24CQMR01-B|Marketing
+14
+M24DCMR101|Nguyen Van|An|Nam|123
+0
+M24DCMR102|Tran Thi|Bich|Nữ|123
+0
+M24DCMR103|Le Van|Cuong|Nam|123
+0
+M24DCMR104|Hoang Thi|Dao|Nữ|123
+0
+M24DCMR105|Phan Van|Dung|Nam|123
+0
+M24DCMR106|Do Thi|Giang|Nữ|123
+0
+M24DCMR107|Bui Van|Hai|Nam|123
+0
+M24DCMR108|Nguyen Thi|Linh|Nữ|123
+0
+M24DCMR109|Pham Van|Minh|Nam|123
+0
+M24DCMR110|Vo Thi|Ngoc|Nữ|123
+0
+M24DCMR111|Le Van|Phong|Nam|123
+0
+M24DCMR112|Tran Thi|Quyen|Nữ|123
+0
+M24DCMR113|Pham Van|Tai|Nam|123
+0
+M24DCMR114|Nguyen Thi|Phuong|Nữ|123
 0

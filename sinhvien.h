@@ -24,5 +24,9 @@ extern SinhVien *headDsachSV;
 
 SinhVien* taoNodeSinhVien(QString masv, QString ho, QString ten, QString phai, QString password);
 void themSinhVien(SinhVien*& tail, SinhVien* newSV);
+int soSanhTen(SinhVien* sv1, SinhVien* sv2);
+void quickSortArray(SinhVien** arr, int low, int high);
+int partitionArray(SinhVien** arr, int low, int high);
+
 
 #endif // SINHVIEN_H

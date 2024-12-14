@@ -5,15 +5,15 @@
 #include <QDebug>
 
 lop::lop() {}
-Lop* danhSachLop[MAX];
+
 void themSinhVienVaoLopCoThuTu(SinhVien* newSV, const QString &lop, Lop** danhSachLop) {
     int i = 0;
-    while (danhSachLop[i] != nullptr) {
+    while (i < MAX && danhSachLop[i] != nullptr) {
         if (danhSachLop[i]->MALOP == lop) {
             SinhVien* current = danhSachLop[i]->DSSV;
             SinhVien* prev = nullptr;
 
-            while (current != nullptr && current->ten < newSV->ten) {
+            while (current != nullptr && soSanhTen(current, newSV) < 0) {
                 prev = current;
                 current = current->next;
             }
@@ -33,7 +33,7 @@ void themSinhVienVaoLopCoThuTu(SinhVien* newSV, const QString &lop, Lop** danhSa
 
 void themSinhVienVaoLop(SinhVien* newSV, const QString &lop, Lop** danhSachLop) {
     int i = 0;
-    while (danhSachLop[i] != nullptr) {
+    while (i < MAX && danhSachLop[i] != nullptr) {
         if (danhSachLop[i]->MALOP == lop) {
             newSV->next = danhSachLop[i]->DSSV;
             danhSachLop[i]->DSSV = newSV;
@@ -152,6 +152,7 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
                 currentLop->MALOP = lopFields.at(0).trimmed();
                 currentLop->TENLOP = lopFields.at(1).trimmed();
                 currentLop->DSSV = nullptr;
+                qDebug() << currentLop->MALOP;
 
                 if (lopIndex < MAX) {
                     danhSachLop[lopIndex++] = currentLop;
@@ -221,32 +222,32 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
     qDebug() << "Dữ liệu đã được đọc thành công.";
 }
 
-Lop* timLop(const QString& malop) {
-    for (int i = 0; i < 10000; ++i) {
-        if (danhSachLop[i] == nullptr) {
-            break; // Không còn lớp nào trong danh sách
-        }
-        if (danhSachLop[i]->MALOP == malop) {
-            return danhSachLop[i]; // Trả về lớp tìm thấy
-        }
-    }
-    return nullptr; // Không tìm thấy lớp
-}
+// Lop* timLop(const QString& malop) {
+//     for (int i = 0; i < 10000; ++i) {
+//         if (danhSachLop[i] == nullptr) {
+//             break; // Không còn lớp nào trong danh sách
+//         }
+//         if (danhSachLop[i]->MALOP == malop) {
+//             return danhSachLop[i]; // Trả về lớp tìm thấy
+//         }
+//     }
+//     return nullptr; // Không tìm thấy lớp
+// }
 
-void themLopVaoDanhSach(Lop* newLop, const QString &maLop) { // AOMALAZ
+// void themLopVaoDanhSach(Lop* newLop, const QString &maLop) { // AOMALAZ
 
-    int i = 0;
+//     int i = 0;
 
-    // Duyệt qua danh sách lớp
-    while (danhSachLop[i] != nullptr && i < MAX) {
-        if (danhSachLop[i]->MALOP == newLop->MALOP) {
-            return;  // Lớp đã tồn tại, không thêm
-        }
-        ++i;
-    }
+//     // Duyệt qua danh sách lớp
+//     while (danhSachLop[i] != nullptr && i < MAX) {
+//         if (danhSachLop[i]->MALOP == newLop->MALOP) {
+//             return;  // Lớp đã tồn tại, không thêm
+//         }
+//         ++i;
+//     }
 
-    // Nếu danh sách không đầy, thêm lớp mới
-    if (i < MAX) {
-        danhSachLop[i] = newLop;
-    }
-}
+//     // Nếu danh sách không đầy, thêm lớp mới
+//     if (i < MAX) {
+//         danhSachLop[i] = newLop;
+//     }
+// }
