@@ -22,7 +22,7 @@ public:
     ~GIao_Vien();
 
     void loadSinhVien();
-    void setupComboBoxFilter(QComboBox *comboBox, const QStringList &lopList);
+    void setupComboBoxFilter(QComboBox *comboBox, const QStringList &lopList); // loc lop
     void onTextEdited(const QString &text);
     void timKiemSinhVien(const QString &text);
 
@@ -50,6 +50,17 @@ private slots:
     void hieuChinhCauHoi();
     void on_Them1CauHoi_clicked();
 
+    void on_lop_clicked();   //AOMALAZ
+    void loadLop();
+    void timLop(const QString &text);
+    void on_sapXep_3_clicked();
+    void on_themlop_clicked();
+    void on_themNhieuLop_clicked();
+    void onTextEdited_2(const QString &text);
+    void showLopContextMenu(const QPoint &pos);
+    void xoaLop();
+    void hieuChinhLop();
+
 private:
     Ui::GIao_Vien *ui;
     Lop** danhSachLop;
@@ -62,6 +73,10 @@ private:
     QAction* sinhVienDeleteAction;
     QAction* sinhVienEditAction;
     QAction* sinhVienViewScoreAction;
+
+    QMenu* lopContextMenu;  //AOMALAZ
+    QAction* lopDeleteAction;
+    QAction* lopEditAction;
 
     QMenu* cauHoiContextMenu;
     QAction* cauHoiDeleteAction;

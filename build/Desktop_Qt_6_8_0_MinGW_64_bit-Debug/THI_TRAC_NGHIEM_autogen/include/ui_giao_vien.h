@@ -30,7 +30,7 @@ class Ui_GIao_Vien
 public:
     QWidget *centralwidget;
     QGroupBox *groupBox;
-    QPushButton *pushButton;
+    QPushButton *lop;
     QPushButton *sinhVien;
     QPushButton *cauHoi;
     QLabel *logo;
@@ -51,6 +51,14 @@ public:
     QPushButton *Them1CauHoi;
     QPushButton *themNhieuSV_3;
     QComboBox *locCauHoi;
+    QGroupBox *tinhNangLop;
+    QLineEdit *timMaLop;
+    QLabel *label_3;
+    QGroupBox *themLop;
+    QPushButton *themlop;
+    QPushButton *themNhieuLop;
+    QPushButton *sapXep_3;
+    QComboBox *locLop_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -64,10 +72,10 @@ public:
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
         groupBox->setGeometry(QRect(0, 180, 321, 641));
-        pushButton = new QPushButton(groupBox);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(80, 180, 151, 61));
-        pushButton->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+        lop = new QPushButton(groupBox);
+        lop->setObjectName("lop");
+        lop->setGeometry(QRect(80, 180, 151, 61));
+        lop->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 20px;\n"
 "background-color: rgb(255, 35, 35);\n"
 "color: white;\n"
@@ -277,10 +285,97 @@ public:
 "}\n"
 "\n"
 ""));
+        tinhNangLop = new QGroupBox(centralwidget);
+        tinhNangLop->setObjectName("tinhNangLop");
+        tinhNangLop->setGeometry(QRect(320, 0, 1201, 191));
+        timMaLop = new QLineEdit(tinhNangLop);
+        timMaLop->setObjectName("timMaLop");
+        timMaLop->setGeometry(QRect(10, 60, 261, 28));
+        timMaLop->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: #F0F0F0;\n"
+"color: black;\n"
+"font-size: 16px;\n"
+"padding-left: 85px;"));
+        label_3 = new QLabel(tinhNangLop);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(10, 30, 261, 20));
+        themLop = new QGroupBox(tinhNangLop);
+        themLop->setObjectName("themLop");
+        themLop->setGeometry(QRect(10, 90, 261, 91));
+        themlop = new QPushButton(themLop);
+        themlop->setObjectName("themlop");
+        themlop->setGeometry(QRect(10, 28, 111, 51));
+        themlop->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
+        themNhieuLop = new QPushButton(themLop);
+        themNhieuLop->setObjectName("themNhieuLop");
+        themNhieuLop->setGeometry(QRect(140, 28, 111, 51));
+        themNhieuLop->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
+        sapXep_3 = new QPushButton(tinhNangLop);
+        sapXep_3->setObjectName("sapXep_3");
+        sapXep_3->setGeometry(QRect(320, 60, 231, 29));
+        sapXep_3->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
+        locLop_2 = new QComboBox(tinhNangLop);
+        locLop_2->setObjectName("locLop_2");
+        locLop_2->setGeometry(QRect(310, 120, 251, 51));
+        locLop_2->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"	border: 2px solid gray;\n"
+"	border-radius: 20px;\n"
+"	background-color: #F0F0F0;\n"
+"	color: black;\n"
+"	font-size: 16px;\n"
+"text-align: center;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"width: 30px;\n"
+"subcontrol-origin: padding;\n"
+"subcontrol-position: top right;\n"
+"border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: #F0F0F0;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    image: url(:/logo/down-arrow (1).png); /* \304\220\306\260\341\273\235ng d\341\272\253n h\303\254nh \341\272\243nh m\305\251i t\303\252n */\n"
+"    width: 20px;\n"
+"    height: 20px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 2px solid gray;\n"
+"    border-radius: 10px;\n"
+"    background-color: white;\n"
+"    selection-background-color: lightblue;  /* M\303\240u n\341\273\201n c\341\273\247a m\341\273\245c \304\221\306\260\341\273\243c ch\341\273\215n */\n"
+"    selection-color: black;  /* M\303\240u ch\341\273\257 c\341\273\247a m\341\273\245c \304\221\306\260\341\273\243c ch\341\273"
+                        "\215n */\n"
+"    padding: 5px;\n"
+"	font-size: 12px;\n"
+"}\n"
+"\n"
+""));
         GIao_Vien->setCentralWidget(centralwidget);
         menubar = new QMenuBar(GIao_Vien);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1687, 26));
+        menubar->setGeometry(QRect(0, 0, 1687, 25));
         GIao_Vien->setMenuBar(menubar);
         statusbar = new QStatusBar(GIao_Vien);
         statusbar->setObjectName("statusbar");
@@ -295,7 +390,7 @@ public:
     {
         GIao_Vien->setWindowTitle(QCoreApplication::translate("GIao_Vien", "MainWindow", nullptr));
         groupBox->setTitle(QCoreApplication::translate("GIao_Vien", "Tu\341\273\263 Ch\341\273\215n", nullptr));
-        pushButton->setText(QCoreApplication::translate("GIao_Vien", "L\341\273\233p", nullptr));
+        lop->setText(QCoreApplication::translate("GIao_Vien", "L\341\273\233p", nullptr));
         sinhVien->setText(QCoreApplication::translate("GIao_Vien", "Sinh Vi\303\252n", nullptr));
         cauHoi->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
         logo->setText(QString());
@@ -315,6 +410,14 @@ public:
         Them1CauHoi->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
         themNhieuSV_3->setText(QCoreApplication::translate("GIao_Vien", "Danh S\303\241ch", nullptr));
         locCauHoi->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "                   L\341\273\215c C\303\242u H\341\273\217i", nullptr));
+        tinhNangLop->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
+        timMaLop->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "M\303\243 L\341\273\233p", nullptr));
+        label_3->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));
+        themLop->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m L\341\273\233p", nullptr));
+        themlop->setText(QCoreApplication::translate("GIao_Vien", "M\341\273\231t L\341\273\233p", nullptr));
+        themNhieuLop->setText(QCoreApplication::translate("GIao_Vien", "Danh S\303\241ch", nullptr));
+        sapXep_3->setText(QCoreApplication::translate("GIao_Vien", "S\341\272\257p x\341\272\277p theo m\303\243 l\341\273\233p", nullptr));
+        locLop_2->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "                      L\341\273\215c L\341\273\233p", nullptr));
     } // retranslateUi
 
 };

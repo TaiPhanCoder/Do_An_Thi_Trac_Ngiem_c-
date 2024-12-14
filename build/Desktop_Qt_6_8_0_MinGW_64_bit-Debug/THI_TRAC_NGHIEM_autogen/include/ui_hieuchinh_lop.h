@@ -19,30 +19,30 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_hieuchinh_lop
+class Ui_HieuChinh_Lop
 {
 public:
     QDialogButtonBox *buttonBox;
     QLabel *hieuChinh;
     QLineEdit *MaLop;
     QLineEdit *TenLop;
-    QLabel *label;
-    QLabel *label_2;
+    QLabel *LoiMaLop;
+    QLabel *LoiTenLop;
 
-    void setupUi(QDialog *hieuchinh_lop)
+    void setupUi(QDialog *HieuChinh_Lop)
     {
-        if (hieuchinh_lop->objectName().isEmpty())
-            hieuchinh_lop->setObjectName("hieuchinh_lop");
-        hieuchinh_lop->resize(600, 300);
-        buttonBox = new QDialogButtonBox(hieuchinh_lop);
+        if (HieuChinh_Lop->objectName().isEmpty())
+            HieuChinh_Lop->setObjectName("HieuChinh_Lop");
+        HieuChinh_Lop->resize(600, 300);
+        buttonBox = new QDialogButtonBox(HieuChinh_Lop);
         buttonBox->setObjectName("buttonBox");
         buttonBox->setGeometry(QRect(200, 250, 341, 32));
         buttonBox->setOrientation(Qt::Orientation::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok);
-        hieuChinh = new QLabel(hieuchinh_lop);
+        hieuChinh = new QLabel(HieuChinh_Lop);
         hieuChinh->setObjectName("hieuChinh");
         hieuChinh->setGeometry(QRect(90, 20, 421, 61));
-        MaLop = new QLineEdit(hieuchinh_lop);
+        MaLop = new QLineEdit(HieuChinh_Lop);
         MaLop->setObjectName("MaLop");
         MaLop->setGeometry(QRect(0, 120, 251, 51));
         MaLop->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
@@ -51,7 +51,7 @@ public:
 "color: black;\n"
 "font-size: 16px;\n"
 "padding-left: 85px;"));
-        TenLop = new QLineEdit(hieuchinh_lop);
+        TenLop = new QLineEdit(HieuChinh_Lop);
         TenLop->setObjectName("TenLop");
         TenLop->setGeometry(QRect(330, 120, 251, 51));
         TenLop->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
@@ -60,34 +60,34 @@ public:
 "color: black;\n"
 "font-size: 16px;\n"
 "padding-left: 85px;"));
-        label = new QLabel(hieuchinh_lop);
-        label->setObjectName("label");
-        label->setGeometry(QRect(70, 190, 151, 20));
-        label_2 = new QLabel(hieuchinh_lop);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(380, 190, 151, 20));
+        LoiMaLop = new QLabel(HieuChinh_Lop);
+        LoiMaLop->setObjectName("LoiMaLop");
+        LoiMaLop->setGeometry(QRect(70, 190, 151, 20));
+        LoiTenLop = new QLabel(HieuChinh_Lop);
+        LoiTenLop->setObjectName("LoiTenLop");
+        LoiTenLop->setGeometry(QRect(380, 190, 151, 20));
 
-        retranslateUi(hieuchinh_lop);
-        QObject::connect(buttonBox, &QDialogButtonBox::accepted, hieuchinh_lop, qOverload<>(&QDialog::accept));
-        QObject::connect(buttonBox, &QDialogButtonBox::rejected, hieuchinh_lop, qOverload<>(&QDialog::reject));
+        retranslateUi(HieuChinh_Lop);
+        QObject::connect(buttonBox, &QDialogButtonBox::accepted, HieuChinh_Lop, qOverload<>(&QDialog::accept));
+        QObject::connect(buttonBox, &QDialogButtonBox::rejected, HieuChinh_Lop, qOverload<>(&QDialog::reject));
 
-        QMetaObject::connectSlotsByName(hieuchinh_lop);
+        QMetaObject::connectSlotsByName(HieuChinh_Lop);
     } // setupUi
 
-    void retranslateUi(QDialog *hieuchinh_lop)
+    void retranslateUi(QDialog *HieuChinh_Lop)
     {
-        hieuchinh_lop->setWindowTitle(QCoreApplication::translate("hieuchinh_lop", "Dialog", nullptr));
-        hieuChinh->setText(QCoreApplication::translate("hieuchinh_lop", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:700; color:#ff0000;\">Hi\341\273\207u Ch\341\273\211nh</span></p></body></html>", nullptr));
-        MaLop->setPlaceholderText(QCoreApplication::translate("hieuchinh_lop", "Ma Lop", nullptr));
-        TenLop->setPlaceholderText(QCoreApplication::translate("hieuchinh_lop", "    Ten Lop", nullptr));
-        label->setText(QCoreApplication::translate("hieuchinh_lop", "TextLabel", nullptr));
-        label_2->setText(QCoreApplication::translate("hieuchinh_lop", "TextLabel", nullptr));
+        HieuChinh_Lop->setWindowTitle(QCoreApplication::translate("HieuChinh_Lop", "Dialog", nullptr));
+        hieuChinh->setText(QCoreApplication::translate("HieuChinh_Lop", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:700; color:#ff0000;\">Hi\341\273\207u Ch\341\273\211nh</span></p></body></html>", nullptr));
+        MaLop->setPlaceholderText(QCoreApplication::translate("HieuChinh_Lop", "Ma Lop", nullptr));
+        TenLop->setPlaceholderText(QCoreApplication::translate("HieuChinh_Lop", "    Ten Lop", nullptr));
+        LoiMaLop->setText(QString());
+        LoiTenLop->setText(QString());
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class hieuchinh_lop: public Ui_hieuchinh_lop {};
+    class HieuChinh_Lop: public Ui_HieuChinh_Lop {};
 } // namespace Ui
 
 QT_END_NAMESPACE

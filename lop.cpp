@@ -5,7 +5,7 @@
 #include <QDebug>
 
 lop::lop() {}
-
+Lop* danhSachLop[MAX];
 void themSinhVienVaoLopCoThuTu(SinhVien* newSV, const QString &lop, Lop** danhSachLop) {
     int i = 0;
     while (danhSachLop[i] != nullptr) {
@@ -219,4 +219,34 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
 
     file.close();
     qDebug() << "Dữ liệu đã được đọc thành công.";
+}
+
+Lop* timLop(const QString& malop) {
+    for (int i = 0; i < 10000; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break; // Không còn lớp nào trong danh sách
+        }
+        if (danhSachLop[i]->MALOP == malop) {
+            return danhSachLop[i]; // Trả về lớp tìm thấy
+        }
+    }
+    return nullptr; // Không tìm thấy lớp
+}
+
+void themLopVaoDanhSach(Lop* newLop, const QString &maLop) { // AOMALAZ
+
+    int i = 0;
+
+    // Duyệt qua danh sách lớp
+    while (danhSachLop[i] != nullptr && i < MAX) {
+        if (danhSachLop[i]->MALOP == newLop->MALOP) {
+            return;  // Lớp đã tồn tại, không thêm
+        }
+        ++i;
+    }
+
+    // Nếu danh sách không đầy, thêm lớp mới
+    if (i < MAX) {
+        danhSachLop[i] = newLop;
+    }
 }
