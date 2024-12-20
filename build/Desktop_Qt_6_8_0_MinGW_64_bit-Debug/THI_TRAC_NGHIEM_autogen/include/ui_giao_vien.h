@@ -33,6 +33,8 @@ public:
     QPushButton *lop;
     QPushButton *sinhVien;
     QPushButton *cauHoi;
+    QPushButton *luuDL;
+    QLabel *thongBaoLuu;
     QLabel *logo;
     QLabel *label_2;
     QGroupBox *tinhNangSinhVien;
@@ -49,8 +51,8 @@ public:
     QLabel *label_4;
     QGroupBox *ThemCauHoi;
     QPushButton *Them1CauHoi;
-    QPushButton *themNhieuSV_3;
     QComboBox *locCauHoi;
+    QPushButton *quanlymonhoc;
     QGroupBox *tinhNangLop;
     QLineEdit *timMaLop;
     QLabel *label_3;
@@ -105,6 +107,20 @@ public:
 "padding: 10px 20px;\n"
 "font-weight: bold;\n"
 "box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
+        luuDL = new QPushButton(groupBox);
+        luuDL->setObjectName("luuDL");
+        luuDL->setGeometry(QRect(80, 420, 151, 61));
+        luuDL->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 20px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"padding: 10px 20px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
+        thongBaoLuu = new QLabel(groupBox);
+        thongBaoLuu->setObjectName("thongBaoLuu");
+        thongBaoLuu->setGeometry(QRect(60, 490, 191, 20));
         logo = new QLabel(centralwidget);
         logo->setObjectName("logo");
         logo->setGeometry(QRect(120, 10, 201, 121));
@@ -228,18 +244,8 @@ public:
         ThemCauHoi->setGeometry(QRect(10, 90, 261, 91));
         Them1CauHoi = new QPushButton(ThemCauHoi);
         Them1CauHoi->setObjectName("Them1CauHoi");
-        Them1CauHoi->setGeometry(QRect(10, 28, 111, 51));
+        Them1CauHoi->setGeometry(QRect(10, 28, 241, 51));
         Them1CauHoi->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
-"border-radius: 10px;\n"
-"background-color: rgb(255, 35, 35);\n"
-"color: white;\n"
-"font-size: 16px;\n"
-"font-weight: bold;\n"
-"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
-        themNhieuSV_3 = new QPushButton(ThemCauHoi);
-        themNhieuSV_3->setObjectName("themNhieuSV_3");
-        themNhieuSV_3->setGeometry(QRect(140, 28, 111, 51));
-        themNhieuSV_3->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
 "border-radius: 10px;\n"
 "background-color: rgb(255, 35, 35);\n"
 "color: white;\n"
@@ -285,6 +291,16 @@ public:
 "}\n"
 "\n"
 ""));
+        quanlymonhoc = new QPushButton(tinhNangCauHoi);
+        quanlymonhoc->setObjectName("quanlymonhoc");
+        quanlymonhoc->setGeometry(QRect(310, 50, 251, 51));
+        quanlymonhoc->setStyleSheet(QString::fromUtf8("border: 2px solid gray;\n"
+"border-radius: 10px;\n"
+"background-color: rgb(255, 35, 35);\n"
+"color: white;\n"
+"font-size: 16px;\n"
+"font-weight: bold;\n"
+"box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"));
         tinhNangLop = new QGroupBox(centralwidget);
         tinhNangLop->setObjectName("tinhNangLop");
         tinhNangLop->setGeometry(QRect(320, 0, 1201, 191));
@@ -393,6 +409,8 @@ public:
         lop->setText(QCoreApplication::translate("GIao_Vien", "L\341\273\233p", nullptr));
         sinhVien->setText(QCoreApplication::translate("GIao_Vien", "Sinh Vi\303\252n", nullptr));
         cauHoi->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
+        luuDL->setText(QCoreApplication::translate("GIao_Vien", "L\306\260u D\341\273\257 Li\341\273\207u", nullptr));
+        thongBaoLuu->setText(QString());
         logo->setText(QString());
         label_2->setText(QCoreApplication::translate("GIao_Vien", "H\341\273\215c Vi\341\273\207n Ho\303\240ng Gia HCM", nullptr));
         tinhNangSinhVien->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
@@ -408,8 +426,8 @@ public:
         label_4->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));
         ThemCauHoi->setTitle(QCoreApplication::translate("GIao_Vien", "Th\303\252m C\303\242u H\341\273\217i", nullptr));
         Them1CauHoi->setText(QCoreApplication::translate("GIao_Vien", "C\303\242u H\341\273\217i", nullptr));
-        themNhieuSV_3->setText(QCoreApplication::translate("GIao_Vien", "Danh S\303\241ch", nullptr));
         locCauHoi->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "                   L\341\273\215c C\303\242u H\341\273\217i", nullptr));
+        quanlymonhoc->setText(QCoreApplication::translate("GIao_Vien", "Qu\341\272\243n L\303\275 M\303\264n H\341\273\215c", nullptr));
         tinhNangLop->setTitle(QCoreApplication::translate("GIao_Vien", "T\303\255nh N\304\203ng", nullptr));
         timMaLop->setPlaceholderText(QCoreApplication::translate("GIao_Vien", "M\303\243 L\341\273\233p", nullptr));
         label_3->setText(QCoreApplication::translate("GIao_Vien", "T\303\254m ki\341\272\277m:", nullptr));

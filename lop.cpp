@@ -152,7 +152,6 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
                 currentLop->MALOP = lopFields.at(0).trimmed();
                 currentLop->TENLOP = lopFields.at(1).trimmed();
                 currentLop->DSSV = nullptr;
-                qDebug() << currentLop->MALOP;
 
                 if (lopIndex < MAX) {
                     danhSachLop[lopIndex++] = currentLop;
@@ -251,3 +250,20 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
 //         danhSachLop[i] = newLop;
 //     }
 // }
+
+Lop* timLop(const QString& malop, Lop** danhSachLop) {
+    // Duyệt qua danh sách lớp
+    for (int i = 0; i < MAX; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break; // Kết thúc nếu gặp lớp trống
+        }
+
+        // So sánh mã lớp của danh sách lớp với mã lớp được truyền vào
+        if (danhSachLop[i]->MALOP == malop) {
+            return danhSachLop[i]; // Trả về lớp nếu tìm thấy
+        }
+    }
+
+    // Không tìm thấy lớp nào khớp
+    return nullptr;
+}

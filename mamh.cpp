@@ -9,6 +9,59 @@ using namespace std;
 
 typedef NodeMonHoc* ptrMonHoc;
 
+CauHoi** loadCauHoiThi(ptrMonHoc root, const QString &mamh, int &questions, int &socauhoi) {
+    // Tìm môn học thông qua mã môn học
+    MonHoc* monHoc = SearchMonHoc(root, mamh);
+
+    if (monHoc == nullptr) {
+        qDebug() << "Không tìm thấy môn học với mã:" << mamh;
+        return nullptr;
+    }
+
+    // Tạo mảng con trỏ cho các câu hỏi, số lượng là socauhoi
+    CauHoi** cauhoiArray = new CauHoi*[socauhoi];
+
+    int index = 0;
+    CauHoi* current = monHoc->headCauhoi;
+
+    // Thêm các câu hỏi từ danh sách liên kết vào mảng con trỏ
+    while (current != nullptr && index < socauhoi) {
+        cauhoiArray[index] = current;
+        current = current->next;
+        index++;
+    }
+
+    // Trộn ngẫu nhiên mảng câu hỏi
+    shuffleArray(cauhoiArray, questions, index);
+
+    return cauhoiArray;
+}
+
+CauHoi* DsachCauHoiThi(ptrMonHoc root, CauHoi** cauhoiArray, int questions, int slCauHoi, const QString &maMH){
+    CauHoi* head = nullptr;
+
+    MonHoc* monHoc = SearchMonHoc(root, maMH);
+
+    // Nối danh sách các câu hỏi để thi (từ 0 đến < questions)
+    for (int i = 0; i < questions; ++i) {
+        cauhoiArray[i]->next = head;
+        head = cauhoiArray[i];
+    }
+
+    // Nối danh sách các câu hỏi còn lại vào monHoc.dscauhoi
+    if (questions < slCauHoi) {
+        monHoc->headCauhoi = nullptr;
+        for (int i = questions; i < slCauHoi; ++i) {
+            cauhoiArray[i]->next = monHoc->headCauhoi;
+            monHoc->headCauhoi = cauhoiArray[i];
+        }
+    } else {
+        monHoc->headCauhoi = nullptr;
+    }
+
+    return head;
+}
+
 // Hàm tính chiều cao của node
 int height(ptrMonHoc n) {
     if (n == NULL)
@@ -20,11 +73,41 @@ int height(ptrMonHoc n) {
 void deleteAVLTree(NodeMonHoc* root) {
     if (root == nullptr) return;
 
-    deleteAVLTree(root->left);
+    // Xóa toàn bộ danh sách câu hỏi của môn học
+    CauHoi* current = root->MH.headCauhoi;
+    while (current != nullptr) {
+        CauHoi* temp = current;
+        current = current->next;
+        delete temp;
+    }
 
+    // Gọi đệ quy để xóa các node con bên trái và phải
+    deleteAVLTree(root->left);
     deleteAVLTree(root->right);
 
+    // Xóa chính node môn học
     delete root;
+}
+
+int demCauHoi(ptrMonHoc root, QString mamh) {
+    // Tìm môn học trong cây AVL
+    MonHoc* monHoc = SearchMonHoc(root, mamh);
+
+    if (monHoc == nullptr) {
+        qDebug() << "Không tìm thấy môn học với mã:" << mamh;
+        return 0;
+    }
+
+    int count = 0;
+    CauHoi* current = monHoc->headCauhoi;
+
+    // Duyệt qua danh sách liên kết các câu hỏi và đếm số lượng
+    while (current != nullptr) {
+        count++;
+        current = current->next;
+    }
+
+    return count;
 }
 
 MonHoc* SearchMonHoc(ptrMonHoc p, QString mamh_input) {
@@ -42,10 +125,11 @@ MonHoc* SearchMonHoc(ptrMonHoc p, QString mamh_input) {
     }
 }
 
-ptrMonHoc newNode(QString mamh_input, QString tenmh_input) {
+ptrMonHoc newNode(QString mamh, QString tenmh, int tinchi) {
     ptrMonHoc node = new NodeMonHoc;
-    node->MH.MAMH = mamh_input;
-    node->MH.TENMH = tenmh_input;
+    node->MH.MAMH = mamh;
+    node->MH.TENMH = tenmh;
+    node->MH.tinChi = tinchi;
     node->height = 1;
     node->left = NULL;
     node->right = NULL;
@@ -87,14 +171,14 @@ int getBalance(ptrMonHoc n) {
     return height(n->left) - height(n->right);
 }
 
-ptrMonHoc insertNodeAVL(ptrMonHoc node, QString mamh_input, QString tenmh_input) {
+ptrMonHoc insertNodeAVL(ptrMonHoc node, QString mamh, QString tenmh, int tinchi) {
     if (node == nullptr)
-        return newNode(mamh_input, tenmh_input);
+        return newNode(mamh, tenmh, tinchi);
 
-    if (mamh_input < node->MH.MAMH)
-        node->left = insertNodeAVL(node->left, mamh_input, tenmh_input);
-    else if (mamh_input > node->MH.MAMH)
-        node->right = insertNodeAVL(node->right, mamh_input, tenmh_input);
+    if (mamh < node->MH.MAMH)
+        node->left = insertNodeAVL(node->left, mamh, tenmh, tinchi);
+    else if (mamh > node->MH.MAMH)
+        node->right = insertNodeAVL(node->right, mamh, tenmh, tinchi);
     else
         return node; // Mã môn học đã tồn tại
 
@@ -105,53 +189,27 @@ ptrMonHoc insertNodeAVL(ptrMonHoc node, QString mamh_input, QString tenmh_input)
     // Cân bằng cây AVL
 
     // Trường hợp Left Left
-    if (balance > 1 && mamh_input < node->left->MH.MAMH)
+    if (balance > 1 && mamh < node->left->MH.MAMH)
         return rightRotate(node);
 
     // Trường hợp Right Right
-    if (balance < -1 && mamh_input > node->right->MH.MAMH)
+    if (balance < -1 && mamh > node->right->MH.MAMH)
         return leftRotate(node);
 
     // Trường hợp Left Right
-    if (balance > 1 && mamh_input > node->left->MH.MAMH) {
+    if (balance > 1 && mamh > node->left->MH.MAMH) {
         node->left = leftRotate(node->left);
         return rightRotate(node);
     }
 
     // Trường hợp Right Left
-    if (balance < -1 && mamh_input < node->right->MH.MAMH) {
+    if (balance < -1 && mamh < node->right->MH.MAMH) {
         node->right = rightRotate(node->right);
         return leftRotate(node);
     }
 
     return node;
 }
-
-ptrMonHoc readFileAndBuildAVL() {
-    ptrMonHoc root = nullptr;
-    QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "Không thể mở file!";
-        return root;
-    }
-
-    QTextStream in(&file);
-    while (!in.atEnd()) {
-        QString line = in.readLine();
-        QStringList parts = line.split("|");
-
-        // Kiểm tra nếu dòng có đúng 3 phần
-        if (parts.size() == 2) {
-            QString mamh = parts[0].trimmed();  // Mã môn học
-            QString tenmh = parts[1].trimmed(); // Tên môn học
-            root = insertNodeAVL(root, mamh, tenmh); // Thêm node vào cây AVL
-        }
-    }
-
-    file.close();
-    return root;
-}
-
 
 ptrMonHoc minValueNode(ptrMonHoc node) {
     ptrMonHoc current = node;
@@ -266,18 +324,6 @@ int demNode(ptrMonHoc p) {
     return 1 + demNode(p->left) + demNode(p->right);
 }
 
-int demTatCaCauHoi(ptrMonHoc root) {
-    if (root == nullptr) {
-        qDebug() << "Null lun r bay oi";
-        return 0;
-    }
-
-    int leftCount = demTatCaCauHoi(root->left);
-    int rightCount = demTatCaCauHoi(root->right);
-    int currentCount = demCauHoi(root->MH.headCauhoi);
-    return leftCount + rightCount + currentCount;
-}
-
 NodeMonHoc* findMonHoc(NodeMonHoc* root, QString mamh)
 {
     NodeMonHoc* current = root;
@@ -310,6 +356,61 @@ CauHoi* findCauHoi(NodeMonHoc* root, QString mamh, int id)
     return nullptr;
 }
 
+void luuLRN(ptrMonHoc root, QTextStream &out) {
+    if (root == nullptr) return;
+
+    luuLRN(root->left, out);
+
+    // Ghi thông tin môn học
+    out << root->MH.MAMH << "|" << root->MH.TENMH << "\n";
+
+    // Đếm số lượng câu hỏi của môn học
+    int count = 0;
+    CauHoi* current = root->MH.headCauhoi;
+    while (current != nullptr) {
+        count++;
+        current = current->next;
+    }
+    out << count << "\n";
+
+    // Ghi thông tin các câu hỏi của môn học
+    current = root->MH.headCauhoi;
+    while (current != nullptr) {
+        out << current->id << "|"
+            << current->noiDung << "|"
+            << current->A << "|"
+            << current->B << "|"
+            << current->C << "|"
+            << current->D << "|"
+            << current->dapAnDung << "|"
+            << (current->daThi ? "T" : "F") << "\n";
+
+        if (current->next == nullptr) {
+            out << "\n"; // Thêm dòng trống nếu là câu hỏi cuối cùng
+        }
+
+        current = current->next;
+    }
+
+    luuLRN(root->right, out);
+}
+
+void luuMonHocVaCauHoi(ptrMonHoc root, const QString& filePath) {
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qDebug() << "Không thể mở file để ghi:" << filePath;
+        return;
+    }
+
+    QTextStream out(&file);
+
+    // Duyệt qua toàn bộ cây AVL của môn học
+    luuLRN(root, out);
+
+    file.close();
+    qDebug() << "Lưu thành công file môn học và câu hỏi tại:" << filePath;
+}
+
 ptrMonHoc loadToanBoCauHoi() {
     ptrMonHoc root = nullptr;
     QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
@@ -326,11 +427,12 @@ ptrMonHoc loadToanBoCauHoi() {
         QString line = in.readLine().trimmed();
         QStringList parts = line.split("|");
 
-        // Kiểm tra nếu đây là phần mã môn học và tên môn học
-        if (parts.size() == 2) {
+        // Kiểm tra nếu đây là phần mã môn học, tên môn học và tín chỉ
+        if (parts.size() == 3) {
             QString mamh = parts[0].trimmed();
             QString tenmh = parts[1].trimmed();
-            root = insertNodeAVL(root, mamh, tenmh);
+            int tinchi = parts[2].toInt();
+            root = insertNodeAVL(root, mamh, tenmh, tinchi);
             currentNode = SearchNode(root, mamh);
             tail = nullptr;
 
@@ -338,7 +440,7 @@ ptrMonHoc loadToanBoCauHoi() {
                 qDebug() << "Lỗi: Không tìm thấy node môn học sau khi thêm mã môn học:" << mamh;
             }
         }
-        else if (parts.size() == 7 && currentNode != nullptr) {
+        else if (parts.size() == 8 && currentNode != nullptr) { // Sửa thành 8 phần tử để thêm cột daThi
             int id = parts[0].toInt();
             QString noiDung = parts[1];
             QString A = parts[2];
@@ -346,6 +448,7 @@ ptrMonHoc loadToanBoCauHoi() {
             QString C = parts[4];
             QString D = parts[5];
             QChar dapAnDung = parts[6].at(0);
+            bool daThi = (parts[7].trimmed() == "T"); // Thêm phần này để đọc và gán cờ daThi
 
             CauHoi* newCauHoi = taoNodeCauHoi(id, noiDung, A, B, C, D, dapAnDung);
 
@@ -353,6 +456,8 @@ ptrMonHoc loadToanBoCauHoi() {
                 qDebug() << "Lỗi: Không thể tạo node câu hỏi với ID:" << id;
                 continue;
             }
+
+            newCauHoi->daThi = daThi; // Gán giá trị cờ daThi
 
             // Thêm câu hỏi vào danh sách liên kết đơn của môn học hiện tại
             if (currentNode->MH.headCauhoi == nullptr) {

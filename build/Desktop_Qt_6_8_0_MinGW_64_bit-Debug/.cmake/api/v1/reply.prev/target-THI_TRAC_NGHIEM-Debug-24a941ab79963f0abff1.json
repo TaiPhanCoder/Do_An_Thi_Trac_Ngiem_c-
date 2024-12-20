@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 74,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 65,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
@@ -399,7 +399,9 @@
 				44,
 				47,
 				50,
-				65
+				53,
+				56,
+				73
 			]
 		}
 	],
@@ -550,7 +552,9 @@
 				44,
 				47,
 				50,
-				65
+				53,
+				56,
+				73
 			]
 		},
 		{
@@ -576,17 +580,21 @@
 				46,
 				49,
 				52,
-				53,
-				54,
 				55,
-				56,
-				57,
 				58,
 				59,
 				60,
 				61,
 				62,
-				63
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71
 			]
 		},
 		{
@@ -606,15 +614,17 @@
 				45,
 				48,
 				51,
-				64
+				54,
+				57,
+				72
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				66,
-				67
+				74,
+				75
 			]
 		}
 	],
@@ -903,6 +913,38 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "quan_ly_mon.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "quan_ly_mon.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "quan_ly_mon.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 4,
+			"path" : "xem_mon_lop.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "xem_mon_lop.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 4,
+			"path" : "xem_mon_lop.ui",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/include/ui_dang_nhap.h",
@@ -972,6 +1014,18 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/include/ui_xem_diem_mon.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/include/ui_quan_ly_mon.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/THI_TRAC_NGHIEM_autogen/include/ui_xem_mon_lop.h",
 			"sourceGroupIndex" : 1
 		},
 		{

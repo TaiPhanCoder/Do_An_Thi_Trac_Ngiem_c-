@@ -6,16 +6,64 @@ hieuchinh_CauHoi::hieuchinh_CauHoi(QWidget *parent, QString mamh, int id, NodeMo
     : QDialog(parent), ui(new Ui::hieuchinh_CauHoi), m_monHoc(mamh), m_id(id), m_root(root)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Thêm Câu Hỏi");
+    this->setWindowTitle("Hiệu Chỉnh Câu Hỏi");
+    selectedMAMH = m_monHoc;
+
     dsMonHoc(m_root);
     themDapAnVaoComboBox();
     cauhoi = findCauHoi(m_root, m_monHoc, m_id);
     setupHieuChinh();
+    connect(ui->monHoc, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &hieuchinh_CauHoi::randomID);
 }
 
 hieuchinh_CauHoi::~hieuchinh_CauHoi()
 {
     delete ui;
+}
+
+void hieuchinh_CauHoi::randomID(int index)
+{
+    selectedMAMH = ui->monHoc->itemData(index).toString();
+
+    if (selectedMAMH == m_monHoc) {
+        // Set text directly if the selected MAMH matches the current MAMH
+        ui->idMonHoc->setText(m_monHoc + QString::number(m_id));
+        ui->idMonHoc->setAlignment(Qt::AlignCenter);
+        return;
+    }
+
+    int* idNgauNhien = new int[1000]();
+
+    NodeMonHoc* current = m_root;
+    while (current != nullptr) {
+        if (current->MH.MAMH == selectedMAMH) {
+            CauHoi* cauHoi = current->MH.headCauhoi;
+            while (cauHoi != nullptr) {
+                if (cauHoi->id >= 0 && cauHoi->id < 1000) {
+                    idNgauNhien[cauHoi->id]++;
+                }
+                cauHoi = cauHoi->next;
+            }
+            break;
+        } else if (selectedMAMH < current->MH.MAMH) {
+            current = current->left;
+        } else {
+            current = current->right;
+        }
+    }
+
+    srand(time(0));
+    while (true) {
+        randomId = rand() % 1000;
+        if (idNgauNhien[randomId] == 0) {
+            break;
+        }
+    }
+
+    ui->idMonHoc->setText(selectedMAMH + QString::number(randomId));
+    ui->idMonHoc->setAlignment(Qt::AlignCenter);
+
+    delete[] idNgauNhien;
 }
 
 void hieuchinh_CauHoi::dsMonHoc(NodeMonHoc* root)
@@ -86,39 +134,11 @@ void hieuchinh_CauHoi::setDapAn(QChar dapAn)
     }
 }
 
-QString hieuchinh_CauHoi::getNoiDung() {
-    return ui->noiDung->text();
-}
-
-QString hieuchinh_CauHoi::getMonHoc() {
-    return ui->monHoc->currentText();
-}
-
-QString hieuchinh_CauHoi::getDapAn() {
-    return ui->dapAnDung->currentText();
-}
-
-QString hieuchinh_CauHoi::getA() {
-    return ui->A->text();
-}
-
-QString hieuchinh_CauHoi::getB() {
-    return ui->B->text();
-}
-
-QString hieuchinh_CauHoi::getC() {
-    return ui->C->text();
-}
-
-QString hieuchinh_CauHoi::getD() {
-    return ui->D->text();
-}
-
 bool hieuchinh_CauHoi::thongBaoLoi() {
     bool isValid = true;
 
     // Kiểm tra trường Nội dung
-    if (getNoiDung().isEmpty()) {
+    if (ui->noiDung->text().isEmpty()) {
         ui->loiNoiDung->setText("Nội dung không được để trống");
         ui->loiNoiDung->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -127,7 +147,7 @@ bool hieuchinh_CauHoi::thongBaoLoi() {
     }
 
     // Kiểm tra trường Môn học
-    if (getMonHoc().isEmpty()) {
+    if (ui->monHoc->currentText().isEmpty()) {
         ui->loiMonHoc->setText("Môn học không được để trống");
         ui->loiMonHoc->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -136,7 +156,7 @@ bool hieuchinh_CauHoi::thongBaoLoi() {
     }
 
     // Kiểm tra trường Đáp án
-    if (getDapAn().isEmpty()) {
+    if (ui->dapAnDung->currentText().isEmpty()) {
         ui->loiDapAn->setText("Đáp án không được để trống");
         ui->loiDapAn->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -145,7 +165,7 @@ bool hieuchinh_CauHoi::thongBaoLoi() {
     }
 
     // Kiểm tra các đáp án A, B, C, D
-    if (getA().isEmpty()) {
+    if (ui->A->text().isEmpty()) {
         ui->loiA->setText("Đáp án A không được để trống");
         ui->loiA->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -153,7 +173,7 @@ bool hieuchinh_CauHoi::thongBaoLoi() {
         ui->loiA->clear();
     }
 
-    if (getB().isEmpty()) {
+    if (ui->B->text().isEmpty()) {
         ui->loiB->setText("Đáp án B không được để trống");
         ui->loiB->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -161,7 +181,7 @@ bool hieuchinh_CauHoi::thongBaoLoi() {
         ui->loiB->clear();
     }
 
-    if (getC().isEmpty()) {
+    if (ui->C->text().isEmpty()) {
         ui->loiC->setText("Đáp án C không được để trống");
         ui->loiC->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -169,7 +189,7 @@ bool hieuchinh_CauHoi::thongBaoLoi() {
         ui->loiC->clear();
     }
 
-    if (getD().isEmpty()) {
+    if (ui->D->text().isEmpty()) {
         ui->loiD->setText("Đáp án D không được để trống");
         ui->loiD->setStyleSheet("QLabel { color : red; qproperty-alignment: 'AlignCenter'; }");
         isValid = false;
@@ -180,8 +200,52 @@ bool hieuchinh_CauHoi::thongBaoLoi() {
     return isValid;
 }
 
+void hieuchinh_CauHoi::updateCauHoiData(CauHoi* cauhoi) {
+    if (cauhoi) {
+        cauhoi->noiDung = ui->noiDung->text();
+        cauhoi->A = ui->A->text();
+        cauhoi->B = ui->B->text();
+        cauhoi->C = ui->C->text();
+        cauhoi->D = ui->D->text();
+        cauhoi->dapAnDung = ui->dapAnDung->currentData().toChar();
+    }
+}
+
 void hieuchinh_CauHoi::accept() {
     if (thongBaoLoi()) {
+        if (selectedMAMH == m_monHoc) {
+            // Tìm câu hỏi cũ và cập nhật dữ liệu
+            CauHoi* cauhoi = findCauHoi(m_root, selectedMAMH, m_id);
+            updateCauHoiData(cauhoi);
+        } else {
+            // Tìm môn học cũ và xóa câu hỏi khỏi danh sách câu hỏi cũ
+            MonHoc* oldMonHoc = SearchMonHoc(m_root, m_monHoc);
+            CauHoi* current = oldMonHoc->headCauhoi;
+            if (oldMonHoc != nullptr) {
+                CauHoi* prev = nullptr;
+                while (current != nullptr) {
+                    if (current->id == m_id) {
+                        if (prev == nullptr) {
+                            oldMonHoc->headCauhoi = current->next;
+                        } else {
+                            prev->next = current->next;
+                        }
+                        updateCauHoiData(current);
+                        break;
+                    }
+                    prev = current;
+                    current = current->next;
+                }
+            }
+            current->id = randomId;
+            // Tìm môn học mới và thêm câu hỏi vào đầu danh sách câu hỏi mới
+            MonHoc* newMonHoc = SearchMonHoc(m_root, selectedMAMH);
+            if (newMonHoc != nullptr) {
+                current->next = newMonHoc->headCauhoi;
+                newMonHoc->headCauhoi = current;
+            }
+        }
         QDialog::accept();
     }
 }
+

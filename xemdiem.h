@@ -24,6 +24,8 @@ private:
     SinhVien* mainUser;
     bool isGV;
 
+    QString quyDoiDiemChu(float diem10);
+    float quyDoiDiem4(float diem10);
     void onTableDoubleClicked(int row, int column);
     void setThongTinSinhVien();
     void loadBangDiem();

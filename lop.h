@@ -27,6 +27,7 @@ void themSinhVienVaoLopCoThuTu(SinhVien* newSV, const QString &lop, Lop** danhSa
 void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop, Lop** danhSachLop);
 SinhVien* timSinhVien(const QString& mssv, const QString& lop, Lop** danhSachLop);
 
-Lop* timLop(const QString& malop);// AOMALAZ
+Lop* timLop(const QString& malop, Lop** danhSachLop);// AOMALAZ
+
 void themLopVaoDanhSach(Lop* newLop, const QString &maLop);
 #endif // LOP_H

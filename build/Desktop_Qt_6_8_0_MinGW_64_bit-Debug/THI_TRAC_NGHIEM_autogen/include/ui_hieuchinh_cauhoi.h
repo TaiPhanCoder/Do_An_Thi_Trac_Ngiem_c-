@@ -232,7 +232,7 @@ public:
         loiDapAn->setText(QString());
         noiDung->setPlaceholderText(QCoreApplication::translate("hieuchinh_CauHoi", "                                                             N\341\273\231i Dung C\303\242u H\341\273\217i", nullptr));
         monHoc->setPlaceholderText(QCoreApplication::translate("hieuchinh_CauHoi", "                           M\303\264n H\341\273\215c", nullptr));
-        ThongTin->setText(QCoreApplication::translate("hieuchinh_CauHoi", "<html><head/><body><p align=\"center\"><span style=\" font-size:24pt; font-weight:700; color:#ff0000;\">Th\303\252m C\303\242u H\341\273\217i</span></p></body></html>", nullptr));
+        ThongTin->setText(QCoreApplication::translate("hieuchinh_CauHoi", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; font-weight:700; color:#ff0000;\">Hi\341\273\207u Ch\341\273\211nh C\303\242u H\341\273\217i</span></p></body></html>", nullptr));
         dapAnDung->setPlaceholderText(QCoreApplication::translate("hieuchinh_CauHoi", "                        \304\220\303\241p \303\241n \304\221\303\272ng", nullptr));
         loiA->setText(QString());
         loiB->setText(QString());

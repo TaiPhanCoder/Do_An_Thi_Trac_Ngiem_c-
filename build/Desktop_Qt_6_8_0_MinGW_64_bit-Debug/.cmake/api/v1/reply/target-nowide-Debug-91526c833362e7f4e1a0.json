@@ -138,11 +138,11 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "nowide_autogen::@74a63cb021cde974a5fb"
+			"id" : "nowide_autogen_timestamp_deps::@74a63cb021cde974a5fb"
 		},
 		{
-			"id" : "nowide_autogen_timestamp_deps::@74a63cb021cde974a5fb"
+			"backtrace" : 0,
+			"id" : "nowide_autogen::@74a63cb021cde974a5fb"
 		}
 	],
 	"id" : "nowide::@74a63cb021cde974a5fb",

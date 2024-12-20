@@ -8,12 +8,16 @@
 #include "hieuchinh_lop.h"
 #include "ui_them_lop.h"
 #include "ui_hieuchinh_lop.h"
+#include "xem_mon_lop.h"
+#include "ui_xem_mon_lop.h"
 #include "mamh.h"
 #include"them_sinh_vien.h"
 #include "themcauhoi.h"
 #include "hieuchinh_cauhoi.h"
 #include "xemdiem.h"
+#include "quan_ly_mon.h"
 
+#include<QTimer>
 #include<QDebug>
 #include<QTableWidget>
 #include <QFileDialog>
@@ -38,7 +42,17 @@ GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
     loadLopVaoComboBox();
 
-    //Tạo context menu
+    // Tạo context menu
+    setupContextMenus();
+}
+
+GIao_Vien::~GIao_Vien()
+{
+    delete ui;
+}
+
+void GIao_Vien::setupContextMenus() {
+    // Context menu cho sinh viên
     sinhVienContextMenu = new QMenu(this);
     sinhVienDeleteAction = new QAction("Xóa Sinh Viên", this);
     sinhVienEditAction = new QAction("Hiệu chỉnh Sinh Viên", this);
@@ -48,6 +62,7 @@ GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     sinhVienContextMenu->addAction(sinhVienEditAction);
     sinhVienContextMenu->addAction(sinhVienViewScoreAction);
 
+    // Context menu cho câu hỏi
     cauHoiContextMenu = new QMenu(this);
     cauHoiDeleteAction = new QAction("Xóa Câu Hỏi", this);
     cauHoiEditAction = new QAction("Hiệu chỉnh Câu Hỏi", this);
@@ -55,27 +70,29 @@ GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     cauHoiContextMenu->addAction(cauHoiDeleteAction);
     cauHoiContextMenu->addAction(cauHoiEditAction);
 
-    lopContextMenu = new QMenu(this);     // AOMALAZADA
+    // Context menu cho lớp
+    lopContextMenu = new QMenu(this);
     lopDeleteAction = new QAction("Xóa Lớp", this);
     lopEditAction = new QAction("Hiệu chỉnh Lớp", this);
+    lopViewScoreAction = new QAction("Xem Điểm", this);
 
     lopContextMenu->addAction(lopDeleteAction);
     lopContextMenu->addAction(lopEditAction);
+    lopContextMenu->addAction(lopViewScoreAction);
 
+    // Kết nối sự kiện cho context menu sinh viên
     connect(sinhVienDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaSV);
     connect(sinhVienEditAction, &QAction::triggered, this, &GIao_Vien::hieuChinhSV);
     connect(sinhVienViewScoreAction, &QAction::triggered, this, &GIao_Vien::xemDiemSinhVien);
 
-    connect(lopDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaLop); //AOMALAZADA
+    // Kết nối sự kiện cho context menu lớp
+    connect(lopDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaLop);
     connect(lopEditAction, &QAction::triggered, this, &GIao_Vien::hieuChinhLop);
+    connect(lopViewScoreAction, &QAction::triggered, this, &GIao_Vien::xemMonLop);
 
+    // Kết nối sự kiện cho context menu câu hỏi
     connect(cauHoiDeleteAction, &QAction::triggered, this, &GIao_Vien::xoaCauHoi);
     connect(cauHoiEditAction, &QAction::triggered, this, &GIao_Vien::hieuChinhCauHoi);
-}
-
-GIao_Vien::~GIao_Vien()
-{
-    delete ui;
 }
 
 void GIao_Vien::showSinhVienContextMenu(const QPoint &pos) {
@@ -311,9 +328,8 @@ void GIao_Vien::locCauHoi(const QString& selectedCauHoi) {
     int row = 0;
 
     if (selectedCauHoi == "Tất Cả Câu Hỏi") {
-        int totalQuestions = demTatCaCauHoi(root);
-        ui->bangDuLieu->setRowCount(totalQuestions);
-        loadCauHoi(root, row);
+        ui->bangDuLieu->setRowCount(0);
+        loadCauHoi(root);
         return;
     }
 
@@ -330,26 +346,30 @@ void GIao_Vien::locCauHoi(const QString& selectedCauHoi) {
     while (current != nullptr) {
         if (current->MH.MAMH == selectedMAMH) {
             CauHoi* currentCauHoi = current->MH.headCauhoi;
-            while (currentCauHoi != nullptr) {
-                QTableWidgetItem* mamhItem = new QTableWidgetItem(current->MH.MAMH);
-                QTableWidgetItem* tenmhItem = new QTableWidgetItem(current->MH.TENMH);
-                QTableWidgetItem* cauHoiItem = new QTableWidgetItem(currentCauHoi->noiDung);
-                QTableWidgetItem* answerAItem = new QTableWidgetItem(currentCauHoi->A);
-                QTableWidgetItem* answerBItem = new QTableWidgetItem(currentCauHoi->B);
-                QTableWidgetItem* answerCItem = new QTableWidgetItem(currentCauHoi->C);
-                QTableWidgetItem* answerDItem = new QTableWidgetItem(currentCauHoi->D);
+            while (current != nullptr) {
+                if (current->MH.MAMH == selectedMAMH) {
+                    CauHoi* currentCauHoi = current->MH.headCauhoi;
+                    while (currentCauHoi != nullptr) {
+                        ui->bangDuLieu->insertRow(row);
+                        ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->MH.MAMH));
+                        QString idCauHoi = current->MH.MAMH + QString::number(currentCauHoi->id);
+                        ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(idCauHoi));
+                        ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->MH.TENMH));
+                        ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(currentCauHoi->noiDung));
+                        ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(currentCauHoi->A));
+                        ui->bangDuLieu->setItem(row, 5, new QTableWidgetItem(currentCauHoi->B));
+                        ui->bangDuLieu->setItem(row, 6, new QTableWidgetItem(currentCauHoi->C));
+                        ui->bangDuLieu->setItem(row, 7, new QTableWidgetItem(currentCauHoi->D));
 
-                ui->bangDuLieu->insertRow(row);
-                ui->bangDuLieu->setItem(row, 0, mamhItem);
-                ui->bangDuLieu->setItem(row, 1, tenmhItem);
-                ui->bangDuLieu->setItem(row, 2, cauHoiItem);
-                ui->bangDuLieu->setItem(row, 3, answerAItem);
-                ui->bangDuLieu->setItem(row, 4, answerBItem);
-                ui->bangDuLieu->setItem(row, 5, answerCItem);
-                ui->bangDuLieu->setItem(row, 6, answerDItem);
-
-                currentCauHoi = currentCauHoi->next;
-                row++;
+                        currentCauHoi = currentCauHoi->next;
+                        row++;
+                    }
+                    break; // Dừng duyệt khi đã tìm thấy và xử lý môn học
+                } else if (selectedMAMH < current->MH.MAMH) {
+                    current = current->left;
+                } else {
+                    current = current->right;
+                }
             }
             break; // Dừng duyệt khi đã tìm thấy và xử lý môn học
         } else if (selectedMAMH < current->MH.MAMH) {
@@ -376,10 +396,8 @@ void GIao_Vien::on_Them1CauHoi_clicked() {
         if (result == QDialog::Accepted) {
             qDebug() << "Môn học đã chọn có index: " << currentIndex;
         } else {
-            int totalQuestions = demTatCaCauHoi(root);
-            int row = 0;
-            ui->bangDuLieu->setRowCount(totalQuestions);
-            loadCauHoi(root, row);
+            ui->bangDuLieu->setRowCount(0);
+            loadCauHoi(root);
             break;
         }
     }
@@ -486,6 +504,22 @@ void GIao_Vien::xemDiemSinhVien() {
 }
 
 
+void GIao_Vien::xemMonLop() {
+    int row = ui->bangDuLieu->currentRow();
+    QString maLop = ui->bangDuLieu->item(row, 0)->text();  // Lấy mã lớp từ bảng
+    Lop* mainClass = timLop(maLop, danhSachLop);
+
+
+    if (!mainClass) {
+        QMessageBox::warning(this, "Cảnh báo", "Không tìm thấy lớp trong danh sách.");
+        return;
+    }
+
+    xem_mon_lop dialog(mainClass, root, this);
+    dialog.exec();
+
+}
+
 void GIao_Vien::hieuChinhSV() {
     int row = ui->bangDuLieu->currentRow();
 
@@ -527,10 +561,8 @@ void GIao_Vien::on_cauHoi_clicked() {
     QStringList headers;
     headers << "Mã MH" << "ID câu hỏi" << "Tên Môn Học" << "Câu Hỏi" << "A" << "B" << "C" << "D";
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
-    int totalQuestions = demTatCaCauHoi(root);
-    int row = 0;
-    ui->bangDuLieu->setRowCount(totalQuestions);
-    loadCauHoi(root, row);
+    ui->bangDuLieu->setRowCount(0);
+    loadCauHoi(root);
     connect(ui->locCauHoi, SIGNAL(currentIndexChanged(int)), this, SLOT(onCauHoiComboBoxChanged(int)));
     bool isFirst = true;
     dsMonHoc(root, isFirst);
@@ -539,7 +571,54 @@ void GIao_Vien::on_cauHoi_clicked() {
 
 void GIao_Vien::xoaCauHoi()
 {
+    int currentRow = ui->bangDuLieu->currentRow();
 
+    QString mamh = ui->bangDuLieu->item(currentRow, 0)->text();
+    QString fullId = ui->bangDuLieu->item(currentRow, 1)->text();
+
+    QString idStr = fullId.mid(mamh.length());
+    int id = idStr.toInt();
+
+    // Tìm môn học cần xoá câu hỏi
+    MonHoc* monHoc = SearchMonHoc(root, mamh);
+    if (!monHoc) {
+        QMessageBox::warning(this, "Lỗi", "Không tìm thấy môn học!");
+        return;
+    }
+
+    // Tìm câu hỏi cần xoá và kiểm tra trạng thái đã thi
+    CauHoi* prev = nullptr;
+    CauHoi* current = monHoc->headCauhoi;
+    while (current) {
+        if (current->id == id) {
+            if (current->daThi) {
+                QMessageBox::warning(this, "Cảnh báo", "Câu hỏi đã có sinh viên làm, không thể xoá!");
+                return;
+            }
+            // Xác nhận với người dùng trước khi xoá
+            QMessageBox::StandardButton reply;
+            reply = QMessageBox::question(this, "Xác nhận xoá", "Bạn có chắc chắn muốn xoá câu hỏi này?",
+                                          QMessageBox::Yes | QMessageBox::No);
+            if (reply == QMessageBox::No) {
+                return;
+            }
+
+            if (prev == nullptr) {
+                // Xoá câu hỏi đầu danh sách
+                monHoc->headCauhoi = current->next;
+            } else {
+                prev->next = current->next;
+            }
+            delete current;
+            break;
+        }
+        prev = current;
+        current = current->next;
+    }
+
+    // Load lại bảng câu hỏi
+    ui->bangDuLieu->setRowCount(0);
+    loadCauHoi(root);
 }
 
 void GIao_Vien::hieuChinhCauHoi()
@@ -553,23 +632,36 @@ void GIao_Vien::hieuChinhCauHoi()
     QString idStr = fullId.mid(mamh.length());
     int id = idStr.toInt();
 
-    hieuchinh_CauHoi dialog(this, mamh, id, root);
-    dialog.exec();
-}
+    // Tìm câu hỏi thông qua hàm findCauHoi
+    CauHoi* cauHoi = findCauHoi(root, mamh, id);
+    qDebug() << "Kiểm tra cauHoi:" << (cauHoi != nullptr ? "Không null" : "Null") << ", daThi:" << (cauHoi != nullptr ? cauHoi->daThi : false);
 
-void GIao_Vien::loadCauHoi(ptrMonHoc root, int &row)
-{
-    if (root == nullptr) {
-        qDebug() << "Root la nullptr, tra ve.";
+    // Kiểm tra xem câu hỏi đã thi chưa
+    if (cauHoi != nullptr && cauHoi->daThi) {
+        QMessageBox::warning(this, "Cảnh báo", "Câu hỏi đã thi, không thể chỉnh sửa!");
         return;
     }
 
-    qDebug() << "Dang load cay con ben trai cua: " << root->MH.MAMH;
-    loadCauHoi(root->left, row);
+    hieuchinh_CauHoi dialog(this, mamh, id, root);
+    if (dialog.exec() == QDialog::Accepted) {
+        ui->bangDuLieu->setRowCount(0);
+        loadCauHoi(root);
+    }
+}
+
+void GIao_Vien::loadCauHoi(ptrMonHoc root)
+{
+    if (root == nullptr) {
+        return;
+    }
+
+    loadCauHoi(root->left);
 
     CauHoi* cauHoi = root->MH.headCauhoi;
     while (cauHoi != nullptr) {
-        qDebug() << "Dang load cau hoi: " << cauHoi->noiDung;
+
+        int row = ui->bangDuLieu->rowCount(); // Lấy số hàng hiện tại trong bảng
+        ui->bangDuLieu->insertRow(row);      // Thêm một hàng mới
 
         ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(root->MH.MAMH));
         QString idCauHoi = root->MH.MAMH + QString::number(cauHoi->id);
@@ -582,12 +674,12 @@ void GIao_Vien::loadCauHoi(ptrMonHoc root, int &row)
         ui->bangDuLieu->setItem(row, 7, new QTableWidgetItem(cauHoi->D));
 
         cauHoi = cauHoi->next;
-        row++;
     }
 
     qDebug() << "Dang load cay con ben phai cua: " << root->MH.MAMH;
-    loadCauHoi(root->right, row);
+    loadCauHoi(root->right);
 }
+
 
 void GIao_Vien::on_sinhVien_clicked() {
     ui->tinhNangCauHoi->hide();
@@ -705,8 +797,7 @@ void GIao_Vien::on_lop_clicked()
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
     loadLop();
     connect(ui->timMaLop, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited_2);
-    connect(ui->timMaLop, &QLineEdit::textChanged, this, &GIao_Vien::timLop);
-
+    // connect(ui->timMaLop, &QLineEdit::textChanged, this, &GIao_Vien::timLop);
 }
 
 
@@ -815,32 +906,32 @@ void GIao_Vien::on_themNhieuLop_clicked()
 
 }
 
-void GIao_Vien::timLop(const QString &text) {
-    ui->bangDuLieu->setRowCount(0); // Xóa dữ liệu cũ trên bảng
-    int row = 0;
+// void GIao_Vien::timLop(const QString &text) {
+//     ui->bangDuLieu->setRowCount(0); // Xóa dữ liệu cũ trên bảng
+//     int row = 0;
 
-    // Duyệt qua danh sách lớp
-    for (int i = 0; i < 10000; ++i) {
-        if (danhSachLop[i] == nullptr) {
-            break;
-        }
+//     // Duyệt qua danh sách lớp
+//     for (int i = 0; i < 10000; ++i) {
+//         if (danhSachLop[i] == nullptr) {
+//             break;
+//         }
 
-        QString maLop = danhSachLop[i]->MALOP;
-        QString tenLop = danhSachLop[i]->TENLOP;
+//         QString maLop = danhSachLop[i]->MALOP;
+//         QString tenLop = danhSachLop[i]->TENLOP;
 
-        // Kiểm tra nếu mã lớp hoặc tên lớp chứa từ khóa
-        if (maLop.contains(text, Qt::CaseInsensitive)) {
-            ui->bangDuLieu->insertRow(row); // Thêm hàng mới vào bảng
+//         // Kiểm tra nếu mã lớp hoặc tên lớp chứa từ khóa
+//         if (maLop.contains(text, Qt::CaseInsensitive)) {
+//             ui->bangDuLieu->insertRow(row); // Thêm hàng mới vào bảng
 
-            // Đặt thông tin lớp vào từng cột
-            ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(maLop));
-            ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(tenLop));
+//             // Đặt thông tin lớp vào từng cột
+//             ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(maLop));
+//             ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(tenLop));
 
 
-            row++; // Tăng chỉ số hàng
-        }
-    }
-}
+//             row++; // Tăng chỉ số hàng
+//         }
+//     }
+// }
 
 
 
@@ -908,6 +999,10 @@ void xoaLopKhoiDanhSach(const QString& maLop, Lop** danhSachLop) {
     }
 }
 
+// void GIao_Vien::xemDiemMon(){
+
+// }
+
 
 void GIao_Vien::xoaLop() {
     // Lấy danh sách các hàng được chọn
@@ -943,4 +1038,24 @@ void GIao_Vien::xoaLop() {
 
     // Xóa hàng khỏi bảng
     ui->bangDuLieu->removeRow(row);
+}
+
+void GIao_Vien::on_luuDL_clicked()
+{
+    // Hiển thị thông báo thành công
+    ui->thongBaoLuu->setText("Bạn đã lưu thành công");
+    ui->thongBaoLuu->setStyleSheet("QLabel { color : green; qproperty-alignment: 'AlignCenter'; }");
+    ui->thongBaoLuu->show();
+
+    // Tự động ẩn thông báo sau 3 giây
+    QTimer::singleShot(3000, this, [=]() {
+        ui->thongBaoLuu->hide();
+    });
+}
+
+void GIao_Vien::on_quanlymonhoc_clicked()
+{
+    quan_Ly_Mon *dialog = new quan_Ly_Mon(this, root);
+    dialog->exec();
+    delete dialog;
 }

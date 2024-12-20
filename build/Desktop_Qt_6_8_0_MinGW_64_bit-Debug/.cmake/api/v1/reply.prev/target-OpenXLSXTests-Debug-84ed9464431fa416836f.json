@@ -120,11 +120,11 @@
 			"id" : "OpenXLSX::@a10863c5946955c16ed7"
 		},
 		{
-			"id" : "OpenXLSXTests_autogen_timestamp_deps::@e82894f2a82980282a17"
-		},
-		{
 			"backtrace" : 0,
 			"id" : "OpenXLSXTests_autogen::@e82894f2a82980282a17"
+		},
+		{
+			"id" : "OpenXLSXTests_autogen_timestamp_deps::@e82894f2a82980282a17"
 		}
 	],
 	"id" : "OpenXLSXTests::@e82894f2a82980282a17",

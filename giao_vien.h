@@ -45,14 +45,14 @@ private slots:
     void loadSinhVienLop(const QString &lop);
     void onLopComboBoxChanged(int index);
     void on_cauHoi_clicked();
-    void loadCauHoi(ptrMonHoc root, int &row);
+    void loadCauHoi(ptrMonHoc root);
     void xoaCauHoi();
     void hieuChinhCauHoi();
     void on_Them1CauHoi_clicked();
+    void setupContextMenus();
 
     void on_lop_clicked();   //AOMALAZ
     void loadLop();
-    void timLop(const QString &text);
     void on_sapXep_3_clicked();
     void on_themlop_clicked();
     void on_themNhieuLop_clicked();
@@ -60,6 +60,10 @@ private slots:
     void showLopContextMenu(const QPoint &pos);
     void xoaLop();
     void hieuChinhLop();
+    void xemMonLop();
+
+    void on_luuDL_clicked();
+    void on_quanlymonhoc_clicked();
 
 private:
     Ui::GIao_Vien *ui;
@@ -77,6 +81,7 @@ private:
     QMenu* lopContextMenu;  //AOMALAZ
     QAction* lopDeleteAction;
     QAction* lopEditAction;
+   QAction* lopViewScoreAction;
 
     QMenu* cauHoiContextMenu;
     QAction* cauHoiDeleteAction;

@@ -15,7 +15,7 @@ Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* mainUser, CauHoi* &danhSachCauHoi, QWidge
     setupUI();
     setupCompleter();
     // Đọc danh sách môn học và thêm vào combo box
-    root = readFileAndBuildAVL();
+    root = loadToanBoCauHoi();
     setupDSMonHoc(root);
 }
 
@@ -24,10 +24,6 @@ Thong_Tin_Thi::~Thong_Tin_Thi()
 {
     delete ui;
     delete completer;
-    if (root) {
-        deleteAVLTree(root);
-        root = nullptr;
-    }
 }
 
 // Thiết lập giao diện người dùng
@@ -90,12 +86,10 @@ QString Thong_Tin_Thi::getMaMH() const { return ui->DSachMonHoc->currentData().t
 void Thong_Tin_Thi::on_DangNhapButton_clicked()
 {
     bool hasError = false;
-    QString MonHoc = ui->DSachMonHoc->currentText();
-    int soCauHoi = 0;
+    QString mamh = ui->DSachMonHoc->currentData().toString();
+    int soCauHoi = demCauHoi(root, mamh);
 
     questions = ui->spinBox->value();
-    CauHoi** mangCauHoi = loadCauHoiThi(MonHoc, questions, soCauHoi);
-
     // Kiểm tra lỗi
     if (questions == 0) {
         ui->LoiCauHoi->setText("Vui Lòng Nhập Số Câu Hỏi Thi");
@@ -114,12 +108,10 @@ void Thong_Tin_Thi::on_DangNhapButton_clicked()
     }
 
     if (!hasError) {
-        shuffleArray(mangCauHoi, questions);
-        danhSachCauHoi = DsachCauHoiThi(mangCauHoi, questions);
-        // if (mangCauHoi) {
-        //     for (int i = 0; i < soCauHoi; ++i) delete mangCauHoi[i];
-        //     delete[] mangCauHoi;
-        // }
+        CauHoi** mangCauHoi = loadCauHoiThi(root, mamh, questions, soCauHoi);
+        luuMonHocVaCauHoi(root, "D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/MH-CauHoi.txt");
+        danhSachCauHoi = DsachCauHoiThi(root, mangCauHoi, questions, soCauHoi, mamh);
+        deleteAVLTree(root);
         accept();
     }
 }

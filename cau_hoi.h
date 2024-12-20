@@ -16,13 +16,12 @@ struct  CauHoi{
     QString C;
     QString D;
     QChar dapAnDung;
+    bool daThi;
 
     CauHoi* next;
 };
 
-CauHoi** loadCauHoiThi(const QString &monHoc, int &questions, int &soCauHoi);
-CauHoi* DsachCauHoiThi(CauHoi** cauhoiArray, int questions);
-void shuffleArray(CauHoi* arr[], int questions);
+void shuffleArray(CauHoi* arr[], int questions, int slCauHoi);
 void duyetDSach(CauHoi* head);
 CauHoi* taoNodeCauHoi(int id, QString noiDung, QString A, QString B, QString C, QString D, QChar dapAnDung);
 int demCauHoi(CauHoi* head);

@@ -23,21 +23,19 @@ private slots:
     void dsMonHoc(NodeMonHoc* root);
     void setupHieuChinh();
     void setDapAn(QChar dapAn);
-    QString getNoiDung();
-    QString getMonHoc();
-    QString getDapAn();
-    QString getA();
-    QString getB();
-    QString getC();
-    QString getD();
     bool thongBaoLoi();
     void accept();
+    void randomID(int index);
 
 private:
     Ui::hieuchinh_CauHoi *ui;
     QString m_monHoc;
     int m_id;
+    QString selectedMAMH;
+
+    void updateCauHoiData(CauHoi* cauhoi);
     CauHoi* cauhoi;
+    int randomId;
     NodeMonHoc* m_root;
 };
 

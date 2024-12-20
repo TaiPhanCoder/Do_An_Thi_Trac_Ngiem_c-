@@ -327,6 +327,12 @@
 			null
 		],
 		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/quan_ly_mon.h",
+			"MU",
+			"EWIEGA46WW/moc_quan_ly_mon.cpp",
+			null
+		],
+		[
 			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h",
 			"MU",
 			"EWIEGA46WW/moc_sinhvien.cpp",
@@ -363,9 +369,21 @@
 			null
 		],
 		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_diem_lop.h",
+			"MU",
+			"EWIEGA46WW/moc_xem_diem_lop.cpp",
+			null
+		],
+		[
 			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_diem_mon.h",
 			"MU",
 			"EWIEGA46WW/moc_xem_diem_mon.cpp",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_mon_lop.h",
+			"MU",
+			"EWIEGA46WW/moc_xem_mon_lop.cpp",
 			null
 		],
 		[
@@ -506,6 +524,11 @@
 			null
 		],
 		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/quan_ly_mon.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.cpp",
 			"MU",
 			null
@@ -541,7 +564,17 @@
 			null
 		],
 		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_diem_lop.cpp",
+			"MU",
+			null
+		],
+		[
 			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_diem_mon.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_mon_lop.cpp",
 			"MU",
 			null
 		],
