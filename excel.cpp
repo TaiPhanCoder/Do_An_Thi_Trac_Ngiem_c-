@@ -5,7 +5,7 @@
 #include "sinhvien.h"
 #include "lop.h"
 
-void loadSinhVienTuFile(Lop* danhSachLop[], const QString &fileName)
+void loadSinhVienTuFile(Lop* danhSachLop[], const QString &fileName, bool dasapxep)
 {
     OpenXLSX::XLDocument xlsx;
     try {
@@ -59,7 +59,13 @@ void loadSinhVienTuFile(Lop* danhSachLop[], const QString &fileName)
         }
 
         SinhVien* newSV = taoNodeSinhVien(masv, ho, ten, phai, "");
-        themSinhVienVaoLop(newSV, lop, danhSachLop);
+
+        // Gọi hàm thêm phù hợp dựa trên biến dasapxep
+        if (dasapxep) {
+            themSinhVienVaoLopCoThuTu(newSV, lop, danhSachLop);
+        } else {
+            themSinhVienVaoLop(newSV, lop, danhSachLop);
+        }
 
         qDebug() << "Đã thêm sinh viên MSSV:" << masv << "Họ:" << ho << "Tên:" << ten << "Phái:" << phai;
         ++row;

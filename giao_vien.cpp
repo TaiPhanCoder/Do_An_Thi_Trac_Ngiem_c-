@@ -6,10 +6,7 @@
 #include "lop.h"
 #include "them_lop.h"
 #include "hieuchinh_lop.h"
-#include "ui_them_lop.h"
-#include "ui_hieuchinh_lop.h"
 #include "xem_mon_lop.h"
-#include "ui_xem_mon_lop.h"
 #include "mamh.h"
 #include"them_sinh_vien.h"
 #include "themcauhoi.h"
@@ -762,7 +759,7 @@ void GIao_Vien::on_themNhieuSV_clicked()
     if (!fileName.isEmpty()) {
         qDebug() << "File selected:" << fileName;
     }
-    // loadSinhVienTuFile(danhSachLop, fileName);
+    loadSinhVienTuFile(danhSachLop, fileName, dasapxep);
     loadSinhVien();
 }
 
@@ -832,6 +829,7 @@ void GIao_Vien::loadLop() {
         row++;
     }
 }
+
 
 
 void GIao_Vien::on_sapXep_3_clicked(){
@@ -1056,6 +1054,13 @@ void GIao_Vien::on_luuDL_clicked()
 void GIao_Vien::on_quanlymonhoc_clicked()
 {
     quan_Ly_Mon *dialog = new quan_Ly_Mon(this, root);
-    dialog->exec();
+    if (dialog->exec() == QDialog::Accepted) {
+        // Load lại bảng câu hỏi sau khi quản lý môn học
+        ui->bangDuLieu->setRowCount(0);
+        loadCauHoi(root);
+        bool isFirst = true;
+        dsMonHoc(root, isFirst);
+        setupComboBoxFilter(ui->locCauHoi, monHocList);
+    }
     delete dialog;
 }

@@ -27,6 +27,7 @@ struct NodeMonHoc {
 
 typedef NodeMonHoc* ptrMonHoc;
 
+ptrMonHoc deleteNodeAVL(ptrMonHoc root, QString mamh_input);
 ptrMonHoc insertNodeAVL(ptrMonHoc node, QString mamh, QString tenmh, int tinchi);
 CauHoi** loadCauHoiThi(ptrMonHoc root, const QString &mamh, int &questions, int &socauhoi);
 CauHoi* DsachCauHoiThi(ptrMonHoc root, CauHoi** cauhoiArray, int questions, int slCauHoi, const QString &maMH);
@@ -38,5 +39,6 @@ void duyetLRN(ptrMonHoc p);
 CauHoi* findCauHoi(NodeMonHoc* root, QString mamh, int id);
 MonHoc* SearchMonHoc(ptrMonHoc p, QString mamh_input);
 int demCauHoi(ptrMonHoc root, QString mamh);
+
 
 #endif // MAMH_H

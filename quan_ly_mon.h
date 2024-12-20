@@ -20,6 +20,8 @@ public:
 private slots:
     void on_them_clicked();
     bool thongBaoLoi();
+    void xoaMonHoc();
+    void doiTenMonHoc();
 
 private:
     Ui::quan_Ly_Mon *ui;

@@ -38,7 +38,9 @@ constexpr auto qt_meta_stringdata_CLASSquan_Ly_MonENDCLASS = QtMocHelpers::strin
     "quan_Ly_Mon",
     "on_them_clicked",
     "",
-    "thongBaoLoi"
+    "thongBaoLoi",
+    "xoaMonHoc",
+    "doiTenMonHoc"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -51,7 +53,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSquan_Ly_MonENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -59,12 +61,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSquan_Ly_MonENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x08,    1 /* Private */,
-       3,    0,   27,    2, 0x08,    2 /* Private */,
+       1,    0,   38,    2, 0x08,    1 /* Private */,
+       3,    0,   39,    2, 0x08,    2 /* Private */,
+       4,    0,   40,    2, 0x08,    3 /* Private */,
+       5,    0,   41,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Bool,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -81,7 +87,11 @@ Q_CONSTINIT const QMetaObject quan_Ly_Mon::staticMetaObject = { {
         // method 'on_them_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'thongBaoLoi'
-        QtPrivate::TypeAndForceComplete<bool, std::false_type>
+        QtPrivate::TypeAndForceComplete<bool, std::false_type>,
+        // method 'xoaMonHoc'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'doiTenMonHoc'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -95,6 +105,8 @@ void quan_Ly_Mon::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         case 0: _t->on_them_clicked(); break;
         case 1: { bool _r = _t->thongBaoLoi();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 2: _t->xoaMonHoc(); break;
+        case 3: _t->doiTenMonHoc(); break;
         default: ;
         }
     }
@@ -119,13 +131,13 @@ int quan_Ly_Mon::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }
