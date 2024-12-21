@@ -2026,6 +2026,8 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/lop.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/dang_nhap.cpp
+ uic:./ui_dang_nhap.h
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_lop.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.0/mingw_64/include/QtCore/QFile
@@ -2455,16 +2457,15 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_lop.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
  uic:ui_hieuchinh_lop.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/dang_nhap.cpp
- uic:./ui_dang_nhap.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/lop.h
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.cpp
  uic:ui_thong_tin_thi.h
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/lop.h
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/main.cpp
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.cpp
  uic:ui_xemdiem.h
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/main.cpp
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.cpp
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_lop.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.0/mingw_64/include/QtCore/QString
@@ -2832,7 +2833,6 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_lop.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_lop.h
  uic:ui_them_lop.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.cpp
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_sinh_vien.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.0/mingw_64/include/QtCore/QFile
@@ -3261,6 +3261,8 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_sinh_vien.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_sinh_vien.h
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_lop.cpp
+ uic:ui_them_lop.h
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.0/mingw_64/include/QtCore/QFile
@@ -3660,8 +3662,6 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/themcauhoi.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/them_lop.cpp
- uic:ui_them_lop.h
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/thong_tin_thi.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.0/mingw_64/include/QtCore/QFile
@@ -4895,13 +4895,13 @@ D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/mamh.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/sinhvien.h
  mdp:D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xemdiem.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.cpp
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.cpp
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/xem_diem_lop.cpp
  uic:ui_xem_diem_lop.h
-D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/excel.cpp
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi_da_thi.cpp
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/cau_hoi.cpp
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_cauhoi.cpp
  uic:ui_hieuchinh_cauhoi.h
+D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/excel.cpp
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/giao_vien.cpp
  uic:ui_giao_vien.h
 D:/DO_AN_THI_TRAC_NGHIEM/Do_An_Thi_Trac_Ngiem_c-/hieuchinh_SinhVien.cpp

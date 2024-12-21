@@ -69,7 +69,7 @@ N23DCCN015|Nguyen Van|Bao|Nam|123
 0
 N23DCCN016|Pham Thi|Linh|Nữ|123
 0
-E23CQCN02-N|Công nghệ thông tin CLC 2023
+E23CQCN02-N|Công nghệ thông tin 2 CLC 2023
 11
 N23DCDK090|Tran Van|Binh|Nam|123
 0
@@ -93,7 +93,7 @@ N23DCDK099|Nguyen Thi|Ha|Nữ|123
 0
 N23DCDK100|Le Van|Tung|Nam|123
 0
-D24CQBC01-B|Báo chí
+D24CQBC01-B|Báo chí 1 đại trà 2024
 12
 B24DCBC101|Nguyen Van|An|Nam|123
 0
@@ -119,7 +119,7 @@ B24DCBC111|Le Van|Phong|Nam|123
 0
 B24DCBC112|Tran Thi|Quyen|Nữ|123
 0
-D24CQTT01-B|Truyền thông đa phương tiện
+D24CQTT01-B|Truyền thông đa phương tiện 1 đại trà 2024
 14
 T24DCTT101|Nguyen Van|Bao|Nam|123
 0
@@ -149,7 +149,7 @@ T24DCTT113|Pham Van|Tai|Nam|123
 0
 T24DCTT114|Nguyen Thi|Phuong|Nữ|123
 0
-D24CQPT03-B|Công nghệ đa phương tiện
+D24CQPT03-B|Công nghệ đa phương tiện 3 đại trà 2024
 14
 P24DCPT101|Tran Van|Anh|Nam|123
 0
@@ -179,7 +179,7 @@ P24DCPT113|Pham Van|Tai|Nam|123
 0
 P24DCPT114|Vo Thi|Phuong|Nữ|123
 0
-D24CQGA04-B|Thiết kế và phát triển game
+D24CQGA04-B|Thiết kế và phát triển game 4 đại trà 2024
 14
 G24DCGA101|Nguyen Van|Bao|Nam|123
 0

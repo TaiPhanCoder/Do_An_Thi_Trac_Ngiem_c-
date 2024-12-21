@@ -218,9 +218,7 @@ void duyetDanhSach(Lop* danhSachLop[]) {
 void GIao_Vien::loadSinhVien() {
     ui->bangDuLieu->setRowCount(0);
     ui->bangDuLieu->clear();
-    QStringList headers;
-    headers << "MSSV" << "Họ" << "Tên" <<"Lớp" << "Giới tính";
-    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
+
     int row = 0;
 
     // Duyệt qua mảng lớp
@@ -229,7 +227,8 @@ void GIao_Vien::loadSinhVien() {
             break;
         }
         SinhVien* current = danhSachLop[i]->DSSV;
-        QString tenLop = danhSachLop[i]->MALOP;
+        QString maLop = danhSachLop[i]->MALOP;
+        QString tenLop = danhSachLop[i]->TENLOP;
 
         while (current != nullptr) {
             ui->bangDuLieu->insertRow(row);
@@ -237,15 +236,17 @@ void GIao_Vien::loadSinhVien() {
             QTableWidgetItem *masvItem = new QTableWidgetItem(current->masv);
             QTableWidgetItem *hoItem = new QTableWidgetItem(current->ho);
             QTableWidgetItem *tenItem = new QTableWidgetItem(current->ten);
-            QTableWidgetItem *phaiItem = new QTableWidgetItem(current->phai);
+            QTableWidgetItem *maLopItem = new QTableWidgetItem(maLop);
             QTableWidgetItem *tenLopItem = new QTableWidgetItem(tenLop);
+            QTableWidgetItem *phaiItem = new QTableWidgetItem(current->phai);
 
             // Đặt các mục vào bảng
             ui->bangDuLieu->setItem(row, 0, masvItem);
             ui->bangDuLieu->setItem(row, 1, hoItem);
             ui->bangDuLieu->setItem(row, 2, tenItem);
-            ui->bangDuLieu->setItem(row, 3, tenLopItem);
-            ui->bangDuLieu->setItem(row, 4, phaiItem);
+            ui->bangDuLieu->setItem(row, 3, maLopItem);
+            ui->bangDuLieu->setItem(row, 4, tenLopItem);
+            ui->bangDuLieu->setItem(row, 5, phaiItem);
             current = current->next;
             row++;
         }
@@ -454,14 +455,17 @@ void GIao_Vien::loadSinhVienLop(const QString &lop) {
         }
         if (danhSachLop[i]->MALOP == lop) {
             SinhVien* current = danhSachLop[i]->DSSV;
+            QString maLop = danhSachLop[i]->MALOP;
+            QString tenLop = danhSachLop[i]->TENLOP;
             int row = 0;
             while (current != nullptr) {
                 ui->bangDuLieu->insertRow(row);
                 ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->masv));
                 ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(current->ho));
                 ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->ten));
-                ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(danhSachLop[i]->MALOP));
-                ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(current->phai));
+                ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(maLop));
+                ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(tenLop));
+                ui->bangDuLieu->setItem(row, 5, new QTableWidgetItem(current->phai));
                 row++;
                 current = current->next;
             }
@@ -683,18 +687,19 @@ void GIao_Vien::on_sinhVien_clicked() {
     ui->tinhNangLop->hide();
     ui->tinhNangSinhVien->show();
 
+    ui->bangDuLieu->setColumnCount(6);
+    QStringList headers;
+    headers << "MSSV" << "Họ" << "Tên" << "Mã lớp" << "Tên lớp" << "Giới tính";
+    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
+
+    // Đặt chế độ tự động điều chỉnh độ rộng cột
+    ui->bangDuLieu->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
     // Thiết lập context menu cho bảng Sinh viên
     ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
     disconnect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showCauHoiContextMenu);
     disconnect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showLopContextMenu);
     connect(ui->bangDuLieu, &QTableWidget::customContextMenuRequested, this, &GIao_Vien::showSinhVienContextMenu);
-
-    ui->bangDuLieu->setColumnCount(5);
-    ui->bangDuLieu->setColumnWidth(0, 300);
-    ui->bangDuLieu->setColumnWidth(1, 350);
-    ui->bangDuLieu->setColumnWidth(2, 150);
-    ui->bangDuLieu->setColumnWidth(3, 200);
-    ui->bangDuLieu->setColumnWidth(4, 150);
 
     connect(ui->locLop, QOverload<int>::of(&QComboBox::currentIndexChanged),
             this, &GIao_Vien::onLopComboBoxChanged);
