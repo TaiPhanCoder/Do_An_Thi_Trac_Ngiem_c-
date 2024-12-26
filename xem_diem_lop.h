@@ -23,11 +23,12 @@ private:
     void setThongTinMon(const QString &maMH, NodeMonHoc *root);
     float LayDiemThi(SinhVien* sv, QString &maMH);
     // void loadBangDiem(const QString& maMH);
-
+    void xemDiemSinhVien(int row, int column);
     void loadBangDiem(const QString& maMH);
 
     QString timTenMonHoc(const QString& maMH, NodeMonHoc* root);
     Lop* mainClass;
+    NodeMonHoc* root;
 
 };
 

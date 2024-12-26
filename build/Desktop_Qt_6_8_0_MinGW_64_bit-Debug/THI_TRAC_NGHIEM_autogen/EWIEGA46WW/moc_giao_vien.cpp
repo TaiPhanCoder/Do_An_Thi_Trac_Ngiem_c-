@@ -80,6 +80,7 @@ constexpr auto qt_meta_stringdata_CLASSGIao_VienENDCLASS = QtMocHelpers::stringD
     "xoaLop",
     "hieuChinhLop",
     "xemMonLop",
+    "timLop",
     "on_luuDL_clicked",
     "on_quanlymonhoc_clicked"
 );
@@ -94,7 +95,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      35,   14, // methods
+      36,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -102,41 +103,42 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,  224,    2, 0x08,    1 /* Private */,
-       4,    1,  227,    2, 0x08,    3 /* Private */,
-       5,    0,  230,    2, 0x08,    5 /* Private */,
-       6,    1,  231,    2, 0x08,    6 /* Private */,
-       8,    1,  234,    2, 0x08,    8 /* Private */,
-       9,    0,  237,    2, 0x08,   10 /* Private */,
-      10,    0,  238,    2, 0x08,   11 /* Private */,
-      11,    0,  239,    2, 0x08,   12 /* Private */,
-      12,    0,  240,    2, 0x08,   13 /* Private */,
-      13,    0,  241,    2, 0x08,   14 /* Private */,
-      14,    0,  242,    2, 0x08,   15 /* Private */,
-      15,    0,  243,    2, 0x08,   16 /* Private */,
-      16,    2,  244,    2, 0x08,   17 /* Private */,
-      20,    1,  249,    2, 0x08,   20 /* Private */,
-      22,    1,  252,    2, 0x08,   22 /* Private */,
-      24,    1,  255,    2, 0x08,   24 /* Private */,
-      26,    1,  258,    2, 0x08,   26 /* Private */,
-      27,    0,  261,    2, 0x08,   28 /* Private */,
-      28,    1,  262,    2, 0x08,   29 /* Private */,
-      30,    0,  265,    2, 0x08,   31 /* Private */,
-      31,    0,  266,    2, 0x08,   32 /* Private */,
-      32,    0,  267,    2, 0x08,   33 /* Private */,
-      33,    0,  268,    2, 0x08,   34 /* Private */,
-      34,    0,  269,    2, 0x08,   35 /* Private */,
-      35,    0,  270,    2, 0x08,   36 /* Private */,
-      36,    0,  271,    2, 0x08,   37 /* Private */,
-      37,    0,  272,    2, 0x08,   38 /* Private */,
-      38,    0,  273,    2, 0x08,   39 /* Private */,
-      39,    1,  274,    2, 0x08,   40 /* Private */,
-      41,    1,  277,    2, 0x08,   42 /* Private */,
-      42,    0,  280,    2, 0x08,   44 /* Private */,
-      43,    0,  281,    2, 0x08,   45 /* Private */,
-      44,    0,  282,    2, 0x08,   46 /* Private */,
-      45,    0,  283,    2, 0x08,   47 /* Private */,
-      46,    0,  284,    2, 0x08,   48 /* Private */,
+       1,    1,  230,    2, 0x08,    1 /* Private */,
+       4,    1,  233,    2, 0x08,    3 /* Private */,
+       5,    0,  236,    2, 0x08,    5 /* Private */,
+       6,    1,  237,    2, 0x08,    6 /* Private */,
+       8,    1,  240,    2, 0x08,    8 /* Private */,
+       9,    0,  243,    2, 0x08,   10 /* Private */,
+      10,    0,  244,    2, 0x08,   11 /* Private */,
+      11,    0,  245,    2, 0x08,   12 /* Private */,
+      12,    0,  246,    2, 0x08,   13 /* Private */,
+      13,    0,  247,    2, 0x08,   14 /* Private */,
+      14,    0,  248,    2, 0x08,   15 /* Private */,
+      15,    0,  249,    2, 0x08,   16 /* Private */,
+      16,    2,  250,    2, 0x08,   17 /* Private */,
+      20,    1,  255,    2, 0x08,   20 /* Private */,
+      22,    1,  258,    2, 0x08,   22 /* Private */,
+      24,    1,  261,    2, 0x08,   24 /* Private */,
+      26,    1,  264,    2, 0x08,   26 /* Private */,
+      27,    0,  267,    2, 0x08,   28 /* Private */,
+      28,    1,  268,    2, 0x08,   29 /* Private */,
+      30,    0,  271,    2, 0x08,   31 /* Private */,
+      31,    0,  272,    2, 0x08,   32 /* Private */,
+      32,    0,  273,    2, 0x08,   33 /* Private */,
+      33,    0,  274,    2, 0x08,   34 /* Private */,
+      34,    0,  275,    2, 0x08,   35 /* Private */,
+      35,    0,  276,    2, 0x08,   36 /* Private */,
+      36,    0,  277,    2, 0x08,   37 /* Private */,
+      37,    0,  278,    2, 0x08,   38 /* Private */,
+      38,    0,  279,    2, 0x08,   39 /* Private */,
+      39,    1,  280,    2, 0x08,   40 /* Private */,
+      41,    1,  283,    2, 0x08,   42 /* Private */,
+      42,    0,  286,    2, 0x08,   44 /* Private */,
+      43,    0,  287,    2, 0x08,   45 /* Private */,
+      44,    0,  288,    2, 0x08,   46 /* Private */,
+      45,    1,  289,    2, 0x08,   47 /* Private */,
+      46,    0,  292,    2, 0x08,   49 /* Private */,
+      47,    0,  293,    2, 0x08,   50 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QPoint,    3,
@@ -172,6 +174,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGIao_VienENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   40,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -266,6 +269,9 @@ Q_CONSTINIT const QMetaObject GIao_Vien::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'xemMonLop'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'timLop'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'on_luuDL_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_quanlymonhoc_clicked'
@@ -315,8 +321,9 @@ void GIao_Vien::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 30: _t->xoaLop(); break;
         case 31: _t->hieuChinhLop(); break;
         case 32: _t->xemMonLop(); break;
-        case 33: _t->on_luuDL_clicked(); break;
-        case 34: _t->on_quanlymonhoc_clicked(); break;
+        case 33: _t->timLop((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 34: _t->on_luuDL_clicked(); break;
+        case 35: _t->on_quanlymonhoc_clicked(); break;
         default: ;
         }
     }
@@ -341,13 +348,13 @@ int GIao_Vien::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 35)
+        if (_id < 36)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 35;
+        _id -= 36;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 35)
+        if (_id < 36)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 35;
+        _id -= 36;
     }
     return _id;
 }

@@ -1,15 +1,17 @@
 #include "xem_diem_lop.h"
+#include "xem_diem_mon.h"
 #include "ui_xem_diem_lop.h"
 #include "mamh.h"
 #include "sinhvien.h"
 #include <QMessageBox>
 #include <QDebug>
 xem_diem_lop::xem_diem_lop(Lop* mainClass, SinhVien* sv, NodeMonHoc* root,const QString maMH,   QWidget *parent)
-    : QDialog(parent), ui(new Ui::xem_diem_lop), mainClass(mainClass)
+    : QDialog(parent), ui(new Ui::xem_diem_lop), mainClass(mainClass), root(root)
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
     this->setWindowTitle("Xem Điểm Lớp");
+    connect(ui->dsachdiem, &QTableWidget::cellDoubleClicked, this, &xem_diem_lop::xemDiemSinhVien);
 
 
     setThongTinMon(maMH, root);
@@ -24,6 +26,41 @@ xem_diem_lop::~xem_diem_lop()
     delete ui;
 }
 
+void xem_diem_lop::xemDiemSinhVien(int row, int column) {
+    if (ui->dsachdiem->item(row, 3)->text() == "CHƯA THI") {
+        return;
+    }
+
+    QString masv = ui->dsachdiem->item(row, 0)->text();
+    SinhVien* sinhVien = nullptr;
+
+    // Tìm sinh viên trong danh sách lớp
+    SinhVien* current = mainClass->DSSV;
+    while (current != nullptr) {
+        if (current->masv == masv) {
+            sinhVien = current;
+            break;
+        }
+        current = current->next;
+    }
+
+    // Lấy mã môn học từ thông tin hiện tại
+    QString maMH = ui->maMH->text().mid(7);
+    MonHoc* monHoc = SearchMonHoc(root, maMH);
+
+    // Tìm môn học dựa trên mã môn học
+    NodeMonHoc* currentNode = root;
+
+    if (!monHoc) {
+        qWarning() << "Không tìm thấy môn học với mã:" << maMH;
+        return;
+    }
+
+    // Hiển thị xem điểm môn
+    xem_Diem_Mon* dialog = new xem_Diem_Mon(sinhVien, monHoc, this);
+    dialog->exec();
+    delete dialog;
+}
 
 float xem_diem_lop::LayDiemThi(SinhVien* sv, QString& maMH)
 {

@@ -1,5 +1,7 @@
 #ifndef MAMH_H
 #define MAMH_H
+#define duongDanMonHoc ":/TK-MK-PTIT/MH-CauHoi.txt"
+
 #include<QString>
 #include "cau_hoi.h"
 
@@ -34,7 +36,7 @@ CauHoi* DsachCauHoiThi(ptrMonHoc root, CauHoi** cauhoiArray, int questions, int 
 void deleteAVLTree(NodeMonHoc* root);
 void duyetLNR(ptrMonHoc root, QStringList &danhSachMonHoc);
 void luuMonHocVaCauHoi(ptrMonHoc root, const QString& filePath);
-ptrMonHoc loadToanBoCauHoi();
+void loadToanBoCauHoi(ptrMonHoc &root, const QString &filepath);
 void duyetLRN(ptrMonHoc p);
 CauHoi* findCauHoi(NodeMonHoc* root, QString mamh, int id);
 MonHoc* SearchMonHoc(ptrMonHoc p, QString mamh_input);

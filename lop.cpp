@@ -55,7 +55,7 @@ int demSoLop(Lop* danhSachLop[]) {
 }
 
 bool checkMSSV(const QString &newMssv, Lop** danhSachLop) {
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -84,7 +84,7 @@ int demSVLop(Lop* lop) {
 }
 
 void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop, Lop** danhSachLop) {
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -111,7 +111,7 @@ void xoaSinhVienKhoiLop(SinhVien* sv, const QString& lop, Lop** danhSachLop) {
 }
 
 SinhVien* timSinhVien(const QString& mssv, const QString& lop, Lop** danhSachLop) {
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -140,7 +140,7 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
     SinhVien* currentSV = nullptr;
 
     int lopIndex = 0;
-    int soLop = in.readLine().toInt();  // Đọc số lượng lớp
+    int soLop = in.readLine().toInt();
 
     for (int i = 0; i < soLop; ++i) {
         // Đọc thông tin lớp
@@ -222,7 +222,7 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
 }
 
 // Lop* timLop(const QString& malop) {
-//     for (int i = 0; i < 10000; ++i) {
+//     for (int i = 0; i < MAX; ++i) {
 //         if (danhSachLop[i] == nullptr) {
 //             break; // Không còn lớp nào trong danh sách
 //         }
@@ -251,7 +251,7 @@ void lapdssinhvien(const QString &filename, Lop* danhSachLop[]) {
 //     }
 // }
 
-Lop* timLop(const QString& malop, Lop** danhSachLop) {
+Lop* timKiemLop(const QString& malop, Lop** danhSachLop) {
     // Duyệt qua danh sách lớp
     for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {

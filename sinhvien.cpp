@@ -59,7 +59,7 @@ int soSanhTen(SinhVien* sv1, SinhVien* sv2) {
         return (size1 < size2) ? -1 : 1;
     }
 
-    return 0; // Nếu cả họ và tên đều giống nhau
+    return 0;
 }
 
 void quickSortArray(SinhVien** arr, int low, int high) {

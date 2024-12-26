@@ -61,6 +61,7 @@ private slots:
     void xoaLop();
     void hieuChinhLop();
     void xemMonLop();
+    void timLop(const QString &text);
 
     void on_luuDL_clicked();
     void on_quanlymonhoc_clicked();

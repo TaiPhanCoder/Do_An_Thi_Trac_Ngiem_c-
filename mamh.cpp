@@ -411,12 +411,11 @@ void luuMonHocVaCauHoi(ptrMonHoc root, const QString& filePath) {
     qDebug() << "Lưu thành công file môn học và câu hỏi tại:" << filePath;
 }
 
-ptrMonHoc loadToanBoCauHoi() {
-    ptrMonHoc root = nullptr;
-    QFile file(":/TK-MK-PTIT/MH-CauHoi.txt");
+void loadToanBoCauHoi(ptrMonHoc &root, const QString &filepath) {
+    QFile file(filepath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qWarning() << "Không thể mở file!";
-        return root;
+        qWarning() << "Không thể mở file:" << filepath;
+        return;
     }
 
     QTextStream in(&file);
@@ -434,6 +433,7 @@ ptrMonHoc loadToanBoCauHoi() {
             int tinchi = parts[2].toInt();
             root = insertNodeAVL(root, mamh, tenmh, tinchi);
             currentNode = SearchNode(root, mamh);
+            qDebug() << currentNode->MH.TENMH;
             tail = nullptr;
 
             if (currentNode == nullptr) {
@@ -471,5 +471,4 @@ ptrMonHoc loadToanBoCauHoi() {
     }
 
     file.close();
-    return root;
 }

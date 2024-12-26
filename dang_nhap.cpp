@@ -54,8 +54,6 @@ void Dang_Nhap::setupButtonConnections() {
 
 void Dang_Nhap::on_sharingan_clicked()
 {
-    qDebug() << "Ham on_sharingan_clicked() da duoc goi.";
-
     if (ui->MatKhau->echoMode() == QLineEdit::Password) {
         ui->MatKhau->setEchoMode(QLineEdit::Normal);
         qDebug() << "Chuyen sang che do hien thi mat khau.";
@@ -71,7 +69,7 @@ bool Dang_Nhap::checkLogin(const QString &enteredUsername, const QString &entere
     }
 
     // Duyệt qua mảng lớp
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }

@@ -15,7 +15,7 @@ Thong_Tin_Thi::Thong_Tin_Thi(SinhVien* mainUser, CauHoi* &danhSachCauHoi, QWidge
     setupUI();
     setupCompleter();
     // Đọc danh sách môn học và thêm vào combo box
-    root = loadToanBoCauHoi();
+    loadToanBoCauHoi(root, duongDanMonHoc);
     setupDSMonHoc(root);
 }
 

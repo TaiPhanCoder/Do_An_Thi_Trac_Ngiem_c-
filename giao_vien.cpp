@@ -34,7 +34,7 @@ GIao_Vien::GIao_Vien(Lop* danhSachLop[], QWidget* parent)
     ui->logo->setPixmap(scaledPixmap);
     this->setWindowFlags(Qt::Window | Qt::WindowCloseButtonHint);
     this->setWindowIcon(QIcon(":/logo/ad27bc12ca81e862ceb35328122757ee.ico"));
-    root =loadToanBoCauHoi();
+    loadToanBoCauHoi(root, duongDanMonHoc);
     on_sinhVien_clicked();
     ui->bangDuLieu->setEditTriggers(QAbstractItemView::NoEditTriggers);
     loadLopVaoComboBox();
@@ -217,7 +217,6 @@ void duyetDanhSach(Lop* danhSachLop[]) {
 
 void GIao_Vien::loadSinhVien() {
     ui->bangDuLieu->setRowCount(0);
-    ui->bangDuLieu->clear();
 
     int row = 0;
 
@@ -261,37 +260,39 @@ void GIao_Vien::onTextEdited(const QString &text) {
     connect(ui->timMSSV, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited);
 }
 
-    void GIao_Vien::timKiemSinhVien(const QString &text) {
-        ui->bangDuLieu->setRowCount(0);
+void GIao_Vien::timKiemSinhVien(const QString &text) {
+    ui->bangDuLieu->setRowCount(0);
 
-        int row = 0;
+    int row = 0;
 
-        // Duyệt qua mảng lớp
-        for (int i = 0; i < MAX; ++i) {
-            if (danhSachLop[i] == nullptr) {
-                break;
+    // Duyệt qua mảng lớp
+    for (int i = 0; i < MAX; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
+        SinhVien* current = danhSachLop[i]->DSSV;
+        QString maLop = danhSachLop[i]->MALOP;
+        QString tenLop = danhSachLop[i]->TENLOP;
+
+        // Duyệt qua danh sách sinh viên của lớp hiện tại
+        while (current != nullptr) {
+            if (current->masv.contains(text, Qt::CaseInsensitive)) {
+                ui->bangDuLieu->insertRow(row);
+
+                ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->masv));
+                ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(current->ho));
+                ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->ten));
+                ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(maLop));
+                ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(tenLop));
+                ui->bangDuLieu->setItem(row, 5, new QTableWidgetItem(current->phai));
+
+                row++;
             }
-            SinhVien* current = danhSachLop[i]->DSSV;
-            QString tenLop = danhSachLop[i]->MALOP;
 
-            // Duyệt qua danh sách sinh viên của lớp hiện tại
-            while (current != nullptr) {
-                if (current->masv.contains(text, Qt::CaseInsensitive)) {
-                    ui->bangDuLieu->insertRow(row);
-
-                    ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(current->masv));
-                    ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(current->ho));
-                    ui->bangDuLieu->setItem(row, 2, new QTableWidgetItem(current->ten));
-                    ui->bangDuLieu->setItem(row, 3, new QTableWidgetItem(tenLop));
-                    ui->bangDuLieu->setItem(row, 4, new QTableWidgetItem(current->phai));
-
-                    row++;
-                }
-
-                current = current->next;
-            }
+            current = current->next;
         }
     }
+}
 
 void GIao_Vien::dsMonHoc(NodeMonHoc* root, bool isFirst) {
     if (root == nullptr) {
@@ -508,7 +509,7 @@ void GIao_Vien::xemDiemSinhVien() {
 void GIao_Vien::xemMonLop() {
     int row = ui->bangDuLieu->currentRow();
     QString maLop = ui->bangDuLieu->item(row, 0)->text();  // Lấy mã lớp từ bảng
-    Lop* mainClass = timLop(maLop, danhSachLop);
+    Lop* mainClass = timKiemLop(maLop, danhSachLop);
 
 
     if (!mainClass) {
@@ -688,12 +689,12 @@ void GIao_Vien::on_sinhVien_clicked() {
     ui->tinhNangSinhVien->show();
 
     ui->bangDuLieu->setColumnCount(6);
-    QStringList headers;
-    headers << "MSSV" << "Họ" << "Tên" << "Mã lớp" << "Tên lớp" << "Giới tính";
-    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
 
     // Đặt chế độ tự động điều chỉnh độ rộng cột
     ui->bangDuLieu->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    QStringList headers;
+    headers << "MSSV" << "Họ" << "Tên" << "Mã lớp" << "Tên lớp" << "Giới tính";
+    ui->bangDuLieu->setHorizontalHeaderLabels(headers);
 
     // Thiết lập context menu cho bảng Sinh viên
     ui->bangDuLieu->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -713,7 +714,6 @@ void GIao_Vien::on_sapXep_clicked()
     if (!dasapxep) {
         dasapxep = true;
         for (int i = 0; i < MAX; ++i) {
-            qDebug() << "CB sap xep";
             if (danhSachLop[i] == nullptr) {
                 break;
             }
@@ -799,7 +799,7 @@ void GIao_Vien::on_lop_clicked()
     ui->bangDuLieu->setHorizontalHeaderLabels(headers);
     loadLop();
     connect(ui->timMaLop, &QLineEdit::textEdited, this, &GIao_Vien::onTextEdited_2);
-    // connect(ui->timMaLop, &QLineEdit::textChanged, this, &GIao_Vien::timLop);
+    connect(ui->timMaLop, &QLineEdit::textChanged, this, &GIao_Vien::timLop);
 }
 
 
@@ -814,7 +814,7 @@ void GIao_Vien::loadLop() {
     int row = 0;
 
     // Duyệt qua mảng lớp
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break;
         }
@@ -837,50 +837,44 @@ void GIao_Vien::loadLop() {
 
 
 
-void GIao_Vien::on_sapXep_3_clicked(){
-    dasapxep = true;
-    for (int i = 0; i < 10000; ++i) {
+void GIao_Vien::on_sapXep_3_clicked() {
+
+
+    // Sắp xếp danh sách lớp trực tiếp bằng Bubble Sort
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
+            break; // Nếu gặp nullptr, tức là danh sách lớp đã hết
+        }
+
+        // Biến swapped để kiểm tra trạng thái hoán đổi
+        bool swapped = false;
+
+        // Thực hiện Bubble Sort
+        for (int j = 0; j > MAX - i - 1; ++j) {
+            if (danhSachLop[j] == nullptr || danhSachLop[j + 1] == nullptr) {
+                break; // Nếu gặp nullptr trong quá trình duyệt, dừng vòng lặp
+            }
+
+            // So sánh theo mã lớp (MALOP)
+            if (danhSachLop[j]->MALOP > danhSachLop[j + 1]->MALOP) {
+                // Hoán đổi vị trí nếu MALOP nhỏ hơn
+                Lop* temp = danhSachLop[j];
+                danhSachLop[j] = danhSachLop[j + 1];
+                danhSachLop[j + 1] = temp;
+
+                swapped = true; // Đánh dấu đã có hoán đổi
+            }
+        }
+
+        // Nếu không có hoán đổi nào, danh sách đã được sắp xếp
+        if (!swapped) {
             break;
-        }
-
-        Lop* lopArray[10000];
-        int lopCount = 0;
-
-        for (int j = 0; j < 10000; ++j) {
-            if (danhSachLop[j] == nullptr) {
-                break;
-            }
-            lopArray[lopCount++] = danhSachLop[j];
-        }
-
-        // Sắp xếp mảng lớp theo tên lớp (TENLOP)
-        bool swapped;
-        do {
-            swapped = false;
-            for (int k = 0; k < lopCount - 1; ++k) {
-                if (lopArray[k]->MALOP < lopArray[k + 1]->MALOP) {
-                    // Hoán đổi các lớp nếu tên lớp trước đó lớn hơn lớp sau
-                    Lop* temp = lopArray[k];
-                    lopArray[k] = lopArray[k + 1];
-                    lopArray[k + 1] = temp;
-
-                    swapped = true;
-                }
-            }
-        } while (swapped);
-
-        // Cập nhật lại danh sách lớp sau khi sắp xếp
-        for (int k = 0; k < lopCount; ++k) {
-            danhSachLop[k] = lopArray[k];
         }
     }
 
     // Tải lại bảng lớp sau khi sắp xếp
     loadLop();
-    qDebug() << "Đã sắp xếp danh sách lớp theo tên.";
-
-
+    qDebug() << "Đã sắp xếp danh sách lớp theo mã lớp.";
 }
 
 
@@ -909,32 +903,32 @@ void GIao_Vien::on_themNhieuLop_clicked()
 
 }
 
-// void GIao_Vien::timLop(const QString &text) {
-//     ui->bangDuLieu->setRowCount(0); // Xóa dữ liệu cũ trên bảng
-//     int row = 0;
+void GIao_Vien::timLop(const QString &text) {
+    ui->bangDuLieu->setRowCount(0); // Xóa dữ liệu cũ trên bảng
+    int row = 0;
 
-//     // Duyệt qua danh sách lớp
-//     for (int i = 0; i < 10000; ++i) {
-//         if (danhSachLop[i] == nullptr) {
-//             break;
-//         }
+    // Duyệt qua danh sách lớp
+    for (int i = 0; i < MAX; ++i) {
+        if (danhSachLop[i] == nullptr) {
+            break;
+        }
 
-//         QString maLop = danhSachLop[i]->MALOP;
-//         QString tenLop = danhSachLop[i]->TENLOP;
+        QString maLop = danhSachLop[i]->MALOP;
+        QString tenLop = danhSachLop[i]->TENLOP;
 
-//         // Kiểm tra nếu mã lớp hoặc tên lớp chứa từ khóa
-//         if (maLop.contains(text, Qt::CaseInsensitive)) {
-//             ui->bangDuLieu->insertRow(row); // Thêm hàng mới vào bảng
+        // Kiểm tra nếu mã lớp hoặc tên lớp chứa từ khóa
+        if (maLop.contains(text, Qt::CaseInsensitive)) {
+            ui->bangDuLieu->insertRow(row); // Thêm hàng mới vào bảng
 
-//             // Đặt thông tin lớp vào từng cột
-//             ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(maLop));
-//             ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(tenLop));
+            // Đặt thông tin lớp vào từng cột
+            ui->bangDuLieu->setItem(row, 0, new QTableWidgetItem(maLop));
+            ui->bangDuLieu->setItem(row, 1, new QTableWidgetItem(tenLop));
 
 
-//             row++; // Tăng chỉ số hàng
-//         }
-//     }
-// }
+            row++; // Tăng chỉ số hàng
+        }
+    }
+}
 
 
 
@@ -976,7 +970,7 @@ void GIao_Vien::hieuChinhLop() {
 }
 
 void xoaLopKhoiDanhSach(const QString& maLop, Lop** danhSachLop) {
-    for (int i = 0; i < 10000; ++i) {
+    for (int i = 0; i < MAX; ++i) {
         if (danhSachLop[i] == nullptr) {
             break; // Kết thúc nếu không còn lớp nào trong danh sách
         }
@@ -993,10 +987,10 @@ void xoaLopKhoiDanhSach(const QString& maLop, Lop** danhSachLop) {
             delete danhSachLop[i];
 
             // Dịch chuyển các phần tử phía sau lên trước để lấp chỗ trống
-            for (int j = i; j < 9999; ++j) {
+            for (int j = i; j < MAX - 1; ++j) {
                 danhSachLop[j] = danhSachLop[j + 1];
             }
-            danhSachLop[9999] = nullptr; // Đảm bảo phần tử cuối cùng là nullptr
+            danhSachLop[MAX - 1] = nullptr; // Đảm bảo phần tử cuối cùng là nullptr
             return; // Thoát khi đã xóa lớp
         }
     }

@@ -130,8 +130,10 @@ void xem_mon_lop::loadBangMonHoc()
     ui->dsachmon->setSelectionBehavior(QAbstractItemView::SelectRows); // Chọn cả hàng khi nhấn vào ô
     ui->dsachmon->setSelectionMode(QAbstractItemView::SingleSelection); // Chỉ chọn 1 dòng
 
-    // Duyệt qua danh sách sinh viên để lấy môn học
-    QSet<QString> danhSachMonHoc; // Tránh trùng lặp
+    const int MAX_MON_HOC = 100; // Giới hạn số lượng môn học
+    QString danhSachMonHoc[MAX_MON_HOC];
+    int soLuongMonHoc = 0; // Số lượng môn học đã thêm
+
     int row = 0;
     SinhVien* sv = mainClass->DSSV;
 
@@ -139,21 +141,33 @@ void xem_mon_lop::loadBangMonHoc()
         monHocDaThi* current = sv->ds_diemthi;
 
         while (current != nullptr) {
-            if (!danhSachMonHoc.contains(current->maMH)) {
+            // Kiểm tra trùng lặp bằng cách duyệt mảng tĩnh
+            bool daTonTai = false;
+            for (int i = 0; i < soLuongMonHoc; ++i) {
+                if (danhSachMonHoc[i] == current->maMH) {
+                    daTonTai = true;
+                    break;
+                }
+            }
+
+            if (!daTonTai) {
                 QString tenMonHoc = timTenMonHoc(current->maMH, root);
 
                 ui->dsachmon->insertRow(row); // Thêm dòng mới
                 ui->dsachmon->setItem(row, 0, new QTableWidgetItem(current->maMH));
                 ui->dsachmon->setItem(row, 1, new QTableWidgetItem(tenMonHoc));
 
-                danhSachMonHoc.insert(current->maMH); // Đánh dấu đã thêm
+                // Thêm mã môn học vào mảng tĩnh
+                if (soLuongMonHoc < MAX_MON_HOC) {
+                    danhSachMonHoc[soLuongMonHoc++] = current->maMH;
+                } else {
+                    qDebug() << "Danh sách môn học vượt quá giới hạn!";
+                }
                 row++;
             }
+
             current = current->next;
         }
         sv = sv->next;
-    }
-    if (row == 0) {
-        QMessageBox::information(this, "Thông báo", "Lớp chưa có môn học nào.");
     }
 }
